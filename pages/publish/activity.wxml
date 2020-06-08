@@ -1,0 +1,64 @@
+<!--上部分-->
+<view class="title">
+  <view class="list">
+    <view class="name">活动名称</view>
+    <input class="typein" type="text" placeholder="请填写活动名称"></input>
+  </view>
+   <view class="list">
+    <view class="name">价格</view>
+    <input class="typein" type="digit" placeholder="0.00"></input>
+  </view>
+   <view class="list">
+    <view class="name">人数</view>
+    <input class="typein" type="number" placeholder="不限"></input>
+  </view>
+  <view class="upload">
+    <view class="name">活动图</view>
+   <image class= "show-image" mode="aspectFitf" src="{{src}}" bindtap="gotoShow"></image>
+  </view>
+</view>
+<!--活动描述-->
+<view class="middle">
+  <view class="name">活动描述</view>
+  <textarea  type="text" placeholder="简单说说要求吧.."></textarea>
+</view>
+<!--行程管理-->
+<view class="bottom">
+  <view class="bottom_1">
+    <view class="name">时间</view>
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">{{date}}</picker>
+    <image src="/images/tongming/toright.png" class="toright"></image>
+     <picker mode="date" value="{{date}}" bindchange="bindDateChange">{{date}}</picker>
+  </view>
+   <view class="bottom_1">
+    <view class="name2">请输入活动集合点</view>
+    <input class="typein" type="text" placeholder="地点"></input>
+  </view>
+  <view class="bottom_2">行程管理</view>
+ 
+  <view class="bottom_3">
+    <view class="name">2020-2-2</view>
+    <input placeholder="请添行程管理" class="areain"></input>
+  </view>
+   <image class= "xingcheng-image" mode="aspectFitf" src="{{src}}" bindtap="gotoShow"></image>
+    <view class="bottom_3">
+    <view class="name">2020-2-2</view>
+    <input placeholder="请添行程管理" class="areain"></input>
+  </view>
+   <image class= "xingcheng-image" mode="aspectFitf" src="{{src}}" bindtap="gotoShow"></image>
+</view>
+<!--活动须知-->
+<view class="last">
+  <view class="bottom_4">
+    <view>活动须知</view>
+    <input type="text" class="areain" placeholder="简单说说要求吧..."></input>
+  </view>
+  <view class="bottom_1">
+   <view class="name">是否公开</view>
+   <radio-group>
+     <radio class="yes">是</radio>
+     <radio class="yes">否</radio>
+   </radio-group>
+  </view>
+  <view class="sumit">立即发布</view>
+</view>

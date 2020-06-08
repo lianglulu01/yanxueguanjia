@@ -1,5 +1,12 @@
 {
   "pages": [
+    "pages/publish/index",
+    "pages/publish/jilu",
+    "pages/publish/activity",
+    
+    
+    
+    
     "pages/active/active",
     "pages/index/index",
     "pages/dynamic/dynamic",
@@ -29,7 +36,7 @@
       },
       {
         "pagePath": "pages/active/active",
-        "text": "圈子",
+        "text": "活动",
         "selectedIconPath": "images/active_selected.png",
         "iconPath": "images/active.png"
       },
