@@ -1,0 +1,32 @@
+page {
+  background-color: #f7f3f7;
+}
+
+.comment_text {
+  background-color: #fff;
+}
+
+.tex {
+  width: 100%;
+  padding: 28rpx 20rpx;
+  font-size: 26rpx;
+  /* color: #D9D9D9; */
+}
+
+.comment_bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 71rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 286rpx;
+  color: #fff;
+  line-height: 72rpx;
+  height: 73rpx;
+  background: linear-gradient(-22deg, rgba(25, 119, 251, 1), rgba(88, 156, 252, 1));
+  border-radius: 36rpx;
+}

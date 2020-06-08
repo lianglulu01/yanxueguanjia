@@ -1,0 +1,41 @@
+<view class="content">
+  <view class="content_top">
+    <view class="index_tab">
+      <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+        <view class='nav {{item.id==idx?"select":""}}' wx:for="{{nav_list}}" wx:key="key" bindtap='switchTap' data-index="{{index}}">
+          <view>{{item.name}}</view>
+          <view class='{{item.id==idx?"border":""}}'></view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="active_new">
+      <view class="active_left">
+        <view class="left_title">【北京国际夏令营打电话回复】</view>
+        <view class="left_center">
+          <text class="people">220人报名</text> |
+          <text>时间:</text>
+          <text>6月3号-6月6号</text>
+        </view>
+        <view class="left_bottom">
+          <text>地点:</text>
+          <text>北京朝阳区望京SOHO塔2A座</text>
+        </view>
+      </view>
+      <view class="active_right">
+        <view class="right_top">
+          <view>立即查看</view>
+          <image src="../../images/arrow.png" class="right_arr"></image>
+        </view>
+        <view class="right_bottom">
+          <view class="button">打卡记录</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="people_position">
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="20" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; "></map>
+  </view>
+  <view class="buttons">
+  <view class=""></view>
+  </view>
+</view>

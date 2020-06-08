@@ -1,0 +1,281 @@
+page {
+  background-color: #f7f4f8;
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+}
+
+.tex {
+  background-color: #fff;
+}
+
+.tex textarea {
+  padding: 20rpx 28rpx;
+  font-size: 26rpx;
+}
+
+.img {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx 28rpx;
+}
+
+.img_list {
+  display: flex;
+  width: 560rpx;
+  background-color: #fff;
+  align-items: center;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+}
+
+.img_item {
+  padding: 10rpx 30rpx 10rpx 0;
+}
+
+.img_item image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.img_button {
+  padding: 10rpx;
+  width: 150rpx;
+  height: 150rpx;
+  background: rgba(247, 244, 248, 1);
+  border-radius: 5rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.img_button image {
+  width: 73rpx;
+  height: 62rpx;
+}
+
+.img_button .button_text {
+  width: 100%;
+  font-size: 24rpx;
+  color: #d9d9d9;
+  text-align: center;
+}
+
+.list {
+  padding: 0 31rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 27rpx 0;
+}
+
+.item_name {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.item_name .title {
+  margin-left: 11rpx;
+  color: #333;
+}
+
+.item_val {
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.item_val .name {
+  margin-right: 30rpx;
+  color: #333;
+}
+
+.item image {
+  width: 36rpx;
+  height: 39rpx;
+}
+
+.item .doll {
+  width: 26rpx;
+  height: 36rpx;
+}
+
+.item .doll_text {
+  margin-left: 20rpx;
+}
+
+.border {
+  border-top: 1rpx solid #f7f4f8;
+}
+
+.button {
+  width: 100%;
+  margin-top: 90rpx;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.button_content {
+  width: 374rpx;
+  height: 73rpx;
+  background: linear-gradient(-22deg, rgba(26, 120, 252, 1), rgba(89, 157, 252, 1));
+  border-radius: 37rpx;
+  line-height: 73rpx;
+}
+
+/* 活动弹框 */
+
+.dialog {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 20rpx 20rpx 0px 0px;
+  height: 755rpx;
+}
+
+.dialog_top {
+  display: flex;
+  padding: 27rpx 32rpx;
+  justify-content: space-around;
+}
+
+.dialog_top .cancel {
+  width: 20%;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.dialog_top .dialog_title {
+  width: 60%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.dialog_top .sure {
+  width: 20%;
+  text-align: right;
+  color: #1a78fc;
+}
+
+.dialog_list {
+  padding: 0 31rpx;
+}
+
+.dialog_item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1rpx solid #f3f3f3;
+  padding: 31rpx 0;
+}
+
+.dialog_img image {
+  width: 117rpx;
+  height: 117rpx;
+}
+
+.dialog_content {
+  margin-left: 22rpx;
+  /* height: 67rpx; */
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 41rpx;
+}
+
+.air {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+}
+
+/* 活动弹框end */
+
+/* 权限弹框 */
+
+.message {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 20rpx 20rpx 0px 0px;
+  height:524rpx;
+  width: 100%;
+}
+
+.message_top {
+  display: flex;
+  padding: 27rpx 32rpx;
+  justify-content: space-around;
+}
+
+.message_top .cancel {
+  width: 20%;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.message_top .message_title {
+  width: 60%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+}
+.message_top .sure{
+  width: 20%;
+  text-align: right;
+  color: #1a78fc;
+}
+.message_item {
+  display: flex;
+  height: 79rpx;
+  border-bottom: 1rpx solid #F3F3F3;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.message_left{
+  font-size: 26rpx;
+  color: #333333;
+}
+.only{
+  color: #E7E7E7;
+}
+ .message_right image{
+   width: 32rpx;
+   height: 32rpx;
+ }
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.4;
+}

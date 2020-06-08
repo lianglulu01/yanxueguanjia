@@ -1,0 +1,107 @@
+<view class="content">
+  <view class="tex">
+    <textarea placeholder="请输入内容" placeholder-style="color:#D9D9D9;"></textarea>
+  </view>
+  <view class="img">
+    <view class="img_list">
+      <view class="img_item">
+        <image mode="aspectFill" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
+      </view>
+      <view class="img_item">
+        <image mode="aspectFill" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
+      </view>
+      <view class="img_item">
+        <image mode="aspectFill" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
+      </view>
+      <view class="img_button">
+        <image src="../../images/camera.png"></image>
+        <view class="button_text">添加图片</view>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="item" bindtap="active">
+      <view class="item_name">
+        <image src=" ../../images/activity.png"></image>
+        <view class="title">所属活动</view>
+      </view>
+      <view class="item_val">
+        <view class="name">夏令营</view>
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="item border" bindtap="watch">
+      <view class="item_name">
+        <image src=" ../../images/character.png" class="doll"></image>
+        <view class="title" class="doll_text">谁可以看</view>
+      </view>
+      <view class="item_val">
+        <view class="name">公开</view>
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="button">
+    <view class="button_content">
+      发布
+    </view>
+  </view>
+</view>
+<!-- 活动弹框start -->
+<view class="dialog" wx:if="{{isAction==1}}">
+  <view class="dialog_top">
+    <view class="cancel" bindtap="cancel">取消</view>
+    <view class="dialog_title">所属活动</view>
+    <view class="sure">确定</view>
+  </view>
+  <view class="dialog_list">
+    <view class="dialog_item">
+      <view class="dialog_img">
+        <image src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
+      </view>
+      <view class="dialog_content">活动就在北京昌平区沙河路某某的地方,你绝对想不到的</view>
+    </view>
+  </view>
+</view>
+<!-- 活动弹框end -->
+<view class="message" wx:if="{{isWatch==1}}">
+  <view class="message_top">
+    <view class="cancel" bindtap="cancelMsg">取消</view>
+    <view class="message_title">所属活动</view>
+    <view class="sure" bindtap="sureMsg">确定</view>
+  </view>
+  <view class="message_list">
+    <view class="message_item">
+      <view class="message_left">私密 <text class="only">(自己可见)</text></view>
+      <view class="message_right">
+        <image src="../../images/selected.png"></image>
+      </view>
+    </view>
+    <view class="message_item">
+      <view class="message_left">同学可见</view>
+      <view class="message_right">
+        <image src="../../images/selected.png"></image>
+      </view>
+    </view>
+    <view class="message_item">
+      <view class="message_left">老师可见</view>
+      <view class="message_right">
+        <image src="../../images/selected.png"></image>
+      </view>
+    </view>
+    <view class="message_item">
+      <view class="message_left">家长可见</view>
+      <view class="message_right">
+        <image src="../../images/selected.png"></image>
+      </view>
+    </view>
+    <view class="message_item">
+      <view class="message_left">公开</view>
+      <view class="message_right">
+        <image src="../../images/selected.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="mask" wx:if="{{isWatch ==1}}" bindtap="cancelMsg"></view>
+<view class="air" wx:if="{{isAction==1}}" bindtap="cancel"></view>

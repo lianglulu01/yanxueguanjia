@@ -1,0 +1,122 @@
+<view class="content">
+  <view class="content_top">
+    <view class="location">
+      <image src="../../images/localtion.png"></image>
+      <view>北京</view>
+    </view>
+    <view class="police">
+      <image src="../../images/location_back.png" class="police_background"></image>
+      <view class="police_content">
+        <image src="../../images/police.png"></image>
+        <view>报警</view>
+      </view>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <!-- <view class="carousel"> -->
+  <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-active-color='#ffffff'>
+    <block wx:for="{{bnrUrl}}" wx:for-index="index" wx:key="key">
+      <swiper-item>
+        <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 轮播图end -->
+  <!-- </view> -->
+  <view class="punch">
+    <view class="punch_left">
+      <image src="../../images/punch.png"></image>
+    </view>
+    <view class="punch_center">
+      <view class="address">朝阳公园露营活动!</view>
+      <view class="distance">距离你1.5km</view>
+    </view>
+    <view class="punch_right">
+      <view class="button">打卡</view>
+    </view>
+  </view>
+  <view class="card">
+    <view class="card_top">
+      <view class="card_left">我的活动</view>
+      <view class="card_right">
+        <text>往期活动</text>
+        <image class="rigth_arr" style="width:22rpx;height:22rpx;" src="../../images/right_arr.png"></image>
+      </view>
+    </view>
+    <view class="card_center">
+      <image src="https://ns-strategy.cdn.bcebos.com/ns-strategy/upload/fc_big_pic/part-00799-3949.jpg"></image>
+      <view class="img_content">望京公园露营开始了....</view>
+    </view>
+    <view class="card_bottom">
+      <view class="bottom_left">
+        <view class="people">33人报名</view>
+        <view class="time">时间:6月3号-6月6日</view>
+        <view class="activeAddress">北京市朝阳区</view>
+      </view>
+      <view class="bottom-right">
+        <view class="look">立即查看</view>
+      </view>
+    </view>
+  </view>
+  <!-- 导航 -->
+  <view class="tabs-nav">
+    <view class="{{selected?'page pgselected':'page'}}" data-status="{{index}}" bindtap='selectedFn'>最新</view>
+    <view class="{{selected1?'page pgselected':'page'}}" data-status="{{index}}" bindtap='selectedFn1'>往期</view>
+    <view class="mine_border" wx:if="{{selected}}">
+      <image src="../../images/border.png"></image>
+    </view>
+    <view class="square_border" wx:if="{{selected1}}">
+      <image src="../../images/border.png"></image>
+    </view>
+  </view>
+  <!-- 导航结束 -->
+  <!-- 列表开始 -->
+  <view class="active_list">
+    <view class="active_item">
+      <view class="active_left">
+        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
+      </view>
+      <view class="active_right">
+        <view class="active_title">
+          朝阳公园的露营活动已经开始了,快了参加吧!
+        </view>
+        <view class="active_news">
+          <view class="active_num">55人参加</view>
+          <view class="active_date">时间:8月8号-9月9号</view>
+          <view class="active_address">北京朝阳区公园</view>
+        </view>
+      </view>
+    </view>
+    <view class="active_item">
+      <view class="active_left">
+        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
+      </view>
+      <view class="active_right">
+        <view class="active_title">
+          朝阳公园的露营活动已经开始了,快了参加吧!
+        </view>
+        <view class="active_news">
+          <view class="active_num">55人参加</view>
+          <view class="active_date">时间:8月8号-9月9号</view>
+          <view class="active_address">北京朝阳区公园</view>
+        </view>
+      </view>
+    </view>
+    <view class="active_item">
+      <view class="active_left">
+        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
+      </view>
+      <view class="active_right">
+        <view class="active_title">
+          朝阳公园的露营活动已经开始了,快了参加吧!
+        </view>
+        <view class="active_news">
+          <view class="active_num">55人参加</view>
+          <view class="active_date">时间:8月8号-9月9号</view>
+          <view class="active_address">北京朝阳区公园</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 列表结束 -->
+</view>

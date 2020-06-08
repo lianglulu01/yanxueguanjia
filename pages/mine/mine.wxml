@@ -1,0 +1,79 @@
+<view class="content">
+  <view class="top">
+    <image class="background_img" src="../../images/background.png"></image>
+    <view class="top_content">
+      <view class="top_left">
+        <image src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20190115/87868f21befc4e7f9007aa71efa79621.jpeg"></image>
+      </view>
+      <view class="top_right">
+        <view class="name">
+          <view>这是个好人</view>
+          <image class="edit" src="../../images/edit.png"></image>
+        </view>
+        <view class="phone">
+          17616241217
+        </view>
+        <view class="age">
+          年龄: 20
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="activity">
+    <view class="activity_top">
+      <view>活动发布</view>
+      <image class="activity_arrow" src="../../images/arrow.png"></image>
+    </view>
+    <view class="activity_center">
+      <view class="button">
+        <image class="button_background" src="../../images/button.png"></image>
+        <view class="button_content" bindtap="release">
+          <image class="file" src="../../images/file.png"></image>
+          <view>新活动发布</view>
+        </view>
+
+      </view>
+    </view>
+    <view class="activity_bottom">
+      快去发布新的活动吧~~~
+    </view>
+  </view>
+  <view class="list">
+    <view class="item">
+      <view class="item_name">
+        <image src="../../images/hart.png"></image>
+        <text>我的活动</text>
+      </view>
+      <view class="item_val">
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="item" bindtap="toDynamic">
+      <view class="item_name">
+        <image src="../../images/new.png"></image>
+        <text>我的说说</text>
+      </view>
+      <view class="item_val">
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item_name">
+        <image src="../../images/customer.png"></image>
+        <text>在线客服</text>
+      </view>
+      <view class="item_val">
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item_name">
+        <image src="../../images/platform.png"></image>
+        <text>关于平台</text>
+      </view>
+      <view class="item_val">
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

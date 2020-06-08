@@ -1,0 +1,8 @@
+<view class="content">
+  <view class="comment_text">
+    <textarea placeholder="请输入内容" class="tex" placeholder-style="color:#D9D9D9;"></textarea>
+  </view>
+  <view class="comment_bottom">
+    <view class="button">发送</view>
+  </view>
+</view>
