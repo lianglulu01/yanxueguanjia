@@ -17,5 +17,10 @@ Page({
     // wx.navigateTo({
     //   url:'../dynamic/dynamic'
     // })
+  },
+  associate:function(){
+    wx.navigateTo({
+      url: '../relatedList/relatedList',
+    })
   }
 })

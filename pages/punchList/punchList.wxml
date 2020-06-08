@@ -1,0 +1,47 @@
+<view class="content">
+  <view class="list"  wx:for="{{5}}" wx:key="key">
+    <view class="item">
+      <view class="item_row">
+        <view class="item_key">
+          <view class="item_img">
+            <image src="../../images/me.png"></image>
+          </view>
+          <view class="item_name">李超</view>
+        </view>
+        <view class="item_val">
+          未打卡
+        </view>
+      </view>
+      <view class="item_row">
+        <view class="item_key">
+          <view class="item_img">
+            <image src="../../images/time.png"></image>
+          </view>
+          <view class="item_name">2020-12-02 13:02:11</view>
+        </view>
+      </view>
+      <view class="item_row">
+        <view class="item_key">
+          <view class="item_img">
+            <image src="../../images/address.png"></image>
+          </view>
+          <view class="item_name">打卡位置: 北京大兴区南海家园C区</view>
+        </view>
+        <!-- <view class="item_val">
+          未打卡
+        </view> -->
+      </view>
+      <view class="item_row">
+        <view class="item_key">
+          <view class="item_img">
+            <image src="../../images/site.png"></image>
+          </view>
+          <view class="item_name">实打打卡位置: 无</view>
+        </view>
+        <!-- <view class="item_val">
+          未打卡
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>

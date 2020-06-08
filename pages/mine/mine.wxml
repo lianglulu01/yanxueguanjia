@@ -8,7 +8,10 @@
       <view class="top_right">
         <view class="name">
           <view>这是个好人</view>
-          <image class="edit" src="../../images/edit.png"></image>
+          <view class="associate_button" bindtap="associate">
+            <view class="button_cont">关联用户</view>
+            <image class="associate" src="../../images/associate.png"></image>
+          </view>
         </view>
         <view class="phone">
           17616241217
@@ -16,6 +19,7 @@
         <view class="age">
           年龄: 20
         </view>
+        <image class="edit" src="../../images/edit.png"></image>
       </view>
     </view>
   </view>

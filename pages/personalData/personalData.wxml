@@ -1,0 +1,22 @@
+<view class="content">
+  <view class="list">
+    <view class="item">
+      <view class="item_name">头像</view>
+      <view class="item_val">
+        <image src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3140403455,2984550794&fm=26&gp=0.jpg"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item_name">真实姓名</view>
+      <view class="item_val">李超</view>
+    </view>
+    <view class="item">
+      <view class="item_name">手机号</view>
+      <view class="item_val">176162471217</view>
+    </view>
+    <view class="item">
+      <view class="item_name">身份证号</view>
+      <view class="item_val">41152519991018035</view>
+    </view>
+  </view>
+</view>

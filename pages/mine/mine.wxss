@@ -75,7 +75,7 @@ page {
 }
 
 .top_right .age {
-  width: 50%;
+  width: 38%;
   font-size: 26rpx;
   padding-left: 10rpx;
   box-sizing: border-box;
@@ -86,6 +86,26 @@ page {
 .edit {
   width: 35rpx;
   height: 29rpx;
+   margin-top: 37rpx;
+}
+
+.associate_button{
+  font-size: 28rpx;
+}
+.button_cont{
+ z-index: 99;
+position: fixed;
+right: 44rpx;
+top: 128rpx;
+
+}
+.associate{
+  width: 177rpx;
+height: 58rpx;
+position: fixed;
+right: 36rpx;
+top: 119rpx;
+
 }
 
 .activity {

@@ -34,21 +34,16 @@
 }
 
 .index_tab .bottom_scroll .select {
-  /* background-color: #00c19c; */
   color: #000;
-  /* border-bottom: 2rpx solid  linear-gradient(90deg, rgba(212, 230, 255, 0.72), rgba(26, 120, 252, 0.72)); *//* border-bottom: 2rpx solid #000; */
   font-size: 32rpx;
   font-weight: 600;
-  /* display: flex;
-  align-items: center; *//* opacity: 1; */
 }
 
 .border {
   height: 6rpx;
   width: 50rpx;
-  /* background-color: linear-gradient(90deg, rgba(212, 230, 255, 0.72), rgba(26, 120, 252, 0.72)); */
   background: linear-gradient(90deg, rgba(212, 230, 255, 0.72), rgba(26, 120, 252, 0.72));
-  margin-left: 19rpx;
+  margin-left: 20rpx;
   margin-top: 10rpx;
 }
 
@@ -110,9 +105,11 @@
   font-size: 26rpx;
   color: #666;
 }
-.right_bottom{
+
+.right_bottom {
   margin-top: 30rpx;
 }
+
 .right_bottom .button {
   width: 138rpx;
   height: 49rpx;
@@ -128,7 +125,190 @@
 /* 顶部信息end */
 
 /* 地图start */
-#map{
-  height: 900rpx;
+
+.people_position {
+  position: relative;
 }
+
+#map {
+  height: 700rpx;
+}
+
 /* 地图end */
+
+.buttons {
+  position: absolute;
+  bottom: 53rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons .punch {
+  width: 235rpx;
+  height: 71rpx;
+  background: rgba(53, 137, 255, 1);
+  box-shadow: 0px 0px 4px 0px rgba(53, 137, 255, 0.38);
+  border-radius: 36rpx;
+  color: #fff;
+  line-height: 71rpx;
+  text-align: center;
+}
+
+.buttons .police {
+  width: 235rpx;
+  height: 71rpx;
+  background: rgba(255, 105, 53, 1);
+  box-shadow: 0px 0px 4px 0px rgba(191, 75, 34, 0.38);
+  border-radius: 36rpx;
+  color: #fff;
+  line-height: 71rpx;
+  text-align: center;
+}
+
+/* 底部日期导航栏start */
+
+.bottom_nav .bottom_scroll {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 83rpx;
+  border-bottom: 4rpx solid #f9f9f9;
+}
+
+.bottom_nav .bottom_scroll .nav {
+  width: 129rpx;
+  display: inline-block;
+  white-space: normal;
+  text-align: center;
+  font-size: 36rpx;
+  color: #545454;
+  line-height: 40rpx;
+  margin-left: 32rpx;
+  /* opacity: 0.6; */
+  margin-right: 10rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+.cur {
+  color: #000;
+  background-color: #fff;
+}
+
+.bottom_nav .bottom_scroll .select {
+  color: #333;
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+/* 底部导航end */
+
+.content_bottom {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 31rpx 31rpx 0px 0px;
+}
+
+.explanation_list {
+  padding: 0 30rpx;
+  /* box-sizing:  */
+  padding-bottom: 49rpx;
+  border-bottom: 4rpx solid #f2f2f2;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  margin-top: 54rpx;
+}
+
+.circle {
+  width: 14rpx;
+  height: 14rpx;
+  background: rgba(53, 137, 255, 1);
+  border-radius: 50%;
+}
+
+.item_text {
+  font-size: 26rpx;
+  color: #606060;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+
+/* 底部的评价部分 */
+
+.bottom_assess {
+  padding-top: 40rpx;
+}
+
+.assess_top {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 32rpx;
+  color: #333;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.top_border {
+  width: 6rpx;
+  height: 40rpx;
+  background: rgba(53, 137, 255, 1);
+  border-radius: 3rpx;
+  margin-right: 19rpx;
+}
+
+.assess_item {
+  padding-top: 47rpx;
+  padding-left: 57rpx;
+  box-sizing: border-box;
+}
+
+.assess_name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 27rpx;
+}
+
+.assess_name image {
+  width: 29rpx;
+  height: 29rpx;
+  margin-left: 20rpx;
+}
+
+.assess_val {
+  /* display: flex; *//* justify-content: center; */
+  text-align: left;
+  width: 648rpx;
+  height: 55rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(96, 96, 96, 1);
+  line-height: 30rpx;
+}
+.assess_value {
+  text-align: center;
+}
+.assess_value image {
+  width: 459rpx;
+  height: 298rpx;
+}
+.teach_title{
+  width: 174rpx;
+}
+.teach{
+  font-size:26rpx;
+  color: #606060;
+  font-weight: 500;
+}

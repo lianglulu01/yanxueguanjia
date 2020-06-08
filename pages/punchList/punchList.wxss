@@ -1,0 +1,44 @@
+page {
+  background-color: #f7f4f8;
+}
+
+.list{
+  display: flex;
+  justify-content: center;
+}
+.item {
+  margin-top: 14rpx;
+ 
+  width: 720rpx;
+  height: 248rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 9rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  
+}
+
+.item_row {
+  display: flex;
+  height: 56rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item_key {
+  display: flex;
+  font-size:28rpx;
+  color: #333333;
+}
+.item_name{
+  margin-left: 20rpx;
+}
+.item_val{
+  color: #FC685E;
+  font-size: 28rpx;
+}
+
+.item_img image {
+  width: 24rpx;
+  height: 24rpx;
+}

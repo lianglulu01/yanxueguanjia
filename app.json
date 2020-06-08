@@ -1,11 +1,19 @@
 {
   "pages": [
-    "pages/active/active",
+    "pages/mine/mine",
+    "pages/personalData/personalData",
+    "pages/relatedList/relatedList",
+   
+   
+   
     "pages/index/index",
+    "pages/punchList/punchList",
+    "pages/activeDetail/activeDetail",
+    "pages/active/active",
     "pages/dynamic/dynamic",
     "pages/comment/comment",
-    "pages/releaseDynamic/releaseDynamic",
-    "pages/mine/mine"
+    "pages/releaseDynamic/releaseDynamic"
+   
    
   ],
   "window": {
@@ -34,12 +42,17 @@
         "iconPath": "images/active.png"
       },
       {
+        "pagePath": "pages/active/active",
+       "text": "发布活动",
+        "selectedIconPath": "images/add.png",
+        "iconPath": "images/add.png"
+      },
+      {
         "pagePath": "pages/dynamic/dynamic",
         "text": "圈子",
         "selectedIconPath": "images/circle_selected.png",
         "iconPath": "images/circle.png"
       },
-    
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",

@@ -1,0 +1,22 @@
+/* pages/personalData/personalData.wxss */
+.item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ECECEC;
+  padding: 40rpx 28rpx;
+  align-items: center;
+}
+.item_name{
+  color: #1D1D1D;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.item_val image{
+  width: 98rpx;
+  border-radius: 50%;
+  height: 98rpx;
+}
+.item_val{
+  font-size: 30rpx;
+  color: #676767;
+}

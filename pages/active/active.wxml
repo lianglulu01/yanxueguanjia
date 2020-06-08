@@ -22,11 +22,11 @@
         </view>
       </view>
       <view class="active_right">
-        <view class="right_top">
+        <view class="right_top" bindtap="immediately">
           <view>立即查看</view>
           <image src="../../images/arrow.png" class="right_arr"></image>
         </view>
-        <view class="right_bottom">
+        <view class="right_bottom" bindtap="punch">
           <view class="button">打卡记录</view>
         </view>
       </view>
@@ -34,8 +34,73 @@
   </view>
   <view class="people_position">
     <map id="map" longitude="113.324520" latitude="23.099994" scale="20" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; "></map>
+    <view class="buttons">
+      <view class="punch">打卡</view>
+      <view class="police">一键报警</view>
+    </view>
   </view>
-  <view class="buttons">
-  <view class=""></view>
+  <view class="content_bottom">
+    <view class="bottom_nav">
+      <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+        <view class='nav {{item.id==idxx?"select":""}}' wx:for="{{date_list}}" wx:key="key" bindtap='dateTap' data-index="{{index}}">
+          <view>{{item.name}}</view>
+          <view class='{{item.id==idxx?"border":""}}'></view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="explanation_list">
+      <view class="point" wx:for="{{date_list}}" wx:key="key">
+        <view class="circle"></view>
+        <view class="item_text">
+          我是个哈后的房价看了就阿斯蒂芬接口蓝卡队昂科了撒的积分康拉德
+        </view>
+      </view>
+    </view>
+    <view class="bottom_assess">
+      <view class="assess_top">
+        <view class="top_border"></view>
+        <view>每日评价</view>
+      </view>
+      <view class="assess_bottom">
+        <view class="assess_item">
+          <view class="assess_name">
+            <text>今日表现:</text>
+            <image src="../../images/star.png"></image>
+          </view>
+          <view class="assess_value">
+            <image src="../../images/ability.png"></image>
+          </view>
+        </view>
+        <view class="assess_item">
+          <view class="assess_name">
+            <text>综合能力:</text>
+            <image src="../../images/star.png"></image>
+          </view>
+          <view class="assess_val">
+            有记者就“未来的海南自贸港是否会替代香港的部分功能和地位
+          </view>
+        </view>
+        <view class="assess_item">
+          <view class="assess_name">
+            <text> 活动态度:</text>
+            <image src="../../images/star.png"></image>
+          </view>
+          <view class="assess_val">
+            有记者就“未来的海南自贸港是否会替代香港的部分功能和地位
+          </view>
+        </view>
+        <view class="assess_item">
+          <view class="assess_name">
+            <view class="teach_title">老师寄语:</view>
+            <view class="teach">
+             有记者就“未来的海南自贸港是否会替代香港的部分功能和地
+            </view>
+          </view>
+          <!-- <view class="assess_val">
+            有记者就“未来的海南自贸港是否会替代香港的部分功能和地位
+          </view> -->
+        </view>
+      </view>
+    </view>
   </view>
 </view>
