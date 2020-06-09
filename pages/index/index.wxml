@@ -17,7 +17,7 @@
   <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-active-color='#ffffff'>
     <block wx:for="{{bnrUrl}}" wx:for-index="index" wx:key="key">
       <swiper-item>
-        <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+        <image src='{{item.thum_img}}' class='u-img-slide' mode='aspectFill'></image>
       </swiper-item>
     </block>
   </swiper>
@@ -31,7 +31,7 @@
       <view class="address">朝阳公园露营活动!</view>
       <view class="distance">距离你1.5km</view>
     </view>
-    <view class="punch_right">
+    <view class="punch_right" bindtap="punch">
       <view class="button">打卡</view>
     </view>
   </view>
@@ -72,7 +72,7 @@
   <!-- 导航结束 -->
   <!-- 列表开始 -->
   <view class="active_list">
-    <view class="active_item">
+    <view class="active_item" bindtap="toDetail">
       <view class="active_left">
         <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
       </view>
@@ -102,7 +102,7 @@
         </view>
       </view>
     </view>
-    <view class="active_item">
+    <view class="active_item" >
       <view class="active_left">
         <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
       </view>
@@ -120,3 +120,17 @@
   </view>
   <!-- 列表结束 -->
 </view>
+
+<view class="msg" wx:if="{{type==1}}">
+  <image src="../../images/authorize.png"></image>
+  <view class="authorize_content">
+    <view>亲 为了给您提供更好的服务</view>
+    <view>我们需要您的授权喔~</view>
+    <view class="min">- 授权后您将享受以下服务 -</view>
+    <view class="btn">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
+    </view>
+  </view>
+
+</view>
+<view class="air" wx:if="{{type==1}}"></view>

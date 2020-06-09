@@ -36,7 +36,7 @@
           <view class="item_img">
             <image src="../../images/site.png"></image>
           </view>
-          <view class="item_name">实打打卡位置: 无</view>
+          <view class="item_name">实打卡位置: 无</view>
         </view>
         <!-- <view class="item_val">
           未打卡

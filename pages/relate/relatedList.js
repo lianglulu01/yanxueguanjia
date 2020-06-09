@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    id:'' //邀请人的id
   },
 toPerson:function(){
   // wx.navigateTo({
@@ -16,7 +16,10 @@ toPerson:function(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(wx.getStorageSync('userinfo').id)
+    this.setData({
+      id: wx.getStorageSync('userinfo').id
+    })
   },
 
   /**
@@ -70,7 +73,7 @@ toPerson:function(){
 
       title:'邀请你成为好友,更多好玩的夏令营在等着你哟~~' ,
       imageUrl: 'https://yanxue.qiweibang.com/web/uploads/image/store_1/72f7415d6d701faf8d13bec85b7b710a4a9a07f7.png',
-      path: '/pages/index/index?id=1'
+      path: '/pages/index/index?id='+this.id
   }
   }
 })
