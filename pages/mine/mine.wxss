@@ -116,6 +116,7 @@ top: 119rpx;
   margin: 20rpx 34rpx;
   box-sizing: border-box;
   padding: 24rpx 27rpx;
+  display: none;
 }
 
 .activity_top {

@@ -54,7 +54,7 @@
         <image src="../../images/forward.png"></image>
       </view>
       <view class="comment_list">
-        <view class="comment_item">
+        <view class="comment_item" bindtap="toComment">
           <view class="comment_name">502_李超:</view>
           <view class="comment_val">我真的很帮</view>
         </view>

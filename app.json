@@ -1,11 +1,22 @@
 {
   "pages": [
+
     "pages/mine/mine",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList",
    
    
    
+
+    "pages/publish/index",
+    "pages/publish/jilu",
+    "pages/publish/activity",
+    
+    
+    
+    
+  
+
     "pages/index/index",
     "pages/punchList/punchList",
     "pages/activeDetail/activeDetail",
@@ -37,12 +48,12 @@
       },
       {
         "pagePath": "pages/active/active",
-        "text": "圈子",
+        "text": "活动",
         "selectedIconPath": "images/active_selected.png",
         "iconPath": "images/active.png"
       },
       {
-        "pagePath": "pages/active/active",
+        "pagePath": "pages/publish/index",
        "text": "发布活动",
         "selectedIconPath": "images/add.png",
         "iconPath": "images/add.png"

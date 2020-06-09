@@ -34,6 +34,11 @@ Page({
     })
    
   },
+  toComment:function(){
+    wx.navigateTo({
+      url: '../comment/comment',
+    })
+  }
 
  
 })
