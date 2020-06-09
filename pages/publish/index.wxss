@@ -77,7 +77,8 @@ line-height: 46rpx;
   height: 807rpx;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
+  margin-top: 15rpx;
 }
 .list_name{
   font-size:34rpx;
@@ -91,7 +92,7 @@ height:315rpx;
 background:rgba(255,255,255,1);
 box-shadow:0px 15rpx 14rpx 0px rgba(221, 221, 221, 0.35);
 border-radius:20rpx;
-margin: 0 auto;
+margin: 27rpx auto 0;
 position: relative;
 }
 .list_index > image:first-child{
