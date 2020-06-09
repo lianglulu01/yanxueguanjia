@@ -27,11 +27,49 @@ Page({
       date: e.detail.value
     })
   },
+  formSubmit:function(e) {
+    console.log(e)
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/sub-activity',
+      behaviors: ['wx://form-field'],
+      header: {
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        },
+      data:{
+        id:"",
+        name:"",
+        price: "",
+        pic_url:["https://meyy.qiweibang.com/static/img/xiaochengxu/turntable/start.png"],
+        desc:"",
+        team_num:"",
+        start_time:"",
+        end_time: "",
+        richeng:"",
+        know:"",
+        is_open:"",
+        address:""
+
+      },
+      method:"POST",
+      success:function(res) {
+        console.log(res)
+        wx.showToast({
+          title: '发布成功',
+        })
+        setTimeout(function(){
+          wx.navigateBack({
+            delta:1
+          })
+        }, 1500);
+      } 
+    })
+},
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**

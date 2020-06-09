@@ -1,22 +1,15 @@
 {
   "pages": [
-
-    "pages/mine/mine",
-    "pages/personalData/personalData",
-    "pages/relatedList/relatedList",
-   
-   
-   
-
     "pages/publish/index",
-    "pages/publish/jilu",
     "pages/publish/activity",
-    
-    
+    "pages/publish/create_punch",
     
     
   
-
+    "pages/mine/mine",
+    "pages/personalData/personalData",
+    "pages/relatedList/relatedList",
+    "pages/publish/jilu",
     "pages/index/index",
     "pages/punchList/punchList",
     "pages/activeDetail/activeDetail",
@@ -24,8 +17,6 @@
     "pages/dynamic/dynamic",
     "pages/comment/comment",
     "pages/releaseDynamic/releaseDynamic"
-   
-   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -54,7 +45,7 @@
       },
       {
         "pagePath": "pages/publish/index",
-       "text": "发布活动",
+        "text": "发布活动",
         "selectedIconPath": "images/add.png",
         "iconPath": "images/add.png"
       },

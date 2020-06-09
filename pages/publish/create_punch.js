@@ -1,4 +1,4 @@
-// pages/publish/index.js
+// pages/publish/create_punch.js
 Page({
 
   /**
@@ -7,26 +7,12 @@ Page({
   data: {
 
   },
-  takeout:function(){
-     wx.navigateTo({
-       url: '/pages/publish/activity',
-     })
-  },
-  jilu:function(){
-    wx.navigateTo({
-      url: '/pages/publish/jilu',
-    })
-  },
-  create_punch:function(){
-    wx.navigateTo({
-      url: '/pages/publish/create_punch',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     
+
   },
 
   /**
