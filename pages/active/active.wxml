@@ -33,7 +33,7 @@
     </view>
   </view>
   <view class="people_position">
-    <map id="map" longitude="113.324520" latitude="23.099994" scale="20" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; "></map>
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="20" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" show-location style="width: 100%; "></map>
     <view class="buttons">
       <view class="punch">打卡</view>
       <view class="police">一键报警</view>
@@ -67,9 +67,13 @@
             <text>今日表现:</text>
             <image src="../../images/star.png"></image>
           </view>
+          <!-- 插件start -->
           <view class="assess_value">
-            <image src="../../images/ability.png"></image>
+            <view class="container">
+              <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+            </view>
           </view>
+          <!-- 插件end -->
         </view>
         <view class="assess_item">
           <view class="assess_name">
@@ -93,7 +97,7 @@
           <view class="assess_name">
             <view class="teach_title">老师寄语:</view>
             <view class="teach">
-             有记者就“未来的海南自贸港是否会替代香港的部分功能和地
+              有记者就“未来的海南自贸港是否会替代香港的部分功能和地
             </view>
           </view>
           <!-- <view class="assess_val">

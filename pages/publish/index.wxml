@@ -1,8 +1,8 @@
  <!--标题用户信息-->
 <view class="title">
- <image src="/images/tongming/xiaokeai.png" class="userpng"></image>
- <view class="username">静文小妹妹</view>
- <view class="userphone">185****1236</view>
+ <image src="{{userinfo.avatarUrl}}" class="userpng"></image>
+ <view class="username">{{userinfo.nickName}}</view>
+ <view class="userphone">{{userinfo.phone}}</view>
 </view>
 <!--发布活动-->
 <view class="title_1">
@@ -15,10 +15,10 @@
 <!--活动列表-->
 <view class="list">
  <view class="list_name">活动列表</view>
- <view class="list_index">
-  <image src="/images/tongming/xiaokeai.png"></image>
-  <view>161U币陈素不相识上次你说..</view>
-  <view>2020-2-2 13:02:03..</view>
+ <view class="list_index" wx:for="{{list}}">
+  <image src="{{item.pic_url}}"></image>
+  <view>{{item.name}}</view>
+  <view>{{item.addtime}}</view>
   <view class="fenge"></view>
    <view class="index_bottom">
     <view class="bottom_bottom">
@@ -27,34 +27,6 @@
     </view>
    <view class="bottom_bottom">
     <image src="/images/tongming/jilu.png"  bindtap="jilu"></image>
-      <view>打卡记录</view>
-    </view>
-     <view class="bottom_bottom">
-    <image src="/images/tongming/pinglun.png"></image>
-      <view>评论管理</view>
-    </view>
-    <view class="bottom_bottom">
-    <image src="/images/tongming/canjia.png"></image>
-      <view>参加人</view>
-    </view>
-     <view class="bottom_bottom">
-    <image src="/images/tongming/xiezhu.png"></image>
-      <view>协助教师</view>
-    </view>
-  </view>
- </view>
-  <view class="list_index">
-  <image src="/images/tongming/xiaokeai.png"></image>
-  <view>161U币陈素不相识上次你说..</view>
-  <view>2020-2-2 13:02:03..</view>
-  <view class="fenge"></view>
-   <view class="index_bottom">
-    <view class="bottom_bottom">
-      <image src="/images/tongming/daka.png" bindtap="create_punch"></image>
-      <view>创建打卡</view>
-    </view>
-   <view class="bottom_bottom">
-    <image src="/images/tongming/jilu.png" bindtap="jilu"></image>
       <view>打卡记录</view>
     </view>
      <view class="bottom_bottom">

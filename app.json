@@ -1,16 +1,14 @@
 {
   "pages": [
     "pages/publish/index",
-    "pages/publish/activity",
     "pages/publish/create_punch",
-    
-    
-  
+    "pages/publish/activity",
+    "pages/punch/punch",
+    "pages/index/index",
     "pages/mine/mine",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList",
     "pages/publish/jilu",
-    "pages/index/index",
     "pages/punchList/punchList",
     "pages/activeDetail/activeDetail",
     "pages/active/active",

@@ -7,6 +7,7 @@ Page({
   data: {
    src:"/images/tongming/add.png",
    date: '2020-06-01',
+   test:1
   },
   gotoShow:function(){
        var _this = this
@@ -35,19 +36,20 @@ Page({
       header: {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
         },
+        // data:e.detail.value,
       data:{
-        id:"",
-        name:"",
-        price: "",
+        id:"1",
+        name:"111",
+        price: "1111",
         pic_url:["https://meyy.qiweibang.com/static/img/xiaochengxu/turntable/start.png"],
-        desc:"",
-        team_num:"",
-        start_time:"",
-        end_time: "",
-        richeng:"",
-        know:"",
-        is_open:"",
-        address:""
+        desc:"33",
+        team_num:"33",
+        start_time:"44",
+        end_time: "55",
+        richeng:"66",
+        know:"77",
+        is_open:"88",
+        address:"99"
 
       },
       method:"POST",

@@ -3,7 +3,7 @@
    <view class="list">
      <view class="font">打卡位置</view>
       <view>
-       <view></view>
+       <view bindtap="weizhi"></view>
        <image src="/images/arrow.png" class="arrow"></image>
      </view>
    </view>

@@ -1,0 +1,28 @@
+<view class="content">
+  <view class="bottom_nav">
+    <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+      <view class='nav {{item.id==idxx?"select":""}}' wx:for="{{date_list}}" wx:key="key" bindtap='dateTap' data-index="{{index}}">
+        <view>{{item.name}}</view>
+        <view class='{{item.id==idxx?"border":""}}'></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="list">
+    <view class="list_item" wx:for="{{5}}" wx:key="key">
+      <view class="item_top">
+        <image src="../../images/localtion.png"></image>
+        <view class="address">朝阳区望京SOHO</view>
+      </view>
+      <view class="item_bottom">
+        <view class="bottom_left">
+          <view class="aleadyNum">24</view>
+          <view class="aleady">打卡</view>
+        </view>
+        <view class="bottom_right">
+          <view class="noNum">24</view>
+          <view class="no">未打卡</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

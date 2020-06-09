@@ -1,0 +1,114 @@
+page {
+  background-color: #f7f3f7;
+}
+
+/* 底部日期导航栏start */
+
+.bottom_nav .bottom_scroll {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 83rpx;
+  border-bottom: 4rpx solid #f9f9f9;
+  background-color: #fff;
+}
+
+.bottom_nav .bottom_scroll .nav {
+  width: 129rpx;
+  display: inline-block;
+  white-space: normal;
+  text-align: center;
+  font-size: 28rpx;
+  /* color: #545454; */
+  color: #999;
+  line-height: 40rpx;
+  margin-left: 32rpx;
+  /* opacity: 0.6; */
+  margin-right: 10rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+.cur {
+  color: #000;
+  background-color: #fff;
+}
+
+.bottom_nav .bottom_scroll .select {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+/* 底部导航end */
+
+.list {
+  padding: 0 31rpx;
+  box-sizing: border-box;
+}
+
+.list_item {
+  width: 687rpx;
+  margin-top: 21rpx;
+  /* height: 239rpx; */
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.item_top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f7f3f7;
+  color: #333;
+  font-size: 32rpx;
+  width: 100%;
+  padding: 21rpx 21rpx;
+}
+
+.item_top image {
+  width: 23rpx;
+  height: 31rpx;
+}
+
+.item_bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bottom_right {
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.bottom_left {
+  /* width: 50%; */
+  text-align: center;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.aleadyNum{
+  margin-top: 31rpx;
+  color: #1FC351;
+  
+}
+.aleady{
+  margin-top: 21rpx;
+  margin-bottom: 40rpx;
+}
+.noNum{
+  margin-top: 31rpx;
+  color: #FF503E;
+}
+.no{
+  margin-top: 21rpx;
+  margin-bottom: 40rpx;
+}

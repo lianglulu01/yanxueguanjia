@@ -2,12 +2,12 @@
   <view class="top">
     <image class="background_img" src="../../images/background.png"></image>
     <view class="top_content">
-      <view class="top_left">
-        <image src="http://5b0988e595225.cdn.sohucs.com/q_70,c_zoom,w_640/images/20190115/87868f21befc4e7f9007aa71efa79621.jpeg"></image>
+      <view class="top_left" bindtap="toAuth">
+        <image src="{{info.avatarUrl}}"></image>
       </view>
       <view class="top_right">
         <view class="name">
-          <view>这是个好人</view>
+          <view>{{info.nickName}}</view>
           <view class="associate_button" bindtap="associate">
             <view class="button_cont">关联用户</view>
             <image class="associate" src="../../images/associate.png"></image>
@@ -16,10 +16,10 @@
         <view class="phone">
           17616241217
         </view>
-        <view class="age">
+        <!-- <view class="age">
           年龄: 20
-        </view>
-        <image class="edit" src="../../images/edit.png"></image>
+        </view> -->
+        <image class="edit" src="../../images/edit.png" bindtap="editPeople"></image>
       </view>
     </view>
   </view>
@@ -64,6 +64,24 @@
     <view class="item">
       <view class="item_name">
         <image src="../../images/customer.png"></image>
+        <text>综合实际报告</text>
+      </view>
+      <view class="item_val">
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item_name">
+        <image src="../../images/platform.png"></image>
+        <text>行动轨迹报告</text>
+      </view>
+      <view class="item_val">
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="item_name">
+        <image src="../../images/platform.png"></image>
         <text>在线客服</text>
       </view>
       <view class="item_val">
@@ -81,3 +99,16 @@
     </view>
   </view>
 </view>
+<view class="msg" wx:if="{{type==1}}">
+  <image src="../../images/authorize.png"></image>
+  <view class="authorize_content">
+    <view>亲 为了给您提供更好的服务</view>
+    <view>我们需要您的授权喔~</view>
+    <view class="min">- 授权后您将享受以下服务 -</view>
+    <view class="btn">
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
+    </view>
+  </view>
+
+</view>
+<view class="air" wx:if="{{type==1}}"></view>

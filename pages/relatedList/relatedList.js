@@ -8,9 +8,9 @@ Page({
 
   },
 toPerson:function(){
-  wx.navigateTo({
-    url: '../personalData/personalData',
-  })
+  // wx.navigateTo({
+  //   url: '../personalData/personalData',
+  // })
 },
   /**
    * 生命周期函数--监听页面加载
@@ -65,12 +65,12 @@ toPerson:function(){
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  //   return {
+    return {
+      
 
-  //     // title: ,
-
-  //     // desc: this.data.rows.linename,
-
-  //     // path: '/pages/relatedList/relatedList'
+      title:'邀请你成为好友,更多好玩的夏令营在等着你哟~~' ,
+      imageUrl: 'https://yanxue.qiweibang.com/web/uploads/image/store_1/72f7415d6d701faf8d13bec85b7b710a4a9a07f7.png',
+      path: '/pages/index/index?id=1'
+  }
   }
 })

@@ -12,9 +12,8 @@
   </view>
   <view class="content_bottom">
     <view class="add_button">
-    <image src="../../images/share.png"></image>
-      
-      <button open-type='share' class="btn-share"> 新增学生</button>
+      <image src="../../images/share.png"></image>
+      <text>新增学生</text>
     </view>
     <view class="list">
       <view class="item" bindtap="toPerson">
