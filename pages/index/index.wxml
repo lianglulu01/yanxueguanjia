@@ -72,51 +72,23 @@
   <!-- 导航结束 -->
   <!-- 列表开始 -->
   <view class="active_list">
-    <view class="active_item" bindtap="toDetail">
+    <view class="active_item" bindtap="toDetail" wx:for="{{list}}" wx:key="key" data-id="{{item.id}}">
       <view class="active_left">
-        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
+        <image src="{{item.pic_url}}"></image>
       </view>
       <view class="active_right">
         <view class="active_title">
-          朝阳公园的露营活动已经开始了,快了参加吧!
+          {{item.name}}
         </view>
         <view class="active_news">
-          <view class="active_num">55人参加</view>
-          <view class="active_date">时间:8月8号-9月9号</view>
-          <view class="active_address">北京朝阳区公园</view>
+          <view class="active_num">{{item.people}}人参加</view>
+          <view class="active_date">时间:{{item.start_time}}-{{item.end_time}}</view>
+          <view class="active_address">{{item.address}}</view>
         </view>
       </view>
     </view>
-    <view class="active_item">
-      <view class="active_left">
-        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
-      </view>
-      <view class="active_right">
-        <view class="active_title">
-          朝阳公园的露营活动已经开始了,快了参加吧!
-        </view>
-        <view class="active_news">
-          <view class="active_num">55人参加</view>
-          <view class="active_date">时间:8月8号-9月9号</view>
-          <view class="active_address">北京朝阳区公园</view>
-        </view>
-      </view>
-    </view>
-    <view class="active_item" >
-      <view class="active_left">
-        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
-      </view>
-      <view class="active_right">
-        <view class="active_title">
-          朝阳公园的露营活动已经开始了,快了参加吧!
-        </view>
-        <view class="active_news">
-          <view class="active_num">55人参加</view>
-          <view class="active_date">时间:8月8号-9月9号</view>
-          <view class="active_address">北京朝阳区公园</view>
-        </view>
-      </view>
-    </view>
+    
+  
   </view>
   <!-- 列表结束 -->
 </view>

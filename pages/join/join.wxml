@@ -1,0 +1,42 @@
+<view class="content">
+  <view class="content_top">
+    <input placeholder="搜索"></input>
+  </view>
+  <view class="item">
+    <view class="top">
+      <view class="top_left">
+        <image src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg" class="ava"></image>
+        <view class="name">遥远的距离</view>
+      </view>
+      <view class="top_right">李超</view>
+    </view>
+    <view class="item_center">
+      <view class="center">
+        <view class="center_left">报名人</view>
+        <view class="center_right">李超</view>
+      </view>
+      <view class="center">
+        <view class="center_left">报名人</view>
+        <view class="center_right">李超</view>
+      </view>
+      <view class="center">
+        <view class="center_left">报名人</view>
+        <view class="center_right">李超</view>
+      </view>
+    </view>
+    <view class="item_bottom">
+      <view class="bottom">
+        <view class="bottom_left">应打卡数</view>
+        <view class="bottom_right">23次</view>
+      </view>
+       <view class="bottom">
+        <view class="bottom_left">应打卡数</view>
+        <view class="bottom_right">23次</view>
+      </view>
+       <view class="bottom">
+        <view class="bottom_left">应打卡数</view>
+        <view class="bottom_right">23次</view>
+      </view>
+    </view>
+  </view>
+</view>

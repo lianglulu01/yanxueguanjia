@@ -38,12 +38,20 @@ page {
   width: 130rpx;
   height: 130rpx;
   border-radius: 65rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .top_left image {
   width: 130rpx;
   height: 130rpx;
   border-radius: 65rpx;
+}
+.top_left .no_ava{
+  width: 72rpx;
+  height: 72rpx;
 }
 
 .top_right {

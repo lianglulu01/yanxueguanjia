@@ -319,7 +319,7 @@ page {
 }
 
 .active_right {
-  margin-left: 46rpx;
+  margin-left: 34rpx;
 }
 .active_title{
   color: #333333;
@@ -332,16 +332,18 @@ page {
   flex-wrap: wrap;
 }
 .active_num{
-  width: 134rpx;
-  color: #FB8600;
-  font-size: 26rpx;
-  border-right: 1rpx solid #000;
+  width: 106rpx;
+color: #FB8600;
+font-size: 26rpx;
+border-right: 1rpx solid #000;
+
 
 }
 .active_date{
-  width: 250rpx;
-  font-size: 26rpx;
-  padding-left: 20rpx;
+ width: 297rpx;
+font-size: 26rpx;
+padding-left: 18rpx;
+
 }
 .active_address{
   width: 100%;

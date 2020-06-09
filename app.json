@@ -1,9 +1,10 @@
 {
   "pages": [
-    "pages/punch/punch",
+    "pages/join/join",
+    "pages/assess/assess",
+    "pages/dynamic/dynamic",
     "pages/index/index",
-    
-    
+    "pages/punch/punch",
     "pages/mine/mine",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList",
@@ -13,10 +14,9 @@
     "pages/punchList/punchList",
     "pages/activeDetail/activeDetail",
     "pages/active/active",
-    "pages/dynamic/dynamic",
     "pages/comment/comment",
     "pages/releaseDynamic/releaseDynamic"
-    
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

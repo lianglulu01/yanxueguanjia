@@ -1,0 +1,84 @@
+<view class="content">
+  <view class="content_top">
+    <view class="button">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
+        </view>
+      </picker>
+      <image src="../../images/bottom_arr.png"></image>
+    </view>
+  </view>
+  <view class="list">
+    <view class="list_item">
+      <view class="item_top">
+        <view class="name">活动态度</view>
+        <view class="star_list">
+          <image src="../../images/star.png"></image>
+        </view>
+
+      </view>
+      <view class="item_bottom">
+        <textarea placeholder="请输入内容" disable-default-padding placeholder-style="color:#5F5F5F;" maxlength="100"></textarea>
+      </view>
+    </view>
+    <view class="list_item">
+      <view class="item_top">
+        <view class="name">综合能力</view>
+        <view class="star_list">
+          <image src="../../images/star.png"></image>
+        </view>
+      </view>
+      <view class="item_bottom">
+        <textarea placeholder="请输入内容" disable-default-padding placeholder-style="color:#5F5F5F;" maxlength="100"></textarea>
+      </view>
+    </view>
+    <view class="list_item">
+      <view class="item_top">
+        <view class="name">积极表现</view>
+        <view class="star_list">
+          <image src="../../images/star.png"></image>
+        </view>
+
+      </view>
+      <view class="item_bottom">
+        <textarea placeholder="请输入内容" disable-default-padding placeholder-style="color:#5F5F5F;" maxlength="100"></textarea>
+      </view>
+    </view>
+    <view class="list_item">
+      <view class="item_top">
+        <view class="name">团队贡献</view>
+        <view class="star_list">
+          <image src="../../images/star.png"></image>
+        </view>
+
+      </view>
+      <view class="item_bottom">
+        <textarea placeholder="请输入内容" disable-default-padding placeholder-style="color:#5F5F5F;" maxlength="100"></textarea>
+      </view>
+    </view>
+    <view class="list_item">
+      <view class="item_top">
+        <view class="name">成果评价</view>
+        <view class="star_list">
+          <image src="../../images/star.png"></image>
+        </view>
+
+      </view>
+      <view class="item_bottom">
+        <textarea placeholder="请输入内容" disable-default-padding placeholder-style="color:#5F5F5F;" maxlength="100"></textarea>
+      </view>
+    </view>
+  </view>
+  <view class="teach">
+    <view class="title">
+      老师寄语
+    </view>
+    <textarea placeholder="加油啦,同学" placeholder-style="color:#5F5F5F;"></textarea>
+    <view class="btn">
+      <view class="btn_content">
+        确认评价
+      </view>
+    </view>
+  </view>
+</view>
