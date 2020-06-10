@@ -48,6 +48,14 @@ text-align: right;
   justify-content: flex-start;
   margin: 40rpx auto 0;
 }
+.upload_btn{
+  width: 125rpx;
+  height: 125rpx;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 125rpx;
+  border: 2rpx solid #666;
+}
 .show-image{
   width: 125rpx;
   height: 125rpx;

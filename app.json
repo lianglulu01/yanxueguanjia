@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/publish/activity",
-    "pages/publish/index",
     "pages/publish/create_punch",
+    
+    "pages/publish/index",
+   
     
     "pages/punch/punch",
     "pages/index/index",
@@ -22,6 +24,11 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "permission":{
+    "scope.userLocation":{
+      "desc":"需要您的位置信息授权"
+    }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
