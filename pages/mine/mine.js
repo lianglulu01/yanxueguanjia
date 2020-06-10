@@ -7,6 +7,7 @@ Page({
     info:{},
     not:0
   },
+
   onLoad: function() {
     // wx.clearStorageSync()
     // console.log(!wx.getStorageSync('userinfo'))

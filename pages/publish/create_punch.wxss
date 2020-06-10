@@ -1,0 +1,27 @@
+.title{
+  width: 90%;
+  height: 180rpx;
+  margin: 20rpx auto 0;
+}
+.list{
+  width: 100%;
+  height: 89rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+.font{
+  font-size:26rpx;
+font-weight:400;
+color:rgba(52,52,52,1);
+}
+.arrow{
+  width: 35rpx;
+  height: 35rpx;
+}
+.distance{
+  font-size:26rpx;
+font-weight:400;
+color:rgba(153,153,153,1);
+}

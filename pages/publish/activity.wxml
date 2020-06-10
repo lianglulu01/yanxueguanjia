@@ -1,16 +1,17 @@
 <!--上部分-->
+<form bindsubmit="formSubmit">
 <view class="title">
   <view class="list">
     <view class="name">活动名称</view>
-    <input class="typein" type="text" placeholder="请填写活动名称"></input>
+    <input class="typein1" name="name" type="text" placeholder="请填写活动名称"></input>
   </view>
    <view class="list">
     <view class="name">价格</view>
-    <input class="typein" type="digit" placeholder="0.00"></input>
+    <input class="typein" type="digit" name="price" placeholder="0.00" maxlength="8"></input>
   </view>
    <view class="list">
     <view class="name">人数</view>
-    <input class="typein" type="number" placeholder="不限"></input>
+    <input class="typein" type="number" name="team_num" placeholder="不限" maxlength="3"></input>
   </view>
   <view class="upload">
     <view class="name">活动图</view>
@@ -20,19 +21,19 @@
 <!--活动描述-->
 <view class="middle">
   <view class="name">活动描述</view>
-  <textarea  type="text" placeholder="简单说说要求吧.."></textarea>
+  <textarea  type="text" placeholder="简单说说要求吧.." name="desc" class="middle_textarea"></textarea>
 </view>
 <!--行程管理-->
 <view class="bottom">
   <view class="bottom_1">
     <view class="name">时间</view>
-    <picker mode="date" value="{{date}}" bindchange="bindDateChange">{{date}}</picker>
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="start_time">{{date}}</picker>
     <image src="/images/tongming/toright.png" class="toright"></image>
-     <picker mode="date" value="{{date}}" bindchange="bindDateChange">{{date}}</picker>
+     <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="end_time">{{date}}</picker>
   </view>
    <view class="bottom_1">
-    <view class="name2">请输入活动集合点</view>
-    <input class="typein" type="text" placeholder="地点"></input>
+    <view class="name2">地点</view>
+    <input class="typein1" type="text" placeholder="请输入活动集合点" name="address"></input>
   </view>
   <view class="bottom_2">行程管理</view>
  
@@ -49,16 +50,17 @@
 </view>
 <!--活动须知-->
 <view class="last">
-  <view class="bottom_4">
-    <view>活动须知</view>
-    <input type="text" class="areain" placeholder="简单说说要求吧..."></input>
+  <view class="middle">
+    <view class="name">活动须知</view>
+    <textarea type="text" class="middle_textarea" placeholder="简单说说要求吧..." name="know"></textarea>
   </view>
   <view class="bottom_1">
    <view class="name">是否公开</view>
-   <radio-group>
+   <radio-group name="is_open">
      <radio class="yes">是</radio>
      <radio class="yes">否</radio>
    </radio-group>
   </view>
-  <view class="sumit">立即发布</view>
+  <button class="sumit" form-type="submit">立即发布</button>
 </view>
+</form>

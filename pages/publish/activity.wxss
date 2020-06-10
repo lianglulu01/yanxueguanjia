@@ -26,7 +26,15 @@ font-weight:bold;
 color:rgba(51,51,51,1);
 }
 .typein{
-  width:180rpx;
+  width:220rpx;
+height:24rpx;
+font-size:25rpx;
+font-weight:400;
+color:rgba(153,153,153,1);
+text-align: right;
+}
+.typein1{
+  width:700rpx;
 height:24rpx;
 font-size:25rpx;
 font-weight:400;
@@ -59,7 +67,7 @@ text-align: right;
   margin: 0 auto;
   overflow: hidden;
 }
-.middle>textarea{
+.middle_textarea{
   width: 75%;
   height: 178rpx;
   font-size:26prx;
@@ -68,7 +76,6 @@ color:rgba(185,185,185,1);
 }
 .bottom{
   width: 100%;
-
 }
 .bottom_1{
   width: 90%;
@@ -148,4 +155,5 @@ font-size:30rpx;
 font-weight:bold;
 color:rgba(255,255,255,1);
 margin-top: 45rpx;
+padding: 0;
 }
