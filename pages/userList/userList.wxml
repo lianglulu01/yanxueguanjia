@@ -1,0 +1,14 @@
+<view class="content">
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="key">
+      <view class="item_key">
+        我是李超
+      </view>
+      <view class="item_val" bindtap="select" data-index="{{index}}">
+        <image src="../../images/selected.png "   class='img {{idx==index?"select":""}}'></image>
+        <view class='air {{idx==index?"none":""}}' ></view>
+      </view>
+      <view class="border"></view>
+    </view>
+  </view>
+</view>

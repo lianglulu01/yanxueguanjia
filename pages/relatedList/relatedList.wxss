@@ -28,6 +28,9 @@ page {
   height: 36rpx;
   border-radius: 16rpx;
 }
+.name{
+  margin-left: 20rpx;
+}
 
 .top_right {
   font-size: 26rpx;

@@ -1,0 +1,47 @@
+<view class="content">
+  <view class="card">
+    <view class="card_left">
+      <image src="{{info.avatarUrl}}"></image>
+    </view>
+    <view class="card_right">
+      <view class="title">望京公园露营活动开始招募啦!快来参加吧!</view>
+      <view class="center">
+        <view class="people">{{people}}人参加 </view>
+        <view class="time">时间;6月2日-6月56日</view>
+      </view>
+      <view class="address">朝阳区望京街道</view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="item">
+      <view class="item_name">参加活动人</view>
+      <view class="item_val" bindtap="select">
+        <text class="place">请选择活动添加人</text>
+        <image src="../../images/arrow.png"></image>
+      </view>
+    </view>
+    <view class="border"></view>
+    <view class="item ">
+      <view class="item_name">报名人数</view>
+      <view class="item_val">
+        <text>1人</text>
+      </view>
+    </view>
+    <view class="border"></view>
+    <view class="item">
+      <view class="item_name">联系方式</view>
+      <view class="item_val">
+        <input placeholder="请输入联系方式" placeholder-style="color:#999999;"></input>
+      </view>
+    </view>
+  </view>
+  <view class="money">
+    <view class="money_left">支付金额</view>
+    <view class="money_right">￥666</view>
+  </view>
+  <view class="button">
+    <view class="btn_content">
+      立即支付
+    </view>
+  </view>
+</view>

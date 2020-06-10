@@ -1,16 +1,17 @@
-<form>
- <view class="title">
-   <view class="list">
+<view class="title">
+   <view class="list" bindtap="weizhi">
      <view class="font">打卡位置</view>
      <view class="right">
-       <map latitude="{{lat}}" longitude="{{lon}}"></map>
-       <view>{{latitude}}</view>
-       <image src="/images/arrow.png" class="arrow"></image>
+       <view class="dakaweizhi">{{weizhi}}</view>
+       <image src="/images/arrow.png" class="arrow" ></image>
      </view>
    </view>
    <view class="list">
     <view class="font">距离</view>
-    <view class="distance"></view>
+    <view class="right">
+    <input type="number" class="dakaweizhi1"  bindblur="dis"></input>
+    <view class="dakaweizhi">m</view>
+    </view>
    </view>
  </view>
-</form>
+ <view class="bottom" bindtap="submit">确定</view>

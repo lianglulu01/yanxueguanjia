@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/publish/activity",
     "pages/publish/create_punch",
-    
     "pages/publish/index",
-   
+    
+    
+    "pages/publish/activity",
     
     "pages/punch/punch",
     "pages/index/index",

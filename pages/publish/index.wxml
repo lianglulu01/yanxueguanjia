@@ -1,8 +1,8 @@
  <!--标题用户信息-->
 <view class="title">
- <image src="{{userinfo.avatarUrl}}" class="userpng"></image>
- <view class="username">{{userinfo.nickName}}</view>
- <view class="userphone">{{userinfo.phone}}</view>
+ <image src="{{user.avatar_url}}" class="userpng"></image>
+ <view class="username">{{user.nickname}}</view>
+ <view class="userphone">{{user.phone}}</view>
 </view>
 <!--发布活动-->
 <view class="title_1">

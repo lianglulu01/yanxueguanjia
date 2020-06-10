@@ -9,13 +9,14 @@ Page({
    date: '2020-06-01',
    date2:'2020-06-03',
    test:1,
-   hudong:[]
+   activeImgArr:[],
+   richeng:[{"time":"2020-6-9","desc":"说明111","pic_url":["http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png"]},{"time":"2020-6-10","desc":"说明2222","pic_url":["http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png"]}], 
   },
   gotoShow:function(){
        var _this = this;
        var pic = []
        wx.chooseImage({
-        count:9 - this.data.hudong.length,
+        count:9 - this.data.activeImgArr.length,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'],
         success:function(res){
@@ -25,16 +26,16 @@ Page({
           }
           console.log(pic)
           _this.uploadimg({
-            url: 'https://yanxue.qiweibang.com/web/index.php?r=api/upload/upload', //这里是你图片上传的接口
+            url: 'https://yanxue.qiweibang.com/web/index.php?r=api/upload/upload', 
             huodong: pic, //这里是选取的图片的地址数组
           });
         }
        })
   },
-  // 上传图片  搞几张图片试试
+  
   uploadimg:function(config){
     let { url, huodong} = config
-    console.log(huodong)
+    let _this = this
     for (let i = 0; i < huodong.length; i++) {
       wx.uploadFile({
         url: url,
@@ -45,13 +46,13 @@ Page({
         filePath: huodong[i],
         name: 'file',
         success (res) {
-          const data = res.data
+          const data = JSON.parse(res.data)
           if (data.code == 0) {
-            let hudong = this.data.hudong;
+            let activeImgArr = _this.data.activeImgArr;
             console.log(data)
-            hudong.push(data.data) // 拿到的url 添加到数组中
-            this.setData({
-              huodong
+            activeImgArr.push(data.data) // 拿到的url 添加到数组中
+            _this.setData({
+              activeImgArr
             })
           }
         }
@@ -61,34 +62,48 @@ Page({
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      date: e.detail.value
-    })
+    let index = e.currentTarget.dataset.index;
+    console.log(index)
+    if (index == 0) {
+      this.setData({
+        date: e.detail.value
+      })
+    } else {
+      this.setData({
+        date2: e.detail.value
+      })
+    }
+   
   },
   formSubmit:function(e) {
     console.log(e)
+    let userinfo = wx.getStorageSync('userinfo')
+     e.detail.value.id = userinfo.id
+     e.detail.value.pic_url = this.data.activeImgArr
     wx.request({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/sub-activity',
       behaviors: ['wx://form-field'],
       header: {
         'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
         },
-        // data:e.detail.value,
-      data:{
-        id:"1",
-        name:"",
-        price: "",
-        pic_url:{},
-        desc:"33",
-        team_num:"33",
-        start_time:"44",
-        end_time: "55",
-        richeng:"66",
-        know:"77",
-        is_open:"88",
-        address:"99"
+         
+         data:e.detail.value,
+  
+      // data:{
+      //   id:id,
+      //   name:"",
+      //   price: "",
+      //   pic_url:{},
+      //   desc:"",
+      //   team_num:"",
+      //   start_time:"",
+      //   end_time: "",
+      //   richeng:"",
+      //   know:"",
+      //   is_open:"",
+      //   address:""
 
-      },
+      // },
       method:"POST",
       success:function(res) {
         console.log(res)

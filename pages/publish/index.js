@@ -6,12 +6,13 @@ Page({
    */
   data: {
       userinfo:{
-        avatarUrl:'/images/tongming/xiaokeai.png',
-        nickName:'静文小妹妹',
-        phone:'185****1236',
-        id:1
+        rolename:'',
+        nickName:'',
+        phone:'',
+        id:''
       },
-      list:{}
+      list:{},
+      user:{}
   },
   takeout:function(){
      wx.navigateTo({
@@ -99,14 +100,20 @@ Page({
   },
 
 getlist(){
-  let id = this.data.userinfo.id
-  let  me = this
+  let me = this
+
+  let userinfo = wx.getStorageSync('userinfo')
+  
+  // console.log(userinfo)
+  let id = userinfo.id
+
   wx.request({
     url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/list&id='+id+'&page=',
     success:res => {
       console.log(res)
       me.setData({
-        list:res.data.data.list
+        list:res.data.data.list,
+        user:res.data.data.user
       })
     }
   })

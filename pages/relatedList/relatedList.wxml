@@ -2,12 +2,13 @@
   <view class="content_top">
     <view class="top_left">
       <view class="avatar">
-        <image src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3140403455,2984550794&fm=26&gp=0.jpg"></image>
+        <image src="{{info.avatarUrl}}"></image>
       </view>
-      <view class="name">假装我很美</view>
+      <view class="name">{{info.nickName}}</view>
     </view>
     <view class="top_right">
-      17616241217
+      <!-- 17616241217 -->
+      {{info.phone}}
     </view>
   </view>
   <view class="content_bottom">
@@ -17,15 +18,16 @@
       <button open-type='share' class="btn-share"> 新增学生</button>
     </view>
     <view class="list">
-      <view class="item" bindtap="toPerson">
+      <view class="item" wx:for="{{list}}" wx:key="key">
         <view class="circle"></view>
         <view class="student_avator">
-        <image src="https://dss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3140403455,2984550794&fm=26&gp=0.jpg"></image>
+        <image src="{{item.avatar_url}}"></image>
         </view>
         <view class="student_new">
-          <view class="student_name">李超</view>
-          <view class="student_phone">手机号:17616241217</view>
-          <view class="student_id">身份证:411525199812150245</view>
+          <view class="student_name" wx:if="{{item.rolename}}">{{item.rolename}}</view>
+          <view class="student_name" wx:else>{{item.nickname}}</view>
+          <view class="student_phone">手机号:{{item.phone}}</view>
+          <view class="student_id">身份证:{{item.id_card}}</view>
         </view>
       </view>
     </view>
