@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/publish/activity",
     "pages/publish/index",
     "pages/publish/create_punch",
-    "pages/publish/activity",
+    
     "pages/punch/punch",
     "pages/index/index",
     "pages/mine/mine",

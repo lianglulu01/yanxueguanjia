@@ -39,9 +39,9 @@ Page({
         // data:e.detail.value,
       data:{
         id:"1",
-        name:"111",
-        price: "1111",
-        pic_url:["https://meyy.qiweibang.com/static/img/xiaochengxu/turntable/start.png"],
+        name:"",
+        price: "",
+        pic_url:{},
         desc:"33",
         team_num:"33",
         start_time:"44",
