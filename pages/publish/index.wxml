@@ -22,7 +22,7 @@
   <view class="fenge"></view>
    <view class="index_bottom">
     <view class="bottom_bottom">
-      <image src="/images/tongming/daka.png" bindtap="create_punch"></image>
+      <image src="/images/tongming/daka.png"   data-id="{{item.id}}" bindtap="create_punch"></image>
       <view>创建打卡</view>
     </view>
    <view class="bottom_bottom">

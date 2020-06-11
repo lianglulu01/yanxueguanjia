@@ -24,9 +24,9 @@ Page({
       url: '/pages/publish/jilu',
     })
   },
-  create_punch:function(){
+  create_punch:function(e){
     wx.navigateTo({
-      url: '/pages/publish/create_punch',
+      url: '/pages/publish/create_punch?id='  +  e.currentTarget.dataset.id,
     })
   },
 //   user:function(e) {
