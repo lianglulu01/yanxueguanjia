@@ -1,8 +1,8 @@
  <!--标题用户信息-->
 <view class="title">
- <image src="{{userinfo.avatarUrl}}" class="userpng"></image>
- <view class="username">{{userinfo.nickName}}</view>
- <view class="userphone">{{userinfo.phone}}</view>
+ <image src="{{user.avatar_url}}" class="userpng"></image>
+ <view class="username">{{user.nickname}}</view>
+ <view class="userphone">{{user.phone}}</view>
 </view>
 <!--发布活动-->
 <view class="title_1">
@@ -22,7 +22,7 @@
   <view class="fenge"></view>
    <view class="index_bottom">
     <view class="bottom_bottom">
-      <image src="/images/tongming/daka.png" bindtap="create_punch"></image>
+      <image src="/images/tongming/daka.png"   data-id="{{item.id}}" bindtap="create_punch"></image>
       <view>创建打卡</view>
     </view>
    <view class="bottom_bottom">

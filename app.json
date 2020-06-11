@@ -1,28 +1,17 @@
 {
   "pages": [
-
+    "pages/index/index",
     "pages/userList/userList",
     "pages/order/order",
     "pages/join/join",
-    "pages/index/index",
     "pages/mine/mine",
     "pages/assess/assess",
     "pages/dynamic/dynamic",
     "pages/punch/punch",
     "pages/publish/index",
-    "pages/publish/create_punch",
-    
-
-    "pages/publish/activity",
-    
-    
-
-   
-    
-   
   
-
-
+    "pages/publish/create_punch",
+    "pages/publish/activity",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList",
     "pages/publish/jilu",

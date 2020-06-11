@@ -5,23 +5,70 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    activity_id:'',
+    user_id:'',
+    weizhi:'',
+    latitude:'',
+    longitude:'',
+     dis:''
   },
   weizhi:function(){
     var that = this
-    wx.getLocation({
-      type: 'wgs84',
+    wx.chooseLocation({
       success (res) {
-        const lat = res.latitude
-        const lon = res.longitude
+       let weizhi = res.name
+       let latitude = res.latitude
+       let longitude = res.longitude
+
+       that.setData({
+         weizhi:weizhi,
+         latitude:latitude,
+         longitude:longitude
+       })
       }
      })
+  },
+  dis:function(e){
+    var dis = e.detail.value
+    this.setData({
+      dis:dis
+    })
+  },
+  submit:function(){
+    let weizhi = this.data.weizhi
+    let longitude = this.data.longitude
+    let latitude =this.data.latitude
+    let dis = this.data.dis
+    let userinfo = wx.getStorageSync('userinfo')
+    let id = userinfo.id
+    let activity_id = this.data.activity_id
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/clock-in/create',
+      data:{
+        activity_id:activity_id,
+        address:weizhi,
+        user_id:id,
+        longitude:longitude,
+        latitude:latitude,
+        distance:dis
+      },
+      method:"POST",
+      success:function(res){
+        wx.showToast({
+          title: '创建成功',
+        })
+       console.log(res.data)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.weizhi()
+    var activity_id = options.id
+    this.setData({
+      activity_id:activity_id
+    })
   },
 
   /**

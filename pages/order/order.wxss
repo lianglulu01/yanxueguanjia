@@ -1,3 +1,163 @@
+
+page {
+  background-color: #f7f4f8;
+}
+
+.content {
+  padding: 20rpx 31rpx;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  width: 687rpx;
+  height: 226rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 21rpx 17rpx;
+}
+
+.card_left {
+  margin-right: 30rpx;
+}
+
+.card_left image {
+  width: 172rpx;
+  height: 172rpx;
+  border-radius: 10rpx;
+}
+
+.card_right .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.card_right .center {
+  display: flex;
+  align-items: center;
+  font-size: 22rpx;
+  color: #999;
+  /* margin-top: 21rpx; */
+}
+
+.center .people {
+  color: #fb8600;
+  font-size: 26rpx;
+  padding-right: 10rpx;
+}
+
+.center .time {
+  padding-left: 10rpx;
+  border-left: 1rpx solid #999;
+  height: 22rpx;
+  line-height: 22rpx;
+}
+
+.card_right .address {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+
+.list {
+  width: 687rpx;
+  /* height: 264rpx; */
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  padding: 0rpx 17rpx;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  /* padding: 31rpx 17rpx; */
+  height: 88rpx;
+  /* border-bottom: 1rpx solid #B5B5B5; */
+}
+
+.border {
+  width: 640rpx;
+  height: 2rpx;
+  background: rgba(181, 181, 181, 1);
+  opacity: 0.2;
+  border-radius: 1rpx;
+}
+
+.item_name {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.item_val {
+  color: #333;
+  font-size: 27rpx;
+}
+
+.item_val input {
+  text-align: right;
+  margin-right: 29rpx;
+}
+
+.item_val image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 58rpx;
+}
+
+.place {
+  color: #999;
+  font-size: 27rpx;
+}
+
+.money {
+  display: flex;
+  width: 687rpx;
+  justify-content: space-between;
+  border-radius: 10rpx;
+  background-color: #fff;
+  height: 87rpx;
+  align-items: center;
+  padding: 0 22rpx;
+  box-sizing: border-box;
+}
+
+.money_left {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.money_right {
+  font-size: 28rpx;
+  color: #e60012;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+.btn_content {
+  width: 374rpx;
+  height: 73rpx;
+  background: linear-gradient(-22deg, rgba(26, 120, 252, 1), rgba(89, 157, 252, 1));
+  border-radius: 37rpx;
+  text-align: center;
+  line-height: 73rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
 page {
   background-color: #f7f4f8;
 }

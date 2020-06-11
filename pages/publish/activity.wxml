@@ -15,7 +15,9 @@
   </view>
   <view class="upload">
     <view class="name">活动图</view>
-   <image class= "show-image" mode="aspectFitf" src="{{src}}" wx:for="{{huodong}}"></image>
+    <block wx:for="{{activeImgArr}}" wx:key="item">
+      <image class= "show-image" mode="aspectFitf" src="{{item}}" ></image>
+    </block>
     <image class= "show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
   </view>
 </view>
@@ -28,26 +30,26 @@
 <view class="bottom">
   <view class="bottom_1">
     <view class="name">时间</view>
-    <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="start_time">{{date}}</picker>
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="start_time" data-index="0">{{date}}</picker>
     <image src="/images/tongming/toright.png" class="toright"></image>
-     <picker mode="date" value="{{date2}}" bindchange="bindDateChange" name="end_time">{{date2}}</picker>
+     <picker mode="date" value="{{date2}}" bindchange="bindDateChange" name="end_time" data-index="1">{{date2}}</picker>
   </view>
    <view class="bottom_1">
     <view class="name2">地点</view>
     <input class="typein1" type="text" placeholder="请输入活动集合点" name="address"></input>
   </view>
   <view class="bottom_2">行程管理</view>
- 
-  <view class="bottom_3">
-    <view class="name">2020-2-2</view>
-    <input placeholder="请添行程管理" class="areain"></input>
-  </view>
-   <image class= "xingcheng-image" mode="aspectFitf" src="{{src}}" bindtap="gotoShow"></image>
+  <block wx:for="{{richeng}}" wx:key="item.time">
     <view class="bottom_3">
-    <view class="name">2020-2-2</view>
-    <input placeholder="请添行程管理" class="areain"></input>
-  </view>
-   <image class= "xingcheng-image" mode="aspectFitf" src="{{src}}" bindtap="gotoShow"></image>
+      <view class="name">{{item.time}}</view>
+      <input placeholder="请添行程管理" name="richeng" class="areain">{{item.desc}}</input>
+    </view>
+    <block wx:for="{{item.pic_url}}" wx:for-item="imgSrc">
+      <image class= "xingcheng-image" mode="aspectFitf" src="{{imgSrc}}"></image>
+      <image class= "show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
+    </block>
+  </block>
+  
 </view>
 <!--活动须知-->
 <view class="last">
@@ -58,8 +60,8 @@
   <view class="bottom_1">
    <view class="name">是否公开</view>
    <radio-group name="is_open">
-     <radio class="yes">是</radio>
-     <radio class="yes">否</radio>
+     <radio class="yes" value="1">是</radio>
+     <radio class="yes" value="0">否</radio>
    </radio-group>
   </view>
   <button class="sumit" form-type="submit">立即发布</button>
