@@ -28,20 +28,20 @@ Page({
       url: '/pages/publish/create_punch',
     })
   },
-  user:function(e) {
-    console.log(e)
-    wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/list&id=&page=',
-      data:{
-        id:"",
-        page:2
-      },
-      method:"GET",
-      success:function(res) {
-        console.log(res)
-      } 
-    })
-},
+//   user:function(e) {
+//     console.log(e)
+//     wx.request({
+//       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/list&id=&page=',
+//       data:{
+//         id:"",
+//         page:2
+//       },
+//       method:"GET",
+//       success:function(res) {
+//         console.log(res)
+//       } 
+//     })
+// },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -130,8 +130,6 @@ getlist(){
           that.setData({
             userinfo:userinfo
           })
-
-    
           //授权成功后,通过改变 isHide 的值，让实现页面显示出来，把授权页面隐藏起来
     
           that.setData({

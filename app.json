@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/userList/userList",
     "pages/order/order",
     "pages/join/join",
@@ -10,7 +11,18 @@
     "pages/punch/punch",
     "pages/publish/index",
     "pages/publish/create_punch",
+    
+
     "pages/publish/activity",
+    
+    
+
+   
+    
+   
+  
+
+
     "pages/personalData/personalData",
     "pages/relatedList/relatedList",
     "pages/publish/jilu",
@@ -26,6 +38,11 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "permission":{
+    "scope.userLocation":{
+      "desc":"需要您的位置信息授权"
+    }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

@@ -5,22 +5,59 @@ Page({
    * 页面的初始数据
    */
   data: {
-   src:"/images/tongming/add.png",
+   src:'',
    date: '2020-06-01',
-   test:1
+   date2:'2020-06-03',
+   test:1,
+   hudong:[]
   },
   gotoShow:function(){
-       var _this = this
+       var _this = this;
+       var pic = []
        wx.chooseImage({
-        count:9,
+        count:9 - this.data.hudong.length,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'],
         success:function(res){
-          _this.setData({
-            src:res.tempFilePaths
-          })
+          let src = res.tempFilePaths;
+          for(var i = 0; i < src.length; i++){
+            pic.push(src[i])
+          }
+          console.log(pic)
+          _this.uploadimg({
+            url: 'https://yanxue.qiweibang.com/web/index.php?r=api/upload/upload', //这里是你图片上传的接口
+            huodong: pic, //这里是选取的图片的地址数组
+          });
         }
        })
+  },
+  // 上传图片  搞几张图片试试
+  uploadimg:function(config){
+    let { url, huodong} = config
+    console.log(huodong)
+    for (let i = 0; i < huodong.length; i++) {
+      wx.uploadFile({
+        url: url,
+        header: {
+          "Content-Type": "multipart/form-data",
+          'accept': 'application/json'
+        },
+        filePath: huodong[i],
+        name: 'file',
+        success (res) {
+          const data = res.data
+          if (data.code == 0) {
+            let hudong = this.data.hudong;
+            console.log(data)
+            hudong.push(data.data) // 拿到的url 添加到数组中
+            this.setData({
+              huodong
+            })
+          }
+        }
+      })
+    }
+   
   },
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -39,9 +76,9 @@ Page({
         // data:e.detail.value,
       data:{
         id:"1",
-        name:"111",
-        price: "1111",
-        pic_url:["https://meyy.qiweibang.com/static/img/xiaochengxu/turntable/start.png"],
+        name:"",
+        price: "",
+        pic_url:{},
         desc:"33",
         team_num:"33",
         start_time:"44",

@@ -5,16 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    
   },
   weizhi:function(){
+    var that = this
     wx.getLocation({
       type: 'wgs84',
       success (res) {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        const speed = res.speed
-        const accuracy = res.accuracy
+        const lat = res.latitude
+        const lon = res.longitude
       }
      })
   },
@@ -22,7 +21,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.weizhi()
   },
 
   /**

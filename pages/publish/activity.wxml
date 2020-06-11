@@ -15,7 +15,8 @@
   </view>
   <view class="upload">
     <view class="name">活动图</view>
-   <image class= "show-image" mode="aspectFitf" src="{{src}}" bindtap="gotoShow"></image>
+   <image class= "show-image" mode="aspectFitf" src="{{src}}" wx:for="{{huodong}}"></image>
+    <image class= "show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
   </view>
 </view>
 <!--活动描述-->
@@ -29,7 +30,7 @@
     <view class="name">时间</view>
     <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="start_time">{{date}}</picker>
     <image src="/images/tongming/toright.png" class="toright"></image>
-     <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="end_time">{{date}}</picker>
+     <picker mode="date" value="{{date2}}" bindchange="bindDateChange" name="end_time">{{date2}}</picker>
   </view>
    <view class="bottom_1">
     <view class="name2">地点</view>

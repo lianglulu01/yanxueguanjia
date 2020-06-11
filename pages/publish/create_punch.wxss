@@ -25,3 +25,8 @@ color:rgba(52,52,52,1);
 font-weight:400;
 color:rgba(153,153,153,1);
 }
+.right{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
