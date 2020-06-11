@@ -1,0 +1,142 @@
+/* 设置整体背景色 */
+page{
+  background-color: #f7f4f8;
+}
+/* 课程块 */
+.active_content{
+  padding: 0rpx 31rpx;
+  margin-top: 20rpx;
+}
+.active_item {
+  width: 688rpx;
+  height: 210rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  padding: 18rpx 29rpx;
+  box-sizing: border-box;
+  margin-bottom: 22rpx;
+}
+
+.active_left image {
+  width: 175rpx;
+  height: 172rpx;
+  border-radius: 10rpx;
+}
+
+.active_right {
+  margin-left: 46rpx;
+}
+.active_title{
+  color: #333333;
+  font-size: 30rpx;
+  margin-bottom: 16rpx;
+  font-weight: 600;
+}
+.active_news{
+  display: flex;
+  flex-wrap: wrap;
+}
+.active_num{
+  width: 134rpx;
+  color: #FB8600;
+  font-size: 26rpx;
+  border-right: 1rpx solid #000;
+
+}
+.active_date{
+  width: 250rpx;
+  font-size: 26rpx;
+  padding-left: 20rpx;
+}
+.active_address{
+  width: 100%;
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 16rpx;
+}
+
+/* 用户信息块 */
+.active_user{
+  width: 688rpx;
+  height: 270rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 0 29rpx;
+  box-sizing: border-box;
+  margin-bottom: 22rpx;
+}
+.join_user,.join_user_num,.join_user_phone{
+  font-size: 26rpx;
+  color:#666;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;height:100rpx;
+  align-items: center;
+  border-bottom:1rpx solid #f4f4f4;
+}
+.join_user{
+  position:relative;
+}
+.join_user image{
+  width:30rpx;
+  position: absolute;
+  right:-10rpx;
+  top:28rpx;
+}
+.join_user view:last-child,.join_user_num view:last-child{
+  color:#aaa;
+  padding-right: 34rpx;
+}
+.join_user_phone input{
+  width:220rpx;
+}
+.join_user_phone input::placeholder{
+  color: #ccc;
+}
+
+/* 支付块 */
+.active_pay{
+  width: 688rpx;
+  height: 180rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 0 29rpx;
+  box-sizing: border-box;
+  margin-bottom: 22rpx;
+}
+.active_pay .join_user view:last-child{
+  color:#ef6568;
+}
+.join_user_num{
+  position:relative;
+}
+.join_user_num image{
+  width:30rpx;
+  position: absolute;
+  right:-10rpx;
+  top:28rpx;
+}
+
+
+/* 付款按钮 */
+.pay{
+  text-align: center;
+  margin:0 auto;
+  padding: 30rpx 25%;
+}
+.button{
+  background: linear-gradient(to right, #6ba8fd,#1b77fb);
+  border-radius: 100rpx;
+  color:#fff;
+  font-weight: 50rpx;
+  font-size: 28rpx;
+  /* width:%; */
+  height:76rpx;
+  line-height: 76rpx;
+}

@@ -1,0 +1,57 @@
+<!--pages/signUp/signUp.wxml-->
+<view class="active_content">
+  <view class="active_item">
+    <view class="active_left">
+      <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
+    </view>
+    <view class="active_right">
+      <view class="active_title">
+        朝阳公园的露营活动已经开始了,快了参加吧! 
+      </view>
+      <view class="active_news">
+        <view class="active_num">55人参加</view>
+        <view class="active_date">时间:8月8号-9月9号</view>
+        <view class="active_address">北京朝阳区公园</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="active_content">
+  <view class="active_user">
+    <view class="join_user" bindtap="chooseUser">
+      <view>参加活动人</view>
+      <view>
+        <view>请选择活动添加人</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="join_user_num">
+      <view>报名人数</view>
+      <view>1人</view>
+    </view>
+    <view class="join_user_phone">
+      <view>联系方式</view>
+      <input class="weui-input" type="number" maxlength="11" placeholder="请输入联系方式" />
+    </view>
+  </view>
+</view>
+
+<view class="active_content">
+  <view class="active_pay">
+    <view class="join_user">
+      <view>支付金额</view>
+      <view>¥666</view>
+    </view>
+    <view class="join_user_num">
+      <view>支付方式</view>
+      <view>
+        <view>微信支付</view>
+        <image src="../../images/arrow.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="pay">
+  <view class="button" bindtap="pay">立即付款</view>
+</view>

@@ -1,55 +1,53 @@
 <view class="content">
   <view class="carousel">
     <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-active-color='#ffffff'>
-      <block wx:for="{{obj.pic_url}}" wx:for-index="index" wx:key="key">
+      <block wx:for="{{details.pic_url}}" wx:for-index="index" wx:key="index">
         <swiper-item>
           <image src='{{item}}' class='u-img-slide' mode='aspectFill'></image>
         </swiper-item>
       </block>
     </swiper>
     <view class="num">
-      {{obj.pic_url.length}}
+      {{details.pic_url.length}}
     </view>
   </view>
   <view class="content_top">
     <view class="top_left">
-      <view class="top_title">{{obj.name}}</view>
-      <view class="top_money">￥{{obj.price}}</view>
+      <view class="top_title">{{details.name}}</view>
+      <view class="top_money">￥{{details.price}}</view>
     </view>
     <view class="top-right">
-      <view>{{obj.address}}</view>
+      <view>{{details.address}}</view>
       <!-- <image src="../../images/loac.png"></image> -->
     </view>
   </view>
   <view class="item">
     <view class="item_left">
       <view class="item_title">老师</view>
-       <view class=" item_name "  wx:if="{{obj.rolename}}">{{obj.rolename}}</view>
-      <view class=" item_name " wx:else>{{obj.nickname}}</view>
-      
+       <view class="item_name"  wx:if="{{details.rolename}}">{{details.rolename}}</view>
+      <view class="item_name" wx:else>{{details.nickname}}</view>
     </view>
-    <view class="item_val " bindtap="open">
+    <view class="item_val" bindtap="open">
       <!-- <button bindtap="open">点击拨号</button> -->
-      <image src="../../images/phone.png "></image>
+      <image src="../../images/phone.png"></image>
     </view>
   </view>
-  <view class="item ">
+  <view class="item">
     <view class="item_left">
       <view class="item_title">时间</view>
-      <view class="item_name">{{obj.start_time}}至{{obj.end_time}}</view>
+      <view class="item_name">{{details.start_time}}至{{details.end_time}}</view>
     </view>
-
   </view>
   <view class="plan_list">
     <view class="plan_title">活动日程安排</view>
-    <view class="plan_item" wx:for="{{obj.richeng}}" wx:for-item="item"  wx:key="key">
+    <view class="plan_item" wx:for="{{details.richeng}}" wx:key="index">
       <view class="plan_time">{{item.time}}</view>
       <view class="plan_content">
        {{item.desc}}
       </view>
       <view class="plan_img">
-        <view class="img_item" wx:for="{{item.pic_url}}" wx:for-item="item1"  wx:key="y">
-          <image src="{{item1}}"></image>
+        <view class="img_item" wx:for="{{item.pic_url}}" wx:for-item="pu"  wx:key="y">
+          <image src="{{pu}}"></image>
         </view>
       </view>
     </view>
@@ -59,8 +57,8 @@
       活动须知
     </view>
     <view class="notice_content">
-    {{obj.know}}
+    {{details.know}}
     </view>
   </view>
-  <view class="sign_button" wx:if="{{type==1}}" data-id="{{obj.id}}">立即报名</view>
+  <view class="sign_button" wx:if="{{type==1}}" data-id="{{details.id}}" bindtap="signUp">立即报名</view>
 </view>

@@ -1,12 +1,9 @@
 // pages/activeDetail/activeDetail.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+  /* 页面的初始数据 */
   data: {
-
-    obj:{},
+    details:{},
     type:1
   },
 
@@ -17,14 +14,16 @@ Page({
     console.log(options.id)
     var that = this
     wx.request({
+      
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/detail',
       data:{
         id: options.id
       },
+      
       success:function(res){
-        console.log(res)
+        console.log(res.data.data)
         that.setData({
-          obj:res.data.data
+          details:res.data.data
         })
       }
     })
@@ -44,14 +43,21 @@ Page({
 
   },
 
+  // 电话老师
   open: function () {
     var that = this 
-    console.log(that.data.obj.phone)
+    console.log(that.data.details.phone)
     wx.makePhoneCall({
 
-      phoneNumber: that.data.obj.phone,
+      phoneNumber: that.data.details.phone,
 
     })
-  }
+  },
  
+  // 跳转至订单页
+  signUp(id) {
+    wx.navigateTo({
+      url: '../signUp/signUp?id='+id,
+    })
+  },
 })

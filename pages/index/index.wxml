@@ -72,7 +72,7 @@
   <!-- 导航结束 -->
   <!-- 列表开始 -->
   <view class="active_list">
-    <view class="active_item" bindtap="toDetail" wx:for="{{list}}" wx:key="key" data-id="{{item.id}}">
+    <view class="active_item" bindtap="toDetail" wx:for="{{list}}" wx:key="index" data-id="{{item.id}}">
       <view class="active_left">
         <image src="{{item.pic_url}}"></image>
       </view>
