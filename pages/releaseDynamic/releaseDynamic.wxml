@@ -1,19 +1,13 @@
 <view class="content">
   <view class="tex">
-    <textarea placeholder="请输入内容" placeholder-style="color:#D9D9D9;"></textarea>
+    <textarea bindinput='getValue' placeholder="请输入内容" placeholder-style="color:#D9D9D9;"></textarea>
   </view>
   <view class="img">
     <view class="img_list">
-      <view class="img_item">
-        <image mode="aspectFill" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
+      <view class="img_item" wx:if="images" wx:for="{{images}}" wx:key="{{index}}">
+        <image mode="aspectFill" src="{{item}}"></image>
       </view>
-      <view class="img_item">
-        <image mode="aspectFill" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
-      </view>
-      <view class="img_item">
-        <image mode="aspectFill" src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
-      </view>
-      <view class="img_button">
+      <view class="img_button" bindtap="addImg">
         <image src="../../images/camera.png"></image>
         <view class="button_text">添加图片</view>
       </view>
@@ -26,7 +20,7 @@
         <view class="title">所属活动</view>
       </view>
       <view class="item_val">
-        <view class="name">夏令营</view>
+        <view class="name">{{xz_name}}</view>
         <image src="../../images/arrow.png"></image>
       </view>
     </view>
@@ -36,13 +30,13 @@
         <view class="title" class="doll_text">谁可以看</view>
       </view>
       <view class="item_val">
-        <view class="name">公开</view>
+        <view class="name">{{role_name}}</view>
         <image src="../../images/arrow.png"></image>
       </view>
     </view>
   </view>
   <view class="button">
-    <view class="button_content">
+    <view class="button_content" bindtap="fb">
       发布
     </view>
   </view>
@@ -52,15 +46,27 @@
   <view class="dialog_top">
     <view class="cancel" bindtap="cancel">取消</view>
     <view class="dialog_title">所属活动</view>
-    <view class="sure">确定</view>
+    <view class="sure" bindtap="sure">确定</view>
   </view>
   <view class="dialog_list">
-    <view class="dialog_item">
-      <view class="dialog_img">
-        <image src="https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1388647394,240988450&fm=111&gp=0.jpg"></image>
+  <scroll-view class="scroll" scroll-y="true" style = "height:755rpx;" scroll-into-view="{{toView}}" scroll-with-animation = "true" bindscrolltolower="getdata">
+    <view class="dialog_item"  wx:for="{{activity}}" wx:key="{{index}}">
+      <view class="left">
+            <view class="dialog_img">
+              <image src="{{item.pic_url}}"></image>
+            </view>
+            <view class="dialog_content">{{item.name}}</view>
       </view>
-      <view class="dialog_content">活动就在北京昌平区沙河路某某的地方,你绝对想不到的</view>
+      <view class="right">
+             <view class="imgs" bindtap="check" wx:if="{{xz!=item.id}}" data-order_id="{{item.order_id}}" data-id="{{item.id}}" data-name="{{item.name}}">
+                 <image src="../../images/selected_no.png" mode="aspectFill" style="width:100%;height:100%;"></image>
+             </view>
+             <view class="imgs" bindtap="check" wx:if="{{xz==item.id}}" data-order_id="{{item.order_id}}" data-id="{{item.id}}" data-name="{{item.name}}">
+                <image src="../../images/selected.png" mode="aspectFill" style="width:100%;height:100%;"></image>
+             </view>
+      </view>
     </view>
+  </scroll-view>
   </view>
 </view>
 <!-- 活动弹框end -->
@@ -68,37 +74,52 @@
   <view class="message_top">
     <view class="cancel" bindtap="cancelMsg">取消</view>
     <view class="message_title">所属活动</view>
-    <view class="sure" bindtap="sureMsg">确定</view>
+    <view class="sure" bindtap="sureMsg" >确定</view>
   </view>
   <view class="message_list">
     <view class="message_item">
       <view class="message_left">私密 <text class="only">(自己可见)</text></view>
-      <view class="message_right">
+      <view class="message_right" wx:if="{{check_look==1}}" data-name="私密(自己可见)" bindtap="role" data-id="1">
         <image src="../../images/selected.png"></image>
+      </view>
+      <view class="message_right" wx:else bindtap="role" data-name="私密(自己可见)" data-id="1">
+             <image src="../../images/selected_no.png"></image>   
       </view>
     </view>
     <view class="message_item">
       <view class="message_left">同学可见</view>
-      <view class="message_right">
+      <view class="message_right" wx:if="{{check_look==2}}" data-name="同学可见" bindtap="role" data-id="2">
         <image src="../../images/selected.png"></image>
+      </view>
+      <view class="message_right" wx:else bindtap="role" data-name="同学可见" data-id="2">
+             <image src="../../images/selected_no.png"></image>   
       </view>
     </view>
     <view class="message_item">
       <view class="message_left">老师可见</view>
-      <view class="message_right">
+      <view class="message_right" wx:if="{{check_look==3}}" data-name="老师可见" bindtap="role" data-id="3">
         <image src="../../images/selected.png"></image>
+      </view>
+      <view class="message_right" wx:else bindtap="role" data-name="老师可见" data-id="3">
+             <image src="../../images/selected_no.png"></image>   
       </view>
     </view>
     <view class="message_item">
       <view class="message_left">家长可见</view>
-      <view class="message_right">
+      <view class="message_right" wx:if="{{check_look==4}}" data-name="家长可见" bindtap="role" data-id="4">
         <image src="../../images/selected.png"></image>
+      </view>
+      <view class="message_right" wx:else bindtap="role" data-name="家长可见" data-id="4">
+             <image src="../../images/selected_no.png"></image>   
       </view>
     </view>
     <view class="message_item">
       <view class="message_left">公开</view>
-      <view class="message_right">
+      <view class="message_right" wx:if="{{check_look==5}}" data-name="公开" bindtap="role" data-id="5">
         <image src="../../images/selected.png"></image>
+      </view>
+      <view class="message_right" wx:else bindtap="role" data-name="公开" data-id="5">
+             <image src="../../images/selected_no.png"></image>   
       </view>
     </view>
   </view>

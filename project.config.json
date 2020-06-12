@@ -74,6 +74,20 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "圈子",
+					"pathName": "pages/dynamic/dynamic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "发布圈子",
+					"pathName": "pages/releaseDynamic/releaseDynamic",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
