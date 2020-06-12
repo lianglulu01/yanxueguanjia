@@ -4,13 +4,22 @@
 Page({
   data: {
     type: 0,
-    info:{}
+    info:{},
+    not:0
   },
 
   onLoad: function() {
-    this.setData({
-      info: wx.getStorageSync('userinfo')
-    })
+    // wx.clearStorageSync()
+    // console.log(!wx.getStorageSync('userinfo'))
+    if (!wx.getStorageSync('userinfo')){
+      
+    }else{
+      this.setData({
+        info: wx.getStorageSync('userinfo'),
+        not: 1
+      })
+    }
+   
   },
   release: function() {
     wx.navigateTo({
@@ -33,9 +42,12 @@ Page({
     })
   },
   toAuth: function() {
-    this.setData({
-      type: 1
-    })
+   if (!wx.getStorageSync('userinfo')){
+      this.setData({
+        type: 1
+      })
+    }
+   
   },
   about:function(){
    wx.navigateTo({
@@ -43,12 +55,13 @@ Page({
    })
   },
   getUserInfo: function(o) {
-    wx.showLoading({
-      title: '加载中',
-    })
-    var n = this;
+    // wx.showLoading({
+    //   title: '加载中',
+    // })
+    var that = this;
     "getUserInfo:ok" == o.detail.errMsg && wx.login({
       success: function(e) {
+        console.log(e)
         var t = e.code;
         let abc = {
           code: t,
@@ -67,15 +80,18 @@ Page({
           },
           data: abc,
           success: function(res) {
+            console.log(res)
             console.log(res.data.data.info)
-            if (res.data.data.info){
+            // if (res.data.data.info){
               wx.hideLoading()
               wx.setStorageSync('userinfo', res.data.data.info)
-              n.setData({
+              that.setData({
                 type:0,
-                info: wx.getStorageSync('userinfo')
+                info: res.data.data.info,
+                not: 1
+                // info: wx.getStorageSync('userinfo')
               })
-            }
+            // }
            
           }
         })

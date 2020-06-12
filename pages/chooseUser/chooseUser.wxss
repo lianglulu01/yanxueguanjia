@@ -1,0 +1,48 @@
+/* pages/chooseUser/chooseUser.wxss */
+page{
+  background-color: #f7f4f8;
+}
+.active_content{
+  padding: 0rpx 31rpx;
+  margin-top: 20rpx;
+}
+.active_user{
+  width: 688rpx;
+  min-height: 90rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 0 29rpx;
+  box-sizing: border-box;
+  margin-bottom: 22rpx;
+}
+.join_user{
+  font-size: 26rpx;
+  color:#666;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;height:100rpx;
+  align-items: center;
+  border-bottom:1rpx solid #f4f4f4;
+}
+.join_user image{
+  width:30rpx;
+}
+
+/* 确认选择按钮 */
+.choose_user{
+  text-align: center;
+  margin:0 auto;
+  padding: 30rpx 25%;
+}
+.button{
+  background: linear-gradient(to right, #6ba8fd,#1b77fb);
+  border-radius: 100rpx;
+  color:#fff;
+  font-weight: 50rpx;
+  font-size: 28rpx;
+  /* width:%; */
+  height:76rpx;
+  line-height: 76rpx;
+}

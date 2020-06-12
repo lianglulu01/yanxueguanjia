@@ -1,5 +1,6 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/publish/member",
     "pages/dynamic/dynamic",
     "pages/activeDetail/activeDetail",
@@ -19,6 +20,29 @@
     "pages/publish/create_punch",
     "pages/publish/activity",
     "pages/active/active"
+=======
+    "pages/index/index",
+    "pages/userList/userList",
+    "pages/order/order",
+    "pages/join/join",
+    "pages/mine/mine",
+    "pages/assess/assess",
+    "pages/dynamic/dynamic",
+    "pages/punch/punch",
+    "pages/publish/index",
+  
+    "pages/publish/create_punch",
+    "pages/publish/activity",
+    "pages/personalData/personalData",
+    "pages/relatedList/relatedList",
+    "pages/publish/jilu",
+    "pages/punchList/punchList",
+    "pages/activeDetail/activeDetail",
+    "pages/active/active",
+    "pages/comment/comment",
+    "pages/releaseDynamic/releaseDynamic"
+   
+>>>>>>> 6f0acee7454087decdde62fce6be1badb15125be
   ],
   "window": {
     "backgroundTextStyle": "light",

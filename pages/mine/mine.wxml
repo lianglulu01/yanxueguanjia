@@ -3,9 +3,11 @@
     <image class="background_img" src="../../images/background.png"></image>
     <view class="top_content">
       <view class="top_left" bindtap="toAuth">
-        <image src="{{info.avatarUrl}}"></image>
+        <image src="{{info.avatarUrl}}" wx:if="{{not==1}}"></image>
+        <image src="../../images/ava.png" class="no_ava" wx:if="{{not==0}}"></image>
       </view>
-      <view class="top_right">
+      <view class="top_right" wx:if="{{not==0}}">未授权</view>
+      <view class="top_right" wx:if="{{not==1}}">
         <view class="name">
           <view>{{info.nickName}}</view>
           <view class="associate_button" bindtap="associate">

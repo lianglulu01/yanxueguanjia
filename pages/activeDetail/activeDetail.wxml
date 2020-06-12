@@ -1,52 +1,53 @@
 <view class="content">
   <view class="carousel">
     <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true' indicator-active-color='#ffffff'>
-      <block wx:for="{{bnrUrl}}" wx:for-index="index" wx:key="key">
+      <block wx:for="{{details.pic_url}}" wx:for-index="index" wx:key="index">
         <swiper-item>
-          <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
+          <image src='{{item}}' class='u-img-slide' mode='aspectFill'></image>
         </swiper-item>
       </block>
     </swiper>
     <view class="num">
-      1/6
+      {{details.pic_url.length}}
     </view>
   </view>
   <view class="content_top">
     <view class="top_left">
-      <view class="top_title">夏令营的角度讲</view>
-      <view class="top_money">$320</view>
+      <view class="top_title">{{details.name}}</view>
+      <view class="top_money">￥{{details.price}}</view>
     </view>
     <view class="top-right">
-      <view>距离10.00km</view>
-      <image src="../../images/loac.png"></image>
+      <view>{{details.address}}</view>
+      <!-- <image src="../../images/loac.png"></image> -->
     </view>
   </view>
   <view class="item">
     <view class="item_left">
       <view class="item_title">老师</view>
-      <view class=" item_name ">李超</view>
+       <view class="item_name"  wx:if="{{details.rolename}}">{{details.rolename}}</view>
+      <view class="item_name" wx:else>{{details.nickname}}</view>
     </view>
-    <view class="item_val ">
-      <image src="../../images/phone.png "></image>
+    <view class="item_val" bindtap="open">
+      <!-- <button bindtap="open">点击拨号</button> -->
+      <image src="../../images/phone.png"></image>
     </view>
   </view>
-  <view class="item ">
+  <view class="item">
     <view class="item_left">
       <view class="item_title">时间</view>
-      <view class="item_name">2020-05-26至2020-02-12</view>
+      <view class="item_name">{{details.start_time}}至{{details.end_time}}</view>
     </view>
-
   </view>
   <view class="plan_list">
     <view class="plan_title">活动日程安排</view>
-    <view class="plan_item" wx:for="{{3}}" wx:key="key">
-      <view class="plan_time">6月22日</view>
+    <view class="plan_item" wx:for="{{details.richeng}}" wx:key="index">
+      <view class="plan_time">{{item.time}}</view>
       <view class="plan_content">
-        静之湖第一届山花节成人票节假日通用!，所有动物近距离免费看、免费拍、免费互动、孔雀、梅花鹿、迷你马、小白兔、白鹅、天鹅等一次看个够
+       {{item.desc}}
       </view>
       <view class="plan_img">
-        <view class="img_item" wx:for="{{3}}" wx:key="key">
-          <image src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1858137112,3715794968&fm=26&gp=0.jpg"></image>
+        <view class="img_item" wx:for="{{item.pic_url}}" wx:for-item="pu"  wx:key="y">
+          <image src="{{pu}}"></image>
         </view>
       </view>
     </view>
@@ -55,9 +56,9 @@
     <view class="notice_title">
       活动须知
     </view>
-    <view class="notice_content">钛媒体6月8日消息，天眼查数据显示，近日，微软（中国）有限公司新增一条被执行人记录，执行法院为北京市第一中级人民法院，执行标的952215，案号为(2020)京01执571号
-    微软（中国）有限公司成立于1995年11月，注册资本约1.19亿美元，法定代表人为柯睿杰
+    <view class="notice_content">
+    {{details.know}}
     </view>
   </view>
-  <view class="sign_button" wx:if="{{type==1}}">立即报名</view>
+  <view class="sign_button" wx:if="{{type==1}}" data-id="{{details.id}}" bindtap="signUp">立即报名</view>
 </view>

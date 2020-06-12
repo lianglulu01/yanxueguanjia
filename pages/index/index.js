@@ -17,11 +17,15 @@ Page({
     selected1: false,
     type:0,
     id:null, //这个人的id,要被关联人id
-    userId:null
+    userId:null,
+    sort:1,
+    page:1,
+    list:[]
   },
   onLoad:function(option){
     var that = this
-    console.log(option)
+   
+    // console.log(option)
     if(option.id){
       that.setData({
         userId: option.id,
@@ -31,9 +35,11 @@ Page({
     }
     
       that.getImg()
-    // if (!wx.getStorageSync('userinfo')){
-        
-    //   }
+     
+  },
+  onShow:function(){
+    var that = this
+    that.getList()
   },
   //事件处理函数
   bindViewTap: function() {
@@ -41,21 +47,26 @@ Page({
       url: '../logs/logs'
     })
   },
-  selectedFn: function () {
+  selectedFn: function (e) {
+    console.log(e)
     var that = this;
     that.setData({
       selected1: false,
-      selected: true
+      selected: true,
+      sort:1
     })
+    that.getList()
     // that.companyFieldFn();
   },
-  selectedFn1: function () {
+  selectedFn1: function (e) {
+    console.log(e)
     var that = this;
     that.setData({
       selected1: true,
-      selected: false
+      selected: false,
+      sort: 2
     })
-
+    that.getList()
   },
   getImg:function(){
     var that = this
@@ -133,15 +144,33 @@ Page({
       }
     })
   },
-  toDetail:function(){
+  toDetail:function(e){
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../activeDetail/activeDetail?type=1',
+      url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
     })
   },
   punch:function(){
     wx.navigateTo({
       url: '../punch/punch',
     })
+  },
+  getList:function(){
+    var that = this
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/all-activity',
+      data:{
+        sort:that.data.sort,
+        page:that.data.page
+      },
+      success:function(res){
+        console.log(res)
+        that.setData({
+          list:res.data.data.list
+        })
+      }
+    })
+    
   }
   
 })
