@@ -88,7 +88,7 @@ Page({
             method: 'GET',
             success(res) {
               console.log(res.data)
-              this.onLoad()
+              that.onLoad()
             }
           })
         } else if (res.cancel) {

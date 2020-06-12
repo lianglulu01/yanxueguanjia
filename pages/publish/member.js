@@ -14,7 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */pingjia:function(){
      wx.navigateTo({
-       url: '/pages/publish/comment',
+       url: '/pages/publish/now_comment',
      })
    },
   more:function(){

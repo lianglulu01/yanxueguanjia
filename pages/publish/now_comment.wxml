@@ -1,0 +1,95 @@
+<!--下拉框-->
+<view class='select_box'>
+ <view class='select' catchtap='selectTap'>
+  <text class='select_text'>{{selectData[index]}}</text>
+  <image class='select_img {{show&&"select_img_rotate"}}' src='/images/down.png'></image>   
+ </view>
+ <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+  <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>{{item}}</text>
+ </view>
+</view>
+<!--列表-->
+<view class="list">
+  <view class="list_left">
+    <view class="font_title">活动态度</view>
+    <view class="iconfont iconbianji1" bindtap="one"></view>
+  </view>
+  <view class="list_right">
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+  </view>
+  <view class="shuru" wx:if="{{one}}">今天状态不太好，是不是想家了，明天继续加油</view>
+  <textarea class="shuru"  wx:if="{{one2}}"></textarea>
+</view>
+<view class="list">
+  <view class="list_left">
+    <view class="font_title">综合能力</view>
+    <view class="iconfont iconbianji1"  bindtap="two"></view>
+  </view>
+  <view class="list_right">
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+  </view>
+    <view class="shuru" wx:if="{{two}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
+  <textarea class="shuru"  wx:if="{{two2}}"></textarea>
+</view>
+<view class="list">
+  <view class="list_left">
+    <view class="font_title">积极表现</view>
+    <view class="iconfont iconbianji1" bindtap="three"></view>
+  </view>
+  <view class="list_right">
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+  </view>
+   <view class="shuru" wx:if="{{three}}">表现的真棒！希望明天更出色我哦！！</view>
+  <textarea class="shuru" wx:if="{{three2}}"></textarea>
+</view>
+<view class="list">
+  <view class="list_left">
+    <view class="font_title">团队贡献</view>
+    <view class="iconfont iconbianji1" bindtap="four"></view>
+  </view>
+  <view class="list_right">
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+  </view>
+  <view class="shuru" wx:if="{{four}}">团推贡献超级强，出类拔萃的你明天会更出色！</view>
+  <textarea class="shuru"  wx:if="{{four2}}"></textarea>
+</view>
+<view class="list">
+  <view class="list_left">
+    <view class="font_title">成果评价</view>
+    <view class="iconfont iconbianji1" bindtap="five"></view>
+  </view>
+  <view class="list_right">
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+    <image src="/images/tongming/starno.png"></image>
+  </view>
+   <view class="shuru" wx:if="{{five}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
+  <textarea class="shuru" wx:if="{{five2}}"></textarea>
+</view>
+<view class="list1">
+  <view class="list_left">
+    <view class="font_title">老师寄语</view>
+    <view class="iconfont iconbianji1" bindtap="six"></view>
+  </view>
+  <view class="teachersay" wx:if="{{six}}">黎明即起，孜孜为善</view>
+  <textarea class="teachersay" wx:if="{{six2}}"></textarea>
+  <view class="sure">确认评价</view>
+</view>
