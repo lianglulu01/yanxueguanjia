@@ -24,9 +24,9 @@ Page({
       url: '/pages/relatedList/relatedList',
     })
   },
-  comment: function () {
+  comment: function (event) {
     wx.navigateTo({
-      url: '/pages/publish/comment',
+      url: '/pages/publish/comment?id='+event.currentTarget.dataset.id,
     })
   },
   takeout: function () {

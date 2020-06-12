@@ -29,7 +29,7 @@
     <image src="/images/tongming/jilu.png"></image>
       <view>打卡记录</view>
     </view>
-     <view class="bottom_bottom"  bindtap="comment">
+     <view class="bottom_bottom"  bindtap="comment" data-id="{{item.id}}">
     <image src="/images/tongming/pinglun.png"></image>
       <view>评论管理</view>
     </view>
