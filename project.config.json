@@ -24,9 +24,9 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useIsolateContext": true,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false,
+		"useIsolateContext": true,
 		"compileHotReLoad": false
 	},
 	"compileType": "miniprogram",
