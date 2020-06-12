@@ -50,6 +50,9 @@ Page({
   onLoad: function (options) {
     this.getlist()
   },
+  onShow:function(){
+    this.onLoad()
+  },
   getlist() {
     let me = this
     let userinfo = wx.getStorageSync('userinfo')
@@ -85,6 +88,7 @@ Page({
             method: 'GET',
             success(res) {
               console.log(res.data)
+              this.onLoad()
             }
           })
         } else if (res.cancel) {

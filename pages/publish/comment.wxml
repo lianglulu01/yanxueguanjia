@@ -2,6 +2,7 @@
 <scroll-view  class='top_nav' scroll-x>
   <view class="nav-name {{item.typeId == currentId ? 'nav-hover':''}}" wx:for="{{section}}" wx:key="id" id='{{item.typeId}}' catchtap='handleTap'>
     {{item.name}}
+    <view class="xiahuaxian {{item.typeId == currentId ? 'xiahuaxian1' : 'xiahuaxian'}}"></view>
   </view>
 </scroll-view>
 
@@ -14,7 +15,7 @@
     <view class="more" bindtap="more">查看更多评价</view>
     <view class="fenge"></view>
     <view class="bottom_box">
-      <view class="list">
+      <view class="list1">
        <view class="name">活动态度：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -22,7 +23,7 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">综合能力：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -30,7 +31,7 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">积极表现：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -38,7 +39,7 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">团队贡献：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -46,7 +47,56 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
+       <view class="name">成果评价：</view>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <image src="/images/tongming/xiaokeai.png" class="userpng"></image>
+    <view class="username">不像阳的向日葵</view>
+    <view class="usertime">时间：2020.08.06 13:02:00</view>
+    <view class="more" bindtap="more">查看更多评价</view>
+    <view class="fenge"></view>
+    <view class="bottom_box">
+      <view class="list1">
+       <view class="name">活动态度：</view>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+      </view>
+      <view class="list1">
+       <view class="name">综合能力：</view>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+      </view>
+      <view class="list1">
+       <view class="name">积极表现：</view>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+      </view>
+      <view class="list1">
+       <view class="name">团队贡献：</view>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+       <image src="/images/tongming/starno.png" class="star"></image>
+      </view>
+      <view class="list1">
        <view class="name">成果评价：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -66,7 +116,7 @@
     <view class="more">查看更多评价</view>
     <view class="fenge"></view>
     <view class="bottom_box">
-      <view class="list">
+      <view class="list1">
        <view class="name">活动态度：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -74,7 +124,7 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">综合能力：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -82,7 +132,7 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">积极表现：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -90,7 +140,7 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">团队贡献：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
@@ -98,7 +148,7 @@
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">成果评价：</view>
        <image src="/images/tongming/starno.png" class="star"></image>
        <image src="/images/tongming/starno.png" class="star"></image>

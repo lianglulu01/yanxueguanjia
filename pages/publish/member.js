@@ -6,17 +6,28 @@ Page({
    */
   data: {
     more:true,
-    less:false
+    less:false,
+    list:[0,1,2,3]
   },
 
   /**
    * 生命周期函数--监听页面加载
-   */
+   */pingjia:function(){
+     wx.navigateTo({
+       url: '/pages/publish/comment',
+     })
+   },
   more:function(){
     this.setData({
       more:false,
       less:true
     })
+  },
+  less:function(){
+     this.setData({
+       more:true,
+       less:false
+     })
   },
   onLoad: function (options) {
 
