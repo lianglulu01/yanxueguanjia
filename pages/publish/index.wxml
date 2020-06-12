@@ -33,7 +33,7 @@
     <image src="/images/tongming/pinglun.png"></image>
       <view>评论管理</view>
     </view>
-    <view class="bottom_bottom" bindtap="member">  
+    <view class="bottom_bottom" bindtap="member" data-id="{{item.id}}">  
     <image src="/images/tongming/canjia.png"></image>
       <view>参加人</view>
     </view>

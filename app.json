@@ -1,45 +1,27 @@
 {
   "pages": [
-<<<<<<< HEAD
     "pages/publish/index",
-    "pages/publish/activity",
     "pages/publish/comment",
     "pages/publish/create_punch",
-=======
->>>>>>> 8599d26ec2293178584df6abb4caea7e4fe83b2d
     "pages/index/index",
     "pages/publish/member",
     "pages/dynamic/dynamic",
     "pages/activeDetail/activeDetail",
     "pages/mine/mine",
     "pages/mine/about",
-<<<<<<< HEAD
-=======
-    "pages/publish/index",
->>>>>>> 8599d26ec2293178584df6abb4caea7e4fe83b2d
     "pages/publish/comment_more",
     "pages/punch/punch",
     "pages/releaseDynamic/releaseDynamic",
     "pages/punchList/punchList",
     "pages/relatedList/relatedList",
     "pages/publish/jilu",
-<<<<<<< HEAD
     "pages/userList/userList",
     "pages/order/order",
     "pages/join/join",
     "pages/assess/assess",
-    "pages/active/active",
-    "pages/comment/comment"
-=======
-    "pages/publish/create_punch",
+    "pages/comment/comment",
     "pages/publish/activity",
-    "pages/active/active",
-    "pages/userList/userList",
-    "pages/order/order",
-    "pages/join/join",
-    "pages/assess/assess"
-   
->>>>>>> 8599d26ec2293178584df6abb4caea7e4fe83b2d
+    "pages/active/active"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -14,9 +14,9 @@ Page({
     list: {},
     user: {}
   },
-  member:function(){
+  member:function(event){
     wx.navigateTo({
-      url: '/pages/publish/member',
+      url: '/pages/publish/member?id='+event.currentTarget.dataset.id,
     })
   },
   xiezhu: function () {
