@@ -9,87 +9,101 @@
  </view>
 </view>
 <!--列表-->
-<view class="list">
-  <view class="list_left">
-    <view class="font_title">活动态度</view>
-    <view class="iconfont iconbianji1" bindtap="one"></view>
+<view wx:if="{{is_show_pingjia}}">
+<form bindsubmit="submit_form">
+  <view class="list">
+    <view class="list_left">
+      <view class="font_title">活动态度</view>
+      <view class="iconfont iconbianji1" bindtap="one"></view>
+    </view>
+    <view class="list_right">
+      <image bindtap="change_huo" data-index="1" data-type="1" src="{{huo_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="2" data-type="1" src="{{huo_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="3" data-type="1" src="{{huo_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="4" data-type="1" src="{{huo_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="5" data-type="1" src="{{huo_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+    </view>
+    <view class="shuru" wx:if="{{one}}">今天状态不太好，是不是想家了，明天继续加油</view>
+    <textarea class="shuru" name="huo_desc"  wx:if="{{one2}}"></textarea>
   </view>
-  <view class="list_right">
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
+  <view class="list">
+    <view class="list_left">
+      <view class="font_title">综合能力</view>
+      <view class="iconfont iconbianji1"  bindtap="two"></view>
+    </view>
+    
+    <view class="list_right">
+      <image bindtap="change_huo" data-index="1" data-type="2" src="{{zong_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="2" data-type="2" src="{{zong_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="3" data-type="2" src="{{zong_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="4" data-type="2" src="{{zong_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="5" data-type="2" src="{{zong_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+    </view>
+      <view class="shuru" wx:if="{{two}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
+    <textarea class="shuru" name="zong_desc" wx:if="{{two2}}"></textarea>
   </view>
-  <view class="shuru" wx:if="{{one}}">今天状态不太好，是不是想家了，明天继续加油</view>
-  <textarea class="shuru"  wx:if="{{one2}}"></textarea>
+  <view class="list">
+    <view class="list_left">
+      <view class="font_title">积极表现</view>
+      <view class="iconfont iconbianji1" bindtap="three"></view>
+    </view>
+    
+    <view class="list_right">
+      <image bindtap="change_huo" data-index="1" data-type="3" src="{{jiji_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="2" data-type="3" src="{{jiji_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="3" data-type="3" src="{{jiji_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="4" data-type="3" src="{{jiji_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="5" data-type="3" src="{{jiji_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+    </view>
+    <view class="shuru" wx:if="{{three}}">表现的真棒！希望明天更出色我哦！！</view>
+    <textarea class="shuru" name="jiji_desc" wx:if="{{three2}}"></textarea>
+  </view>
+  <view class="list">
+    <view class="list_left">
+      <view class="font_title">团队贡献</view>
+      <view class="iconfont iconbianji1" bindtap="four"></view>
+    </view>
+    
+    <view class="list_right">
+      <image bindtap="change_huo" data-index="1" data-type="4" src="{{tuan_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="2" data-type="4" src="{{tuan_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="3" data-type="4" src="{{tuan_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="4" data-type="4" src="{{tuan_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="5" data-type="4" src="{{tuan_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+    </view>
+    <view class="shuru" wx:if="{{four}}">团推贡献超级强，出类拔萃的你明天会更出色！</view>
+    <textarea class="shuru" name="tuan_desc" wx:if="{{four2}}"></textarea>
+  </view>
+  <view class="list">
+    <view class="list_left">
+      <view class="font_title">成果评价</view>
+      <view class="iconfont iconbianji1" bindtap="five"></view>
+    </view>
+    
+    <view class="list_right">
+      <image bindtap="change_huo" data-index="1" data-type="5" src="{{cheng_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="2" data-type="5" src="{{cheng_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="3" data-type="5" src="{{cheng_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="4" data-type="5" src="{{cheng_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+      <image bindtap="change_huo" data-index="5" data-type="5" src="{{cheng_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+    </view>
+    <view class="shuru" wx:if="{{five}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
+    <textarea class="shuru" name="cheng_desc" wx:if="{{five2}}"></textarea>
+  </view>
+  <view class="list1">
+    <view class="list_left">
+      <view class="font_title">老师寄语</view>
+      <view class="iconfont iconbianji1" bindtap="six"></view>
+    </view>
+    <view class="teachersay" wx:if="{{six}}">黎明即起，孜孜为善</view>
+    <textarea name="send_word" class="teachersay" wx:if="{{six2}}"></textarea>
+    <button class="sure" form-type="submit">确认评价</button>
+    <!-- <view class="sure">确认评价</view> -->
+  </view>
+  </form>
 </view>
-<view class="list">
-  <view class="list_left">
-    <view class="font_title">综合能力</view>
-    <view class="iconfont iconbianji1"  bindtap="two"></view>
-  </view>
-  <view class="list_right">
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-  </view>
-    <view class="shuru" wx:if="{{two}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
-  <textarea class="shuru"  wx:if="{{two2}}"></textarea>
-</view>
-<view class="list">
-  <view class="list_left">
-    <view class="font_title">积极表现</view>
-    <view class="iconfont iconbianji1" bindtap="three"></view>
-  </view>
-  <view class="list_right">
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-  </view>
-   <view class="shuru" wx:if="{{three}}">表现的真棒！希望明天更出色我哦！！</view>
-  <textarea class="shuru" wx:if="{{three2}}"></textarea>
-</view>
-<view class="list">
-  <view class="list_left">
-    <view class="font_title">团队贡献</view>
-    <view class="iconfont iconbianji1" bindtap="four"></view>
-  </view>
-  <view class="list_right">
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-  </view>
-  <view class="shuru" wx:if="{{four}}">团推贡献超级强，出类拔萃的你明天会更出色！</view>
-  <textarea class="shuru"  wx:if="{{four2}}"></textarea>
-</view>
-<view class="list">
-  <view class="list_left">
-    <view class="font_title">成果评价</view>
-    <view class="iconfont iconbianji1" bindtap="five"></view>
-  </view>
-  <view class="list_right">
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-    <image src="/images/tongming/starno.png"></image>
-  </view>
-   <view class="shuru" wx:if="{{five}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
-  <textarea class="shuru" wx:if="{{five2}}"></textarea>
-</view>
-<view class="list1">
-  <view class="list_left">
-    <view class="font_title">老师寄语</view>
-    <view class="iconfont iconbianji1" bindtap="six"></view>
-  </view>
-  <view class="teachersay" wx:if="{{six}}">黎明即起，孜孜为善</view>
-  <textarea class="teachersay" wx:if="{{six2}}"></textarea>
-  <view class="sure">确认评价</view>
+<!-- 暂无数据 -->
+<view wx:if="{{!is_show_pingjia}}">
+  <view style="width:80%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
+  <view style="text-align: center;width: 100%;font-size: 34rpx;"><text>您已经评价成功</text></view>
 </view>

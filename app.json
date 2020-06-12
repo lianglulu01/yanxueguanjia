@@ -1,5 +1,6 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/dynamic/dynamic_index",
     "pages/publish/index",
     "pages/relatedList/relatedList_student",
@@ -17,6 +18,10 @@
  
     "pages/publish/now_comment",
     "pages/publish/activity",
+=======
+    "pages/publish/index",
+    "pages/publish/now_comment",
+>>>>>>> 4bf3e093f0d8f5fb1a426290e8e15e62d6f7bdb2
     "pages/publish/comment",
     "pages/publish/create_punch",
     "pages/index/index",
@@ -34,9 +39,10 @@
     "pages/userList/userList",
     "pages/order/order",
     "pages/join/join",
-    "pages/active/active",
+    "pages/assess/assess",
     "pages/comment/comment",
-    "pages/assess/assess"
+    "pages/publish/activity",
+    "pages/active/active"
   ],
   "window": {
     "backgroundTextStyle": "light",
