@@ -1,0 +1,31 @@
+<view class="content">
+  <view class="content_bottom">
+    <view class="add_button">
+    <image src="../../images/share.png"></image>
+      
+      <button open-type='share' class="btn-share">邀请教师</button>
+    </view>
+    <view class="list">
+      <view class="item" wx:for="{{list}}" wx:key="key">
+        <view class="circle"></view>
+        <view class="student_avator">
+        <image src="{{item.avatar_url}}"></image>
+        </view>
+        <view class="student_new">
+          <view class="student_name" wx:if="{{item.rolename}}">{{item.rolename}}</view>
+          <view class="student_name" wx:else>{{item.nickname}}</view>
+          <view class="student_phone">手机号:{{item.phone}}</view>
+          <view class="student_id">身份证:{{item.id_card}}</view>
+          <view class="student_num">
+           <view>当前学生数:</view>
+           <view class="num">{{item.id}}</view>
+          </view>
+        </view>
+        <view class="student_right" bindtap="student">
+        分配学生
+        </view>
+      </view>
+    </view>
+    <view class="sure_button">确认关联</view>
+  </view>
+</view>
