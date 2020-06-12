@@ -1,0 +1,37 @@
+<!--搜索框-->
+<view class="index">
+<input class="title" type="text" placeholder="搜索" placeholder-style="font-size:22rpx">
+ <image src="/images/tongming/find.png"></image>
+</input>
+</view>
+<!--列表-->
+<view class="list">
+ <view class="list1">
+  <view class="list1_left">
+   <image src="/images/tongming/xiaokeai.png" class="userpng"></image>
+   <view class="username">不向阳的向日葵</view>
+  </view>
+  <view class="list1_right">张海宇</view>
+ </view>
+ <view class="list2">
+  <view class="list2_1">
+   <view class="font">报名人</view>
+   <view class="font">张小小</view>
+  </view>
+  <view class="list2_1">
+    <view class="font">报名时间</view>
+    <view class="font">2020年2月2日 13:02:00</view>
+  </view>
+  <view class="list2_1">
+    <view class="font">实付价格</view>
+    <view class="money">￥300</view>
+  </view>
+  </view>
+  <view class="list3" wx:if="{{more}}" bindtap="more">
+   <view class="font">查看更多</view>
+   <image src="/images/down.png" style="width:24rpx;height:24rpx;margin-left:12rpx"></image>
+  </view>
+  <view class="list4">
+    
+  </view>
+</view>

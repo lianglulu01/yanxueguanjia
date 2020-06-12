@@ -1,26 +1,24 @@
 {
   "pages": [
-    "pages/publish/index",
-  
-    "pages/publish/create_punch",
-    
-    
-  
-  
-    "pages/publish/activity",
-  
-    "pages/punch/punch",
-    "pages/index/index",
+    "pages/publish/member",
+    "pages/dynamic/dynamic",
+    "pages/activeDetail/activeDetail",
     "pages/mine/mine",
+    "pages/mine/about",
+    "pages/index/index",
+    "pages/publish/index",
+    "pages/publish/comment_more",
+    "pages/publish/comment",
+    "pages/punch/punch",
+    "pages/releaseDynamic/releaseDynamic",
+    "pages/comment/comment",
+    "pages/punchList/punchList",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList",
     "pages/publish/jilu",
-    "pages/punchList/punchList",
-    "pages/activeDetail/activeDetail",
-    "pages/active/active",
-    "pages/dynamic/dynamic",
-    "pages/comment/comment",
-    "pages/releaseDynamic/releaseDynamic"
+    "pages/publish/create_punch",
+    "pages/publish/activity",
+    "pages/active/active"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,9 +26,9 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "permission":{
-    "scope.userLocation":{
-      "desc":"需要您的位置信息授权"
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要您的位置信息授权"
     }
   },
   "style": "v2",

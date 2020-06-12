@@ -9,7 +9,7 @@ Page({
     selected1: false,
     length:5,
     list:5,
-    dynamicArr:[{length:1},{length:4},{length:9}]
+    dynamicArr:[{length:1}]
   },
 
   /**

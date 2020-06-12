@@ -44,6 +44,9 @@ Page({
     let activity_id = this.data.activity_id
     wx.request({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/clock-in/create',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+        },
       data:{
         activity_id:activity_id,
         address:weizhi,

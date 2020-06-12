@@ -1,3 +1,4 @@
+
 <view class="content">
   <view class="tabs-nav">
     <view class="{{selected?'page pgselected':'page'}}" data-status="{{index}}" bindtap='selectedFn'>我的活动</view>
@@ -42,29 +43,28 @@
           </view>
         </view>
         <view class="billing_right">
-          <text>立即参加</text>
+          <view>立即进入</view>
           <image src="../../images/arrow.png"></image>
         </view>
       </view>
       <view class="operating">
-        <image src="../../images/like.png"></image>
+        <view class="iconfont icondianzan1" style="font-size:42rpx;color:#FCC41A"></view>
         <view class="operating_num">300</view>
-        <image src="../../images/comment.png"></image>
+         <view class="iconfont icontubiaozhizuo-" style="font-size:42rpx;color:#FC6A1A"></view>
         <view class="operating_num">3</view>
-        <image src="../../images/forward.png"></image>
+         <view class="iconfont iconzhuanfa1" style="font-size:42rpx"></view>
       </view>
       <view class="comment_list">
         <view class="comment_item" bindtap="toComment">
-          <view class="comment_name">502_李超:</view>
-          <view class="comment_val">我真的很帮</view>
+          <view class="comment_name">杨小敏坏蛋:</view>
+          <view class="comment_val">我是不是你最疼爱的人</view>
         </view>
         <view class="comment_item">
-          <view class="comment_name">502_李超:</view>
-          <view class="comment_val">我真的很帮</view>
+          <view class="comment_name">杨小敏大坏蛋:</view>
+          <view class="comment_val">你为什么不说话</view>
         </view>
       </view>
-      <view class="comment_num ">查看所有的100条评论</view>
-
+      <view class="comment_num ">查看全部评论</view>
     </view>
   </view>
 </view>

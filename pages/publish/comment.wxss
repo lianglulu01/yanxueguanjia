@@ -1,0 +1,98 @@
+.top_nav{
+  width: 100%;
+  height: 60rpx;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.nav-name{
+  display: inline-block;
+  color: #2b2e33;
+  padding: 18rpx 18rpx 10rpx 18rpx;
+  font-size: 28rpx;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.nav-hover{
+  font-weight:bold;
+color:rgba(51,51,51,1);
+  font-size: 30rpx;
+}
+.list{ 
+  width: 100%;
+  height: 384rpx;
+  margin: 10rpx 0;
+  position: relative;
+}
+.userpng{
+  width: 66rpx;
+  height: 66rpx;
+  position: absolute;
+  top: 31rpx;
+  left: 31rpx;
+  border-radius: 50%;
+}
+.username{
+  font-size:28rpx;
+font-weight:bold;
+color:rgba(0,0,0,1);
+position: absolute;
+top: 30rpx;
+left: 120rpx;
+}
+.usertime{
+  font-size:26rpx;
+font-weight:400;
+color:rgba(132,132,132,1);
+position: absolute;
+top: 72rpx;
+left: 122rpx;
+}
+.more{
+  width:186rpx;
+height:52rpx;
+background:linear-gradient(-10deg,rgba(18,97,208,1),rgba(26,120,252,1));
+box-shadow:0px 0px 13rpx 0px rgba(22,108,230,0.43);
+border-radius:26rpx;
+text-align: center;
+line-height: 52rpx;
+position: absolute;
+top: 38rpx;
+right: 30rpx;
+font-size:26rpx;
+font-weight:500;
+color:rgba(255,255,255,1)
+}
+.fenge{
+  width:716rpx;
+height:2rpx;
+background:rgba(246,246,246,1);
+position: absolute;
+top: 123rpx;
+left: 12rpx;
+}
+.bottom_box{
+  width: 370rpx;
+  height: 250rpx;
+  position: absolute;
+  top: 149rpx;
+  left: 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.list{
+  width: 100%;
+  height: 25rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.star{
+  width: 29rpx;
+  height: 29rpx;
+}
+.name{
+  font-size:26rpx;
+font-weight:500;
+color:rgba(0,0,0,1);
+}

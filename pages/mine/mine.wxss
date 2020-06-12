@@ -192,6 +192,19 @@ page {
   padding: 20rpx 20rpx;
   justify-content: space-between;
 }
+.content .list .item1 {
+  display: flex;
+  align-items: center;
+  width: 683rpx;
+  height: 92rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  margin: 20rpx 34rpx;
+  box-sizing: border-box;
+  padding: 20rpx 20rpx;
+  justify-content: space-between;
+  font-weight: 400;
+}
 
 .item_name {
   font-size: 24rpx;

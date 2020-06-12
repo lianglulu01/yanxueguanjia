@@ -6,6 +6,7 @@ page {
 .content {
   height: 100%;
 }
+
 /* 导航 */
 .tabs-nav {
   overflow: hidden;
@@ -144,6 +145,7 @@ page {
 .billing .billing_left image {
   width: 110rpx;
   height: 110rpx;
+  border-radius: 8rpx;
 }
 
 .billing_center {
@@ -157,22 +159,31 @@ page {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   width: 306rpx;
-  font-size: 28rpx;
+  font-size: 26rpx;
   color: #333;
 }
 
 .billing_right {
+  width: 120rpx;
   font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
+.billing_right view{
+  font-size:24rpx;
+font-weight:400;
+color:rgba(101,101,101,1);
+}
 .billing_right image {
-  width: 18rpx;
-  height: 18rpx;
+  width: 25rpx;
+  height: 22rpx;
 }
 
 .operating {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   margin-top: 26rpx;
   border-bottom: 1rpx solid #ececec;
   width: 100%;
@@ -187,6 +198,7 @@ page {
 
 .operating_num {
   margin-right: 20rpx;
+  margin-left: 12rpx;
 }
 
 .comment_list {
@@ -210,9 +222,16 @@ page {
 .comment_num {
   width: 39%;
   font-size: 26rpx;
-  color: #1978fb;
+  font-weight: 400;
+  color: rgba(88, 88, 88, 1);
   border-top: 1rpx solid #ebebeb;
   padding-top: 29rpx;
+}
+
+.comment_val {
+  color: #585858;
+  font-size: 26rpx;
+  font-weight: 400;
 }
 
 .first {

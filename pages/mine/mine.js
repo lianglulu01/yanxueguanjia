@@ -37,6 +37,11 @@ Page({
       type: 1
     })
   },
+  about:function(){
+   wx.navigateTo({
+     url: '/pages/mine/about',
+   })
+  },
   getUserInfo: function(o) {
     wx.showLoading({
       title: '加载中',

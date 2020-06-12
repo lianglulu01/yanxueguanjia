@@ -15,29 +15,29 @@
 <!--活动列表-->
 <view class="list">
  <view class="list_name">活动列表</view>
- <view class="list_index" wx:for="{{list}}">
+ <view class="list_index" data-id="{{item.id}}" wx:for="{{list}}" bindlongpress="deletelist">
   <image src="{{item.pic_url}}"></image>
   <view>{{item.name}}</view>
   <view>{{item.addtime}}</view>
   <view class="fenge"></view>
    <view class="index_bottom">
-    <view class="bottom_bottom">
-      <image src="/images/tongming/daka.png"   data-id="{{item.id}}" bindtap="create_punch"></image>
+    <view class="bottom_bottom"  bindtap="create_punch">
+      <image src="/images/tongming/daka.png"   data-id="{{item.id}}"></image>
       <view>创建打卡</view>
     </view>
-   <view class="bottom_bottom">
-    <image src="/images/tongming/jilu.png"  bindtap="jilu"></image>
+   <view class="bottom_bottom"  bindtap="jilu">
+    <image src="/images/tongming/jilu.png"></image>
       <view>打卡记录</view>
     </view>
-     <view class="bottom_bottom">
+     <view class="bottom_bottom"  bindtap="comment">
     <image src="/images/tongming/pinglun.png"></image>
       <view>评论管理</view>
     </view>
-    <view class="bottom_bottom">
+    <view class="bottom_bottom" bindtap="member">  
     <image src="/images/tongming/canjia.png"></image>
       <view>参加人</view>
     </view>
-     <view class="bottom_bottom">
+     <view class="bottom_bottom"  bindtap="xiezhu">
     <image src="/images/tongming/xiezhu.png"></image>
       <view>协助教师</view>
     </view>

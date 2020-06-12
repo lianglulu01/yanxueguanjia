@@ -1,0 +1,5 @@
+.title{
+  width:100%;
+height:109px;
+background:rgba(255,255,255,1);
+}

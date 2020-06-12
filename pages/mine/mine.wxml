@@ -79,7 +79,7 @@
         <image src="../../images/arrow.png"></image>
       </view>
     </view>
-    <view class="item">
+    <button class="item1" open-type="contact">
       <view class="item_name">
         <image src="../../images/platform.png"></image>
         <text>在线客服</text>
@@ -87,8 +87,8 @@
       <view class="item_val">
         <image src="../../images/arrow.png"></image>
       </view>
-    </view>
-    <view class="item">
+    </button>
+    <view class="item" bindtap="about">
       <view class="item_name">
         <image src="../../images/platform.png"></image>
         <text>关于平台</text>
