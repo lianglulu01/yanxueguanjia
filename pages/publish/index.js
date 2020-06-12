@@ -21,7 +21,7 @@ Page({
   },
   xiezhu: function () {
     wx.navigateTo({
-      url: '/pages/relatedList/relatedList',
+      url: '/pages/relatedList/relatedList_teacher',
     })
   },
   comment: function () {
