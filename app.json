@@ -1,12 +1,11 @@
 {
   "pages": [
-<<<<<<< HEAD
+    "pages/index/index",
     "pages/publish/member",
     "pages/dynamic/dynamic",
     "pages/activeDetail/activeDetail",
     "pages/mine/mine",
     "pages/mine/about",
-    "pages/index/index",
     "pages/publish/index",
     "pages/publish/comment_more",
     "pages/publish/comment",
@@ -14,35 +13,16 @@
     "pages/releaseDynamic/releaseDynamic",
     "pages/comment/comment",
     "pages/punchList/punchList",
-    "pages/personalData/personalData",
     "pages/relatedList/relatedList",
     "pages/publish/jilu",
     "pages/publish/create_punch",
     "pages/publish/activity",
-    "pages/active/active"
-=======
-    "pages/index/index",
+    "pages/active/active",
     "pages/userList/userList",
     "pages/order/order",
     "pages/join/join",
-    "pages/mine/mine",
-    "pages/assess/assess",
-    "pages/dynamic/dynamic",
-    "pages/punch/punch",
-    "pages/publish/index",
-  
-    "pages/publish/create_punch",
-    "pages/publish/activity",
-    "pages/personalData/personalData",
-    "pages/relatedList/relatedList",
-    "pages/publish/jilu",
-    "pages/punchList/punchList",
-    "pages/activeDetail/activeDetail",
-    "pages/active/active",
-    "pages/comment/comment",
-    "pages/releaseDynamic/releaseDynamic"
+    "pages/assess/assess"
    
->>>>>>> 6f0acee7454087decdde62fce6be1badb15125be
   ],
   "window": {
     "backgroundTextStyle": "light",
