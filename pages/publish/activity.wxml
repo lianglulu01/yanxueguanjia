@@ -49,7 +49,6 @@
       <image class= "show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
     </block>
   </block>
-  
 </view>
 <!--活动须知-->
 <view class="last">

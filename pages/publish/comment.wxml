@@ -1,115 +1,66 @@
 <!-- 导航 -->
 <scroll-view  class='top_nav' scroll-x>
-  <view class="nav-name {{item.typeId == currentId ? 'nav-hover':''}}" wx:for="{{section}}" wx:key="id" id='{{item.typeId}}' catchtap='handleTap'>
-    {{item.name}}
+  <view class="nav-name {{index == currentId ? 'nav-hover':''}}" wx:for="{{selectData}}" id='{{index}}' catchtap='handleTap'>
+    {{item}}
+    <view class="xiahuaxian {{index == currentId ? 'xiahuaxian1' : 'xiahuaxian'}}"></view>
   </view>
 </scroll-view>
 
 <!-- html课程 -->
-<view hidden='{{currentId!=1}}'>
-  <view class="list">
-    <image src="/images/tongming/xiaokeai.png" class="userpng"></image>
-    <view class="username">不像阳的向日葵</view>
-    <view class="usertime">时间：2020.08.06 13:02:00</view>
-    <view class="more" bindtap="more">查看更多评价</view>
-    <view class="fenge"></view>
-    <view class="bottom_box">
-      <view class="list">
-       <view class="name">活动态度：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-      </view>
-      <view class="list">
-       <view class="name">综合能力：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-      </view>
-      <view class="list">
-       <view class="name">积极表现：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-      </view>
-      <view class="list">
-       <view class="name">团队贡献：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-      </view>
-      <view class="list">
-       <view class="name">成果评价：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-      </view>
-    </view>
-  </view>
-</view>
-<!-- css课程 -->
-<view hidden='{{currentId!=2}}'>
-   <view class="list">
-    <image src="/images/tongming/xiaokeai.png" class="userpng"></image>
-    <view class="username">不像阳的向日葵</view>
-    <view class="usertime">时间：2020.08.06 13:02:00</view>
+<view wx:if="{{list.length>0}}">
+<scroll-view class="scroll" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation = "true" bindscrolltolower="onReachBottom">
+  <view class="list" wx:for="{{list}}"  bindtap="more" data-id="{{item.id}}">
+    <image src="{{item.avatar_url}}" class="userpng"></image>
+    <view class="username">{{item.nickname}}</view>
+    <view class="usertime">时间：{{item.addtime}}</view>
     <view class="more">查看更多评价</view>
     <view class="fenge"></view>
     <view class="bottom_box">
-      <view class="list">
+      <view class="list1">
        <view class="name">活动态度：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
+       <image class="star" src="{{item.huo_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.huo_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.huo_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.huo_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.huo_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">综合能力：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
+       <image class="star" src="{{item.zong_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.zong_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.zong_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.zong_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.zong_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">积极表现：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
+       <image class="star" src="{{item.jiji_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.jiji_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.jiji_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.jiji_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.jiji_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">团队贡献：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
+       <image class="star" src="{{item.tuan_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.tuan_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.tuan_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.tuan_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.tuan_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       </view>
-      <view class="list">
+      <view class="list1">
        <view class="name">成果评价：</view>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
-       <image src="/images/tongming/starno.png" class="star"></image>
+       <image class="star" src="{{item.cheng_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.cheng_score>1?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.cheng_score>2?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.cheng_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
+       <image class="star" src="{{item.cheng_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       </view>
     </view>
   </view>
+</scroll-view>
 </view>
-<!-- js课程 -->
-<view hidden='{{currentId!=3}}'>
-  <text>我是js课程</text>
+<view wx:else>
+  <view style="width:80%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
+  <view style="text-align: center;width: 100%;font-size: 34rpx;"><text>没有更多数据了</text></view>
 </view>

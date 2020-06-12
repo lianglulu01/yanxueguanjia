@@ -1,20 +1,37 @@
-// pages/publish/comment_more.js
+// pages/publish/now_comment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+   id:0,//评价id,
+   data:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    this.setData({
+      id:options.id,
+    })
+    this.getData()
   },
-
+  getData:function(){
+    var that = this;
+    var id = that.data.id;
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/teacher-comment/comment-detail&id=' + id,
+      success: res => {
+        console.log(res)
+        that.setData({
+          data: res.data.data,
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

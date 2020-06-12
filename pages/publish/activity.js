@@ -10,7 +10,7 @@ Page({
    date2:'2020-06-03',
    test:1,
    activeImgArr:[],
-   richeng:[{"time":"2020-6-9","desc":"说明111","pic_url":["http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png"]},{"time":"2020-6-10","desc":"说明2222","pic_url":["http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png"]}], 
+   richeng:[{"time":"2020-6-9","desc":"说明111","pic_url":["http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png"]}], 
   },
   gotoShow:function(){
        var _this = this;

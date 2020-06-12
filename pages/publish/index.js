@@ -14,19 +14,19 @@ Page({
     list: {},
     user: {}
   },
-  member:function(){
+  member:function(event){
     wx.navigateTo({
-      url: '/pages/publish/member',
+      url: '/pages/publish/member?id='+event.currentTarget.dataset.id,
     })
   },
   xiezhu: function () {
     wx.navigateTo({
-      url: '/pages/relatedList/relatedList',
+      url: '/pages/relatedList/relatedList_teacher',
     })
   },
-  comment: function () {
+  comment: function (event) {
     wx.navigateTo({
-      url: '/pages/publish/comment',
+      url: '/pages/publish/comment?id='+event.currentTarget.dataset.id,
     })
   },
   takeout: function () {
@@ -49,6 +49,9 @@ Page({
    */
   onLoad: function (options) {
     this.getlist()
+  },
+  onShow:function(){
+    this.onLoad()
   },
   getlist() {
     let me = this
@@ -85,6 +88,7 @@ Page({
             method: 'GET',
             success(res) {
               console.log(res.data)
+              that.onLoad()
             }
           })
         } else if (res.cancel) {

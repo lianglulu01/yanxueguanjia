@@ -1,8 +1,15 @@
+ page{
+   background: #F6F6F6;
+ }
+.scroll{
+  height:90vh;
+}
 .top_nav{
   width: 100%;
   height: 60rpx;
   overflow: hidden;
   white-space: nowrap;
+  background: #FFF;
 }
 .nav-name{
   display: inline-block;
@@ -12,6 +19,20 @@
 font-weight:400;
 color:rgba(153,153,153,1);
 }
+.xiahuaxian{
+  width:30rpx;
+height:4rpx;
+background:#FFF;
+border-radius:2rpx;
+margin: 0 auto;
+}
+.xiahuaxian1{
+  width:30rpx;
+height:4rpx;
+background:#1A78FC;
+border-radius:2rpx;
+margin: 0 auto;
+}
 .nav-hover{
   font-weight:bold;
 color:rgba(51,51,51,1);
@@ -19,9 +40,11 @@ color:rgba(51,51,51,1);
 }
 .list{ 
   width: 100%;
-  height: 384rpx;
+  height: 400rpx;
   margin: 10rpx 0;
   position: relative;
+justify-content: flex-start;
+background: #FFF;
 }
 .userpng{
   width: 66rpx;
@@ -80,7 +103,7 @@ left: 12rpx;
   flex-direction: column;
   justify-content: space-around;
 }
-.list{
+.list1{
   width: 100%;
   height: 25rpx;
   display: flex;

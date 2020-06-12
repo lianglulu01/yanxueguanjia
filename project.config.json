@@ -25,7 +25,9 @@
 			"outputPath": ""
 		},
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"useIsolateContext": true,
+		"compileHotReLoad": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.11.1",
