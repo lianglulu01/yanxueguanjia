@@ -17,9 +17,11 @@ Page({
 
   /**
    * 生命周期函数--监听页面加载
-   */pingjia:function(){
+   */pingjia:function(event){
+    var user_id = event.currentTarget.dataset.user_id
+    var activity_id = this.data.activity_id
      wx.navigateTo({
-       url: '/pages/publish/comment',
+       url: '/pages/publish/now_comment?activity_id='+activity_id+'&user_id='+user_id,
      })
    },
    // 显示更多
@@ -93,7 +95,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom:function(){
-    console.log(99999);
     var page = this.data.page+1;
     if(this.data.page_count < page){
       return ;

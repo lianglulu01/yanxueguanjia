@@ -57,7 +57,7 @@
     <view class="list5">
       <view class="font1"  bindtap="less" data-key="{{index}}">收起</view>
     <image src="/images/up.png" style="width:24rpx;height:24rpx;margin-left:12rpx" bindtap="less"></image>
-    <view class="talk" bindtap="pingjia">去评价</view>
+    <view class="talk" bindtap="pingjia" data-user_id="{{item.user_id}}">去评价</view>
     </view>
   </view>
 </view>

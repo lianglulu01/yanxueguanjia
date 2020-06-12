@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/publish/index",
+    "pages/publish/now_comment",
     "pages/publish/comment",
     "pages/publish/create_punch",
     "pages/index/index",
