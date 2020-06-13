@@ -124,7 +124,7 @@ page {
 }
 
 .plan_time {
-  width: 114rpx;
+  width: 150rpx;
   height: 29rpx;
   background: rgba(26, 120, 252, 1);
   border-radius: 1rpx;

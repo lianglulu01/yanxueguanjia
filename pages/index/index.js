@@ -41,9 +41,12 @@ Page({
       that.data.invite.data_type = option.data_type
     }
 
-    wx.getLocation({
-      altitude: 'altitude',
-    })
+    // wx.getLocation({
+    //   altitude: 'altitude',
+    //   success(e){
+    //     console.log(e)
+    //   }
+    // })
 
     that.getImg()
     that.getMyActivity()

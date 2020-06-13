@@ -83,4 +83,5 @@
       </view>
     </view>
   </view>
+  <view class="air" wx:if="{{type==0}}"></view>
 </view>
