@@ -2,16 +2,16 @@
 <view class="active_content">
   <view class="active_item">
     <view class="active_left">
-      <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
+      <image src="{{activityInfo.pic_url}}"></image>
     </view>
     <view class="active_right">
       <view class="active_title">
-        朝阳公园的露营活动已经开始了,快了参加吧! 
+        {{activityInfo.name}} 
       </view>
       <view class="active_news">
-        <view class="active_num">55人参加</view>
-        <view class="active_date">时间:8月8号-9月9号</view>
-        <view class="active_address">北京朝阳区公园</view>
+        <view class="active_num">{{activityInfo.count}}人参加</view>
+        <view class="active_date">时间:{{activityInfo.start_time}}-{{activityInfo.end_time}}</view>
+        <view class="active_address">{{activityInfo.address}}</view>
       </view>
     </view>
   </view>
@@ -21,17 +21,20 @@
     <view class="join_user" bindtap="chooseUser">
       <view>参加活动人</view>
       <view>
-        <view>请选择活动添加人</view>
+        <view wx:if="{{joinUserName.length=='0'}}">请选择活动添加人</view>
+        <view wx:else>
+          <block wx:for="{{joinUserName}}" wx:key="index">{{item}} </block>
+        </view>
         <image src="../../images/arrow.png" mode="widthFix"></image>
       </view>
     </view>
     <view class="join_user_num">
       <view>报名人数</view>
-      <view>1人</view>
+      <view>{{joinUserName.length}}人</view>
     </view>
     <view class="join_user_phone">
       <view>联系方式</view>
-      <input class="weui-input" type="number" maxlength="11" placeholder="请输入联系方式" />
+      <input class="weui-input" type="number" maxlength="11" placeholder="请输入联系方式" bindinput="bindKeyInput"/>
     </view>
   </view>
 </view>
@@ -51,7 +54,6 @@
     </view>
   </view>
 </view>
-
 <view class="pay">
   <view class="button" bindtap="pay">立即付款</view>
 </view>
