@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/mine/mine",
     "pages/active/active",
-    "pages/index/index",
     "pages/publish/index",
     "pages/dynamic/dynamic_index",
     "pages/relatedList/relatedList_student",
