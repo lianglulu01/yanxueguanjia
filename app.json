@@ -1,11 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-<<<<<<< HEAD
     "pages/publish/index",
-=======
     "pages/dynamic/dynamic_index",
-  
     "pages/relatedList/relatedList_student",
     "pages/dynamic/dynamic",
     "pages/relatedList/relatedList",
@@ -13,9 +10,7 @@
     "pages/mine/mine",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList_teacher",
->>>>>>> f64aa50ef8e88062ccd4a21a00ad3a1420690820
     "pages/publish/activity",
-    "pages/publish/index",
     "pages/publish/now_comment",
     "pages/publish/comment",
     "pages/publish/create_punch",
@@ -30,14 +25,7 @@
     "pages/order/order",
     "pages/join/join",
     "pages/assess/assess",
-<<<<<<< HEAD
-    "pages/active/active",
-    "pages/comment/comment"
-=======
-    "pages/comment/comment",
-  
     "pages/active/active"
->>>>>>> f64aa50ef8e88062ccd4a21a00ad3a1420690820
   ],
   "window": {
     "backgroundTextStyle": "light",
