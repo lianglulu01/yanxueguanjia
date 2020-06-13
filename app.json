@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mine/xiezhu",
+    "pages/publish/index",
     "pages/mine/mine",
     "pages/active/active",
-    "pages/publish/index",
     "pages/dynamic/dynamic_index",
     "pages/relatedList/relatedList_student",
     "pages/dynamic/dynamic",

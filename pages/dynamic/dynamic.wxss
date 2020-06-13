@@ -191,13 +191,13 @@ color:rgba(101,101,101,1);
 }
 
 .operating image {
-  width: 48rpx;
-  height: 48rpx;
-  margin-right: 12rpx;
+  width: 26rpx;
+  height: 26rpx;
+  /* margin-right: 12rpx; */
 }
 
 .operating_num {
-  margin-right: 20rpx;
+  margin-right: 12rpx;
   margin-left: 12rpx;
 }
 
@@ -232,6 +232,7 @@ color:rgba(101,101,101,1);
   color: #585858;
   font-size: 26rpx;
   font-weight: 400;
+ 
 }
 
 .first {
@@ -266,22 +267,22 @@ color:rgba(101,101,101,1);
 .tui-table-view{
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  /* justify-content: space-between; */
   flex-wrap: wrap;
   width: 100%;
+  margin: 0 auto;
+  
 }
 .tui-col-3{
  flex: 0 0 auto;
-  width: 33.33333333%;
+  margin: 8rpx;
   text-align: center;
   color: #797979;
-  padding: 40rpx 0;
   font-size: 30rpx;
 }
 .img{
      width: 156rpx;
      height: 156rpx;
+     border-radius: 18rpx;
 }
 
 button {
@@ -301,4 +302,18 @@ button {
   
   button::after {
     display: none;
+    }
+
+    .sj{
+      padding-left: 20rpx;
+    }
+
+    .hiddenmore .more-item {
+      display: none;
+    }
+    
+    .showmore .more-item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
     }

@@ -6,12 +6,13 @@
     <view class="mine_border" wx:if="{{selected}}"></view>
     <view class="square_border" wx:if="{{selected1}}"></view>
   </view>
-  <view class="list">
-    <view class="list_item" wx:for="{{myList}}" wx:key="{{index}}">
-      <view class="item_left">
+  <view class="list" wx:if="{{selected}}">
+    <view class="list_item"  wx:for="{{myList}}" wx:key="{{index}}">
+  
+      <view class="item_left" bindtap="dynamic_index" data-id="{{item.id}}">
         <image src="{{item.avatar_url}}"></image>
       </view>
-      <view class="item_right" style="width: 85%">
+      <view class="item_right" bindtap="dynamic_index" data-id="{{item.id}}" style="width: 85%">
         <view class="name">{{item.nickname}}</view>
         <view class="time">{{item.time}}</view>
         <view class="item_content">
@@ -23,7 +24,93 @@
               <!-- 循环图片 -->
                 <view class="tui-col-3" wx:for="{{item.images}}" wx:key="{{index}}">
                     <view class="img">
-                         <image src="{{item}}" style="width:100%;height:100%;"></image>
+                         <image src="{{item}}" style="width:100%;height:100%;border-radius:14rpx"></image>
+                    </view>
+                </view>
+              </view>
+            </view>
+
+        </view>
+         <!-- <view class="item_img {{item.length==1?'first':''}}" wx:if="{{item.length==1}}">
+          <view class="img_list" wx:for="{{item.length}}" wx:key="key">
+            <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3832939494,2009685933&fm=26&gp=0.jpg"></image>
+          </view>
+        </view>
+        <view class="item_img {{item.length==4?'second':''}}" wx:if="{{item.length==4}}">
+          <view class="img_list" wx:for="{{item.length}}" wx:key="key">
+            <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3832939494,2009685933&fm=26&gp=0.jpg"></image>
+          </view>
+        </view>
+         <view class="item_img {{item.length<=4?'three':''}}" wx:if="{{item.length>4}}">
+          <view class="img_list" wx:for="{{item.length}}" wx:key="key">
+            <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3832939494,2009685933&fm=26&gp=0.jpg"></image>
+          </view>
+        </view> -->
+      </view>
+
+      <view class="billing" bindtap="detail" data-id="{{item.activity.id}}">
+        <view class="billing_left">
+          <image src="{{item.activity.pic_url[0]}}"></image>
+        </view>
+        <view class="billing_center">
+          <view class="center_text">
+            {{item.activity.name}}
+          </view>
+        </view>
+        <view class="billing_right">
+          <view>立即进入</view>
+          <image src="../../images/arrow.png"></image>
+        </view>
+      </view>
+      <view class="operating">
+              <image wx:if="{{item.is_agreen}}" bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
+           <image wx:else bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:30rpx;height:30rpx;" src="../../images/wdz.png"></image>
+        <view class="operating_num">{{item.like}}</view>
+         <view class="iconfont icontubiaozhizuo-" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
+        <view class="operating_num">{{item.comment_num}}</view>
+         <button class="iconfont iconzhuanfa" style="font-size:42rpx" open-type="share"></button>
+      </view>
+      <view class="comment_list">
+        <view class="comment_item {{items.to_user_id?'sj':''}}" bindtap="toComment"  wx:for-item="items" data-user_id="{{items.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}"  wx:for="{{item.comment}}" wx:key="{{index}}">
+          <view class="comment_name">{{items.send_nickname}}:</view>
+          <view class="comment_val">{{items.text}}</view>
+        </view>
+      </view>
+      <!-- <view >查看全部评论</view> -->
+       <view class="comment_num "  wx:if="{{item.comment.length>2}}">
+              查看全部评论
+          </view> 
+    </view>
+  </view>
+<scroll-view scroll-y="true" style = "height:100%;position: relative;" scroll-into-view="{{toView}}" scroll-with-animation = "true" bindscrolltolower="bindscrolltolower">
+  <!-- //无数据显示 -->
+  <view wx:if="{{myList.length<1}}" style="position: absolute;top: 343rpx;left: 188rpx">
+     <image src="../../images/nodata.png" style="width:374rpx;height:288rpx;"></image>
+     <view style="font-size:32rpx;text-align:center;">还没有活动哟！</view>
+  </view>
+<view class="add_img" bindtap="fbqz">
+    <image src="../../images/addqz.png" style="width:100%;height:100%;"></image>
+</view>
+<!--无数据显示结束-->
+  <view class="list" wx:if="{{selected1}}">
+    <view class="list_item"  wx:for="{{myList}}" wx:key="{{index}}">
+  
+      <view class="item_left" bindtap="dynamic_index" data-id="{{item.id}}">
+        <image src="{{item.avatar_url}}"></image>
+      </view>
+      <view class="item_right" bindtap="dynamic_index" data-id="{{item.id}}" style="width: 85%">
+        <view class="name">{{item.nickname}}</view>
+        <view class="time">{{item.time}}</view>
+        <view class="item_content">
+               {{item.content}}
+        </view>
+        <view class="jgg">
+           <view class="section">
+              <view class="tui-table-view">
+              <!-- 循环图片 -->
+                <view class="tui-col-3" wx:for="{{item.images}}" wx:key="{{index}}">
+                    <view class="img">
+                         <image src="{{item}}" style="width:100%;height:100%;border-radius:14rpx"></image>
                     </view>
                 </view>
               </view>
@@ -46,6 +133,7 @@
           </view>
         </view>
       </view>
+
       <view class="billing" bindtap="detail" data-id="{{item.activity.id}}">
         <view class="billing_left">
           <image src="{{item.activity.pic_url[0]}}"></image>
@@ -61,24 +149,25 @@
         </view>
       </view>
       <view class="operating">
-        <view class="iconfont icondianzan1" style="font-size:42rpx;color:#FCC41A"></view>
+              <image wx:if="{{item.is_agreen}}" bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
+           <image wx:else bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:35rpx;height:35rpx;" src="../../images/wdz.png"></image>
         <view class="operating_num">{{item.like}}</view>
-         <view class="iconfont icontubiaozhizuo-" bindtap="toComment" style="font-size:42rpx;color:#FC6A1A"></view>
+         <view class="iconfont icontubiaozhizuo-" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
         <view class="operating_num">{{item.comment_num}}</view>
-         <button class="iconfont iconzhuanfa1" style="font-size:42rpx" open-type="share"></button>
+         <button class="iconfont iconzhuanfa" style="font-size:42rpx" open-type="share"></button>
       </view>
       <view class="comment_list">
-        <view class="comment_item" bindtap="toComment" data-id="{{item.id}}" wx:for="{{item.comment}}" wx:key="{{index}}">
-          <view class="comment_name">{{item.send_nickname}}:</view>
-          <view class="comment_val">{{item.text}}</view>
+        <view class="comment_item {{items.to_user_id?'sj':''}}" bindtap="toComment"  wx:for-item="items" data-user_id="{{items.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}"  wx:for="{{item.comment}}" wx:key="{{index}}">
+          <view class="comment_name">{{items.send_nickname}}:</view>
+          <view class="comment_val">{{items.text}}</view>
         </view>
       </view>
-      <view class="comment_num " wx:if="{{item.comment.length>=2}}">查看全部评论</view>
+      <!-- <view >查看全部评论</view> -->
+       <view class="comment_num "  wx:if="{{item.comment.length>2}}">
+              查看全部评论
+          </view> 
     </view>
   </view>
+    </scroll-view>
 </view>
 
-
-<view class="add_img" bindtap="fbqz">
-    <image src="../../images/addqz.png" style="width:100%;height:100%;"></image>
-</view>

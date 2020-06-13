@@ -3,3 +3,4 @@
 .git/
 .git
 */.DS_Store
+project.config.json
