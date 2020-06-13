@@ -1,17 +1,30 @@
 // pages/personalData/personalData.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    info: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let info = wx.getStorageSync('userinfo'),t=this
+    app.get('user-info/get-user', {
+      id: info.id
+    }).then(res => {
+      if(res.code==0){
+        t.setData({
+          info:res.data.info
+        })
+      }
+    }).catch(err => {
+      console.log(err)
+    })
 
   },
 

@@ -94,7 +94,7 @@
 </view>
 
 <view class="msg" wx:if="{{type==1}}">
-  <image src="../../images/authorize.png"></image>
+  <image src="https://yanxue.qiweibang.com/web/uploads/image/store_1/0fc3361feaf9689ba492c99d963f33e037146fa8.png"></image>
   <view class="authorize_content">
     <view>亲 为了给您提供更好的服务</view>
     <view>我们需要您的授权喔~</view>

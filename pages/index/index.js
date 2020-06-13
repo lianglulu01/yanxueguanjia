@@ -20,21 +20,34 @@ Page({
     userId:null,
     sort:1,
     page:1,
-    list:[]
+    list:[],
+    invite:{
+      type:0,
+      user_id:null,
+      activity_id:0,  //协助教师相关，活动id
+      data_type:0
+    }
   },
+
   onLoad:function(option){
     var that = this
-   
-    // console.log(option)
     if(option.id){
       that.setData({
         userId: option.id,
-        type:1
+        type:1,
+        invite:{
+          type:1,
+          user_id:option.id,
+        }
       })
-
     }
-    
-      that.getImg()
+    if(option.activity_id){
+      that.data.invite.activity_id = option.activity_id
+    }
+    if(option.data_type){
+      that.data.invite.data_type = option.activity_id
+    }
+    that.getImg()
      
   },
   onShow:function(){
@@ -97,7 +110,6 @@ Page({
           iv: o.detail.iv,
           signature: o.detail.signature
         };
-        console.log(abc)
 
         wx.request({
           url: 'https://yanxue.qiweibang.com/web/index.php?r=api/users/login',
@@ -134,7 +146,9 @@ Page({
       data:{
         type:1,
         relation_id:that.data.id, //被关联人的id
-        user_id:that.data.userId
+        user_id:that.data.invite.user_id,
+        data_type:that.data.invite.data_type,
+        activity_id:that.data.invite.activity_id
       },
       success:function(res){
         console.log(res)

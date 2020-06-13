@@ -37,7 +37,7 @@
     <image src="/images/tongming/canjia.png"></image>
       <view>参加人</view>
     </view>
-     <view class="bottom_bottom"  bindtap="xiezhu">
+     <view class="bottom_bottom"  bindtap="xiezhu" data-id="{{item.id}}">
     <image src="/images/tongming/xiezhu.png"></image>
       <view>协助教师</view>
     </view>
