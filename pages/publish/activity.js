@@ -28,7 +28,7 @@ Page({
       // }
     ],
   },
-  
+
   gotoShow: function () {
     var _this = this;
     var pic = []
@@ -49,12 +49,12 @@ Page({
       }
     })
   },
-  delShow(e){
+  delShow(e) {
     let index = e.currentTarget.dataset.index
     let arr = this.data.activeImgArr
-    arr.splice(index,1)
+    arr.splice(index, 1)
     this.setData({
-      activeImgArr:arr
+      activeImgArr: arr
     })
   },
   uploadimg: function (config) {
@@ -111,13 +111,13 @@ Page({
     })
   },
 
-  delImg(e){
+  delImg(e) {
     let index = e.currentTarget.dataset.index
     let index2 = e.currentTarget.dataset.index2
     let arr = this.data.richeng
-    arr[index].pic_url.splice(index2,1)
+    arr[index].pic_url.splice(index2, 1)
     this.setData({
-      richeng:arr
+      richeng: arr
     })
   },
 
@@ -159,12 +159,12 @@ Page({
       richeng: arr
     })
   },
-  delRicheng(e){
+  delRicheng(e) {
     let index = e.currentTarget.dataset
     let arr = this.data.richeng
-    arr.splice(index,1)
+    arr.splice(index, 1)
     this.setData({
-      richeng:arr
+      richeng: arr
     })
   },
 
@@ -192,10 +192,10 @@ Page({
     }
     let check = false;
     let length = arr.length
-    if(start && end && start > end){
+    if (start && end && start > end) {
       wx.showToast({
         title: '开始日期不可大于结束日期',
-        icon:'none'
+        icon: 'none'
       })
       return
     }
@@ -235,16 +235,18 @@ Page({
       })
     }
   },
-  changeDesc(e){
+  changeDesc(e) {
     let index = e.currentTarget.dataset.index
     let arr = this.data.richeng
     arr[index].desc = e.detail.value
   },
   formSubmit: function (e) {
-    console.log(e)
+
     let userinfo = wx.getStorageSync('userinfo')
     e.detail.value.id = userinfo.id
     e.detail.value.pic_url = this.data.activeImgArr
+    e.detail.value.richeng = JSON.stringify(this.data.richeng)
+    console.log(e)
     wx.request({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/sub-activity',
       behaviors: ['wx://form-field'],
@@ -272,7 +274,7 @@ Page({
       method: "POST",
       success: function (res) {
         console.log(res)
-        if(res.data.code == 0){
+        if (res.data.code == 0) {
           wx.showToast({
             title: '发布成功',
           })
@@ -281,13 +283,13 @@ Page({
               delta: 1
             })
           }, 1500);
-        }else{
+        } else {
           wx.showToast({
             title: res.data.msg,
-            icon:'none'
+            icon: 'none'
           })
         }
-        
+
       }
     })
   },
@@ -296,7 +298,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**

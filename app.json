@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/active/active",
     "pages/index/index",
     "pages/publish/index",
     "pages/dynamic/dynamic_index",
@@ -24,8 +25,8 @@
     "pages/userList/userList",
     "pages/order/order",
     "pages/join/join",
-    "pages/assess/assess",
-    "pages/active/active"
+    "pages/assess/assess"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
