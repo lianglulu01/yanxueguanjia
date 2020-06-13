@@ -13,8 +13,9 @@
 <form bindsubmit="submit_form">
   <view class="list">
     <view class="list_left">
-      <view class="font_title">活动态度</view>
-      <view class="iconfont iconbianji1" bindtap="one"></view>
+      <view class="font_title" wx:if="{{one}}">活动态度</view>
+      <input class="font_title" wx:if="{{!one}}" name="huo_title" value="活动态度"></input>
+      <view class="iconfont iconbianji1" wx:if="{{one}}" bindtap="one"></view>
     </view>
     <view class="list_right">
       <image bindtap="change_huo" data-index="1" data-type="1" src="{{huo_score>0?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
@@ -23,13 +24,13 @@
       <image bindtap="change_huo" data-index="4" data-type="1" src="{{huo_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       <image bindtap="change_huo" data-index="5" data-type="1" src="{{huo_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     </view>
-    <view class="shuru" wx:if="{{one}}">今天状态不太好，是不是想家了，明天继续加油</view>
-    <textarea class="shuru" name="huo_desc"  wx:if="{{one2}}"></textarea>
+    <textarea class="shuru" name="huo_desc" value="今天状态不太好，是不是想家了，明天继续加油"></textarea>
   </view>
   <view class="list">
     <view class="list_left">
-      <view class="font_title">综合能力</view>
-      <view class="iconfont iconbianji1"  bindtap="two"></view>
+      <view class="font_title" wx:if="{{two}}">综合能力</view>
+      <input class="font_title" wx:if="{{!two}}" name="zong_title" value="综合能力"></input>
+      <view class="iconfont iconbianji1" wx:if="{{two}}" bindtap="two"></view>
     </view>
     
     <view class="list_right">
@@ -39,13 +40,13 @@
       <image bindtap="change_huo" data-index="4" data-type="2" src="{{zong_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       <image bindtap="change_huo" data-index="5" data-type="2" src="{{zong_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     </view>
-      <view class="shuru" wx:if="{{two}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
-    <textarea class="shuru" name="zong_desc" wx:if="{{two2}}"></textarea>
+    <textarea class="shuru" name="zong_desc" value="综合能力超级强，出类拔萃的你明天会更出色！"></textarea>
   </view>
   <view class="list">
     <view class="list_left">
-      <view class="font_title">积极表现</view>
-      <view class="iconfont iconbianji1" bindtap="three"></view>
+      <view class="font_title" wx:if="{{three}}">积极表现</view>
+      <input class="font_title" wx:if="{{!three}}" name="jiji_title" value="积极表现"></input>
+      <view class="iconfont iconbianji1" wx:if="{{three}}" bindtap="three"></view>
     </view>
     
     <view class="list_right">
@@ -55,13 +56,14 @@
       <image bindtap="change_huo" data-index="4" data-type="3" src="{{jiji_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       <image bindtap="change_huo" data-index="5" data-type="3" src="{{jiji_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     </view>
-    <view class="shuru" wx:if="{{three}}">表现的真棒！希望明天更出色我哦！！</view>
-    <textarea class="shuru" name="jiji_desc" wx:if="{{three2}}"></textarea>
+    <view class="shuru"></view>
+    <textarea class="shuru" name="jiji_desc" value="表现的真棒！希望明天更出色我哦！！"></textarea>
   </view>
   <view class="list">
     <view class="list_left">
-      <view class="font_title">团队贡献</view>
-      <view class="iconfont iconbianji1" bindtap="four"></view>
+      <view class="font_title" wx:if="{{four}}">团队贡献</view>
+      <input class="font_title" wx:if="{{!four}}" name="tuan_title" value="团队贡献"></input>
+      <view class="iconfont iconbianji1" wx:if="{{four}}" bindtap="four"></view>
     </view>
     
     <view class="list_right">
@@ -71,13 +73,14 @@
       <image bindtap="change_huo" data-index="4" data-type="4" src="{{tuan_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       <image bindtap="change_huo" data-index="5" data-type="4" src="{{tuan_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     </view>
-    <view class="shuru" wx:if="{{four}}">团推贡献超级强，出类拔萃的你明天会更出色！</view>
-    <textarea class="shuru" name="tuan_desc" wx:if="{{four2}}"></textarea>
+    <!-- <view class="shuru" wx:if="{{four}}">团推贡献超级强，出类拔萃的你明天会更出色！</view> -->
+    <textarea class="shuru" name="tuan_desc" value="团推贡献超级强，出类拔萃的你明天会更出色！"></textarea>
   </view>
   <view class="list">
     <view class="list_left">
-      <view class="font_title">成果评价</view>
-      <view class="iconfont iconbianji1" bindtap="five"></view>
+      <view class="font_title" wx:if="{{five}}">成果评价</view>
+      <input class="font_title" wx:if="{{!five}}" name="cheng_title" value="成果评价"></input>
+      <view class="iconfont iconbianji1" wx:if="{{five}}" bindtap="five"></view>
     </view>
     
     <view class="list_right">
@@ -87,16 +90,17 @@
       <image bindtap="change_huo" data-index="4" data-type="5" src="{{cheng_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
       <image bindtap="change_huo" data-index="5" data-type="5" src="{{cheng_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     </view>
-    <view class="shuru" wx:if="{{five}}">综合能力超级强，出类拔萃的你明天会更出色！</view>
-    <textarea class="shuru" name="cheng_desc" wx:if="{{five2}}"></textarea>
+    <!-- <view class="shuru" wx:if="{{five}}">综合能力超级强，出类拔萃的你明天会更出色！</view> -->
+    <textarea class="shuru" name="cheng_desc" value="综合能力超级强，出类拔萃的你明天会更出色！"></textarea>
   </view>
   <view class="list1">
     <view class="list_left">
-      <view class="font_title">老师寄语</view>
-      <view class="iconfont iconbianji1" bindtap="six"></view>
+      <view class="font_title" wx:if="{{six}}">老师寄语</view>
+      <input class="font_title" wx:if="{{!six}}" name="laoshi_title" value="老师寄语"></input>
+      <view class="iconfont iconbianji1" wx:if="{{six}}" bindtap="six"></view>
     </view>
-    <view class="teachersay" wx:if="{{six}}">黎明即起，孜孜为善</view>
-    <textarea name="send_word" class="teachersay" wx:if="{{six2}}"></textarea>
+    <!-- <view class="teachersay" wx:if="{{six}}">黎明即起，孜孜为善</view> -->
+    <textarea name="send_word" class="teachersay" value="黎明即起，孜孜为善"></textarea>
     <button class="sure" form-type="submit">确认评价</button>
     <!-- <view class="sure">确认评价</view> -->
   </view>

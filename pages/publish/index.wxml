@@ -21,7 +21,7 @@
   <view>{{item.addtime}}</view>
   <view class="fenge"></view>
    <view class="index_bottom">
-    <view class="bottom_bottom"  bindtap="create_punch">
+    <view class="bottom_bottom"  bindtap="create_punch" data-id="{{item.id}}" >
       <image src="/images/tongming/daka.png"   data-id="{{item.id}}"></image>
       <view>创建打卡</view>
     </view>
@@ -37,7 +37,7 @@
     <image src="/images/tongming/canjia.png"></image>
       <view>参加人</view>
     </view>
-     <view class="bottom_bottom"  bindtap="xiezhu">
+     <view class="bottom_bottom"  bindtap="xiezhu" data-id="{{item.id}}">
     <image src="/images/tongming/xiezhu.png"></image>
       <view>协助教师</view>
     </view>

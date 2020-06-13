@@ -24,11 +24,11 @@ Page({
    activity_id:0,//活动id,
    is_show_pingjia:false,//是否显示可以评价的信息
    score:5,
-   huo_score:0,
-   zong_score:0,
-   jiji_score:0,
-   tuan_score:0,
-   cheng_score:0,
+   huo_score:3,
+   zong_score:3,
+   jiji_score:3,
+   tuan_score:3,
+   cheng_score:3,
   },
 
   /**
@@ -178,6 +178,13 @@ Page({
     e.detail.value.jiji_score = that.data.jiji_score;
     e.detail.value.tuan_score = that.data.tuan_score;
     e.detail.value.cheng_score = that.data.cheng_score;
+
+    if(!e.detail.value.huo_title)e.detail.value.huo_title = '活动态度';
+    if(!e.detail.value.zong_title)e.detail.value.zong_title = '综合能力';
+    if(!e.detail.value.jiji_title)e.detail.value.jiji_title = '积极表现';
+    if(!e.detail.value.tuan_title)e.detail.value.tuan_title = '团队贡献';
+    if(!e.detail.value.cheng_title)e.detail.value.cheng_title = '成果评价';
+    if(!e.detail.value.laoshi_title)e.detail.value.laoshi_title = '老师寄语';
     wx.request({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/teacher-comment/sub-comment',
       data:e.detail.value,
@@ -193,7 +200,9 @@ Page({
             icon: 'none',
             duration: 1500
           })
-          wx.navigateBack({})
+          setTimeout(function(){
+            wx.navigateBack({})
+          },1500)
         }else{
           wx.showToast({
             title: res.data.msg,

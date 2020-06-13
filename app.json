@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/mine/mine",
     "pages/active/active",
-    "pages/index/index",
     "pages/publish/index",
+    "pages/publish/activity",
+    "pages/mine/xiezhu",
+    "pages/mine/mine",
+    "pages/index/index",
+
     "pages/dynamic/dynamic_index",
     "pages/relatedList/relatedList_student",
     "pages/dynamic/dynamic",
@@ -11,7 +14,7 @@
     "pages/releaseDynamic/releaseDynamic",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList_teacher",
-    "pages/publish/activity",
+
     "pages/publish/now_comment",
     "pages/publish/comment",
     "pages/publish/create_punch",

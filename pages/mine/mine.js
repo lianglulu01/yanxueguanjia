@@ -49,10 +49,21 @@ Page({
     }
    
   },
+  xiezhu:function(){
+    wx.navigateTo({
+      url: '/pages/mine/xiezhu',
+    })
+  },
   about:function(){
    wx.navigateTo({
      url: '/pages/mine/about',
    })
+  },
+  // 跳转到我的活动 报名列表
+  toMySignUp(){
+    wx.navigateTo({
+      url: './mySignUp',
+    })
   },
   getUserInfo: function(o) {
     // wx.showLoading({
