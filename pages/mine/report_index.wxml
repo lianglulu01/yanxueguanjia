@@ -1,67 +1,37 @@
-<view class="content" wx:if="{{is_content}}">
-  <view class="content_top">
-    <view class="index_tab">
-      <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
-        <view class='nav {{index==idx?"select":""}}' wx:for="{{nav_list}}" wx:key="key" bindtap='switchTap' data-index="{{index}}">
-          <view>{{item.name}}</view>
-          <view class='{{index==idx?"border":""}}'></view>
-        </view>
-      </scroll-view>
-    </view>
-    <view class="active_new">
-      <view class="active_left">
-        <view class="left_title">【{{activity.name}}】</view>
-        <view class="left_center">
-          <text class="people">{{activity.count}}人报名</text> |
-          <text>时间:</text>
-          <text>{{activity.start_time}}-{{activity.end_time}}</text>
-        </view>
-        <view class="left_bottom">
-          <text>地点:</text>
-          <text>{{activity.address}}</text>
-        </view>
+<!--标题名称-->
+<view class="title">
+  <view>最忆城--"中轴时光”研学实践报告</view>
+</view>
+<!--姓名学校班级-->
+<view class="index">
+ <view>姓名: {{name}}</view>
+ <view>学校: {{school}}</view>
+ <view>班级: {{class}}</view>
+</view>
+<!--活动介绍-->
+<view class="desc">
+ <view class="desc_title">活动介绍</view>
+ <view class="desc_content">这是一篇关于AI变换知识总结的一门技巧，通过AI变换功能，可以把简单的图形变得高大上没有,快来围观老师是怎么做的吧；这把简单的图形变得高大上有没有,快来围观老师是怎么做的吧；</view>
+ <image src="{{image}}" class="desc_image"></image>
+</view>
+<!--活动行程-->
+<view class="plan_list">
+    <view class="plan_title">活动日程安排</view>
+    <view class="plan_item" wx:for="{{details.richeng}}" wx:key="index">
+      <view class="plan_time">{{item.time}}</view>
+      <view class="plan_content">
+       {{item.desc}}
       </view>
-      <view class="active_right">
-        <view class="right_top" bindtap="immediately">
-          <view>立即查看</view>
-          <image src="../../images/arrow.png" class="right_arr"></image>
-        </view>
-        <view class="right_bottom" bindtap="punch">
-          <view class="button">打卡记录</view>
+      <view class="plan_img">
+        <view class="img_item" wx:for="{{item.pic_url}}" wx:for-item="pu"  wx:key="y">
+          <image src="{{pu}}"></image>
         </view>
       </view>
     </view>
   </view>
-  <view class="people_position">
-    <map id="map" longitude="113.324520" latitude="23.099994" scale="20" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" show-location style="width: 100%; "></map>
-    <view class="buttons">
-      <view class="punch">打卡</view>
-      <view class="police">一键报警</view>
-    </view>
-  </view>
-  <view class="content_bottom">
-    <view class="bottom_nav">
-      <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
-        <view style="font-size:24rpx;" class='nav {{index==idxx?"select":""}}' wx:for="{{activity.richeng}}" wx:for-item="times" wx:key="key" bindtap='dateTap' data-index="{{index}}">
-          <view>{{times.time}}</view>
-          <view class='{{index==idxx?"border":""}}'></view>
-        </view>
-      </scroll-view>
-    </view>
-
-    <view class="explanation_list">
-      <view class="point">
-        <view class="circle"></view>
-        <view class="item_text">
-          {{activity.richeng[idxx].desc}}
-        </view>
-      </view>
-        <view class="xiaokeai_list">
-      <image wx:for="{{activity.richeng[idxx].pic_url}}" wx:for-item="pic_url" wx:key="key" src="{{pic_url}}" class="xiaokeai" data-key="{{index}}" bindtap="previewImg"></image>
-        </view>
-    </view>
-
-    <view class="bottom_assess" wx:if="{{is_comment}}">
+  
+  <!--画布-->
+     <view class="bottom_assess" wx:if="{{is_comment}}">
       <view class="assess_top">
         <view class="top_border"></view>
         <view>每日评价</view>
@@ -82,7 +52,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text>{{comment.zong_title}}:</text>
+            <text>综合能力:</text>
             <image wx:if="{{comment.zong_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.zong_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.zong_score>2}}" src="../../images/star.png"></image>
@@ -95,7 +65,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text>{{comment.huo_title}}:</text>
+            <text> 活动态度:</text>
             <image wx:if="{{comment.huo_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.huo_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.huo_score>2}}" src="../../images/star.png"></image>
@@ -108,7 +78,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text>{{comment.jiji_title}}:</text>
+            <text> 积极表现:</text>
             <image wx:if="{{comment.jiji_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.jiji_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.jiji_score>2}}" src="../../images/star.png"></image>
@@ -121,7 +91,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text>{{comment.tuan_title}}:</text>
+            <text> 团队贡献:</text>
             <image wx:if="{{comment.tuan_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.tuan_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.tuan_score>2}}" src="../../images/star.png"></image>
@@ -134,7 +104,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text>{{comment.cheng_title}}:</text>
+            <text> 成果评价:</text>
             <image wx:if="{{comment.cheng_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.cheng_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.cheng_score>2}}" src="../../images/star.png"></image>
@@ -148,7 +118,7 @@
 
         <view class="assess_item">
           <view class="assess_name">
-            <view class="teach_title">{{comment.laoshi_title}}:</view>
+            <view class="teach_title">老师寄语:</view>
             <view class="teach">
               {{comment.send_word}}
             </view>
@@ -159,13 +129,13 @@
         </view>
       </view>
     </view>
-    <view wx:else>
-      <view style="width:66%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
-  <view style="text-align: center;width: 100%;font-size: 32rpx;"><text>当前日期暂无评价</text></view>
-    </view>
-  </view>
-</view>
-  <view wx:else>
-    <view style="width:391rpx;height:305rpx;margin:350rpx auto 0"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
-<view style="text-align: center;width: 100%;font-size: 28rpx;color:rgba(102,102,102,1);"><text>没有正在进行的活动</text></view>
-  </view>
+ <!--印章-->
+ <view class="yinzhang">
+   <view>人民大学</view>
+   <view style="margin-right:45rpx">2020.02.02</view>
+   <image src="/images/tongming/yinzhang.png"></image>
+ </view>
+ <view class="bottom">
+   <view class="xiazai">下载</view>
+   <view class="fenxiang">分享</view>
+ </view>

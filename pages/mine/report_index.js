@@ -53,6 +53,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name: "健康美丽喝撒呦",
+    school: "家里蹲大学",
+    class: "一年级一班",
+    image: "http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png",
     ec: {
       onInit: function(canvas, width, height, dpr){
         chart = echarts.init(canvas, null, {
@@ -66,7 +70,6 @@ Page({
         chart.setOption(option);
       },//initChart
     },
-    xiaokeai:[1,2,3,4,5,6,7,8,9],
     imgArr:[],
     nav_list: [{
       name: '李超',
@@ -235,11 +238,7 @@ Page({
           
           // 重新赋值画图！！！
           option.series[0].data[0].value = score
-          option.radar.indicator[0].name = new_data.zong_title
-          option.radar.indicator[1].name = new_data.huo_title
-          option.radar.indicator[2].name = new_data.jiji_title
-          option.radar.indicator[3].name = new_data.tuan_title
-          option.radar.indicator[4].name = new_data.cheng_title
+          console.log(option);
           
           that.setData({
             comment: res.data.data,
