@@ -1,4 +1,5 @@
 // pages/relatedList/relatedList.js
+const app = getApp()
 Page({
 
   /**
@@ -26,10 +27,10 @@ toPerson:function(){
   getList:function(){
     var that = this 
     wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/relation/get-relation',
+      url: app.globalData.api+'relation/get-relation',
       data:{
-        // user_id:that.data.info.id,
-        user_id:1,
+        user_id:that.data.info.id,
+        // user_id:1,
         page:that.data.page,
         relation_id:0  //学生关联学生是0  老师关联老师是1
       },success:function(res){
