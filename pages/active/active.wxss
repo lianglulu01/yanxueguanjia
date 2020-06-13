@@ -9,7 +9,7 @@
 }
 
 .index_tab .bottom_scroll .nav {
-  width: 88rpx;
+  width: 104rpx;
   display: inline-block;
   white-space: normal;
   text-align: center;
@@ -35,7 +35,7 @@
 
 .index_tab .bottom_scroll .select {
   color: #000;
-  font-size: 32rpx;
+  font-size: 30rpx;
   font-weight: 600;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .bottom_nav .bottom_scroll .nav {
-  width: 129rpx;
+  width: 146rpx;
   display: inline-block;
   white-space: normal;
   text-align: center;

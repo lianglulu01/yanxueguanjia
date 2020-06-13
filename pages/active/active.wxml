@@ -1,4 +1,4 @@
-<view class="content">
+<view class="content" wx:if="{{is_content}}">
   <view class="content_top">
     <view class="index_tab">
       <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
@@ -160,8 +160,12 @@
       </view>
     </view>
     <view wx:else>
-      <view style="width:80%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
+      <view style="width:66%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
   <view style="text-align: center;width: 100%;font-size: 32rpx;"><text>当前日期暂无评价</text></view>
     </view>
   </view>
 </view>
+  <view wx:else>
+    <view style="width:66%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
+<view style="text-align: center;width: 100%;font-size: 32rpx;"><text>没有正在进行的活动</text></view>
+  </view>

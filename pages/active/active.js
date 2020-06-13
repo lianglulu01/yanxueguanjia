@@ -74,6 +74,7 @@ Page({
     activity:[],//活动展示数组
     comment:[],//评价管理
     is_comment:0,//是否评价
+    is_content:false,
     date_list: [{
       name: '6月6号',
       id: 0
@@ -180,10 +181,13 @@ Page({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/activity&user_id='+user_id,
       success:function(res){
         // console.log(res.data.data)
-        that.setData({
-          nav_list: res.data.data
-        })
-        that.getActivity();
+        if(res.data.data.length>0){
+          that.setData({
+            nav_list: res.data.data,
+            is_content:true
+          })
+          that.getActivity();
+        }
       }
     })
   },
