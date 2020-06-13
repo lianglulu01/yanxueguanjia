@@ -12,9 +12,9 @@ Page({
   /* 生命周期函数--监听页面加载 */
   onLoad: function (options) {
     let user_id = wx.getStorageSync('userinfo').id
-    console.log(options)
+    console.log(options.id)
     wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/choose-user&id=1&user_id=1',
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/choose-user&id=' + options.id+'&user_id=' + user_id,
       // https://yanxue.qiweibang.com/web/index.php?r=api/activity/choose-user&id=1&user_id=1
       method: 'GET',
       dataType: 'json',
@@ -22,7 +22,7 @@ Page({
       success: res => {
         console.log(res)
         this.setData({
-          userList: res.data.list
+          userList: res.data.data.list
         })
       },
       fail: function (res) { },
