@@ -9,7 +9,7 @@
 <view class="list" wx:for="{{list}}">
  <view class="list1">
   <view class="list1_left">
-   <image src="/images/tongming/xiaokeai.png" class="userpng"></image>
+   <image src="{{item.avatar_url}}" class="userpng"></image>
    <view class="username">{{item.nickname}}</view>
   </view>
   <view class="list1_right">{{item.rolename}}</view>

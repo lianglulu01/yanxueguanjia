@@ -7,15 +7,28 @@
     <view class="square_border" wx:if="{{selected1}}"></view>
   </view>
   <view class="list">
-    <view class="list_item" wx:for="{{dynamicArr}}" wx:key="key">
+    <view class="list_item" wx:for="{{myList}}" wx:key="{{index}}">
       <view class="item_left">
-        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
+        <image src="{{item.avatar_url}}"></image>
       </view>
-      <view class="item_right">
-        <view class="name">我是个好人</view>
-        <view class="time">2个小时前</view>
+      <view class="item_right" style="width: 85%">
+        <view class="name">{{item.nickname}}</view>
+        <view class="time">{{item.time}}</view>
         <view class="item_content">
-          徘徊于革命与反革命之间，他既是英雄，又是受难者，他有着哥萨克的一切美好品质——勇敢、正直、不畏强暴，而同时，格里高利身上又带有哥萨克的种种偏见和局限
+               {{item.content}}
+        </view>
+        <view class="jgg">
+           <view class="section">
+              <view class="tui-table-view">
+              <!-- 循环图片 -->
+                <view class="tui-col-3" wx:for="{{item.images}}" wx:key="{{index}}">
+                    <view class="img">
+                         <image src="{{item}}" style="width:100%;height:100%;"></image>
+                    </view>
+                </view>
+              </view>
+            </view>
+
         </view>
          <view class="item_img {{item.length==1?'first':''}}" wx:if="{{item.length==1}}">
           <view class="img_list" wx:for="{{item.length}}" wx:key="key">
@@ -33,13 +46,13 @@
           </view>
         </view>
       </view>
-      <view class="billing">
+      <view class="billing" bindtap="detail" data-id="{{item.activity.id}}">
         <view class="billing_left">
-          <image src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=749063240,1600668152&fm=111&gp=0.jpg"></image>
+          <image src="{{item.activity.pic_url[0]}}"></image>
         </view>
         <view class="billing_center">
           <view class="center_text">
-            格里高利一会儿投入红军，一会儿倒向白军，双手沾满了两方面的鲜血，他的矛盾和痛苦显然与他所属的特定的群体无法切割
+            {{item.activity.name}}
           </view>
         </view>
         <view class="billing_right">
@@ -49,22 +62,23 @@
       </view>
       <view class="operating">
         <view class="iconfont icondianzan1" style="font-size:42rpx;color:#FCC41A"></view>
-        <view class="operating_num">300</view>
-         <view class="iconfont icontubiaozhizuo-" style="font-size:42rpx;color:#FC6A1A"></view>
-        <view class="operating_num">3</view>
-         <view class="iconfont iconzhuanfa1" style="font-size:42rpx"></view>
+        <view class="operating_num">{{item.like}}</view>
+         <view class="iconfont icontubiaozhizuo-" bindtap="toComment" style="font-size:42rpx;color:#FC6A1A"></view>
+        <view class="operating_num">{{item.comment_num}}</view>
+         <button class="iconfont iconzhuanfa1" style="font-size:42rpx" open-type="share"></button>
       </view>
       <view class="comment_list">
-        <view class="comment_item" bindtap="toComment">
-          <view class="comment_name">杨小敏坏蛋:</view>
-          <view class="comment_val">我是不是你最疼爱的人</view>
-        </view>
-        <view class="comment_item">
-          <view class="comment_name">杨小敏大坏蛋:</view>
-          <view class="comment_val">你为什么不说话</view>
+        <view class="comment_item" bindtap="toComment" data-id="{{item.id}}" wx:for="{{item.comment}}" wx:key="{{index}}">
+          <view class="comment_name">{{item.send_nickname}}:</view>
+          <view class="comment_val">{{item.text}}</view>
         </view>
       </view>
-      <view class="comment_num ">查看全部评论</view>
+      <view class="comment_num " wx:if="{{item.comment.length>=2}}">查看全部评论</view>
     </view>
   </view>
+</view>
+
+
+<view class="add_img" bindtap="fbqz">
+    <image src="../../images/addqz.png" style="width:100%;height:100%;"></image>
 </view>

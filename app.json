@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/publish/index",
     "pages/dynamic/dynamic_index",
-  
     "pages/relatedList/relatedList_student",
     "pages/dynamic/dynamic",
     "pages/relatedList/relatedList",
@@ -10,11 +11,9 @@
     "pages/personalData/personalData",
     "pages/relatedList/relatedList_teacher",
     "pages/publish/activity",
-    "pages/publish/index",
     "pages/publish/now_comment",
     "pages/publish/comment",
     "pages/publish/create_punch",
-    "pages/index/index",
     "pages/publish/member",
     "pages/activeDetail/activeDetail",
     "pages/mine/about",
@@ -26,8 +25,6 @@
     "pages/order/order",
     "pages/join/join",
     "pages/assess/assess",
-    "pages/comment/comment",
-  
     "pages/active/active"
   ],
   "window": {
