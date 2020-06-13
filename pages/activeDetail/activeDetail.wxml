@@ -56,9 +56,9 @@
     <view class="notice_title">
       活动须知
     </view>
-    <view class="notice_content">
+    <text class="notice_content">
     {{details.know}}
-    </view>
+    </text>
   </view>
   <view class="sign_button" wx:if="{{type==1}}" data-id="{{details.id}}" bindtap="signUp">立即报名</view>
 </view>

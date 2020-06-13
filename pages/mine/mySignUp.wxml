@@ -1,11 +1,18 @@
 <!--pages/mine/my.wxml-->
 <view class="content">
-  <view class="" wx:for="{{list}}" wx:key="index">
-    <view>{{item.status_text}}</view>
-    <image src="{{item.pic_url}}"></image>
-    <view>{{item.name}}</view>
-    <view>参加人数:{{item.people}}人</view>
-    <view>时间:{{item.addtime}}人</view>
-    <view>¥{{item.pay_price}}</view>
+  <!-- <view></view> -->
+  <view class="item" wx:for="{{list}}" wx:key="index">
+    <view class="item-left">
+      <view>{{item.status_text}}</view>
+      <image src="{{item.pic_url}}" mode="aspectFill"></image>
+    </view>
+    <view class="item-right">
+      <view class="item-title">{{item.name}}</view>
+      <view class="item-people">参加人数: {{item.people}}人</view>
+      <view class="item-right-bottom">
+        <view class="item-time">时间: {{item.addtime}}</view>
+        <view class="item-price">¥{{item.pay_price}}</view>
+      </view>
+    </view>
   </view>
 </view>

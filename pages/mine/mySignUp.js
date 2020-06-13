@@ -7,17 +7,18 @@ Page({
   /* 页面的初始数据 */
   data: {
     list: [],
+    page:1,
   },
 
   /** 生命周期函数--监听页面加载 */
   onLoad: function (options) {
-    console.log(wx.getStorageSync('userinfo'))
+    // console.log(wx.getStorageSync('userinfo'))
 
-    this.myActive()
+    this.mySignUp()
   },
 
   // 获取我的活动
-  myActive() {
+  mySignUp() {
     let id = wx.getStorageSync('userinfo').id
     let page = 1
     wx.request({
@@ -62,6 +63,15 @@ Page({
 
   },
 
+  getMySignUpList(){
+    let id = wx.getStorageSync('userinfo').id
+    let page = this.data.page
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/my-order&id='+id+'&page='+page,
+
+    })
+    // https://yanxue.qiweibang.com/web/index.php?r=api/activity/my-order&id=1&page=1
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

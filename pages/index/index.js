@@ -4,15 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    bnrUrl: [
-    //   {
-    //   "url": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1816366408,1729518576&fm=26&gp=0.jpg"
-    // }, {
-    //     "url": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2902760319,1082246374&fm=26&gp=0.jpg"
-    // }, {
-    //     "url": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3836010369,196474655&fm=26&gp=0.jpg"
-    // },
-     ],
+    bnrUrl: [],
     selected: true,
     selected1: false,
     type:0,
@@ -20,21 +12,37 @@ Page({
     userId:null,
     sort:1,
     page:1,
-    list:[]
+    list:[],
+    invite:{
+      type:0,
+      user_id:null,
+      activity_id:0,  //协助教师相关，活动id
+      data_type:0
+    },
+    activity:{}
   },
+
   onLoad:function(option){
     var that = this
-   
-    // console.log(option)
     if(option.id){
       that.setData({
         userId: option.id,
-        type:1
+        type:1,
+        invite:{
+          type:1,
+          user_id:option.id,
+        }
       })
-
     }
+    if(option.activity_id){
+      that.data.invite.activity_id = option.activity_id
+    }
+    if(option.data_type){
+      that.data.invite.data_type = option.activity_id
+    }
+    that.getImg()
     
-      that.getImg()
+    that.getMyActivity()
      
   },
   onShow:function(){
@@ -97,7 +105,6 @@ Page({
           iv: o.detail.iv,
           signature: o.detail.signature
         };
-        console.log(abc)
 
         wx.request({
           url: 'https://yanxue.qiweibang.com/web/index.php?r=api/users/login',
@@ -134,7 +141,9 @@ Page({
       data:{
         type:1,
         relation_id:that.data.id, //被关联人的id
-        user_id:that.data.userId
+        user_id:that.data.invite.user_id,
+        data_type:that.data.invite.data_type,
+        activity_id:that.data.invite.activity_id
       },
       success:function(res){
         console.log(res)
@@ -144,6 +153,7 @@ Page({
       }
     })
   },
+  // 跳转 活动详情
   toDetail:function(e){
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
@@ -151,8 +161,25 @@ Page({
     })
   },
 
-  // 往期活动跳转
-  toHistoryActivity() {
+  // 首页我参加的活动
+  getMyActivity(){
+    // + wx.getStorageSync('userinfo').id
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-one&user_id='+ wx.getStorageSync('userinfo').id ,
+      success:res=>{
+        console.log(res)
+        this.setData({
+          activity:res.data.data
+        })
+      },
+      fail:err=>{
+        console.log(err)
+      }
+    })
+  },
+  // 
+  // 查看活动 跳转
+  toMyActivity() {
     wx.navigateTo({
       url: './myActivity',
     })
@@ -161,10 +188,34 @@ Page({
   signIn() {
 
   },
-  
+  // 打卡 按钮
   punch:function(){
-    wx.navigateTo({
-      url: '../punch/punch',
+    wx.getLocation({
+      type: 'wgs84',
+      success:(res)=> {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        // console.log(latitude, longitude)
+        wx.request({
+          url: 'https://yanxue.qiweibang.com/web/index.php?r=api/clock-in/user-clock-in',
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data: {
+            user_id: wx.getStorageSync('userinfo').id,
+            // address:
+            // clock_in_id:
+            longitude: longitude,
+            latitude: latitude
+            // join_user: JSON.stringify(this.data.joinUserId),
+            // mobile: this.data.phone,
+            // activity_id: this.data.id,
+          },
+          success: (res) => { console.log(res) },
+          fail: (err) => { }
+        })
+      }
     })
   },
   getList:function(){
