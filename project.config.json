@@ -130,6 +130,13 @@
 >>>>>>> 7d6a851a786854ba16119837ac9d2dd1b52a8c63
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "详情",
+					"pathName": "pages/activeDetail/activeDetail",
+					"query": "id=40",
+					"scene": null
 				}
 			]
 		}
