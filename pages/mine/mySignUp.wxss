@@ -1,1 +1,58 @@
 /* pages/mine/my.wxss */
+.content{
+  margin:0 40rpx;
+
+}
+.item{
+  padding:30rpx 0;
+  display: flex;
+  border-bottom:1rpx solid #f6f6f6
+
+}
+.item-left{
+  position: relative
+}
+.item-left view{
+  position: absolute;
+  right:26rpx;
+  top:-4rpx;
+  background-color: #fc8506;
+  color:#fff;
+  font-size: 22rpx;
+  border-radius: 8rpx;
+  padding: 2rpx 6rpx;
+}
+.item-left image{
+  width:200rpx;
+  height:200rpx;
+  border-radius: 10rpx;
+  margin-right:30rpx;
+}
+.item-right{
+  
+}
+.item-title{
+  font-size: 30rpx;
+  color:#333;
+  padding: 6rpx 0;
+  height:80rpx;
+}
+.item-people{
+  font-size: 26rpx;
+  color:#fc8506;
+  padding: 20rpx 0 10rpx 0;
+}
+.item-time{
+  font-size: 26rpx;
+  color:#999;
+  padding-top:10rpx;
+}
+.item-price{
+  color:#ff312f;
+  font-size:36rpx;
+}
+.item-right-bottom{
+  display: flex;
+  justify-content: space-between;
+
+}

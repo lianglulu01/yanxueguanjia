@@ -2,8 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/mine/xiezhu",
-    "pages/publish/index",
     "pages/mine/mine",
+    "pages/publish/index",
     "pages/active/active",
     "pages/dynamic/dynamic_index",
     "pages/relatedList/relatedList_student",

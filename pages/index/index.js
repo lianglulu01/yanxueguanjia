@@ -4,15 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    bnrUrl: [
-    //   {
-    //   "url": "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1816366408,1729518576&fm=26&gp=0.jpg"
-    // }, {
-    //     "url": "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2902760319,1082246374&fm=26&gp=0.jpg"
-    // }, {
-    //     "url": "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3836010369,196474655&fm=26&gp=0.jpg"
-    // },
-     ],
+    bnrUrl: [],
     selected: true,
     selected1: false,
     type:0,
@@ -26,7 +18,8 @@ Page({
       user_id:null,
       activity_id:0,  //协助教师相关，活动id
       data_type:0
-    }
+    },
+    activity:{}
   },
 
   onLoad:function(option){
@@ -48,6 +41,8 @@ Page({
       that.data.invite.data_type = option.activity_id
     }
     that.getImg()
+    
+    that.getMyActivity()
      
   },
   onShow:function(){
@@ -158,6 +153,7 @@ Page({
       }
     })
   },
+  // 跳转 活动详情
   toDetail:function(e){
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
@@ -165,8 +161,25 @@ Page({
     })
   },
 
-  // 往期活动跳转
-  toHistoryActivity() {
+  // 首页我参加的活动
+  getMyActivity(){
+    // + wx.getStorageSync('userinfo').id
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-one&user_id='+ wx.getStorageSync('userinfo').id ,
+      success:res=>{
+        console.log(res)
+        this.setData({
+          activity:res.data.data
+        })
+      },
+      fail:err=>{
+        console.log(err)
+      }
+    })
+  },
+  // 
+  // 查看活动 跳转
+  toMyActivity() {
     wx.navigateTo({
       url: './myActivity',
     })
@@ -175,10 +188,34 @@ Page({
   signIn() {
 
   },
-  
+  // 打卡 按钮
   punch:function(){
-    wx.navigateTo({
-      url: '../punch/punch',
+    wx.getLocation({
+      type: 'wgs84',
+      success:(res)=> {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        // console.log(latitude, longitude)
+        wx.request({
+          url: 'https://yanxue.qiweibang.com/web/index.php?r=api/clock-in/user-clock-in',
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data: {
+            user_id: wx.getStorageSync('userinfo').id,
+            // address:
+            // clock_in_id:
+            longitude: longitude,
+            latitude: latitude
+            // join_user: JSON.stringify(this.data.joinUserId),
+            // mobile: this.data.phone,
+            // activity_id: this.data.id,
+          },
+          success: (res) => { console.log(res) },
+          fail: (err) => { }
+        })
+      }
     })
   },
   getList:function(){
