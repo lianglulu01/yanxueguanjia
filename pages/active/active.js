@@ -79,15 +79,6 @@ Page({
     nav_list: [{
       name: '李超',
       id: 0
-    }, {
-      name: '李超',
-      id: 1
-    }, {
-      name: '李超',
-      id: 2
-    }, {
-      name: '李超',
-      id: 3
     }],
     date_list: [{
       name: '6月6号',
@@ -173,7 +164,21 @@ Page({
     })
   },
   onLoad: function() {
-
-  }
+    this.getNavlist()
+  },
+  getNavlist:function(){
+    var that = this;
+    let userinfo = wx.getStorageSync('userinfo')
+    var user_id = userinfo.id
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/activity&user_id='+user_id,
+      success:function(res){
+        // console.log(res.data.data)
+        that.setData({
+          nav_list: res.data.data
+        })
+      }
+    })
+  },
 
 })
