@@ -1,0 +1,90 @@
+page{
+  background-color: #FAFAFA;
+}
+.kj{
+    width: 95%;
+    /* height: 500rpx; */
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 20rpx;
+    padding-top:20rpx;
+    padding-bottom: 20rpx;
+}
+.top{
+     width: 95%;
+     margin: 0 auto;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+.img{
+    width: 75rpx;
+    height: 75rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+.left{
+   display: flex;
+   width: 80%;
+}
+
+.nickname{
+    color: #1B1B1B;
+    font-size:30rpx;
+}
+.time{
+  font-size:22rpx;
+  color:#97989E;
+}
+
+.right{
+   width: 34rpx;
+   height: 34rpx;
+}
+
+.content{
+    width: 95%;
+    margin: 0 auto;
+    color: #333333;
+    font-size: 30rpx;
+    margin-top: 20rpx;
+}
+
+.images{
+    width: 95%;
+    margin: 0 auto;
+}
+
+.add_img{
+  width: 117rpx;
+  height: 117rpx;
+  position: fixed;
+  top: 70%;
+  right: 27rpx;
+  z-index: 100;
+}
+.tui-table-view{
+display: -webkit-flex;
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+margin: 0 auto;
+
+}
+.tui-col-3{
+flex: 0 0 auto;
+margin: 8rpx;
+text-align: center;
+color: #797979;
+font-size: 30rpx;
+}
+
+.imgs{
+   width: 156rpx;
+   height: 156rpx;
+   border-radius: 20rpx;
+}
+
+.contents{
+  margin-bottom: 20rpx;
+}

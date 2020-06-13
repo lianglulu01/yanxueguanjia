@@ -114,6 +114,10 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
+					"name": "我的说说",
+					"pathName": "pages/mytalk/mytalk",
+=======
 					"name": "活动发布",
 					"pathName": "pages/publish/activity",
 					"query": "",
@@ -123,6 +127,7 @@
 					"id": -1,
 					"name": "活动列表",
 					"pathName": "pages/publish/index",
+>>>>>>> 7d6a851a786854ba16119837ac9d2dd1b52a8c63
 					"query": "",
 					"scene": null
 				},

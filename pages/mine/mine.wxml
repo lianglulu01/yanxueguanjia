@@ -9,19 +9,23 @@
       <view class="top_right" wx:if="{{not==0}}">未授权</view>
       <view class="top_right" wx:if="{{not==1}}">
         <view class="name">
-          <view>{{info.nickName}}</view>
+          <view>
+          {{info.nickName}}
+          <image class="edit" src="../../images/edit.png" bindtap="editPeople"></image>
+          </view>
+          
           <view class="associate_button" bindtap="associate">
             <view class="button_cont">关联用户</view>
             <image class="associate" src="../../images/associate.png"></image>
           </view>
         </view>
-        <view class="phone">
-          17616241217
+        <view class="phone" wx:if="{{info.phone}}">
+          {{info.phone}}
         </view>
         <!-- <view class="age">
           年龄: 20
         </view> -->
-        <image class="edit" src="../../images/edit.png" bindtap="editPeople"></image>
+        
       </view>
     </view>
   </view>
