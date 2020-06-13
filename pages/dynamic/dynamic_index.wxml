@@ -10,12 +10,14 @@
         <view class="item_content">
            {{detail.content}}
         </view>
+        <view class="tui-table-view">
              <!-- 循环图片 -->
                 <view class="tui-col-3" wx:for="{{detail.images}}" wx:key="{{index}}">
                     <view class="img">
                          <image src="{{item}}" style="width:100%;height:100%;"></image>
                     </view>
                 </view>
+         </view>       
       </view>
       <view class="billing" bindtap="detail" data-id="{{detail.activity.id}}">
         <view class="billing_left">
