@@ -116,7 +116,7 @@
 
 .areain {
   width: 80%;
-  height: 60rpx;
+  height: 30rpx;
   font-size: 25rpx;
   font-weight: 400;
   color: rgba(153, 153, 153, 1);
@@ -217,7 +217,7 @@
 .show-image {
   width: 125rpx;
   height: 125rpx;
-  margin-right: 20rpx;
+  margin:20rpx
 }
 
 .xingcheng-image {

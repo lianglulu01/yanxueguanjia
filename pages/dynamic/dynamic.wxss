@@ -191,13 +191,13 @@ color:rgba(101,101,101,1);
 }
 
 .operating image {
-  width: 48rpx;
-  height: 48rpx;
+  width: 26rpx;
+  height: 26rpx;
   /* margin-right: 12rpx; */
 }
 
 .operating_num {
-  margin-right: 20rpx;
+  margin-right: 12rpx;
   margin-left: 12rpx;
 }
 
@@ -282,6 +282,7 @@ color:rgba(101,101,101,1);
 .img{
      width: 156rpx;
      height: 156rpx;
+     border-radius: 18rpx;
 }
 
 button {
