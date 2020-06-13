@@ -61,7 +61,10 @@ Page({
   },
   // 跳转到我的活动 报名列表
   toMySignUp(){
+<<<<<<< HEAD
     // if(){}
+=======
+>>>>>>> 6.13.1
     wx.navigateTo({
       url: './mySignUp',
     })

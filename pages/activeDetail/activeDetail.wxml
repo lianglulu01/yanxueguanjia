@@ -65,6 +65,7 @@
     <view class="notice_title">
       活动须知
     </view>
+<<<<<<< HEAD
     <view class="notice_content-box">
       <text class="notice_content">{{details.know}}</text>
     </view>
@@ -82,5 +83,10 @@
         <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
       </view>
     </view>
+=======
+    <text class="notice_content">
+    {{details.know}}
+    </text>
+>>>>>>> 6.13.1
   </view>
 </view>

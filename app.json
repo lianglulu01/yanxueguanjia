@@ -1,6 +1,7 @@
 {
   "pages": [
 <<<<<<< HEAD
+<<<<<<< HEAD
     "pages/active/active",
     "pages/publish/index",
     "pages/publish/activity",
@@ -13,6 +14,11 @@
     "pages/index/index",
     "pages/mine/xiezhu",
     "pages/mine/mine",
+=======
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/active/active",
+>>>>>>> 6.13.1
     "pages/publish/index",
     "pages/active/active",
 >>>>>>> 94685ffc234e09aeca80adf25a3cf886832c755e
