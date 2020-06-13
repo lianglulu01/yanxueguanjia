@@ -1,4 +1,5 @@
 // pages/publish/index.js
+const app = getApp()
 Page({
 
   /**
@@ -11,23 +12,25 @@ Page({
       phone: '',
       id: ''
     },
-    list: {},
-    user: {}
+    list: [],
+    user: {},
+    page: 1,
+    totalPage: 1
   },
-  member:function(event){
+  member: function (event) {
     wx.navigateTo({
-      url: '/pages/publish/member?id='+event.currentTarget.dataset.id,
+      url: '/pages/publish/member?id=' + event.currentTarget.dataset.id,
     })
   },
   xiezhu: function (e) {
     let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/relatedList/relatedList_teacher?id='+id,
+      url: '/pages/relatedList/relatedList_teacher?id=' + id,
     })
   },
   comment: function (event) {
     wx.navigateTo({
-      url: '/pages/publish/comment?id='+event.currentTarget.dataset.id,
+      url: '/pages/publish/comment?id=' + event.currentTarget.dataset.id,
     })
   },
   takeout: function () {
@@ -51,24 +54,52 @@ Page({
   onLoad: function (options) {
     this.getlist()
   },
-  onShow:function(){
-   this.onLoad()
+  onShow: function () {
+
   },
-  getlist() {
+  getlist(useLoad=true) {
     let me = this
     let userinfo = wx.getStorageSync('userinfo')
     // console.log(userinfo)
     let id = userinfo.id
-    wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/list&id=' + id + '&page=',
-      success: res => {
-        console.log(res)
+    if (me.data.page > me.data.pageTotal) {
+      wx.showToast({
+        title: '暂无更多',
+        icon: 'none'
+      })
+      return
+    }
+    if(useLoad)wx.showLoading({title:'加载中'})
+    app.get('activity/list', {
+      id: id,
+      page: me.data.page
+    }).then(res => {
+      setTimeout(function () {
+        wx.hideLoading()
+        wx.stopPullDownRefresh()
         me.setData({
-          list: res.data.data.list,
-          user: res.data.data.user
+          list: me.data.list.concat(res.data.list),
+          user: res.data.user,
+          pageTotal: res.data.page_count
         })
-      }
+      },300)
+      
+    }).catch(err => {
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+      wx.showToast({
+        title: '网络错误，请重试',
+      })
     })
+    // wx.request({
+    //   url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/list&id=' + id + '&page=',
+    //   success: res => {
+    //     me.setData({
+    //       list: res.data.data.list,
+    //       user: res.data.data.user
+    //     })
+    //   }
+    // })
   },
   deletelist: function (e) {
     console.log(e);
@@ -82,7 +113,7 @@ Page({
         if (res.confirm) {
           list.splice(index, 1);
           wx.request({
-            url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/delete&id='+index,
+            url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/delete&id=' + index,
             data: {
               id: index
             },
@@ -101,5 +132,21 @@ Page({
       }
     })
 
+  },
+
+  onPullDownRefresh() {
+    let t = this
+    this.data.page = 1
+    setTimeout(function(){
+      t.setData({
+        list: []
+      })
+    },200)
+    
+    this.getlist(false)
+  },
+  onReachBottom() {
+    this.data.page++;
+    this.getlist()
   }
 })

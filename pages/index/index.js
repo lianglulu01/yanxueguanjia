@@ -38,8 +38,13 @@ Page({
       that.data.invite.activity_id = option.activity_id
     }
     if(option.data_type){
-      that.data.invite.data_type = option.activity_id
+      that.data.invite.data_type = option.data_type
     }
+
+    wx.getLocation({
+      altitude: 'altitude',
+    })
+
     that.getImg()
     
     that.getMyActivity()

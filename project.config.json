@@ -111,6 +111,20 @@
 					"pathName": "pages/mine/mine",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动发布",
+					"pathName": "pages/publish/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动列表",
+					"pathName": "pages/publish/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
