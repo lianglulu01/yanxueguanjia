@@ -35,7 +35,7 @@
       <view class="button">打卡</view>
     </view>
   </view>
-  <view class="card">
+  <view class="card" wx:if="{{activity.id!='null'}}">
     <view class="card_top">
       <view class="card_left">我的活动</view>
       <view class="card_right" bindtap="toMyActivity">

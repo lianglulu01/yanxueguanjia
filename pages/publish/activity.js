@@ -111,7 +111,7 @@ Page({
     })
   },
 
-  delImg(e) {
+  delImg:function(e) {
     let index = e.currentTarget.dataset.index
     let index2 = e.currentTarget.dataset.index2
     let arr = this.data.richeng
@@ -160,7 +160,7 @@ Page({
     })
   },
   delRicheng(e) {
-    let index = e.currentTarget.dataset
+    let index = e.currentTarget.dataset.index
     let arr = this.data.richeng
     arr.splice(index, 1)
     this.setData({
@@ -241,12 +241,14 @@ Page({
     arr[index].desc = e.detail.value
   },
   formSubmit: function (e) {
-
+    wx.showLoading({
+      title: '正在提交',
+      mask:true
+    })
     let userinfo = wx.getStorageSync('userinfo')
     e.detail.value.id = userinfo.id
     e.detail.value.pic_url = this.data.activeImgArr
     e.detail.value.richeng = JSON.stringify(this.data.richeng)
-    console.log(e)
     wx.request({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/sub-activity',
       behaviors: ['wx://form-field'],
@@ -273,7 +275,7 @@ Page({
       // },
       method: "POST",
       success: function (res) {
-        console.log(res)
+
         if (res.data.code == 0) {
           wx.showToast({
             title: '发布成功',

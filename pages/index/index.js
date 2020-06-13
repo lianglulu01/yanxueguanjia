@@ -8,7 +8,7 @@ Page({
     selected: true,
     selected1: false,
     type:0,
-    id:null, //这个人的id,要被关联人id
+    id:null,     //这个人的id,要被关联人id
     userId:null,
     sort:1,
     page:1,
@@ -38,10 +38,14 @@ Page({
       that.data.invite.activity_id = option.activity_id
     }
     if(option.data_type){
-      that.data.invite.data_type = option.activity_id
+      that.data.invite.data_type = option.data_type
     }
+
+    wx.getLocation({
+      altitude: 'altitude',
+    })
+
     that.getImg()
-    
     that.getMyActivity()
      
   },
@@ -160,8 +164,7 @@ Page({
       url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
     })
   },
-
-  // 首页我参加的活动
+  // 首页-我的活动
   getMyActivity(){
     // + wx.getStorageSync('userinfo').id
     wx.request({
@@ -177,7 +180,6 @@ Page({
       }
     })
   },
-  // 
   // 查看活动 跳转
   toMyActivity() {
     wx.navigateTo({
@@ -188,7 +190,7 @@ Page({
   signIn() {
 
   },
-  // 打卡 按钮
+  // 确认打卡的按钮
   punch:function(){
     wx.getLocation({
       type: 'wgs84',
@@ -218,6 +220,7 @@ Page({
       }
     })
   },
+
   getList:function(){
     var that = this
     wx.request({

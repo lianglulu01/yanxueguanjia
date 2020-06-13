@@ -22,7 +22,7 @@ font-weight:400;
 color:rgba(51,51,51,1);
 }
 .list_left{
-  width: 150rpx;
+  width: 250rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;

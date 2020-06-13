@@ -82,7 +82,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text>综合能力:</text>
+            <text>{{comment.zong_title}}:</text>
             <image wx:if="{{comment.zong_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.zong_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.zong_score>2}}" src="../../images/star.png"></image>
@@ -95,7 +95,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text> 活动态度:</text>
+            <text>{{comment.huo_title}}:</text>
             <image wx:if="{{comment.huo_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.huo_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.huo_score>2}}" src="../../images/star.png"></image>
@@ -108,7 +108,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text> 积极表现:</text>
+            <text>{{comment.jiji_title}}:</text>
             <image wx:if="{{comment.jiji_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.jiji_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.jiji_score>2}}" src="../../images/star.png"></image>
@@ -121,7 +121,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text> 团队贡献:</text>
+            <text>{{comment.tuan_title}}:</text>
             <image wx:if="{{comment.tuan_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.tuan_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.tuan_score>2}}" src="../../images/star.png"></image>
@@ -134,7 +134,7 @@
         </view>
         <view class="assess_item">
           <view class="assess_name">
-            <text> 成果评价:</text>
+            <text>{{comment.cheng_title}}:</text>
             <image wx:if="{{comment.cheng_score>0}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.cheng_score>1}}" src="../../images/star.png"></image>
             <image wx:if="{{comment.cheng_score>2}}" src="../../images/star.png"></image>
@@ -148,7 +148,7 @@
 
         <view class="assess_item">
           <view class="assess_name">
-            <view class="teach_title">老师寄语:</view>
+            <view class="teach_title">{{comment.laoshi_title}}:</view>
             <view class="teach">
               {{comment.send_word}}
             </view>

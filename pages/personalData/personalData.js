@@ -13,19 +13,49 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let info = wx.getStorageSync('userinfo'),t=this
+    let info = wx.getStorageSync('userinfo'), t = this
     app.get('user-info/get-user', {
       id: info.id
     }).then(res => {
-      if(res.code==0){
+      if (res.code == 0) {
         t.setData({
-          info:res.data.info
+          info: res.data.info
         })
       }
     }).catch(err => {
       console.log(err)
     })
 
+  },
+  saveInfo(e) {
+    let _d = this.data
+    let d = e.detail.value
+    d.open_id = _d.info.open_id
+    d.id = _d.info.id
+    app.post('user-info/set-user', d).then(res => {
+      if (res.code == 0) {
+        wx.showToast({
+          title: '保存成功',
+          icon: 'none',
+          duration:1600,
+          success(e) {
+            setTimeout(function(){
+              wx.navigateBack()
+            },1600)
+          }
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+      }
+    }).catch(err => {
+      wx.showToast({
+        title: '网络错误，请重试',
+      })
+    })
+    console.log(e)
   },
 
   /**
