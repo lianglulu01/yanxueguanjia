@@ -13,15 +13,12 @@ Page({
     sort:1,
     page:1,
     list:[],
-<<<<<<< HEAD
     invite:{
       type:0,
       user_id:null,
       activity_id:0,  //协助教师相关，活动id
       data_type:0
     },
-=======
->>>>>>> 6.13.1
     activity:{}
   },
 
@@ -44,11 +41,6 @@ Page({
       that.data.invite.data_type = option.activity_id
     }
     that.getImg()
-    
-<<<<<<< HEAD
-=======
-    that.getImg()
->>>>>>> 6.13.1
     that.getMyActivity()
      
   },
@@ -167,12 +159,7 @@ Page({
       url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
     })
   },
-
-<<<<<<< HEAD
   // 首页-我的活动
-=======
-  // 首页我参加的活动
->>>>>>> 6.13.1
   getMyActivity(){
     // + wx.getStorageSync('userinfo').id
     wx.request({
@@ -188,11 +175,6 @@ Page({
       }
     })
   },
-<<<<<<< HEAD
-  
-=======
-  // 
->>>>>>> 6.13.1
   // 查看活动 跳转
   toMyActivity() {
     wx.navigateTo({
@@ -203,12 +185,7 @@ Page({
   signIn() {
 
   },
-<<<<<<< HEAD
-
   // 确认打卡的按钮
-=======
-  // 打卡 按钮
->>>>>>> 6.13.1
   punch:function(){
     wx.getLocation({
       type: 'wgs84',
@@ -226,16 +203,11 @@ Page({
             user_id: wx.getStorageSync('userinfo').id,
             // address:
             // clock_in_id:
-<<<<<<< HEAD
-            // longitude: longitude,
-            // latitude: latitude
-=======
             longitude: longitude,
             latitude: latitude
             // join_user: JSON.stringify(this.data.joinUserId),
             // mobile: this.data.phone,
             // activity_id: this.data.id,
->>>>>>> 6.13.1
           },
           success: (res) => { console.log(res) },
           fail: (err) => { }
