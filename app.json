@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/active/active",
     "pages/index/index",
     "pages/publish/index",
@@ -8,7 +9,7 @@
     "pages/dynamic/dynamic",
     "pages/relatedList/relatedList",
     "pages/releaseDynamic/releaseDynamic",
-    "pages/mine/mine",
+ 
     "pages/personalData/personalData",
     "pages/relatedList/relatedList_teacher",
     "pages/publish/activity",
