@@ -1,7 +1,7 @@
 <!--列表-->
 <view class="list">
   <view class="list_left">
-    <view class="font_title">活动态度</view>
+    <view class="font_title">{{data.huo_title}}</view>
     <!-- <view class="iconfont iconbianji1" bindtap="one"></view> -->
   </view>
   <view class="list_right">
@@ -11,11 +11,11 @@
     <image src="{{data.huo_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     <image src="{{data.huo_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
   </view>
-  <textarea class="shuru" disabled  value="{{data.huo_desc}}">{{data.huo_desc}}</textarea>
+  <textarea class="shuru" disabled  value="{{data.huo_desc}}"></textarea>
 </view>
 <view class="list">
   <view class="list_left">
-    <view class="font_title">综合能力</view>
+    <view class="font_title">{{data.zong_title}}</view>
     <!-- <view class="iconfont iconbianji1"  bindtap="two"></view> -->
   </view>
   
@@ -26,11 +26,11 @@
     <image src="{{data.zong_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     <image src="{{data.zong_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
   </view>
-  <textarea class="shuru"   value="{{data.zong_desc}}" disabled="">{{data.zong_desc}}</textarea>
+  <textarea class="shuru"   value="{{data.zong_desc}}" disabled=""></textarea>
 </view>
 <view class="list">
   <view class="list_left">
-    <view class="font_title">积极表现</view>
+    <view class="font_title">{{data.jiji_title}}</view>
     <!-- <view class="iconfont iconbianji1" bindtap="three"></view> -->
   </view>
   
@@ -41,11 +41,11 @@
     <image src="{{data.jiji_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     <image src="{{data.jiji_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
   </view>
-  <textarea class="shuru"  value="{{data.jiji_desc}}"  disabled>{{data.jiji_desc}}</textarea>
+  <textarea class="shuru"  value="{{data.jiji_desc}}"  disabled></textarea>
 </view>
 <view class="list">
   <view class="list_left">
-    <view class="font_title">团队贡献</view>
+    <view class="font_title">{{data.tuan_title}}</view>
     <!-- <view class="iconfont iconbianji1"></view> -->
   </view>
   
@@ -56,11 +56,11 @@
     <image src="{{data.tuan_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     <image src="{{data.tuan_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
   </view>
-  <textarea class="shuru" value="{{data.tuan_desc}}" disabled>{{data.tuan_desc}}</textarea>
+  <textarea class="shuru" value="{{data.tuan_desc}}" disabled></textarea>
 </view>
 <view class="list">
   <view class="list_left">
-    <view class="font_title">成果评价</view>
+    <view class="font_title">{{data.cheng_title}}</view>
     <!-- <view class="iconfont iconbianji1" bindtap="five"></view> -->
   </view>
   
@@ -71,11 +71,11 @@
     <image src="{{data.cheng_score>3?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
     <image src="{{data.cheng_score>4?'/images/tongming/star.png':'/images/tongming/starno.png'}}"></image>
   </view>
-  <textarea class="shuru"  value="{{data.cheng_desc}}" disabled >{{data.cheng_desc}}</textarea>
+  <textarea class="shuru"  value="{{data.cheng_desc}}" disabled></textarea>
 </view>
 <view class="list1">
   <view class="list_left">
     <view class="font_title">老师寄语</view>
   </view>
-  <textarea disabled value="{{data.send_word}}" class="teachersay">{{data.send_word}}</textarea>
+  <textarea disabled value="{{data.send_word}}" class="teachersay"></textarea>
 </view>

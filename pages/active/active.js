@@ -235,7 +235,11 @@ Page({
           
           // 重新赋值画图！！！
           option.series[0].data[0].value = score
-          console.log(option);
+          option.radar.indicator[0].name = new_data.zong_title
+          option.radar.indicator[1].name = new_data.huo_title
+          option.radar.indicator[2].name = new_data.jiji_title
+          option.radar.indicator[3].name = new_data.tuan_title
+          option.radar.indicator[4].name = new_data.cheng_title
           
           that.setData({
             comment: res.data.data,

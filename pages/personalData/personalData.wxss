@@ -29,3 +29,11 @@
   width: 100%;
   text-align: right;
 }
+
+.formBtn{
+  width: 40%;
+  margin-top: 50rpx;
+  color: #FFF;
+  background: #247EFC;
+  border-radius: 80rpx;
+}
