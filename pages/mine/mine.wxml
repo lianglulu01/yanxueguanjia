@@ -47,7 +47,7 @@
   <view class="list">
     <view class="item">
       <view class="item_name">
-        <image src="../../images/hart.png"></image>
+        <image src="../../images/tongming/huodong.png"></image>
         <text>我的活动</text>
       </view>
       <view class="item_val">
@@ -56,7 +56,7 @@
     </view>
     <view class="item" bindtap="toDynamic">
       <view class="item_name">
-        <image src="../../images/new.png"></image>
+        <image src="../../images/tongming/shuoshuo.png"></image>
         <text>我的说说</text>
       </view>
       <view class="item_val">
@@ -65,8 +65,17 @@
     </view>
     <view class="item">
       <view class="item_name">
-        <image src="../../images/customer.png"></image>
-        <text>综合实际报告</text>
+        <image src="../../images/tongming/myxiezhu.png"></image>
+        <text>我的协助</text>
+      </view>
+      <view class="item_val">
+        <image src="../../images/arrow.png"></image>
+      </view>
+      </view>
+    <view class="item">
+      <view class="item_name">
+        <image src="../../images/tongming/baogao.png"></image>
+        <text>研学实践报告</text>
       </view>
       <view class="item_val">
         <image src="../../images/arrow.png"></image>
@@ -74,8 +83,8 @@
     </view>
     <view class="item">
       <view class="item_name">
-        <image src="../../images/platform.png"></image>
-        <text>行动轨迹报告</text>
+        <image src="../../images/tongming/xingcheng.png"></image>
+        <text>行程单</text>
       </view>
       <view class="item_val">
         <image src="../../images/arrow.png"></image>
@@ -83,7 +92,7 @@
     </view>
     <button class="item1" open-type="contact">
       <view class="item_name">
-        <image src="../../images/platform.png"></image>
+        <image src="../../images/tongming/kefu.png"></image>
         <text>在线客服</text>
       </view>
       <view class="item_val">
@@ -92,7 +101,7 @@
     </button>
     <view class="item" bindtap="about">
       <view class="item_name">
-        <image src="../../images/platform.png"></image>
+        <image src="../../images/tongming/guanyu.png"></image>
         <text>关于平台</text>
       </view>
       <view class="item_val">
@@ -102,7 +111,7 @@
   </view>
 </view>
 <view class="msg" wx:if="{{type==1}}">
-  <image src="../../images/authorize.png"></image>
+  <image src="https://yanxue.qiweibang.com/web/uploads/image/store_1/0fc3361feaf9689ba492c99d963f33e037146fa8.png"></image>
   <view class="authorize_content">
     <view>亲 为了给您提供更好的服务</view>
     <view>我们需要您的授权喔~</view>
