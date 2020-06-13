@@ -2,9 +2,9 @@
   <view class="content_top">
     <view class="index_tab">
       <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
-        <view class='nav {{item.id==idx?"select":""}}' wx:for="{{nav_list}}" wx:key="key" bindtap='switchTap' data-index="{{index}}">
+        <view class='nav {{index==idx?"select":""}}' wx:for="{{nav_list}}" wx:key="key" bindtap='switchTap' data-index="{{index}}">
           <view>{{item.name}}</view>
-          <view class='{{item.id==idx?"border":""}}'></view>
+          <view class='{{index==idx?"border":""}}'></view>
         </view>
       </scroll-view>
     </view>
@@ -49,12 +49,15 @@
       </scroll-view>
     </view>
     <view class="explanation_list">
-      <view class="point" wx:for="{{date_list}}" wx:key="key">
+      <view class="point">
         <view class="circle"></view>
         <view class="item_text">
           我是个哈后的房价看了就阿斯蒂芬接口蓝卡队昂科了撒的积分康拉德
         </view>
       </view>
+        <view class="xiaokeai_list">
+      <image src="/images/tongming/xiaokeai.png"  wx:for="{{xiaokeai}}" wx:key="key" class="xiaokeai" bindtap="previewImg"></image>
+        </view>
     </view>
     <view class="bottom_assess">
       <view class="assess_top">

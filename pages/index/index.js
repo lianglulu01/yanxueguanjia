@@ -150,6 +150,18 @@ Page({
       url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
     })
   },
+
+  // 往期活动跳转
+  toHistoryActivity() {
+    wx.navigateTo({
+      url: './myActivity',
+    })
+  },
+  // 签到
+  signIn() {
+
+  },
+  
   punch:function(){
     wx.navigateTo({
       url: '../punch/punch',

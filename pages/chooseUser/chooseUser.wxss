@@ -28,13 +28,14 @@ page{
 }
 .join_user image{
   width:30rpx;
+  height:30rpx;
 }
 
 /* 确认选择按钮 */
 .choose_user{
   text-align: center;
   margin:0 auto;
-  padding: 30rpx 25%;
+  padding: 30rpx 10%;
 }
 .button{
   background: linear-gradient(to right, #6ba8fd,#1b77fb);
@@ -42,7 +43,7 @@ page{
   color:#fff;
   font-weight: 50rpx;
   font-size: 28rpx;
-  /* width:%; */
+  /* width:60%; */
   height:76rpx;
   line-height: 76rpx;
 }

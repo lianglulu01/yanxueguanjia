@@ -1,0 +1,11 @@
+<!--pages/mine/my.wxml-->
+<view class="content">
+  <view class="" wx:for="{{list}}" wx:key="index">
+    <view>{{item.status_text}}</view>
+    <image src="{{item.pic_url}}"></image>
+    <view>{{item.name}}</view>
+    <view>参加人数:{{item.people}}人</view>
+    <view>时间:{{item.addtime}}人</view>
+    <view>¥{{item.pay_price}}</view>
+  </view>
+</view>
