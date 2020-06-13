@@ -83,7 +83,15 @@
     </view>
   </view>
 <scroll-view scroll-y="true" style = "height:100%;position: relative;" scroll-into-view="{{toView}}" scroll-with-animation = "true" bindscrolltolower="bindscrolltolower">
-
+  <!-- //无数据显示 -->
+  <view wx:if="{{myList.length<1}}" style="position: absolute;top: 343rpx;left: 188rpx">
+     <image src="../../images/nodata.png" style="width:374rpx;height:288rpx;"></image>
+     <view style="font-size:32rpx;text-align:center;">还没有活动哟！</view>
+  </view>
+<view class="add_img" bindtap="fbqz">
+    <image src="../../images/addqz.png" style="width:100%;height:100%;"></image>
+</view>
+<!--无数据显示结束-->
   <view class="list" wx:if="{{selected1}}">
     <view class="list_item"  wx:for="{{myList}}" wx:key="{{index}}">
   
@@ -163,11 +171,3 @@
     </scroll-view>
 </view>
 
-  <!-- //无数据显示 -->
-  <view wx:if="{{myList.length<1}}" style="margin:0 auto;">
-     <image src="../../images/nodata.png" style="width:100%;height:100%;width:374rpx;height:288rpx;"></image>
-     <view style="font-size:32px;margin:0 auto;">还没有活动哟！</view>
-  </view>
-<view class="add_img" bindtap="fbqz">
-    <image src="../../images/addqz.png" style="width:100%;height:100%;"></image>
-</view>
