@@ -1,0 +1,16 @@
+<!--pages/index/m y.wxml-->
+<view class="content">
+  <view class="item" wx:for="{{mylist}}" wx:key="index" bindtap="xiangqing">
+    <view class="item-top">
+      <view class="item-status">{{item.status_text}}</view>
+      <image src="{{item.pic_url}}" mode="aspectFill"></image>
+      <view class="item-name">
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+    <view class="item-bottom">
+      <view class="item-time">时间:{{item.start_time}}-{{item.end_time}}</view>
+    </view>
+    <view class="item-region">北京市朝阳区</view>
+  </view>
+</view>

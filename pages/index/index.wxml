@@ -2,13 +2,13 @@
   <view class="content_top">
     <view class="location">
       <image src="../../images/localtion.png"></image>
-      <view>北京</view>
+      <view>{{address}}</view>
     </view>
     <view class="police">
       <image src="../../images/location_back.png" class="police_background"></image>
       <view class="police_content">
         <image src="../../images/police.png"></image>
-        <view>报警</view>
+        <view catchtap="freeTell">报警</view>
       </view>
     </view>
   </view>
@@ -35,7 +35,7 @@
       <view class="button">打卡</view>
     </view>
   </view>
-  <view class="card">
+  <view class="card" wx:if="{{activity.id!='null'}}" wx:if="{{sq}}">
     <view class="card_top">
       <view class="card_left">我的活动</view>
       <view class="card_right" bindtap="toMyActivity">

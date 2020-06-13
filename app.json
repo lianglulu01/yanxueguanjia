@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/mine/report_index",
+    "pages/mine/report",
     "pages/active/active",
-    "pages/publish/index",
     "pages/publish/activity",
     "pages/mine/xiezhu",
     "pages/mine/mine",
-    "pages/index/index",
-
+    "pages/publish/index",
     "pages/dynamic/dynamic_index",
     "pages/relatedList/relatedList_student",
     "pages/dynamic/dynamic",
@@ -14,7 +15,6 @@
     "pages/releaseDynamic/releaseDynamic",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList_teacher",
-
     "pages/publish/now_comment",
     "pages/publish/comment",
     "pages/publish/create_punch",
@@ -30,7 +30,8 @@
     "pages/join/join",
     "pages/assess/assess",
     "pages/index/myActivity",
-    "pages/mine/mySignUp"
+    "pages/mine/mySignUp",
+    "pages/mytalk/mytalk"
   ],
   "window": {
     "backgroundTextStyle": "light",

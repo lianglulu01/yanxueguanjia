@@ -1,0 +1,41 @@
+<view class="contents">
+<scroll-view class="scroll" scroll-y="true" style = "height:90vh;" scroll-into-view="{{toView}}" scroll-with-animation = "true" bindscrolltolower="bindscrolltolower">
+<view class="kj" wx:for="{{list}}" wx:key="index"> 
+     <view class="top">
+            <view class="left">
+                  <view class="img"> 
+                  <image src="{{item.avatar_url}}" style="width:100%;height:100%;border-radius: 50%;"></image> 
+                  </view>
+                  <view class="info">
+                      <view class="nickname">{{item.nickname}}</view>
+                       <view class="time">{{item.create_time}}</view>
+                  </view>
+                 
+            </view>
+            <view class="right" bindtap="del" data-id="{{item.id}}">
+                 <image src="../../images/del.png" style="width:100%;height:100%;"></image>
+            </view>
+     </view>
+
+     <view class="content">
+              {{item.content}}
+     </view>
+    <view class="images">
+          <view class="tui-table-view">
+             <!-- 循环图片 -->
+                <view class="tui-col-3" wx:for="{{item.images}}" wx:key="{{index}}">
+                    <view class="imgs">
+                         <image src="{{item}}" style="width:100%;height:100%;border-radius: 20rpx;"></image>
+                    </view>
+                </view>
+         </view> 
+    </view>
+</view>
+</scroll-view>
+</view>
+
+  <!-- //无数据显示 -->
+  <view wx:if="{{list.length<1}}" style="position: absolute;top: 343rpx;left: 188rpx">
+     <image src="../../images/nodata.png" style="width:374rpx;height:288rpx;"></image>
+     <view style="font-size:32rpx;text-align:center;">还没有说说哟！</view>
+  </view>

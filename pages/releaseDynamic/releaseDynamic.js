@@ -13,7 +13,8 @@ Page({
     activity:'',
      xz:'',
      xz_name:'',
-     check_look:''
+     check_look:'',
+     is_tj:1
   },
   role:function(e){
         var that = this;
@@ -131,13 +132,20 @@ Page({
        })
       },
   fb:function(){
+    
     var that = this;
+    that.setData({
+      is_tj:2
+    })
     if(that.data.xz==""){
        wx.showToast({
          title: '请选择所属活动！',
          icon:'none',
          duration:2000
        })
+       that.setData({
+        is_tj:1
+      })
        return false;
     }
     if(that.data.check_look==""){
@@ -145,6 +153,9 @@ Page({
         title: '请选择谁可以看！',
         icon:'none',
         duration:2000
+      })
+      that.setData({
+        is_tj:1
       })
       return false;
    }
@@ -164,6 +175,7 @@ Page({
           data:data,
           method:'POST',
           success:function(e){
+            
                  console.log(e);
                  if(e.data.code==0){
                   wx.showToast({
@@ -171,12 +183,18 @@ Page({
                     icon:'success',
                     duration:2000
                   })
+                  that.setData({
+                    is_tj:2
+                  })
                   setTimeout(function () {
                     wx.navigateBack({//返回
                       delta: 1
                     })
                     }, 2000)
                  }else{
+                  that.setData({
+                    is_tj:1
+                  })
                   wx.showToast({
                     title: '发布失败!',
                     icon:'success',

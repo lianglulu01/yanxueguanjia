@@ -53,11 +53,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    circles:[],
-    latitude:23.099994,
-    longitude:113.324520,
-
-
+    name: "健康美丽喝撒呦",
+    school: "家里蹲大学",
+    class: "一年级一班",
+    image: "http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png",
     ec: {
       onInit: function(canvas, width, height, dpr){
         chart = echarts.init(canvas, null, {
@@ -71,7 +70,6 @@ Page({
         chart.setOption(option);
       },//initChart
     },
-    xiaokeai:[1,2,3,4,5,6,7,8,9],
     imgArr:[],
     nav_list: [{
       name: '李超',
@@ -177,101 +175,7 @@ Page({
     })
   },
   onLoad: function() {
-    let me = this
-     me.getNavlist()
-  },
-  onShow:function() {
-    console.log("show/show")
-    this.getLocationWit()
-  },
-  //获取当前位置
-  getLocationWit:function(obj = null){
-    let me = this
-    wx.showLoading({
-      title: '定位最新位置....',
-    })
-    wx.getLocation({
-      type: 'wgs84',
-      success(res) {
-        let latitude = res.latitude
-        let longitude = res.longitude
-        me.setData({
-          latitude:latitude,
-          longitude:longitude
-        },() => {
-          if(obj != null) {
-            obj.dakaInfo()
-          }
-        })
-      },
-      complete:() => {
-        wx.hideLoading({
-          complete: (res) => {},
-        })
-      }
-    })
-  },
-
-  //点击打卡按钮
-  dakaBtn:function(){
-    let me = this
-    console.log("btn-打卡")
-    me.getLocationWit(me)
-  },
-  //发送请求 , 打卡
-  dakaInfo:function(){
-    let me = this
-    let user = wx.getStorageSync('userinfo')
-
-    let data = {
-      activity_id:me.data.activity.id,
-      longitude:me.data.longitude,
-      latitude:me.data.latitude,
-      clock_in_id:me.data.activity.daka_last.id,
-      user_id:user.id
-    };
-    // data.user_id = 0
-    app.post('activity/set-da-ka',data).then(res => {
-      console.log(res)
-      if(res.code == 1) {
-          wx.showToast({
-              title: res.data.msg, 
-              icon: 'none',
-              duration: 1500   
-          })
-      }else{
-        wx.showToast({
-            title: res.data.msg,
-            icon: 'success',
-            duration: 1500
-        })
-      }
-
-    }).catch(err => {
-      console.log(err)
-          wx.showToast({
-              title: '系统异常', 
-              icon: 'none',
-              duration: 1500   
-          })
-    })
-  },
-  //设置位置
-  updateMap:function(latitude,longitude,jvli){
-
-    let me = this
-    me.setData({
-      latitude:latitude,
-      longitude:longitude,
-      circles:[{
-        latitude: latitude,
-        longitude: longitude,
-        color: '#7cb5ec88',
-        fillColor: '#7cb5ec88',
-        radius: jvli,
-        strokeWidth: 1
-      }],
-    })
+    this.getNavlist()
   },
   getNavlist:function(){
     var that = this;
@@ -301,9 +205,8 @@ Page({
         // console.log(res.data.data)
         that.setData({
           activity: res.data.data,
-          imgArr: res.data.data.richeng[0].pic_url,
+          imgArr: res.data.data.richeng[0].pic_url
         })
-        that.updateMap(res.data.data.daka_last.latitude,res.data.data.daka_last.longitude,res.data.data.daka_last.distance / 2)
         that.getComment();
       }
     })
@@ -335,11 +238,7 @@ Page({
           
           // 重新赋值画图！！！
           option.series[0].data[0].value = score
-          option.radar.indicator[0].name = new_data.zong_title
-          option.radar.indicator[1].name = new_data.huo_title
-          option.radar.indicator[2].name = new_data.jiji_title
-          option.radar.indicator[3].name = new_data.tuan_title
-          option.radar.indicator[4].name = new_data.cheng_title
+          console.log(option);
           
           that.setData({
             comment: res.data.data,

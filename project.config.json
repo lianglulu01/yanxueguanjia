@@ -106,9 +106,6 @@
 				},
 				{
 					"id": -1,
-					"name": "个人信息",
-					"pathName": "pages/personalData/personalData",
-					"query": "id=16",
 					"name": "圈子详情",
 					"pathName": "pages/dynamic/dynamic_index",
 					"query": "circel_id=14",
@@ -120,6 +117,37 @@
 					"pathName": "pages/mine/mine",
 					"query": "",
 >>>>>>> d35ba841757e2ac32245c4e4fca4c2c1fcf72bde
+					"scene": null
+				},
+				{
+					"id": -1,
+<<<<<<< HEAD
+					"name": "pages/mine/report_index",
+					"pathName": "pages/mine/report_index",
+=======
+<<<<<<< HEAD
+					"name": "我的说说",
+					"pathName": "pages/mytalk/mytalk",
+=======
+					"name": "活动发布",
+					"pathName": "pages/publish/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "活动列表",
+					"pathName": "pages/publish/index",
+>>>>>>> 7d6a851a786854ba16119837ac9d2dd1b52a8c63
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "详情",
+					"pathName": "pages/activeDetail/activeDetail",
+					"query": "id=40",
+>>>>>>> 050396742da3fc3ac6e4f5fa0096454d30c18348
 					"scene": null
 				}
 			]

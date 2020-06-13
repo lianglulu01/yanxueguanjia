@@ -32,9 +32,9 @@ Page({
     })
   },
   toDynamic: function() {
-    // wx.navigateTo({
-    //   url:'../dynamic/dynamic'
-    // })
+    wx.navigateTo({
+      url:'../mytalk/mytalk'
+    })
   },
   associate: function() {
     wx.navigateTo({
@@ -81,7 +81,6 @@ Page({
           iv: o.detail.iv,
           signature: o.detail.signature
         };
-        console.log(abc)
 
         wx.request({
           url: 'https://yanxue.qiweibang.com/web/index.php?r=api/users/login',
@@ -91,9 +90,6 @@ Page({
           },
           data: abc,
           success: function(res) {
-            console.log(res)
-            console.log(res.data.data.info)
-            // if (res.data.data.info){
               wx.hideLoading()
               wx.setStorageSync('userinfo', res.data.data.info)
               that.setData({
@@ -102,7 +98,6 @@ Page({
                 not: 1
                 // info: wx.getStorageSync('userinfo')
               })
-            // }
            
           }
         })
