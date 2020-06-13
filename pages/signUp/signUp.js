@@ -9,19 +9,22 @@ Page({
     joinUserId: [],
     joinUserName: [],
     phone: 0,
-    id: 1
+    id: 0
   },
 
   /*  生命周期函数--监听页面加载 */
   onLoad: function (options) {
     console.log(options)
+    wx.setNavigationBarTitle({
+      title: '订单页面'
+    })
     this.setData({
-      id: options.id
+      id: options.id  
     })
     wx.request({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/show-join-activity&id=' + options.id,
       success: res => {
-        // console.log(res)
+        console.log(res)
         this.setData({
           activityInfo: res.data.data
         })
@@ -100,9 +103,10 @@ Page({
   },
   
   // 跳转关联用户列表
-  chooseUser: function () {
+  chooseUser: function (e) {
+    // console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../chooseUser/chooseUser',
+      url: '../chooseUser/chooseUser?id=' + e.currentTarget.dataset.id,
     })
   },
   /**

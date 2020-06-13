@@ -18,7 +18,7 @@
 </view>
 <view class="active_content">
   <view class="active_user">
-    <view class="join_user" bindtap="chooseUser">
+    <view class="join_user" bindtap="chooseUser" data-id="{{id}}">
       <view>参加活动人</view>
       <view>
         <view wx:if="{{joinUserName.length=='0'}}">请选择活动添加人</view>
@@ -43,7 +43,7 @@
   <view class="active_pay">
     <view class="join_user">
       <view>支付金额</view>
-      <view>¥666</view>
+      <view>¥{{activityInfo.price * joinUserName.length}}</view>
     </view>
     <view class="join_user_num">
       <view>支付方式</view>
