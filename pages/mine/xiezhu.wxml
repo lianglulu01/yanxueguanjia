@@ -1,0 +1,32 @@
+<view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>进行中</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>已完成</view>
+</view>
+<swiper current="{{currentData}}" class='swiper' style="height:1400rpx;" duration="300" bindchange="bindchange">
+  <swiper-item><view class='swiper_con'>
+    <view class="list"> 
+    <view class="list_index" data-id="{{item.id}}" wx:for="{{list}}" bindlongpress="deletelist">
+  <image src="{{item.pic_url}}"></image>
+  <view>{{item.name}}</view>
+  <view>{{item.addtime}}</view>
+  <view class="fenge"></view>
+   <view class="index_bottom">
+   <view class="bottom_bottom"  bindtap="jilu">
+    <image src="/images/tongming/jilu.png"></image>
+      <view>打卡记录</view>
+    </view>
+     <view class="bottom_bottom"  bindtap="comment" data-id="{{item.id}}">
+    <image src="/images/tongming/pinglun.png"></image>
+      <view>评论管理</view>
+    </view>
+    <view class="bottom_bottom" bindtap="member" data-id="{{item.id}}">  
+    <image src="/images/tongming/canjia.png"></image>
+      <view>参加人</view>
+    </view>
+   
+  </view>
+ </view></view>
+  
+  </view></swiper-item>
+  <swiper-item><view class='swiper_con'>welcome come to 热点</view></swiper-item>
+</swiper>

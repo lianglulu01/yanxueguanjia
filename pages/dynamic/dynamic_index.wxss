@@ -275,3 +275,16 @@ float: right;
 margin-right: 46rpx;
 margin-top: 60rpx;
 }
+
+.tui-col-3{
+  flex: 0 0 auto;
+   width: 33.33333333%;
+   text-align: center;
+   color: #797979;
+   padding: 40rpx 0;
+   font-size: 30rpx;
+ }
+ .img{
+      width: 224rpx;
+      height: 224rpx;
+ }

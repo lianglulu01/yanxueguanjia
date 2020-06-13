@@ -63,7 +63,7 @@
         <image src="../../images/arrow.png"></image>
       </view>
     </view>
-    <view class="item">
+    <view class="item" bindtap="xiezhu">
       <view class="item_name">
         <image src="../../images/tongming/myxiezhu.png"></image>
         <text>我的协助</text>

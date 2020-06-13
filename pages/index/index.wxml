@@ -37,9 +37,9 @@
   </view>
   <view class="card">
     <view class="card_top">
-      <view class="card_left">我的活动</view>
-      <view class="card_right">
-        <text>往期活动</text>
+      <view class="card_left">我参加的活动</view>
+      <view class="card_right" bindtap="toHistoryActivity">
+        <text>往查看活动期活动</text>
         <image class="rigth_arr" style="width:22rpx;height:22rpx;" src="../../images/right_arr.png"></image>
       </view>
     </view>
@@ -54,7 +54,7 @@
         <view class="activeAddress">北京市朝阳区</view>
       </view>
       <view class="bottom-right">
-        <view class="look">立即查看</view>
+        <view class="look">签到</view>
       </view>
     </view>
   </view>
@@ -94,7 +94,7 @@
 </view>
 
 <view class="msg" wx:if="{{type==1}}">
-  <image src="https://yanxue.qiweibang.com/web/uploads/image/store_1/0fc3361feaf9689ba492c99d963f33e037146fa8.png"></image>
+  <image src="../../images/authorize.png"></image>
   <view class="authorize_content">
     <view>亲 为了给您提供更好的服务</view>
     <view>我们需要您的授权喔~</view>

@@ -1,36 +1,29 @@
   <view class="list">
-    <view class="list_item" wx:for="{{dynamicArr}}" wx:key="key">
+    <view class="list_item"  >
       <view class="item_left">
-        <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
-         <view class="name">我是个好人</view>
-        <view class="time">2个小时前</view>
+        <image src="{{detail.avatar_url}}"></image>
+         <view class="name">{{detail.nickname}}</view>
+        <view class="time">{{detail.time}}</view>
       </view>
       <view class="item_right">
        
         <view class="item_content">
-          徘徊于革命与反革命之间，他既是英雄，又是受难者，他有着哥萨克的一切美好品质——勇敢、正直、不畏强暴，而同时，格里高利身上又带有哥萨克的种种偏见和局限山东省劳动抗衰老的快死了收集道具收费i的司法四弟哦是的风景活动送饭是第四代和对方厚度发i警方将豆腐煎豆腐剪刀手
+           {{detail.content}}
         </view>
-         <view class="item_img {{item.length==1?'first':''}}" wx:if="{{item.length==1}}">
-            <image class="img_list" wx:for="{{item.length}}" wx:key="key" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3832939494,2009685933&fm=26&gp=0.jpg"></image>
-        </view>
-        <view class="item_img {{item.length==4?'second':''}}" wx:if="{{item.length==4}}">
-          <view class="img_list" wx:for="{{item.length}}" wx:key="key">
-            <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3832939494,2009685933&fm=26&gp=0.jpg"></image>
-          </view>
-        </view>
-         <view class="item_img {{item.length<=4?'three':''}}" wx:if="{{item.length>4}}">
-          <view class="img_list" wx:for="{{item.length}}" wx:key="key">
-            <image src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3832939494,2009685933&fm=26&gp=0.jpg"></image>
-          </view>
-        </view>
+             <!-- 循环图片 -->
+                <view class="tui-col-3" wx:for="{{detail.images}}" wx:key="{{index}}">
+                    <view class="img">
+                         <image src="{{item}}" style="width:100%;height:100%;"></image>
+                    </view>
+                </view>
       </view>
-      <view class="billing">
+      <view class="billing" bindtap="detail" data-id="{{detail.activity.id}}">
         <view class="billing_left">
-          <image src="https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=749063240,1600668152&fm=111&gp=0.jpg"></image>
+          <image src="{{detail.activity.pic_url[0]}}"></image>
         </view>
         <view class="billing_center">
           <view class="center_text">
-            格里高利一会儿投入红军，一会儿倒向白军，双手沾满了两方面的鲜血，他的矛盾和痛苦显然与他所属的特定的群体无法切割
+            {{detail.activity.name}}
           </view>
         </view>
         <view class="billing_right">
@@ -43,7 +36,7 @@
 </view>
 <view class="bottom">
  <view class="bottom_1">
-  <view>2555</view>
+  <view>{{detail.comment_num}}</view>
   <view>评论</view>
 </view>
  <view class="item_left1">
