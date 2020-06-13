@@ -29,6 +29,14 @@ Page({
     })
   },
 
+  toAuth: function () {
+    if (!wx.getStorageSync('userinfo')) {
+      this.setData({
+        type: 1
+      })
+    }
+  },
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

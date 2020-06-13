@@ -120,6 +120,5 @@
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
     </view>
   </view>
-
 </view>
-<view class="air" wx:if="{{type==1}}"></view>
+<view class="air" wx:if="{{type==0}}"></view>
