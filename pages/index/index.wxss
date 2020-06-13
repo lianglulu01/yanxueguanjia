@@ -359,7 +359,7 @@ padding-left: 18rpx;
   left: 67rpx;
   width: 607rpx;
   height: 640rpx;
-  z-index: 99;
+  z-index: 1000;
  
 }
 

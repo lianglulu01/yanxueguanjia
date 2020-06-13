@@ -192,7 +192,8 @@ Page({
               n.setData({
                 type: 0,
                 id: wx.getStorageSync('userinfo').id,
-                info: wx.getStorageSync('userinfo')
+                info: wx.getStorageSync('userinfo'),
+                sq:true
               })
               n.related()
             }
