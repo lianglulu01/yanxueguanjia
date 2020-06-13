@@ -31,6 +31,7 @@ Page({
              to_user_id:that.data.user_id,
              user_id:wx.getStorageSync("userinfo").id,
              text:that.data.text,
+             comment_id:that.data.comment_id
          }
           wx.request({
             url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity-comment/add-comment',
@@ -72,6 +73,7 @@ Page({
              user_id:options.user_id,
              circel_id:options.circel_id,
              activity_id:options.activity_id,
+             comment_id:options.comment_id
        })
   },
 

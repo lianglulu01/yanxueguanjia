@@ -275,7 +275,14 @@ float: right;
 margin-right: 46rpx;
 margin-top: 60rpx;
 }
-
+.tui-table-view{
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  
+}
 .tui-col-3{
   flex: 0 0 auto;
    width: 33.33333333%;
