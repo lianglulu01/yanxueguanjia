@@ -3,70 +3,50 @@ import * as echarts from '../../ec-canvas/echarts';
 
 const app = getApp();
 
-function initChart(canvas, width, height, dpr) {
-  const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height,
-    devicePixelRatio: dpr // new
-  });
-  canvas.setChart(chart);
-
-  var option = {
-    backgroundColor: "#ffffff",
-    color: ["#37A2DA", "#FF9F7F"],
-    xAxis: {
-      show: false
-    },
-    yAxis: {
-      show: false
-    },
-    radar: {
-      // shape: 'circle',
-      indicator: [{
-          name: '食品',
-          max: 500
-        },
-        {
-          name: '玩具',
-          max: 500
-        },
-        {
-          name: '服饰',
-          max: 500
-        },
-        {
-          name: '绘本',
-          max: 500
-        },
-        {
-          name: '医疗',
-          max: 500
-        }
-      ]
-    },
-    series: [{
-      name: '预算 vs 开销',
-      type: 'radar',
-      data: [{
-          value: [430, 340, 500, 300, 490, 400],
-          name: '预算'
-        },
-        {
-          value: [300, 430, 150, 300, 420, 250],
-          name: '开销'
-        }
-      ]
-    }]
-  };
-
-  chart.setOption(option);
-  return chart;
+let chart;
+let option = {
+  backgroundColor: "#ffffff",
+  color: ["#37A2DA", "#FF9F7F"],
+  xAxis: {
+    show: false
+  },
+  yAxis: {
+    show: false
+  },
+  radar: {
+    // shape: 'circle',
+    indicator: [{
+        name: '综合能力',
+        max: 5
+      },
+      {
+        name: '活动态度',
+        max: 5
+      },
+      {
+        name: '积极表现',
+        max: 5
+      },
+      {
+        name: '团队贡献',
+        max: 5
+      },
+      {
+        name: '成果评价',
+        max: 5
+      }
+    ]
+  },
+  series: [{
+    name: '预算 vs 开销',
+    type: 'radar',
+    data: [{
+        value: [0, 0, 0, 0, 0],
+        name: '预算'
+      },
+    ]
+  }]
 }
-
-
-
-
-
 Page({
 
   /**
@@ -74,7 +54,16 @@ Page({
    */
   data: {
     ec: {
-      onInit: initChart
+      onInit: function(canvas, width, height, dpr){
+        chart = echarts.init(canvas, null, {
+          width: width,
+          height: height,
+          devicePixelRatio: dpr // new
+        });
+        canvas.setChart(chart);
+
+        chart.setOption(option);
+      },//initChart
     },
     xiaokeai:[1,2,3,4,5,6,7,8,9],
     imgArr:[],
@@ -101,7 +90,8 @@ Page({
     idxx: 0,
     explanation: ['中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争'],
 
-  },previewImg:function(e){
+  },
+  previewImg:function(e){
     console.log(e.currentTarget.dataset.key);
     let that = this;
     var key = e.currentTarget.dataset.key
@@ -223,10 +213,29 @@ Page({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/activity-comment&user_id='+user_id+'&time='+time+'&activity_id='+activity_id,
       success:function(res){
         // console.log(res.data.data)
+        // series: [{
+        //   name: '预算 vs 开销',
+        //   type: 'radar',
+        //   data: [{
+        //       value: [5, 4, 3, 2, 1],
+        //       name: '预算'
+        //     },
+        //   ]
+        // }]
         if(res.data.code==0){
+          // var serier = option.series
+          // console.log(serier);
+          var new_data = res.data.data
+          var score = [new_data.zong_score,new_data.huo_score,new_data.jiji_score,new_data.tuan_score,new_data.cheng_score];
+          
+          // 重新赋值画图！！！
+          option.series[0].data[0].value = score
+          console.log(option);
+          
           that.setData({
             comment: res.data.data,
             is_comment:1,
+            score:score
           })
         }else{
           that.setData({

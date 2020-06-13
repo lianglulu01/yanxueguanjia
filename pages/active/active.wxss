@@ -327,8 +327,8 @@ box-sizing: border-box;
 }
 
 ec-canvas {
-  width: 500rpx;
-  height: 450rpx;
+  width: 600rpx;
+  height: 498rpx;
 }
 .xiaokeai_list{
   width: 80%;
