@@ -77,11 +77,14 @@ Page({
       onInit: initChart
     },
     xiaokeai:[1,2,3,4,5,6,7,8,9],
-    imgArr:['http://bpic.588ku.com/element_origin_min_pic/16/10/30/528aa13209e86d5d9839890967a6b9c1.jpg','http://bpic.588ku.com/element_origin_min_pic/16/10/30/528aa13209e86d5d9839890967a6b9c1.jpg'],
+    imgArr:[],
     nav_list: [{
       name: '李超',
       id: 0
     }],
+    activity:[],//活动展示数组
+    comment:[],//评价管理
+    is_comment:0,//是否评价
     date_list: [{
       name: '6月6号',
       id: 0
@@ -99,10 +102,11 @@ Page({
     explanation: ['中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争'],
 
   },previewImg:function(e){
-    console.log(e.currentTarget.dataset.src);
+    console.log(e.currentTarget.dataset.key);
     let that = this;
+    var key = e.currentTarget.dataset.key
     wx.previewImage({
-     current:e.currentTarget.dataset.src,   //当前图片地址
+     current:that.data.imgArr[key],   //当前图片地址
      urls: that.data.imgArr,        //所有要预览的图片的地址集合 数组形式
     })
    },
@@ -131,7 +135,8 @@ Page({
       idx: id,
 
     })
-    console.log(id, '变了的下标')
+    that.getActivity();
+    console.log(id, '头部名称---变了的下标')
 
   },
   dateTap(e) { //导航
@@ -154,12 +159,14 @@ Page({
       scrollX = maxScrollX;
     }
     let id = e.currentTarget.dataset.index
+    var imgArr = that.data.activity.richeng[id].pic_url
     that.setData({
       x: scrollX,
       idxx: id,
-
+      imgArr:imgArr
     })
-    console.log(id, '变了的下标')
+    that.getComment();//更新评价
+    console.log(id, '日期---变了的下标')
 
   },
   immediately: function() {
@@ -186,8 +193,47 @@ Page({
         that.setData({
           nav_list: res.data.data
         })
+        that.getActivity();
       }
     })
   },
-
+  // 获取用户当前获取的活动
+  getActivity:function(){
+    var that = this;
+    var activity_id = that.data.nav_list[that.data.idx].id;
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/get-now-activity&id='+activity_id,
+      success:function(res){
+        // console.log(res.data.data)
+        that.setData({
+          activity: res.data.data,
+          imgArr: res.data.data.richeng[0].pic_url
+        })
+        that.getComment();
+      }
+    })
+  },
+  // 获取用户当前的评价
+  getComment:function(){
+    var that = this;
+    var time = that.data.activity.richeng[that.data.idxx].time;
+    var user_id = that.data.nav_list[that.data.idx].user_id;
+    var activity_id = that.data.nav_list[that.data.idx].id;
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/activity-comment&user_id='+user_id+'&time='+time+'&activity_id='+activity_id,
+      success:function(res){
+        // console.log(res.data.data)
+        if(res.data.code==0){
+          that.setData({
+            comment: res.data.data,
+            is_comment:1,
+          })
+        }else{
+          that.setData({
+            is_comment: 0,
+          })
+        }
+      }
+    })
+  },
 })
