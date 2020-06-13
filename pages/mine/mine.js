@@ -49,6 +49,11 @@ Page({
     }
    
   },
+  xiezhu:function(){
+    wx.navigateTo({
+      url: '/pages/mine/xiezhu',
+    })
+  },
   about:function(){
    wx.navigateTo({
      url: '/pages/mine/about',
