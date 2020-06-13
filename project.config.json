@@ -79,10 +79,8 @@
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
 					"name": "发布活动",
 					"pathName": "pages/publish/activity",
-=======
 					"name": "圈子",
 					"pathName": "pages/dynamic/dynamic",
 					"query": "",
@@ -93,7 +91,6 @@
 					"name": "发布圈子",
 					"pathName": "pages/releaseDynamic/releaseDynamic",
 					"query": "",
->>>>>>> f64aa50ef8e88062ccd4a21a00ad3a1420690820
 					"scene": null
 				}
 			]
