@@ -36,7 +36,7 @@
 </view>
 <view class="bottom">
  <view class="bottom_1">
-  <view>2555</view>
+  <view>{{detail.comment_num}}</view>
   <view>评论</view>
 </view>
  <view class="item_left1">

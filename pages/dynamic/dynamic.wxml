@@ -63,8 +63,8 @@
         </view>
       </view>
       <view class="operating">
-              <image wx:if="{{item.is_agreen}}" bindtap="dz" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
-           <image wx:else bindtap="dz" data-circel_id="{{item.id}}" style="width:40rpx;height:40rpx;" src="../../images/wdz.png"></image>
+              <image wx:if="{{item.is_agreen}}" bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
+           <image wx:else bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:40rpx;height:40rpx;" src="../../images/wdz.png"></image>
         <view class="operating_num">{{item.like}}</view>
          <view class="iconfont icontubiaozhizuo-" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
         <view class="operating_num">{{item.comment_num}}</view>
@@ -141,8 +141,8 @@
         </view>
       </view>
       <view class="operating">
-              <image wx:if="{{item.is_agreen}}" bindtap="dz" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
-           <image wx:else bindtap="dz" data-circel_id="{{item.id}}" style="width:40rpx;height:40rpx;" src="../../images/wdz.png"></image>
+              <image wx:if="{{item.is_agreen}}" bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
+           <image wx:else bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:40rpx;height:40rpx;" src="../../images/wdz.png"></image>
         <view class="operating_num">{{item.like}}</view>
          <view class="iconfont icontubiaozhizuo-" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
         <view class="operating_num">{{item.comment_num}}</view>
@@ -163,7 +163,11 @@
     </scroll-view>
 </view>
 
-
+  <!-- //无数据显示 -->
+  <view wx:if="{{myList.length<1}}" style="margin:0 auto;">
+     <image src="../../images/nodata.png" style="width:100%;height:100%;width:374rpx;height:288rpx;"></image>
+     <view style="font-size:32px;margin:0 auto;">还没有活动哟！</view>
+  </view>
 <view class="add_img" bindtap="fbqz">
     <image src="../../images/addqz.png" style="width:100%;height:100%;"></image>
 </view>
