@@ -5,78 +5,102 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    activityInfo: {},
+    joinUserId: [],
+    joinUserName: [],
+    phone: 0,
+    id: 1
   },
 
   /*  生命周期函数--监听页面加载 */
   onLoad: function (options) {
     console.log(options)
-    
-  },
-  // address:
-  // openId:
-  pay:function(){
+    this.setData({
+      id: options.id
+    })
     wx.request({
-      url: address + 'wxPay',
-      data: {
-        openId: openId
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/show-join-activity&id=' + options.id,
+      success: res => {
+        // console.log(res)
+        this.setData({
+          activityInfo: res.data.data
+        })
       },
+      fail: err => {
+        console.log(err)
+      }
+    })
+  },
+
+  // 获取手机号
+  bindKeyInput(e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+
+  pay(e) {
+    console.log(this)
+    console.log(e)
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity',
+      method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
-      method: "POST",
-      success: function (res) {
-        console.log(res);
-        that.doWxPay(res.data);
+      data: {
+        id: wx.getStorageSync('userinfo').id,
+        join_user: JSON.stringify(this.data.joinUserId),
+        mobile: this.data.phone,
+        activity_id: this.data.id,
       },
+      success: (res) => {
+        console.log(res)
+        if (res.data.msg == "请选择参加人") {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          })
+        } else if (res.data.msg == "手机号错误") {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 2000
+          })
+        } else if (res.data.msg == "操作成功") {
+          wx.request({
+            url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/pay-data',
+            data: {
+              order_id: res.data.data,
+              id: wx.getStorageSync('userinfo').id
+            },
+            success: res => {
+              console.log(res)
+              wx.requestPayment({
+                timeStamp: res.data.data.timeStamp,
+                nonceStr: res.data.data.nonceStr,
+                package: res.data.data.package,
+                signType: res.data.data.signType,
+                paySign: res.data.data.paySign,
+                success(res) {
 
-      fail: function (err) {
-        wx.showToast({
-          icon: "none",
-          title: '服务器异常，清稍候再试'
-        })
-      },
-    });
-  },
+                },
+                fail(res) { console.log(res) }
+              })
+            },
+            fail: err => {
 
-  //小程序发起微信支付
-  doWxPay(param) {
-    // wx.requestPayment(
-    //   {
-    //     'timeStamp': '',
-    //     'nonceStr': '',
-    //     'package': '',
-    //     'signType': 'MD5',
-    //     'paySign': '',
-    //     'success': function (res) { },
-    //     'fail': function (res) { },
-    //     'complete': function (res) { }
-    //   })
-    wx.requestPayment({
-      //timeStamp一定要是字符串类型的
-      timeStamp: param.data.timeStamp,
-      nonceStr: param.data.nonceStr,
-      package: param.data.package,
-      signType: 'MD5',
-      paySign: param.data.paySign,
-      success: function (event) {
-        console.log(event);
-        wx.showToast({
-          title: '支付成功',
-          icon: 'success',
-          duration: 2000
-        });
-      },
-      fail: function (error) {
-        console.log("支付失败")
-        console.log(error)
-      },
-      complete: function () {
-        console.log("pay complete")
+            }
+          })
+        }
+        // console.log(wx.getStorageSync('userinfo').id)  
       }
-    });
+    })
   },
-  chooseUser:function(){
+  
+  // 跳转关联用户列表
+  chooseUser: function () {
     wx.navigateTo({
       url: '../chooseUser/chooseUser',
     })
