@@ -1,7 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var QQMapWX = require('../../utils/qqmap-wx-jssdk1.2/qqmap-wx-jssdk.js');
+var qqmapsdk;
 Page({
   data: {
     bnrUrl: [],
@@ -17,12 +18,32 @@ Page({
       type:0,
       user_id:null,
       activity_id:0,  //协助教师相关，活动id
-      data_type:0
+      data_type:0,
+      sq:false
     },
-    activity:{}
+    activity:{},
+   
   },
-
+  freeTell:function(){
+    wx.makePhoneCall({
+      phoneNumber: '110',
+    })
+  },
   onLoad:function(option){
+     // 实例化API核心类
+     qqmapsdk = new QQMapWX({
+      key: 'IOFBZ-O4M6P-MIPDM-LCTE7-NJOCJ-LKBOD'
+  })
+  // var userId = wx.getStorageSync('userinfo').id;
+  if (!wx.getStorageSync('userinfo')){
+        this.setData({
+           sq:false
+        })
+  }else{
+    this.setData({
+      sq:true
+   })
+  }
     var that = this
     if(option.id){
       that.setData({
@@ -41,13 +62,51 @@ Page({
       that.data.invite.data_type = option.data_type
     }
 
-    wx.getLocation({
-      altitude: 'altitude',
-    })
-
+   
     that.getImg()
     that.getMyActivity()
-     
+    that.getCurrentLocal();
+  },
+  // 获取当前地理位置 授权验证
+  getCurrentLocal(){
+    let that = this;
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userLocation'] == false){// 如果已拒绝授权，则打开设置页面
+          wx.openSetting({
+            success(res) {}
+          })
+        }  else { // 第一次授权，或者已授权，直接调用相关api
+          that.getMyLocation()
+        }
+      }
+    })
+  },
+  // 获取当前地理位置
+  getMyLocation(){
+    let that = this
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        console.log(res)
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (addressRes) {
+            console.log(addressRes);
+            var address = addressRes.result.formatted_addresses.recommend;
+            console.log(address);
+            that.setData({
+                 address:address
+            })
+            // app.globalData.address = address;
+          }
+
+      })
+    }
+  })
   },
   onShow:function(){
     var that = this
@@ -159,6 +218,7 @@ Page({
   },
   // 跳转 活动详情
   toDetail:function(e){
+    
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
@@ -192,6 +252,12 @@ Page({
   },
   // 确认打卡的按钮
   punch:function(){
+    if (!wx.getStorageSync('userinfo')){
+      this.setData({
+        type: 1
+      })
+      return false;
+    }
     wx.getLocation({
       type: 'wgs84',
       success:(res)=> {
