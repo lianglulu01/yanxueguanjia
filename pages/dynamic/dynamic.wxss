@@ -193,7 +193,7 @@ color:rgba(101,101,101,1);
 .operating image {
   width: 48rpx;
   height: 48rpx;
-  margin-right: 12rpx;
+  /* margin-right: 12rpx; */
 }
 
 .operating_num {
@@ -301,4 +301,18 @@ button {
   
   button::after {
     display: none;
+    }
+
+    .sj{
+      padding-left: 20rpx;
+    }
+
+    .hiddenmore .more-item {
+      display: none;
+    }
+    
+    .showmore .more-item {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
     }
