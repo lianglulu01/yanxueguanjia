@@ -19,9 +19,10 @@ Page({
       url: '/pages/publish/member?id='+event.currentTarget.dataset.id,
     })
   },
-  xiezhu: function () {
+  xiezhu: function (e) {
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/relatedList/relatedList_teacher',
+      url: '/pages/relatedList/relatedList_teacher?id='+id,
     })
   },
   comment: function (event) {

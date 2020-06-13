@@ -64,10 +64,10 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "pages/index/index",
+					"id": 0,
+					"name": "邀请绑定",
 					"pathName": "pages/index/index",
-					"query": "id=12",
+					"query": "id=21&activity_id=16&data_type=1",
 					"scene": null
 				},
 				{
@@ -93,16 +93,26 @@
 				},
 				{
 					"id": -1,
-					"name": "圈子详情",
-					"pathName": "pages/dynamic/dynamic_index",
-					"query": "",
+					"name": "协助教师列表",
+					"pathName": "pages/relatedList/relatedList_teacher",
+					"query": "id=16",
 					"scene": null
 				},
 				{
 					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/personalData/personalData",
+					"query": "id=16",
 					"name": "圈子详情",
 					"pathName": "pages/dynamic/dynamic_index",
 					"query": "circel_id=14",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/mine/mine",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -1,5 +1,6 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/active/active",
     "pages/publish/index",
     "pages/publish/activity",
@@ -8,6 +9,13 @@
     "pages/mine/mine",
    
     "pages/index/index",
+=======
+    "pages/index/index",
+    "pages/mine/xiezhu",
+    "pages/mine/mine",
+    "pages/publish/index",
+    "pages/active/active",
+>>>>>>> 94685ffc234e09aeca80adf25a3cf886832c755e
     "pages/dynamic/dynamic_index",
     "pages/relatedList/relatedList_student",
     "pages/dynamic/dynamic",

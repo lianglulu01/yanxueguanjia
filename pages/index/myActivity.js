@@ -19,8 +19,7 @@ Page({
     wx.request({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-list',
       data: {
-        // user_id: wx.getStorageSync('userinfo').id,
-        user_id: 1,
+        user_id: wx.getStorageSync('userinfo').id,
         page: 1
       },
       success: res => {

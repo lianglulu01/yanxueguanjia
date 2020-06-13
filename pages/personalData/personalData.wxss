@@ -10,6 +10,7 @@
   color: #1D1D1D;
   font-size: 30rpx;
   font-weight: 600;
+  width: 200rpx;
 }
 .item_val image{
   width: 98rpx;
@@ -19,4 +20,12 @@
 .item_val{
   font-size: 30rpx;
   color: #676767;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40rpx;
+}
+.item_val input{
+  width: 100%;
+  text-align: right;
 }

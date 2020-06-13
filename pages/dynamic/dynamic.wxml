@@ -66,18 +66,28 @@
               <image wx:if="{{item.is_agreen}}" bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
            <image wx:else bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:30rpx;height:30rpx;" src="../../images/wdz.png"></image>
         <view class="operating_num">{{item.like}}</view>
-         <view class="iconfont icontubiaozhizuo-" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
+         <view class="iconfont icontubiaozhizuo-" data-comment_id="" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
         <view class="operating_num">{{item.comment_num}}</view>
          <button class="iconfont iconzhuanfa" style="font-size:42rpx" open-type="share"></button>
       </view>
-      <view class="comment_list">
-        <view class="comment_item {{items.to_user_id?'sj':''}}" bindtap="toComment"  wx:for-item="items" data-user_id="{{items.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}"  wx:for="{{item.comment}}" wx:key="{{index}}">
+      <view class="comment_list" wx:if="{{item.comment.length>0}}">
+        <view class="comment_item {{items.to_user_id?'sj':''}}"   wx:for-item="items"   wx:for="{{item.comment}}" wx:key="{{index}}" >
+        <view style="display:flex" bindtap="toComment" data-user_id="{{items.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" data-comment_id="{{items.id}}">
           <view class="comment_name">{{items.send_nickname}}:</view>
           <view class="comment_val">{{items.text}}</view>
+         </view>
+            <view  data-user_id="{{it.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" data-comment_id="{{items.id}}" class="comment" wx:for="{{items.reply_comment}}" wx:key="index" wx:for-item="it">
+                    <view class="comment_name">{{it.send_nickname}}</view>
+                    <view style="color:#333">回复</view>
+                    <view class="comment_name">{{it.take_nickname}}</view>
+                    <view class="comment_val">{{it.text}}</view>
+            </view> 
+
+
         </view>
       </view>
       <!-- <view >查看全部评论</view> -->
-       <view class="comment_num "  wx:if="{{item.comment.length>2}}">
+       <view class="comment_num" wx:if="{{item.comment.length >=1}}" bindtap="dynamic_index" data-id="{{item.id}}" >
               查看全部评论
           </view> 
     </view>
@@ -152,18 +162,28 @@
               <image wx:if="{{item.is_agreen}}" bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:47rpx;height:47rpx;" src="../../images/ydz.png"></image>
            <image wx:else bindtap="dz" data-key="{{index}}" data-circel_id="{{item.id}}" style="width:35rpx;height:35rpx;" src="../../images/wdz.png"></image>
         <view class="operating_num">{{item.like}}</view>
-         <view class="iconfont icontubiaozhizuo-" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
+         <view class="iconfont icontubiaozhizuo-" bindtap="toComment" data-id="{{item.id}}" data-user_id="" data-comment_id="" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" style="font-size:42rpx;color:#FC6A1A"></view>
         <view class="operating_num">{{item.comment_num}}</view>
          <button class="iconfont iconzhuanfa" style="font-size:42rpx" open-type="share"></button>
       </view>
-      <view class="comment_list">
-        <view class="comment_item {{items.to_user_id?'sj':''}}" bindtap="toComment"  wx:for-item="items" data-user_id="{{items.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}"  wx:for="{{item.comment}}" wx:key="{{index}}">
+      <view class="comment_list" wx:if="{{item.comment.length>0}}">
+        <view class="comment_item {{items.to_user_id?'sj':''}}"   wx:for-item="items"   wx:for="{{item.comment}}" wx:key="{{index}}" >
+        <view style="display:flex" bindtap="toComment" data-user_id="{{items.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" data-comment_id="{{items.id}}">
           <view class="comment_name">{{items.send_nickname}}:</view>
           <view class="comment_val">{{items.text}}</view>
+         </view>
+            <view  data-user_id="{{it.user_id}}" data-id="{{item.id}}" data-circel_id="{{item.id}}" data-activity_id="{{item.activity_id}}" data-comment_id="{{items.id}}" class="comment" wx:for="{{items.reply_comment}}" wx:key="index" wx:for-item="it">
+                    <view class="comment_name">{{it.send_nickname}}</view>
+                    <view style="color:#333">回复</view>
+                    <view class="comment_name">{{it.take_nickname}}</view>
+                    <view class="comment_val">{{it.text}}</view>
+            </view> 
+
+
         </view>
       </view>
       <!-- <view >查看全部评论</view> -->
-       <view class="comment_num "  wx:if="{{item.comment.length>2}}">
+       <view class="comment_num " wx:if="{{item.comment.length >=1}}"  bindtap="dynamic_index" data-id="{{item.id}}" >
               查看全部评论
           </view> 
     </view>
