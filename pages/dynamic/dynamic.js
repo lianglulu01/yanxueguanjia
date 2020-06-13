@@ -31,10 +31,11 @@ Page({
               var list= that.data.myList;
               if(list[key].is_agreen){
                 list[key].is_agreen = false;
-                list[key].like = list[key].like-1;
+                list[key].like =parseInt(list[key].like)-parseInt(1);
               }else{
                 list[key].is_agreen = true;
-                list[key].like = list[key].like+1;
+                list[key].like = parseInt(list[key].like)+parseInt(1);
+                console.log(parseInt(list[key].like)+parseInt(1));
               }
                  that.setData({
                      myList:list
@@ -43,10 +44,10 @@ Page({
               var list= that.data.myList;
               if(list[key].is_agreen){
                 list[key].is_agreen = false;
-                list[key].like = list[key].like-1;
+                list[key].like = parseInt(list[key].like)-parseInt(1);
               }else{
                 list[key].is_agreen = true;
-                list[key].like = list[key].like+1;
+                list[key].like = parseInt(list[key].like)+parseInt(1);
               }
                  that.setData({
                      myList:list
@@ -179,7 +180,7 @@ Page({
   toComment:function(e){
     console.log(e)
     wx.navigateTo({
-      url: '../comment/comment?user_id='+e.currentTarget.dataset.user_id+"&circel_id="+e.currentTarget.dataset.id+"&activity_id="+e.currentTarget.dataset.activity_id+"&circel_id="+e.currentTarget.dataset.circel_id,
+      url: '../comment/comment?user_id='+e.currentTarget.dataset.user_id+"&circel_id="+e.currentTarget.dataset.id+"&activity_id="+e.currentTarget.dataset.activity_id+"&circel_id="+e.currentTarget.dataset.circel_id+"&comment_id="+e.currentTarget.dataset.comment_id,
     })
   }
 

@@ -1,4 +1,5 @@
 //app.js
+var request = require ('./utils/request.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -50,6 +51,7 @@ App({
       }
     });
     return targetObj
-  }
-
+  },
+  get:request.get,
+  post:request.post
 })

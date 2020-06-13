@@ -150,7 +150,6 @@ page {
 .card_left {
   display: flex;
   font-size: 32rpx;
-  font-weight: 600;
 }
 
 .card_right {

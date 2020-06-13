@@ -1,60 +1,63 @@
 // pages/relatedList/relatedList.js
+const app = getApp()
+
+
+// var request = require ('../../utils/request.js')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    info:{},
-    list:[],
-    page:1
+    activity_id: '',
+    info: {},
+    list: [],
+    page: 1
   },
-toPerson:function(){
+  toPerson: function () {
 
-},
-student:function(){
-  wx.navigateTo({
-    url: '/pages/relatedList/relatedList_student',
-  })
-},
+  },
+  student: function () {
+    wx.navigateTo({
+      url: '/pages/relatedList/relatedList_student',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-      this.setData({
-        info: wx.getStorageSync('userinfo')
-      })
-      this.getList()
+    this.data.activity_id = options.id //活动id
+    this.setData({
+      info: wx.getStorageSync('userinfo')
+    })
+    this.getList()
   },
 
-  getList:function(){
-    var that = this 
-    wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/relation/get-relation',
-      data:{
-        // user_id:that.data.info.id,
-        user_id:1,
-        page:that.data.page,
-        relation_id:0  //学生关联学生是0  老师关联老师是1
-      },success:function(res){
-        console.log(res.data.data.list)
-        that.setData({
-          list: res.data.data.list
-        })
-      }
+  getList: function () {
+    let t = this
+    app.get(
+      'relation/get-relation',{user_id:1,page:1,relation_id:0}
+    ).then(res=>{
+      t.setData({
+        list: res.data.list
+      })
+    }).catch(err=>{
+      wx.showToast({
+        title: '网络错误，请返回重试',
+      })
     })
   },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    let d = this.data
+    let p = '/pages/index/index?id=' + d.info.id + "&activity_id=" + d.activity_id
     return {
-      
-
-      title:'邀请你成为好友,更多好玩的夏令营在等着你哟~~' ,
+      title: '邀请你成为好友,更多好玩的夏令营在等着你哟~~',
       imageUrl: 'https://yanxue.qiweibang.com/web/uploads/image/store_1/72f7415d6d701faf8d13bec85b7b710a4a9a07f7.png',
-      path: '/pages/index/index?id=1'
-  }
+      path: '/pages/index/index?id=' + d.info.id + "&activity_id=" + d.activity_id + '&data_type=1'
+    }
   }
 })
