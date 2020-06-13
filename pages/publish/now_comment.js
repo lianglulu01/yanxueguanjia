@@ -193,7 +193,9 @@ Page({
             icon: 'none',
             duration: 1500
           })
-          wx.navigateBack({})
+          setTimeout(function(){
+            wx.navigateBack({})
+          },1500)
         }else{
           wx.showToast({
             title: res.data.msg,

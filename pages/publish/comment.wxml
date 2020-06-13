@@ -61,6 +61,6 @@
 </scroll-view>
 </view>
 <view wx:else>
-  <view style="width:80%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
+  <view style="width:66%;height:400rpx;margin:0 auto"><image style="width:100%;height:100%;" src="https://yanxue.qiweibang.com/web/uploads/image/store_1/ee086d9e2db001145e18a1bb22a12acc962decd9.png"></image></view>
   <view style="text-align: center;width: 100%;font-size: 34rpx;"><text>没有更多数据了</text></view>
 </view>

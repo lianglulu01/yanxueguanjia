@@ -14,7 +14,7 @@
     <input class="typein" type="number" name="team_num" placeholder="不限" maxlength="3"></input>
   </view>
   <view class="upload">
-    <view class="name">活动图</view>
+    <view class="name" style="width:100%">活动图</view>
     <block wx:for="{{activeImgArr}}" wx:key="item">
       <view class="showImageBox">
         <image class= "show-image" mode="aspectFitf" src="{{item}}" ></image>
@@ -27,7 +27,7 @@
 <!--活动描述-->
 <view class="middle">
   <view class="name">活动描述</view>
-  <textarea  type="text" placeholder="简单说说要求吧.." name="desc" class="middle_textarea"></textarea>
+  <textarea  type="text" placeholder="简单说说要求吧.." name="desc" maxlength="-1" class="middle_textarea"></textarea>
 </view>
 <!--行程管理-->
 <view class="bottom">
@@ -39,7 +39,7 @@
   </view>
    <view class="bottom_1">
     <view class="name2">地点</view>
-    <input class="typein1" type="text" placeholder="请输入活动集合点" name="address"></input>
+    <textarea class="typein1" type="text" placeholder="请输入活动集合点" name="address"></textarea>
   </view>
 
   <view class="bottom_2">行程管理</view>
@@ -53,7 +53,7 @@
           </view>
         </picker>
       </view>
-      <input placeholder="请添行程管理" name="richeng" bindinput="changeDesc" data-index="{{index}}" class="areain" value="{{item.desc}}"></input>
+      <textarea placeholder="请添行程管理" name="richeng" bindinput="changeDesc" data-index="{{index}}" class="areain" value="{{item.desc}}"></textarea>
     </view>
     <view class="richengImgs">
       <block wx:for="{{item.pic_url}}" wx:for-item="imgSrc" wx:for-index="index_pic">
@@ -74,7 +74,7 @@
 <view class="last">
   <view class="middle">
     <view class="name">活动须知</view>
-    <textarea type="text" class="middle_textarea" placeholder="简单说说要求吧..." name="know"></textarea>
+    <textarea type="text" class="middle_textarea" maxlength="-1" placeholder="简单说说要求吧..." name="know"></textarea>
   </view>
   <view class="bottom_1">
    <view class="name">是否公开</view>

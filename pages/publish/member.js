@@ -13,6 +13,7 @@ Page({
     page_count:"",//总共几页
     uhide:0,//第几个显示--隐藏
     inputVal:'',
+    is_show:false,
   },
 
   /**
@@ -63,10 +64,13 @@ Page({
       },
       success: res => {
         console.log(res)
-        that.setData({
-          list: res.data.data.list,
-          page_count:res.data.data.page_count,
-        })
+        if(res.data.data.list.length>0){
+          that.setData({
+            list: res.data.data.list,
+            page_count:res.data.data.page_count,
+            is_show:true,
+          })
+        }
       }
     })
   },
