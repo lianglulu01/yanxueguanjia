@@ -1,59 +1,64 @@
 <!--搜索框-->
 <view class="index">
-<input class="title" type="text" placeholder="搜索" placeholder-style="font-size:22rpx">
+<input class="title" type="text" value="{{inputVal}}" bindinput="inputTyping" bindconfirm="search" placeholder="搜索" placeholder-style="font-size:22rpx">
  <image src="/images/tongming/find.png"></image>
 </input>
 </view>
 <!--列表-->
+ <scroll-view class="scroll" scroll-y="true" scroll-into-view="{{toView}}" scroll-with-animation = "true" bindscrolltolower="onReachBottom">
 <view class="list" wx:for="{{list}}">
  <view class="list1">
   <view class="list1_left">
-   <image src="/images/tongming/xiaokeai.png" class="userpng"></image>
-   <view class="username">不向阳的向日葵</view>
+   <image src="{{item.avatar_url}}" class="userpng"></image>
+   <view class="username">{{item.nickname}}</view>
   </view>
-  <view class="list1_right">张海宇</view>
+  <view class="list1_right">{{item.rolename}}</view>
  </view>
  <view class="list2">
   <view class="list2_1">
    <view class="font">报名人</view>
-   <view class="font1">张小小</view>
+   <view class="font1">{{item.baoming_name}}</view>
   </view>
   <view class="list2_1">
     <view class="font">报名时间</view>
-    <view class="font1">2020年2月2日 13:02:00</view>
+    <view class="font1">{{item.pay_time}}</view>
   </view>
   <view class="list2_1">
     <view class="font">实付价格</view>
-    <view class="money">￥300</view>
+    <view class="money">￥{{item.pay_price}}</view>
   </view>
   </view>
-  <view class="list3" wx:if="{{more}}" bindtap="more">
+   <!-- wx:if="{{more}}" -->
+  <view class="list3" bindtap="more" wx:if="{{!item.is_show}}" data-key="{{index}}">
    <view class="font1">查看更多</view>
    <image src="/images/down.png" style="width:24rpx;height:24rpx;margin-left:12rpx"></image>
   </view>
-  <view class="gengduo" wx:if="{{less}}">
-  <view class="list4">
-      <view class="list2_1">
-   <view class="font">应打卡数</view>
-   <view class="font1">22次</view>
-  </view>
-  <view class="list2_1">
-    <view class="font">成功打卡数</view>
-    <view class="font1">3次</view>
-  </view>
-  <view class="list2_1">
-    <view class="font">异常打卡</view>
-    <view class="font1">3次</view>
-  </view>
-  <view class="list2_1">
-    <view class="font">是否签到</view>
-    <view class="qiandao">已签到</view>
-  </view>
-  </view>
-  <view class="list5">
-     <view class="font1"  bindtap="less">收起</view>
-   <image src="/images/up.png" style="width:24rpx;height:24rpx;margin-left:12rpx" bindtap="less"></image>
-   <view class="talk" bindtap="pingjia">去评价</view>
-  </view>
+   <!-- wx:if="{{less}}" -->
+  <view class="gengduo"  wx:if="{{item.is_show}}">
+    <view class="list4">
+        <view class="list2_1">
+    <view class="font">应打卡数</view>
+    <view class="font1">{{item.total_dakanum}}次</view>
+    </view>
+    <view class="list2_1">
+      <view class="font">成功打卡数</view>
+      <view class="font1">{{item.zhengc_dakanum}}次</view>
+    </view>
+    <view class="list2_1">
+      <view class="font">异常打卡</view>
+      <view class="font1">{{item.yichang_dakanum}}次</view>
+    </view>
+    <view class="list2_1">
+      <view class="font">是否签到</view>
+      <view class="qiandao" wx:if="{{item.sign_in==1}}">已签到</view>
+      <view class="qiandao" wx:else>未签到</view>
+    </view>
+    </view>
+    <view class="list5">
+      <view class="font1"  bindtap="less" data-key="{{index}}">收起</view>
+    <image src="/images/up.png" style="width:24rpx;height:24rpx;margin-left:12rpx" bindtap="less"></image>
+    <view class="talk" bindtap="pingjia" data-user_id="{{item.user_id}}">去评价</view>
+    </view>
   </view>
 </view>
+</scroll-view>

@@ -1,27 +1,43 @@
 {
   "pages": [
     "pages/index/index",
+<<<<<<< HEAD
     "pages/publish/index",
+=======
+    "pages/dynamic/dynamic_index",
+  
+    "pages/relatedList/relatedList_student",
+    "pages/dynamic/dynamic",
+    "pages/relatedList/relatedList",
+    "pages/releaseDynamic/releaseDynamic",
+    "pages/mine/mine",
+    "pages/personalData/personalData",
+    "pages/relatedList/relatedList_teacher",
+>>>>>>> f64aa50ef8e88062ccd4a21a00ad3a1420690820
     "pages/publish/activity",
+    "pages/publish/index",
+    "pages/publish/now_comment",
     "pages/publish/comment",
     "pages/publish/create_punch",
     "pages/publish/member",
-    "pages/dynamic/dynamic",
     "pages/activeDetail/activeDetail",
-    "pages/mine/mine",
     "pages/mine/about",
     "pages/publish/comment_more",
     "pages/punch/punch",
-    "pages/releaseDynamic/releaseDynamic",
     "pages/punchList/punchList",
-    "pages/relatedList/relatedList",
     "pages/publish/jilu",
     "pages/userList/userList",
     "pages/order/order",
     "pages/join/join",
     "pages/assess/assess",
+<<<<<<< HEAD
     "pages/active/active",
     "pages/comment/comment"
+=======
+    "pages/comment/comment",
+  
+    "pages/active/active"
+>>>>>>> f64aa50ef8e88062ccd4a21a00ad3a1420690820
   ],
   "window": {
     "backgroundTextStyle": "light",
