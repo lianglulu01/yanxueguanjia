@@ -9,6 +9,9 @@ Page({
     selected1: false,
     length:5,
     list:5,
+    jump:true,
+    tongming:false,
+    last:true,
     dynamicArr:[{length:9}]
   },
 
@@ -17,6 +20,20 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  tongming:function(){
+    this.setData({
+      tongming:true,
+      jump:true,
+      last:false
+    })
+  },
+  huifu:function(){
+    this.setData({
+      last:true,
+      jump:false,
+      tongming:false
+    })
   },
   selectedFn: function () {
     var that = this;

@@ -128,6 +128,7 @@ margin-top: 19rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15rpx;
 }
 
 .billing .billing_left {
@@ -240,4 +241,37 @@ border-radius:32rpx;
 background: #F6F6F6;
 margin-left: 31rpx;
 padding-left: 19rpx;
+}
+.jump{
+  width: 100%;
+  height: 120rpx;
+  background: #FFF;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25rpx;
+}
+.jump2{
+  width: 550rpx;
+  height: 110rpx;
+  background: #FFF;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25rpx;
+}
+.junmp1{
+  width: 100%;
+  height: 40rpx;
+}
+.jump1 view{
+  background: blue;
+width: 120rpx;
+height: 45rpx;
+border-radius: 20rpx;
+font-size: 24rpx;
+text-align: center;
+line-height: 45rpx;
+color: #FFF;
+float: right;
+margin-right: 46rpx;
+margin-top: 60rpx;
 }
