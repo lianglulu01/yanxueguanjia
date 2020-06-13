@@ -111,7 +111,7 @@ Page({
     })
   },
 
-  delImg(e) {
+  delImg:function(e) {
     let index = e.currentTarget.dataset.index
     let index2 = e.currentTarget.dataset.index2
     let arr = this.data.richeng
