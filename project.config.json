@@ -95,13 +95,6 @@
 					"id": -1,
 					"name": "圈子详情",
 					"pathName": "pages/dynamic/dynamic_index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "圈子详情",
-					"pathName": "pages/dynamic/dynamic_index",
 					"query": "circel_id=14",
 					"scene": null
 				}

@@ -288,3 +288,27 @@ margin-top: 60rpx;
       width: 224rpx;
       height: 224rpx;
  }
+
+ .reply{
+    display: flex;
+    text-align: center;
+ }
+
+ button {
+  font: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  line-height: unset !important;
+  text-align: inherit !important;
+  width: unset !important;
+  color: inherit !important;
+  position: unset !important;
+  box-sizing: inherit !important;
+  border: unset !important;
+  min-height: unset !important;
+  }
+  
+  button::after {
+    display: none;
+    }
