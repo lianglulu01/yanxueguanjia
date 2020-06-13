@@ -1,28 +1,49 @@
+
+
+
+
 <view class="content">
-  <view class="bottom_nav">
-    <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
-      <view class='nav {{item.id==idxx?"select":""}}' wx:for="{{date_list}}" wx:key="key" bindtap='dateTap' data-index="{{index}}">
-        <view>{{item.name}}</view>
-        <view class='{{item.id==idxx?"border":""}}'></view>
-      </view>
+  <view class="bottom_nav" >
+    <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+            <view class="nav-item {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">{{navItem}}</view>
+        </block>     
     </scroll-view>
+
+
+    
   </view>
-  <view class="list">
-    <view class="list_item" wx:for="{{5}}" wx:key="key">
-      <view class="item_top">
-        <image src="../../images/localtion.png"></image>
-        <view class="address">朝阳区望京SOHO</view>
-      </view>
-      <view class="item_bottom">
-        <view class="bottom_left">
-          <view class="aleadyNum">24</view>
-          <view class="aleady">打卡</view>
-        </view>
-        <view class="bottom_right">
-          <view class="noNum">24</view>
-          <view class="no">未打卡</view>
-        </view>
-      </view>
-    </view>
-  </view>
+
+
+    <!-- 页面内容 -->
+    <!-- <swiper class="tab-box" current="{{currentTab}}" duration="300" style="height:93vh;" bindchange="switchTab">         -->
+        <!-- <swiper-item  class="tab-content" > -->
+
+              <view class="list_item"  wx:for="{{one_list}}" wx:key="key">
+                <view class="item_top">
+                  <image src="../../images/localtion.png"></image>
+                  <view class="address">{{item.address}}</view>
+                </view>
+                <view class="item_bottom">
+                  <view class="bottom_left" bindtap="GoUserList" data-type="1"  data-id="{{item.id}}" data-activity_id="{{item.activity_id}}">
+                    <view class="aleadyNum">{{item.yi_da_ka}}</view>
+                    <view class="aleady">打卡</view>
+                  </view>
+                  <view class="bottom_right"  bindtap="GoUserList" data-type="0" data-id="{{item.id}}"  data-activity_id="{{item.activity_id}}">
+                    <view class="noNum">{{item.wei_da_ka}}</view>
+                    <view class="no">未打卡</view>
+                  </view>
+                </view>
+              </view>
+
+        <!-- </swiper-item> -->
+    <!-- </swiper> -->
 </view>
+
+
+
+
+
+  <!-- <view class="list"> -->
+
+  <!-- </view> -->

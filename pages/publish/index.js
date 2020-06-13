@@ -34,9 +34,10 @@ Page({
       url: '/pages/publish/activity',
     })
   },
-  jilu: function () {
+  jilu: function (event) {
     wx.navigateTo({
-      url: '/pages/publish/jilu',
+      // url: '/pages/publish/jilu',
+      url:"/pages/punch/punch?id=" +event.currentTarget.dataset.id
     })
   },
   create_punch: function (e) {

@@ -2,6 +2,7 @@ page {
   background-color: #f7f3f7;
 }
 
+
 /* 底部日期导航栏start */
 
 .bottom_nav .bottom_scroll {
@@ -11,6 +12,12 @@ page {
   line-height: 83rpx;
   border-bottom: 4rpx solid #f9f9f9;
   background-color: #fff;
+  position: fixed;
+  top:0rpx;
+}
+
+.bottom_nav{
+  margin-bottom: 100rpx;
 }
 
 .bottom_nav .bottom_scroll .nav {
@@ -53,6 +60,7 @@ page {
 }
 
 .list_item {
+  margin: 25rpx auto;
   width: 687rpx;
   margin-top: 21rpx;
   /* height: 239rpx; */
@@ -111,4 +119,41 @@ page {
 .no{
   margin-top: 21rpx;
   margin-bottom: 40rpx;
+}
+
+
+
+
+
+/**index.wxss**/
+.nav {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  background: #f7f7f7;
+  font-size: 16px;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.nav-item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+.nav-item.active{
+  color: red;
+}
+.tab-box{
+  /* background: greenyellow; */
+  padding-top: 5rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+.tab-content{
+  overflow-y: scroll;
 }

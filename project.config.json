@@ -6,16 +6,16 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
-		"enhance": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"coverView": true,
-		"nodeModules": false,
 		"autoAudits": false,
+		"coverView": true,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"enhance": true,
+		"nodeModules": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -32,7 +32,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.11.1",
 	"appid": "wx6361ef659af83d2d",
-	"projectname": "yanxue",
+	"projectname": "%E7%A0%94%E5%AD%A6",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -89,6 +89,13 @@
 					"name": "发布圈子",
 					"pathName": "pages/releaseDynamic/releaseDynamic",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/punch/punch",
+					"pathName": "pages/punch/punch",
+					"query": "id=31",
 					"scene": null
 				}
 			]
