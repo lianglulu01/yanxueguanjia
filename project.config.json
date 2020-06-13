@@ -74,6 +74,12 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布活动",
+					"pathName": "pages/publish/activity",
+					"scene": null
 				}
 			]
 		}

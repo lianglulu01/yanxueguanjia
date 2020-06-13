@@ -16,7 +16,10 @@
   <view class="upload">
     <view class="name">活动图</view>
     <block wx:for="{{activeImgArr}}" wx:key="item">
-      <image class= "show-image" mode="aspectFitf" src="{{item}}" ></image>
+      <view class="showImageBox">
+        <image class= "show-image" mode="aspectFitf" src="{{item}}" ></image>
+        <view class="showImageDel" bindtap="delShow" data-index="{{index}}"></view>
+      </view>
     </block>
     <image class= "show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
   </view>
@@ -38,17 +41,34 @@
     <view class="name2">地点</view>
     <input class="typein1" type="text" placeholder="请输入活动集合点" name="address"></input>
   </view>
+
   <view class="bottom_2">行程管理</view>
-  <block wx:for="{{richeng}}" wx:key="item.time">
+  <view class="richengBox" wx:for="{{richeng}}" wx:key="item.time">
     <view class="bottom_3">
-      <view class="name">{{item.time}}</view>
-      <input placeholder="请添行程管理" name="richeng" class="areain">{{item.desc}}</input>
+      <!-- <view class="name">{{item.time}}</view> -->
+      <view class="name">
+        <picker mode="date" value="item.time" start="{{date}}" end="{{date2}}" data-index="{{index}}" bindchange="bindTimeChange">
+          <view>
+            {{item.time ? item.time : '请选择日期'}}
+          </view>
+        </picker>
+      </view>
+      <input placeholder="请添行程管理" name="richeng" bindinput="changeDesc" data-index="{{index}}" class="areain" value="{{item.desc}}"></input>
     </view>
-    <block wx:for="{{item.pic_url}}" wx:for-item="imgSrc">
-      <image class= "xingcheng-image" mode="aspectFitf" src="{{imgSrc}}"></image>
-      <image class= "show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
-    </block>
-  </block>
+    <view class="richengImgs">
+      <block wx:for="{{item.pic_url}}" wx:for-item="imgSrc" wx:for-index="index_pic">
+        <view class="xingcheng-image showImageBox">
+          <image class= "" mode="aspectFill" src="{{imgSrc}}"></image>
+          <view class="showImageDel" bindtap="delImg" data-index="{{index}}" data-index2="{{index_pic}}"></view>
+        </view>
+      </block>
+      <image class= "xingcheng-image" mode="aspectFill" src="/images/tongming/add.png" data-index="{{index}}" bindtap="addImg"></image>
+    </view>
+    <view class="richengDel" bindtap="delRicheng" data-index="{{index}}">
+      <text class="iconfont iconshanchu" style="color:#696969"></text>
+    </view>
+  </view>
+  <view class="richengBtn" bindtap="addRicheng">添加行程</view>
 </view>
 <!--活动须知-->
 <view class="last">
