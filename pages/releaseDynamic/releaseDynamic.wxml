@@ -36,7 +36,10 @@
     </view>
   </view>
   <view class="button">
-    <view class="button_content" bindtap="fb">
+    <view class="button_content" bindtap="fb" wx:if="{{is_tj==1}}">
+      发布
+    </view>
+     <view class="button_content" wx:if="{{is_tj==2}}">
       发布
     </view>
   </view>

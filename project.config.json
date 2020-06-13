@@ -100,9 +100,6 @@
 				},
 				{
 					"id": -1,
-					"name": "个人信息",
-					"pathName": "pages/personalData/personalData",
-					"query": "id=16",
 					"name": "圈子详情",
 					"pathName": "pages/dynamic/dynamic_index",
 					"query": "circel_id=14",
@@ -112,6 +109,13 @@
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的说说",
+					"pathName": "pages/mytalk/mytalk",
 					"query": "",
 					"scene": null
 				}

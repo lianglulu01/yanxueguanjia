@@ -32,9 +32,9 @@ Page({
     })
   },
   toDynamic: function() {
-    // wx.navigateTo({
-    //   url:'../dynamic/dynamic'
-    // })
+    wx.navigateTo({
+      url:'../mytalk/mytalk'
+    })
   },
   associate: function() {
     wx.navigateTo({
