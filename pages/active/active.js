@@ -76,18 +76,11 @@ Page({
     ec: {
       onInit: initChart
     },
+    xiaokeai:[1,2,3,4,5,6,7,8,9],
+    imgArr:['http://bpic.588ku.com/element_origin_min_pic/16/10/30/528aa13209e86d5d9839890967a6b9c1.jpg','http://bpic.588ku.com/element_origin_min_pic/16/10/30/528aa13209e86d5d9839890967a6b9c1.jpg'],
     nav_list: [{
       name: '李超',
       id: 0
-    }, {
-      name: '李超',
-      id: 1
-    }, {
-      name: '李超',
-      id: 2
-    }, {
-      name: '李超',
-      id: 3
     }],
     date_list: [{
       name: '6月6号',
@@ -105,7 +98,14 @@ Page({
     idxx: 0,
     explanation: ['中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争'],
 
-  },
+  },previewImg:function(e){
+    console.log(e.currentTarget.dataset.src);
+    let that = this;
+    wx.previewImage({
+     current:e.currentTarget.dataset.src,   //当前图片地址
+     urls: that.data.imgArr,        //所有要预览的图片的地址集合 数组形式
+    })
+   },
   switchTap(e) { //导航
     // console.log(e)
     var that = this
@@ -173,7 +173,21 @@ Page({
     })
   },
   onLoad: function() {
-
-  }
+    this.getNavlist()
+  },
+  getNavlist:function(){
+    var that = this;
+    let userinfo = wx.getStorageSync('userinfo')
+    var user_id = userinfo.id
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/activity&user_id='+user_id,
+      success:function(res){
+        // console.log(res.data.data)
+        that.setData({
+          nav_list: res.data.data
+        })
+      }
+    })
+  },
 
 })

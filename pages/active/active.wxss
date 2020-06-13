@@ -330,3 +330,16 @@ ec-canvas {
   width: 500rpx;
   height: 450rpx;
 }
+.xiaokeai_list{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.xiaokeai{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 20rpx;
+  margin: 6rpx 0;
+}

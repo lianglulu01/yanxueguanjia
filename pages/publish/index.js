@@ -51,7 +51,7 @@ Page({
     this.getlist()
   },
   onShow:function(){
-    this.onLoad()
+   this.onLoad()
   },
   getlist() {
     let me = this

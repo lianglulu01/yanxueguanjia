@@ -50,24 +50,24 @@
         <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
          <view class="name1">我是个好人</view>
         <view class="time1">2个小时前</view>
-        <view class="talk">最近没有买新鞋回头就拍个就写可以不？小编</view>
+        <view class="talk" bindtap="tongming">最近没有买新鞋回头就拍个就写可以不？小编</view>
         <view class="review">
-          <view>咕咚小编：当然可以啦</view>
-          <view>Jack0810：小贝</view>
+          <view bindtap="tongming">咕咚小编：当然可以啦</view>
+          <view bindtap="tongming"> Jack0810：小贝</view>
         </view>
   </view>
   <view class="item_left1">
         <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1967122488,1967216897&fm=26&gp=0.jpg"></image>
          <view class="name1">我是个好人</view>
         <view class="time1">2个小时前</view>
-        <view class="talk">最近没有买新鞋回头就拍个就写可以不？小编</view>
+        <view class="talk" bindtap="tongming">最近没有买新鞋回头就拍个就写可以不？小编</view>
         <view class="review">
-          <view>咕咚小编：当然可以啦</view>
-          <view>Jack0810：小贝</view>
+          <view bindtap="tongming">咕咚小编：当然可以啦</view>
+          <view bindtap="tongming">Jack0810：小贝</view>
         </view>
   </view>
 </view>
-<view class="last">
+<view class="last" wx:if="{{last}}">
   <input class="last_input" type="text" placeholder="写评论" placeholder-style="font-size:30rpx;"></input>
    <view class="operating">
         <view class="iconfont icondianzan1" style="font-size:42rpx;color:#FCC41A"></view>
@@ -76,4 +76,10 @@
         <view class="operating_num">3</view>
          <view class="iconfont iconzhuanfa1" style="font-size:42rpx"></view>
       </view>
+</view>
+<view class="jump" wx:if="{{jump}}">
+<input  focus="{{tongming}}" bindblur="huifu" class="jump2" placeholder="写评论" placeholder-style="font-size:22rpx;color:rgba(177, 177, 177, 1)"></input>
+<view class="jump1">
+ <view>发送</view>
+</view>
 </view>
