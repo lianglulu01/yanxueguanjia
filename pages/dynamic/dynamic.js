@@ -16,6 +16,7 @@ Page({
   dz:function(e){
       console.log(e);
       var that = this;
+      var key = e.currentTarget.dataset.key;
        var data = {
         circel_id:e.currentTarget.dataset.circel_id,
         user_id:wx.getStorageSync("userinfo").id,
@@ -26,9 +27,30 @@ Page({
          success:function(res){
              console.log(res);
              if(that.data.selected){
-              that.getQz();
+              // that.getQz();
+              var list= that.data.myList;
+              if(list[key].is_agreen){
+                list[key].is_agreen = false;
+                list[key].like = list[key].like-1;
+              }else{
+                list[key].is_agreen = true;
+                list[key].like = list[key].like+1;
+              }
+                 that.setData({
+                     myList:list
+                 })
              }else{
-              that.getGc();
+              var list= that.data.myList;
+              if(list[key].is_agreen){
+                list[key].is_agreen = false;
+                list[key].like = list[key].like-1;
+              }else{
+                list[key].is_agreen = true;
+                list[key].like = list[key].like+1;
+              }
+                 that.setData({
+                     myList:list
+                 })
              }
              
          },
