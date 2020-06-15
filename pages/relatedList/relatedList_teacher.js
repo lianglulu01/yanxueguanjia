@@ -35,14 +35,14 @@ Page({
   },
 
   getList: function () {
-    let t = this
+    let t = this, d = t.data
     app.get(
-      'relation/get-relation',{user_id:1,page:1,relation_id:0}
-    ).then(res=>{
+      'activity/activity-teacher', { user_id: d.info.id, activity_id: d.activity_id }
+    ).then(res => {
       t.setData({
-        list: res.data.list
+        list: res.list
       })
-    }).catch(err=>{
+    }).catch(err => {
       wx.showToast({
         title: '网络错误，请返回重试',
       })

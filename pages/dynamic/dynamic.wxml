@@ -7,7 +7,7 @@
     <view class="square_border" wx:if="{{selected1}}"></view>
   </view>
   <view class="list" wx:if="{{selected}}">
-    <view class="list_item"  wx:for="{{myList}}" wx:key="{{index}}">
+    <view class="list_item"  wx:for="{{myList}}" wx:key="key">
   
       <view class="item_left" bindtap="dynamic_index" data-id="{{item.id}}">
         <image src="{{item.avatar_url}}"></image>
@@ -96,7 +96,7 @@
   <!-- //无数据显示 -->
   <view wx:if="{{myList.length<1}}" style="position: absolute;top: 343rpx;left: 188rpx">
      <image src="../../images/nodata.png" style="width:374rpx;height:288rpx;"></image>
-     <view style="font-size:32rpx;text-align:center;">还没有活动哟！</view>
+     <view style="font-size:28rpx;text-align:center;color:rgba(102,102,102,1);">还没有活动哟！</view>
   </view>
 <view class="add_img" bindtap="fbqz">
     <image src="../../images/addqz.png" style="width:100%;height:100%;"></image>
@@ -118,7 +118,7 @@
            <view class="section">
               <view class="tui-table-view">
               <!-- 循环图片 -->
-                <view class="tui-col-3" wx:for="{{item.images}}" wx:key="{{index}}">
+                <view class="tui-col-3" wx:for="{{item.images}}" wx:key="key">
                     <view class="img">
                          <image src="{{item}}" style="width:100%;height:100%;border-radius:14rpx"></image>
                     </view>

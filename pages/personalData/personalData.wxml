@@ -1,43 +1,47 @@
 <view class="content">
-  <view class="list">
-    <view class="item">
-      <view class="item_name">头像</view>
-      <view class="item_val">
-        <image src="{{info.avatar_url}}"></image>
-      </view>
-    </view>
-    <view class="item">
-      <view class="item_name">真实姓名</view>
-      <view class="item_val">
-        <input name="rolename" value="{{info.rolename}}"></input>
-      </view>
-    </view>
+	<view class="list">
 
-    <view class="item">
-      <view class="item_name">学校</view>
-      <view class="item_val">
-        <input name="school" value="{{info.school}}"></input>
-      </view>
-    </view>
+		<form bindsubmit="saveInfo">
+			<view class="item">
+				<view class="item_name">头像</view>
+				<view class="item_val">
+					<image src="{{info.avatar_url}}"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="item_name">真实姓名</view>
+				<view class="item_val">
+					<input name="rolename" value="{{info.rolename}}" placeholder="请输入您的真实姓名"></input>
+				</view>
+			</view>
 
-    <view class="item">
-      <view class="item_name">班级</view>
-      <view class="item_val">
-        <input name="class_name" value="{{info.class_name}}"></input>
-      </view>
-    </view>
+			<view class="item">
+				<view class="item_name">学校</view>
+				<view class="item_val">
+					<input name="school" value="{{info.school}}" placeholder="请输入您的学校名称"></input>
+				</view>
+			</view>
 
-    <view class="item">
-      <view class="item_name">手机号</view>
-      <view class="item_val">
-        <input name="rolename" value="{{info.phone}}"></input>
-      </view>
-    </view>
-    <view class="item">
-      <view class="item_name">身份证号</view>
-      <view class="item_val">
-        <input name="rolename" value="{{info.id_card}}"></input>
-      </view>
-    </view>
-  </view>
+			<view class="item">
+				<view class="item_name">班级</view>
+				<view class="item_val">
+					<input name="class_name" value="{{info.class_name}}" placeholder="请输入您班级"></input>
+				</view>
+			</view>
+
+			<view class="item">
+				<view class="item_name">手机号</view>
+				<view class="item_val">
+					<input name="phone" value="{{info.phone}}" placeholder="请输入您的手机号码"></input>
+				</view>
+			</view>
+			<view class="item">
+				<view class="item_name">身份证号</view>
+				<view class="item_val">
+					<input name="id_card" value="{{info.id_card}}" placeholder="请输入您的身份证号"></input>
+				</view>
+			</view>
+			<button class="formBtn" form-type="submit">保存</button>
+		</form>
+	</view>
 </view>

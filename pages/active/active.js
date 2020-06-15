@@ -53,6 +53,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    circles:[],
+    latitude:23.099994,
+    longitude:113.324520,
+
+
     ec: {
       onInit: function(canvas, width, height, dpr){
         chart = echarts.init(canvas, null, {
@@ -60,6 +65,7 @@ Page({
           height: height,
           devicePixelRatio: dpr // new
         });
+        console.log("hellojiangning")
         canvas.setChart(chart);
 
         chart.setOption(option);
@@ -171,7 +177,101 @@ Page({
     })
   },
   onLoad: function() {
-    this.getNavlist()
+    let me = this
+     me.getNavlist()
+  },
+  onShow:function() {
+    console.log("show/show")
+    this.getLocationWit()
+  },
+  //获取当前位置
+  getLocationWit:function(obj = null){
+    let me = this
+    wx.showLoading({
+      title: '定位最新位置....',
+    })
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        let latitude = res.latitude
+        let longitude = res.longitude
+        me.setData({
+          latitude:latitude,
+          longitude:longitude
+        },() => {
+          if(obj != null) {
+            obj.dakaInfo()
+          }
+        })
+      },
+      complete:() => {
+        wx.hideLoading({
+          complete: (res) => {},
+        })
+      }
+    })
+  },
+
+  //点击打卡按钮
+  dakaBtn:function(){
+    let me = this
+    console.log("btn-打卡")
+    me.getLocationWit(me)
+  },
+  //发送请求 , 打卡
+  dakaInfo:function(){
+    let me = this
+    let user = wx.getStorageSync('userinfo')
+
+    let data = {
+      activity_id:me.data.activity.id,
+      longitude:me.data.longitude,
+      latitude:me.data.latitude,
+      clock_in_id:me.data.activity.daka_last.id,
+      user_id:user.id
+    };
+    // data.user_id = 0
+    app.post('activity/set-da-ka',data).then(res => {
+      console.log(res)
+      if(res.code == 1) {
+          wx.showToast({
+              title: res.data.msg, 
+              icon: 'none',
+              duration: 1500   
+          })
+      }else{
+        wx.showToast({
+            title: res.data.msg,
+            icon: 'success',
+            duration: 1500
+        })
+      }
+
+    }).catch(err => {
+      console.log(err)
+          wx.showToast({
+              title: '系统异常', 
+              icon: 'none',
+              duration: 1500   
+          })
+    })
+  },
+  //设置位置
+  updateMap:function(latitude,longitude,jvli){
+
+    let me = this
+    me.setData({
+      latitude:latitude,
+      longitude:longitude,
+      circles:[{
+        latitude: latitude,
+        longitude: longitude,
+        color: '#7cb5ec88',
+        fillColor: '#7cb5ec88',
+        radius: jvli,
+        strokeWidth: 1
+      }],
+    })
   },
   getNavlist:function(){
     var that = this;
@@ -201,8 +301,9 @@ Page({
         // console.log(res.data.data)
         that.setData({
           activity: res.data.data,
-          imgArr: res.data.data.richeng[0].pic_url
+          imgArr: res.data.data.richeng[0].pic_url,
         })
+        that.updateMap(res.data.data.daka_last.latitude,res.data.data.daka_last.longitude,res.data.data.daka_last.distance / 2)
         that.getComment();
       }
     })

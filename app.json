@@ -1,6 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mine/list_index",
+    "pages/mine/list",
+    "pages/mine/report_index",
+    "pages/mine/report",
     "pages/publish/activity",
     "pages/mine/xiezhu",
     "pages/mine/mine",
@@ -29,7 +33,9 @@
     "pages/assess/assess",
     "pages/myActivity/myActivity",
     "pages/mine/mySignUp",
-    "pages/registrationDetail/registrationDetail"
+    "pages/registrationDetail/registrationDetail",
+    "pages/index/myActivity",
+    "pages/mytalk/mytalk"
   ],
   "window": {
     "backgroundTextStyle": "light",

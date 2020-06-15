@@ -1,26 +1,29 @@
-<view class="list">
+
+<view class="list" wx:for="{{list}}">
   <view class="list_1">
     <image src="/images/tongming/1.png"></image>
-    <view class="name">陈小晓</view>
-    <view class="weidaka">未打卡</view>
+    <view class="name">{{item.nickname}}</view>
+    <!-- <view class="weidaka">未打卡</view> -->
   </view>
   <view class="list_1">
    <image src="/images/tongming/2.png"></image>
-   <view class="name">2020-2-2 13:02:00</view>
+   <view class="name" wx:if="{{type == 1}}">{{item.daka_time}}</view>
+   <view class="name" wx:if="{{type == 0}}">无</view>
     </view>
   <view class="list_1">
    <image src="/images/tongming/3.png"></image>
    <view class="name">打卡地点：</view>
-   <view class="name">北京市朝阳区锐创国际</view>
+   <view class="name">{{clock_in_info.address}}</view>
   </view>
   <view class="list_1">
   <image src="/images/tongming/4.png"></image>
   <view class="name">实时打卡位置:</view>
-  <view class="red">无</view>
+  <view class="red" wx:if="{{type == 1}}">{{item.user_address}}</view>
+  <view class="red" wx:if="{{type == 0}}">无</view>
   </view>
 </view>
 <!--一列-->
-<view class="list">
+<!-- <view class="list">
   <view class="list_1">
     <image src="/images/tongming/1.png"></image>
     <view class="name">陈小晓</view>
@@ -103,4 +106,4 @@
   <view class="name">实时打卡位置:</view>
   <view class="red">无</view>
   </view>
-</view>
+</view> -->

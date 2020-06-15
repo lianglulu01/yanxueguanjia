@@ -1,88 +1,88 @@
 <!--上部分-->
 <form bindsubmit="formSubmit">
-<view class="title">
-  <view class="list">
-    <view class="name">活动名称</view>
-    <input class="typein1" name="name" type="text" placeholder="请填写活动名称"></input>
-  </view>
-   <view class="list">
-    <view class="name">价格</view>
-    <input class="typein" type="digit" name="price" placeholder="0.00" maxlength="8"></input>
-  </view>
-   <view class="list">
-    <view class="name">人数</view>
-    <input class="typein" type="number" name="team_num" placeholder="不限" maxlength="3"></input>
-  </view>
-  <view class="upload">
-    <view class="name" style="width:100%">活动图</view>
-    <block wx:for="{{activeImgArr}}" wx:key="item">
-      <view class="showImageBox">
-        <image class= "show-image" mode="aspectFitf" src="{{item}}" ></image>
-        <view class="showImageDel" bindtap="delShow" data-index="{{index}}"></view>
-      </view>
-    </block>
-    <image class= "show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
-  </view>
-</view>
-<!--活动描述-->
-<view class="middle">
-  <view class="name" style="width:1750rpx">活动描述</view>
-  <textarea  type="text" placeholder="简单说说要求吧.." name="desc" maxlength="-1" class="middle_textarea" placeholder-style="font-size:25rpx"></textarea>
-</view>
-<!--行程管理-->
-<view class="bottom">
-  <view class="bottom_1">
-    <view class="name">时间</view>
-    <picker mode="date" value="{{date}}" bindchange="bindDateChange" name="start_time" data-index="0">{{date}}</picker>
-    <image src="/images/tongming/toright.png" class="toright"></image>
-     <picker mode="date" value="{{date2}}" bindchange="bindDateChange" name="end_time" data-index="1">{{date2}}</picker>
-  </view>
-   <view class="bottom_1">
-    <view class="name2">地点</view>
-    <textarea class="typein2" type="text" placeholder="请输入活动集合点" name="address"></textarea>
-  </view>
+	<view class="title">
+		<view class="list">
+			<view class="name">活动名称</view>
+			<input class="typein1" name="name" type="text" placeholder="请填写活动名称"></input>
+		</view>
+		<view class="list">
+			<view class="name">价格</view>
+			<input class="typein" type="digit" name="price" placeholder="0.00" maxlength="8"></input>
+		</view>
+		<view class="list">
+			<view class="name">人数</view>
+			<input class="typein" type="number" name="team_num" placeholder="不限" maxlength="3"></input>
+		</view>
+		<view class="upload">
+			<view class="name" style="width:100%">活动图</view>
+			<block wx:for="{{activeImgArr}}" wx:key="item">
+				<view class="showImageBox">
+					<image class="show-image" mode="aspectFitf" src="{{item}}"></image>
+					<view class="showImageDel" bindtap="delShow" data-index="{{index}}"></view>
+				</view>
+			</block>
+			<image class="show-image" mode="aspectFitf" src="/images/tongming/add.png" bindtap="gotoShow"></image>
+		</view>
+	</view>
+	<!--活动描述-->
+	<view class="middle">
+		<view class="name" style="width:1750rpx">活动描述</view>
+		<textarea type="text" placeholder="简单说说要求吧.." name="desc" maxlength="-1" class="middle_textarea" placeholder-style="font-size:25rpx"></textarea>
+	</view>
+	<!--行程管理-->
+	<view class="bottom">
+		<view class="bottom_1">
+			<view class="name">时间</view>
+			<picker mode="date" value="{{date}}" bindchange="bindDateChange" name="start_time" data-index="0">{{date}}</picker>
+			<image src="/images/tongming/toright.png" class="toright"></image>
+			<picker mode="date" value="{{date2}}" bindchange="bindDateChange" name="end_time" data-index="1">{{date2}}</picker>
+		</view>
+		<view class="bottom_1">
+			<view class="name2">地点</view>
+			<textarea class="typein2" type="text" placeholder="请输入活动集合点" name="address"></textarea>
+		</view>
 
-  <view class="bottom_2">行程管理</view>
-  <view class="richengBox" wx:for="{{richeng}}" wx:key="item.time">
-    <view class="bottom_3">
-      <!-- <view class="name">{{item.time}}</view> -->
-      <view class="name">
-        <picker mode="date" value="item.time" start="{{date}}" end="{{date2}}" data-index="{{index}}" bindchange="bindTimeChange">
-          <view style="width:100%">
-            {{item.time ? item.time : '请选择日期'}}
-          </view>
-        </picker>
-      </view>
-    </view>
-     <textarea placeholder="请添行程管理" name="richeng" bindinput="changeDesc" data-index="{{index}}" class="middle_textarea1" value="{{item.desc}}" placeholder-style="font-size:25rpx"></textarea>
-    <view class="richengImgs">
-      <block wx:for="{{item.pic_url}}" wx:for-item="imgSrc" wx:for-index="index_pic">
-        <view class="xingcheng-image showImageBox">
-          <image class= "" mode="aspectFill" src="{{imgSrc}}"></image>
-          <view class="showImageDel" bindtap="delImg" data-index="{{index}}" data-index2="{{index_pic}}"></view>
-        </view>
-      </block>
-      <image class= "xingcheng-image" mode="aspectFill" src="/images/tongming/add.png" data-index="{{index}}" bindtap="addImg"></image>
-    </view>
-    <view class="richengDel" bindtap="delRicheng" data-index="{{index}}">
-      <text class="iconfont iconshanchu" style="color:#696969"></text>
-    </view>
-  </view>
-  <view class="richengBtn" bindtap="addRicheng">添加行程</view>
-</view>
-<!--活动须知-->
-<view class="last">
-  <view class="middle">
-    <view class="name">活动须知</view>
-    <textarea type="text" class="middle_textarea" maxlength="-1" placeholder-style="font-size:25rpx" placeholder="简单说说要求吧..." name="know"></textarea>
-  </view>
-  <view class="bottom_1">
-   <view class="name">是否公开</view>
-   <radio-group name="is_open">
-     <radio class="yes" value="1" color="rgba(24, 116, 244, 1)">是</radio>
-     <radio class="yes" value="0" color="rgba(24, 116, 244, 1)">否</radio>
-   </radio-group>
-  </view>
-  <button class="sumit" form-type="submit">立即发布</button>
-</view>
+		<view class="bottom_2">行程管理</view>
+		<view class="richengBox" wx:for="{{richeng}}" wx:key="item.time">
+			<view class="bottom_3">
+				<!-- <view class="name">{{item.time}}</view> -->
+				<view class="name">
+					<picker mode="date" value="item.time" start="{{date}}" end="{{date2}}" data-index="{{index}}" bindchange="bindTimeChange">
+						<view style="width:100%">
+							{{item.time ? item.time : '请选择日期'}}
+						</view>
+					</picker>
+				</view>
+			</view>
+			<textarea placeholder="请添行程管理" name="richeng" bindinput="changeDesc" data-index="{{index}}" class="middle_textarea1" value="{{item.desc}}" placeholder-style="font-size:25rpx"></textarea>
+			<view class="richengImgs">
+				<block wx:for="{{item.pic_url}}" wx:for-item="imgSrc" wx:for-index="index_pic">
+					<view class="xingcheng-image showImageBox">
+						<image class="" mode="aspectFill" src="{{imgSrc}}"></image>
+						<view class="showImageDel" bindtap="delImg" data-index="{{index}}" data-index2="{{index_pic}}"></view>
+					</view>
+				</block>
+				<image class="xingcheng-image" mode="aspectFill" src="/images/tongming/add.png" data-index="{{index}}" bindtap="addImg"></image>
+			</view>
+			<view class="richengDel" bindtap="delRicheng" data-index="{{index}}">
+				<text class="iconfont iconshanchu" style="color:#696969;font-size:32rpx"></text>
+			</view>
+		</view>
+		<view class="richengBtn" bindtap="addRicheng">添加行程</view>
+	</view>
+	<!--活动须知-->
+	<view class="last">
+		<view class="middle">
+			<view class="name">活动须知</view>
+			<textarea type="text" class="middle_textarea" maxlength="-1" placeholder-style="font-size:25rpx" placeholder="简单说说要求吧..." name="know"></textarea>
+		</view>
+		<view class="bottom_1">
+			<view class="name">是否公开</view>
+			<radio-group name="is_open">
+				<radio class="yes" value="1" color="rgba(24, 116, 244, 1)">是</radio>
+				<radio class="yes" value="0" color="rgba(24, 116, 244, 1)">否</radio>
+			</radio-group>
+		</view>
+		<button class="sumit" form-type="submit">立即发布</button>
+	</view>
 </form>

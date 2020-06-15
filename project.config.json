@@ -6,16 +6,16 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
-		"enhance": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"coverView": true,
-		"nodeModules": false,
 		"autoAudits": false,
+		"coverView": true,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"enhance": true,
+		"nodeModules": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -32,7 +32,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.11.1",
 	"appid": "wx6361ef659af83d2d",
-	"projectname": "yanxue",
+	"projectname": "%E7%A0%94%E5%AD%A6",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -93,6 +93,7 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "协助教师列表",
 					"pathName": "pages/relatedList/relatedList_teacher",
 					"query": "id=16",
@@ -100,6 +101,8 @@
 				},
 				{
 					"id": -1,
+=======
+>>>>>>> origin
 					"name": "圈子详情",
 					"pathName": "pages/dynamic/dynamic_index",
 					"query": "circel_id=14",
@@ -114,10 +117,37 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
 					"name": "pages/mine/mine",
 					"pathName": "pages/mine/mine",
 					"query": "",
 					"scene": null
+=======
+					"name": "活动列表",
+					"pathName": "pages/publish/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "详情",
+					"pathName": "pages/activeDetail/activeDetail",
+					"query": "id=40",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/report_index",
+					"pathName": "pages/mine/report_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activeDetail/activeDetail",
+					"pathName": "pages/activeDetail/activeDetail",
+					"scene": null
+>>>>>>> origin
 				}
 			]
 		}

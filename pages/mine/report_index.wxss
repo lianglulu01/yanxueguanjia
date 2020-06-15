@@ -1,0 +1,245 @@
+.title{
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 2rpx solid rgba(245,245,245,1);
+  overflow: hidden;
+}
+.title view{
+  width:244rpx;
+height:56rpx;
+font-size:26rpx;
+font-weight:bold;
+color:rgba(51,51,51,1);
+margin: 30rpx auto;
+text-align: center;
+}
+.index{
+  width: 100%;
+  height: 178rpx;
+  border-bottom: 2rpx solid rgba(245,245,245,1);
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.index view{
+  font-size:26rpx;
+font-weight:400;
+color:rgba(82,82,82,1);
+}
+.desc{
+  width: 100%;
+  height: 667rpx;
+border-bottom: 2rpx solid rgba(245,245,245,1);
+overflow: hidden;
+}
+.desc_title{
+  font-size:30rpx;
+font-weight:bold;
+color:rgba(51,51,51,1);
+margin: 33rpx 0 33rpx 32rpx;
+}
+.desc_content{
+  width:689rpx;
+font-size:24rpx;
+font-weight:400;
+color:rgba(51,51,51,1);
+margin: 0 auto;
+}
+.desc_image{
+  width: 690rpx;
+  height: 374rpx;
+  margin: 44rpx auto 0;
+  display: block;
+}
+/* 活动安排的列表start */
+
+.plan_list {
+  margin-top: 14rpx;
+  background-color: #fff;
+  padding-bottom: 70rpx;
+}
+
+.plan_title {
+  padding: 32rpx 29rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.plan_item {
+  padding-left: 49rpx;
+  box-sizing: border-box;
+  padding-top: 21rpx;
+  margin-bottom: 41rpx;
+}
+
+.plan_time {
+  width: 114rpx;
+  height: 29rpx;
+  background: rgba(26, 120, 252, 1);
+  border-radius: 1rpx;
+  font-size: 22rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 29rpx;
+}
+
+.plan_content {
+  font-size: 24rpx;
+  color: #333;
+  margin: 16rpx 0 19rpx 0;
+}
+
+.plan_img {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.plan_img image {
+  width: 125rpx;
+  height: 125rpx;
+}
+
+.img_item {
+  margin-right: 14rpx;
+}
+/* 画布*/
+
+.bottom_assess {
+  padding-top: 40rpx;
+}
+
+.assess_top {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 32rpx;
+  color: #333;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.top_border {
+  width: 6rpx;
+  height: 40rpx;
+  background: rgba(53, 137, 255, 1);
+  border-radius: 3rpx;
+  margin-right: 19rpx;
+}
+
+.assess_item {
+  padding-top: 47rpx;
+  padding-left: 57rpx;
+  box-sizing: border-box;
+}
+
+.assess_name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  /* align-items: center; */
+  margin-bottom: 27rpx;
+}
+
+.assess_name image {
+  width: 29rpx;
+  height: 29rpx;
+  margin-left: 20rpx;
+}
+
+.assess_val {
+  /* display: flex; *//* justify-content: center; */
+  text-align: left;
+  width: 648rpx;
+  height: 55rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(96, 96, 96, 1);
+  line-height: 30rpx;
+}
+.assess_value {
+  text-align: center;
+}
+.assess_value image {
+  width: 459rpx;
+  height: 298rpx;
+}
+.teach_title{
+  width: 174rpx;
+}
+.teach{
+  font-size:26rpx;
+  color: #606060;
+  font-weight: 500;
+}
+
+
+/* 插件 */
+.container {
+ height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+padding: 20rpx 0;
+box-sizing: border-box;
+
+}
+
+ec-canvas {
+  width: 600rpx;
+  height: 498rpx;
+}
+.yinzhang{
+  width: 100%;
+  height: 158rpx;
+  margin-top: 58rpx;
+  position: relative;
+}
+.yinzhang view{
+  font-size:26rpx;
+font-weight:bold;
+color:rgb(5, 3, 3);
+text-align: right;
+margin-right: 60rpx;
+}
+.yinzhang image{
+  width: 158rpx;
+  height: 158rpx;
+  position: absolute;
+  top: -40rpx;
+  right: 35rpx;
+}
+.bottom{
+  width: 100%;
+  height: 62rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.xiazai{
+  width:166rpx;
+height:61rpx;
+background:rgba(251,134,0,1);
+border-radius:31rpx;
+font-size:30rpx;
+font-weight:400;
+color:rgba(255,255,255,1);
+text-align: center;
+line-height: 61rpx;
+}
+.fenxiang{
+  width:166rpx;
+height:61rpx;
+background:rgba(36,126,252,1);
+border-radius:31rpx;
+font-size:30rpx;
+font-weight:400;
+color:rgba(255,255,255,1);
+text-align: center;
+line-height: 61rpx;
+}

@@ -20,15 +20,11 @@ Page({
       id: options.id
     })
     wx.request({
-<<<<<<< HEAD:pages/registrationDetail/registrationDetail.js
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/order-detail&id=' + this.data.id,
-=======
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-list',
       data: {
         user_id: wx.getStorageSync('userinfo').id,
         page: 1
       },
->>>>>>> master:pages/index/myActivity.js
       success: res => {
         console.log(res.data.data)
         this.setData({

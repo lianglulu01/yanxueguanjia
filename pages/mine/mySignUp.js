@@ -14,7 +14,6 @@ Page({
   onLoad: function (options) {
     // console.log(wx.getStorageSync('userinfo'))
 
-<<<<<<< HEAD
     this.getMySignUp()
   },
   // 跳转-活动详情
@@ -23,16 +22,9 @@ Page({
     wx.navigateTo({
       url: '../registrationDetail/registrationDetail?id='+e.currentTarget.dataset.id,
     })
-=======
-    this.mySignUp()
->>>>>>> master
   },
   // 获取我的活动
-<<<<<<< HEAD
   getMySignUp() {
-=======
-  mySignUp() {
->>>>>>> master
     let id = wx.getStorageSync('userinfo').id
     let page = 1
     wx.request({

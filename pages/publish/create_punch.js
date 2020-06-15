@@ -60,6 +60,11 @@ Page({
         wx.showToast({
           title: '创建成功',
         })
+        setTimeout(function(){
+          wx.switchTab({
+            url: '/pages/publish/index',
+          })
+        },1000)
        console.log(res.data)
       }
     })
