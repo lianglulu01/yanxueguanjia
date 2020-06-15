@@ -12,7 +12,7 @@
       <view>{{item.addtime}}</view>
       <view class="fenge"></view>
       <view class="index_bottom">
-        <view class="bottom_bottom" bindtap="jilu">
+        <view class="bottom_bottom" bindtap="jilu" data-id="{{item.id}}">
           <image src="/images/tongming/jilu.png"></image>
           <view>打卡记录</view>
         </view>

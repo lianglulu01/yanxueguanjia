@@ -70,6 +70,17 @@ Page({
       }
     })
   },
+  jilu: function (event){
+    wx.navigateTo({
+      // url: '/pages/publish/jilu',
+      url: "/pages/punch/punch?id=" + event.currentTarget.dataset.id
+    })
+  },
+  comment: function (event) {
+    wx.navigateTo({
+      url: '/pages/publish/comment?id=' + event.currentTarget.dataset.id,
+    })
+  },
   onReachBottom:function(){
     var that = this
     var page = that.data.page+1
