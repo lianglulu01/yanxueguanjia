@@ -196,7 +196,7 @@ page {
   border-radius: 10rpx;
   box-sizing: border-box;
   padding: 26rpx 19rpx;
-  margin-left: 31rpx;
+  margin: 20rpx 0 0 31rpx;
 }
 
 .card_top {
