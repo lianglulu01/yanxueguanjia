@@ -12,21 +12,32 @@
 .item-left{
   position: relative
 }
+<<<<<<< HEAD
 .item-left .item-status{
   position: absolute;
   right:26rpx;
   top:-4rpx;
+=======
+.item-left view{
+  position: absolute;
+  right:26rpx;
+  top:-4rpx;
+  background-color: #fc8506;
+>>>>>>> master
   color:#fff;
   font-size: 22rpx;
   border-radius: 8rpx;
   padding: 2rpx 6rpx;
 }
+<<<<<<< HEAD
 .item_status_in{
   background-color: #fc8506;
 }
 .item_status_end{
   background-color: #949494;
 }
+=======
+>>>>>>> master
 .item-left image{
   width:200rpx;
   height:200rpx;

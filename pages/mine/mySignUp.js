@@ -14,6 +14,7 @@ Page({
   onLoad: function (options) {
     // console.log(wx.getStorageSync('userinfo'))
 
+<<<<<<< HEAD
     this.getMySignUp()
   },
   // 跳转-活动详情
@@ -22,9 +23,16 @@ Page({
     wx.navigateTo({
       url: '../registrationDetail/registrationDetail?id='+e.currentTarget.dataset.id,
     })
+=======
+    this.mySignUp()
+>>>>>>> master
   },
   // 获取我的活动
+<<<<<<< HEAD
   getMySignUp() {
+=======
+  mySignUp() {
+>>>>>>> master
     let id = wx.getStorageSync('userinfo').id
     let page = 1
     wx.request({
@@ -69,6 +77,15 @@ Page({
 
   },
 
+  getMySignUpList(){
+    let id = wx.getStorageSync('userinfo').id
+    let page = this.data.page
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/my-order&id='+id+'&page='+page,
+
+    })
+    // https://yanxue.qiweibang.com/web/index.php?r=api/activity/my-order&id=1&page=1
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

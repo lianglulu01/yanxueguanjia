@@ -13,6 +13,7 @@ Page({
     sort:1,
     page:1,
     list:[],
+<<<<<<< HEAD
     invite:{
       type:0,
       user_id:null,
@@ -22,6 +23,9 @@ Page({
     activity:{},
     modalHidden: true,
     ewmsrc:''
+=======
+    activity:{}
+>>>>>>> master
   },
 
   onLoad:function(option){
@@ -36,6 +40,7 @@ Page({
         }
       })
     }
+<<<<<<< HEAD
     if(option.activity_id){
       that.data.invite.activity_id = option.activity_id
     }
@@ -44,6 +49,12 @@ Page({
     }
     that.getImg()
     // that.getMyActivity()
+=======
+    
+    that.getImg()
+    that.getMyActivity()
+     
+>>>>>>> master
   },
   onShow:function(){
     var that = this
@@ -154,6 +165,7 @@ Page({
       }
     })
   },
+<<<<<<< HEAD
 
 
   // 确认打卡的按钮
@@ -206,6 +218,33 @@ Page({
       },
     })
   },
+=======
+  // 跳转 活动详情
+  toDetail:function(e){
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
+    })
+  },
+
+  // 首页我参加的活动
+  getMyActivity(){
+    // + wx.getStorageSync('userinfo').id
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-one&user_id='+ wx.getStorageSync('userinfo').id ,
+      success:res=>{
+        console.log(res)
+        this.setData({
+          activity:res.data.data
+        })
+      },
+      fail:err=>{
+        console.log(err)
+      }
+    })
+  },
+  // 
+>>>>>>> master
   // 查看活动 跳转
   toMyActivity() {
     wx.navigateTo({
@@ -231,6 +270,7 @@ Page({
       }
     })
   },
+<<<<<<< HEAD
   // 签到结束
   modalCandel: function () {
     this.setData({
@@ -242,6 +282,36 @@ Page({
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
+=======
+  // 打卡 按钮
+  punch:function(){
+    wx.getLocation({
+      type: 'wgs84',
+      success:(res)=> {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        // console.log(latitude, longitude)
+        wx.request({
+          url: 'https://yanxue.qiweibang.com/web/index.php?r=api/clock-in/user-clock-in',
+          method: 'POST',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          data: {
+            user_id: wx.getStorageSync('userinfo').id,
+            // address:
+            // clock_in_id:
+            longitude: longitude,
+            latitude: latitude
+            // join_user: JSON.stringify(this.data.joinUserId),
+            // mobile: this.data.phone,
+            // activity_id: this.data.id,
+          },
+          success: (res) => { console.log(res) },
+          fail: (err) => { }
+        })
+      }
+>>>>>>> master
     })
   },
 

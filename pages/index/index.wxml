@@ -43,17 +43,29 @@
         <image class="rigth_arr" style="width:22rpx;height:22rpx;" src="../../images/right_arr.png"></image>
       </view>
     </view>
+<<<<<<< HEAD
     <view class="card_center" bindtap="toDetail" data-id="{{activity.id}}">
+=======
+    <view class="card_center">
+>>>>>>> master
       <image src="{{activity.pic_url}}" mode="aspectFill"></image>
       <view class="img_content">{{activity.name}}</view>
     </view>
     <view class="card_bottom">
+<<<<<<< HEAD
       <view class="bottom_left" bindtap="toDetail" data-id="{{activity.id}}">
+=======
+      <view class="bottom_left">
+>>>>>>> master
         <view class="people">{{activity.count}}人报名</view>
         <view class="time">时间:{{activity.start_time}}-{{activity.end_time}}</view>
         <view class="activeAddress">{{activity.address}}</view>
       </view>
+<<<<<<< HEAD
       <view class="bottom-right" bindtap="alertEWM">
+=======
+      <view class="bottom-right">
+>>>>>>> master
         <view class="look">去签到</view>
       </view>
       <modal title="签到" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
