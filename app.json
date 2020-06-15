@@ -1,10 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/active/active",
     "pages/publish/activity",
     "pages/mine/xiezhu",
-    "pages/mine/mine",
     "pages/mine/mine",
     "pages/active/active",
     "pages/publish/index",
