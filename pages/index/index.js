@@ -265,6 +265,8 @@ Page({
         type: 1
       })
       return false;
+    }else{
+
     }
     wx.getLocation({
       type: 'wgs84',
@@ -311,6 +313,11 @@ Page({
       }
     })
     
+  },
+  closeMsg: function () {
+    this.setData({
+      type: 0
+    })
   }
   
 })

@@ -1,46 +1,70 @@
- <!--标题用户信息-->
-<view class="title">
- <image src="{{user.avatar_url}}" class="userpng"></image>
- <view class="username">{{user.nickname}}</view>
- <view class="userphone">{{user.phone}}</view>
+<!--标题用户信息-->
+<view class="title" bindtap="login">
+  <image src="{{avatar}}" class="userpng" wx:if="{{avatar}}"></image>
+  <view class="ava" wx:else>
+   <image src="../../images/ava.png"  ></image>
+  </view>
+ 
+  <view class="username">{{nickname}}</view>
+  <view class="userphone">{{phone}}</view>
+  <view class="no_name" wx:if="{{!nickname}}">当前还未登录,请点击登录</view>
 </view>
 <!--发布活动-->
 <view class="title_1">
   <image src="/images/tongming/huodong_bcc.png"></image>
   <view class="title_mid">
-  <view>快去添加新活动吧~~~</view>
-  <view bindtap="takeout">立即发布</view>
+    <view>快去添加新活动吧~~~</view>
+    <view bindtap="takeout">立即发布</view>
   </view>
 </view>
 <!--活动列表-->
 <view class="list">
- <view class="list_name">活动列表</view>
- <view class="list_index" data-id="{{item.id}}" wx:for="{{list}}" bindlongpress="deletelist">
-  <image src="{{item.pic_url}}"></image>
-  <view>{{item.name}}</view>
-  <view>{{item.addtime}}</view>
-  <view class="fenge"></view>
-   <view class="index_bottom">
-    <view class="bottom_bottom"  bindtap="create_punch" data-id="{{item.id}}" >
-      <image src="/images/tongming/daka.png"   data-id="{{item.id}}"></image>
-      <view>创建打卡</view>
-    </view>
-   <view class="bottom_bottom"  bindtap="jilu" data-id="{{item.id}}">
-    <image src="/images/tongming/jilu.png"></image>
-      <view>打卡记录</view>
-    </view>
-     <view class="bottom_bottom"  bindtap="comment" data-id="{{item.id}}">
-    <image src="/images/tongming/pinglun.png"></image>
-      <view>评论管理</view>
-    </view>
-    <view class="bottom_bottom" bindtap="member" data-id="{{item.id}}">  
-    <image src="/images/tongming/canjia.png"></image>
-      <view>参加人</view>
-    </view>
-     <view class="bottom_bottom"  bindtap="xiezhu" data-id="{{item.id}}">
-    <image src="/images/tongming/xiezhu.png"></image>
-      <view>协助教师</view>
+  <view class="list_name">活动列表</view>
+  <view class="list_index" data-id="{{item.id}}" wx:for="{{list}}" bindlongpress="deletelist">
+    <image src="{{item.pic_url}}"></image>
+    <view>{{item.name}}</view>
+    <view>{{item.addtime}}</view>
+    <view class="fenge"></view>
+    <view class="index_bottom">
+      <view class="bottom_bottom" bindtap="create_punch" data-id="{{item.id}}">
+        <image src="/images/tongming/daka.png" data-id="{{item.id}}"></image>
+        <view>创建打卡</view>
+      </view>
+      <view class="bottom_bottom" bindtap="jilu" data-id="{{item.id}}">
+        <image src="/images/tongming/jilu.png"></image>
+        <view>打卡记录</view>
+      </view>
+      <view class="bottom_bottom" bindtap="comment" data-id="{{item.id}}">
+        <image src="/images/tongming/pinglun.png"></image>
+        <view>评论管理</view>
+      </view>
+      <view class="bottom_bottom" bindtap="member" data-id="{{item.id}}">
+        <image src="/images/tongming/canjia.png"></image>
+        <view>参加人</view>
+      </view>
+      <view class="bottom_bottom" bindtap="xiezhu" data-id="{{item.id}}">
+        <image src="/images/tongming/xiezhu.png"></image>
+        <view>协助教师</view>
+      </view>
     </view>
   </view>
- </view>
 </view>
+
+<!-- 弹框start -->
+<view class="msg" wx:if="{{type==1}}">
+  <image src="https://yanxue.qiweibang.com/assets/bg.png"></image>
+  <view class="authorize_content">
+    <view>亲 为了给您提供更好的服务</view>
+    <view>我们需要您的授权喔~</view>
+    <!-- <view class="min">- 授权后您将享受以下服务 -</view> -->
+    <view class="btn">
+      <view class="cancel" bindtap="closeMsg">取消</view>
+
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
+
+
+    </view>
+  </view>
+</view>
+<view class="air" wx:if="{{type==1}}"></view>
+<!-- 弹框end -->

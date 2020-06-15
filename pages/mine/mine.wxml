@@ -1,8 +1,8 @@
 <view class="content">
   <view class="top">
     <image class="background_img" src="../../images/background.png"></image>
-    <view class="top_content">
-      <view class="top_left" bindtap="toAuth">
+    <view class="top_content" bindtap="toAuth">
+      <view class="top_left" >
         <image src="{{info.avatarUrl}}" wx:if="{{not==1}}"></image>
         <image src="../../images/ava.png" class="no_ava" wx:if="{{not==0}}"></image>
       </view>
@@ -10,10 +10,10 @@
       <view class="top_right" wx:if="{{not==1}}">
         <view class="name">
           <view>
-          {{info.nickName}}
-          <image class="edit" src="../../images/edit.png" bindtap="editPeople"></image>
+            {{info.nickName}}
+            <image class="edit" src="../../images/edit.png" bindtap="editPeople"></image>
           </view>
-          
+
           <view class="associate_button" bindtap="associate">
             <view class="button_cont">关联用户</view>
             <image class="associate" src="../../images/associate.png"></image>
@@ -25,7 +25,7 @@
         <!-- <view class="age">
           年龄: 20
         </view> -->
-        
+
       </view>
     </view>
   </view>
@@ -75,7 +75,7 @@
       <view class="item_val">
         <image src="../../images/arrow.png"></image>
       </view>
-      </view>
+    </view>
     <view class="item">
       <view class="item_name">
         <image src="../../images/tongming/baogao.png"></image>
@@ -114,15 +114,18 @@
     </view>
   </view>
 </view>
+<!-- 弹框start -->
 <view class="msg" wx:if="{{type==1}}">
-  <image src="https://yanxue.qiweibang.com/web/uploads/image/store_1/0fc3361feaf9689ba492c99d963f33e037146fa8.png"></image>
+  <image src="https://yanxue.qiweibang.com/assets/bg.png"></image>
   <view class="authorize_content">
     <view>亲 为了给您提供更好的服务</view>
     <view>我们需要您的授权喔~</view>
-    <view class="min">- 授权后您将享受以下服务 -</view>
+    <!-- <view class="min">- 授权后您将享受以下服务 -</view> -->
     <view class="btn">
+      <view class="cancel" bindtap="closeMsg">取消</view>
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
     </view>
   </view>
 </view>
 <view class="air" wx:if="{{type==1}}"></view>
+<!-- 弹框end -->
