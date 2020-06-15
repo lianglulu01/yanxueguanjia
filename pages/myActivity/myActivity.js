@@ -8,6 +8,7 @@ Page({
     mylist: [],
     modalHidden2: true,
     signIn_ewmsrc: '',
+
   },
 
   /**
@@ -75,6 +76,7 @@ Page({
   },
 
   /**
+
    * 生命周期函数--监听页面显示
    */
   onShow: function () {

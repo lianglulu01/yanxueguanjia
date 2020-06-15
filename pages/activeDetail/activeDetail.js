@@ -4,7 +4,9 @@ Page({
   /* 页面的初始数据 */
   data: {
     details:{},
-    type:1
+    type:1,
+    userinfo:{},
+    loginType:0
   },
 
   /**
@@ -13,7 +15,7 @@ Page({
   onLoad: function(options) {
 
     var that = this
-    let userinfo = wx.getStorageSync('userinfo')
+    var  userinfo = wx.getStorageSync('userinfo')
     if(userinfo){
       that.setData({
         userinfo:userinfo
@@ -68,14 +70,21 @@ Page({
  
   // 跳转至订单页
   signUp: function (e) {
+    if (!wx.getStorageSync('userinfo')){
+      this.setData({
+        loginType:1
+      })
+    }
+    console.log(this.data.userinfo)
+    // console.log(this.data.userinfo.id)
     if(this.data.userinfo && this.data.userinfo.id){
       wx.navigateTo({
         url: '../signUp/signUp?id=' + e.currentTarget.dataset.id,
       })
     }else{
-      this.setData({
-        type:0
-      })
+      // this.setData({
+      //   type:0
+      // })
     }
   },
   getUserInfo: function(o) {
@@ -85,9 +94,9 @@ Page({
     // })
     var that = this;
     if(o.detail.errMsg == 'getUserInfo:fail auth deny'){
-      this.setData({
-        type:1
-      })
+      // this.setData({
+      //   loginType:0
+      // })
     }
     "getUserInfo:ok" == o.detail.errMsg && wx.login({
       success: function(e) {
@@ -113,10 +122,8 @@ Page({
               wx.hideLoading()
               wx.setStorageSync('userinfo', res.data.data.info)
               that.setData({
-                type:1,
-                userinfo: res.data.data.info,
-                not: 1
-                // info: wx.getStorageSync('userinfo')
+                loginType:0,
+                userinfo: res.data.data.info
               })
           }
         })
@@ -127,4 +134,9 @@ Page({
       }
     });
   },
+  closeMsg: function () {
+    this.setData({
+      loginType: 0
+    })
+  }
 })

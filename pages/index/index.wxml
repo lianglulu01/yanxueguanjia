@@ -68,12 +68,15 @@
         <view class="time">时间:{{activity.start_time}}-{{activity.end_time}}</view>
         <view class="activeAddress">{{activity.address}}</view>
       </view>
+
       <view class="bottom-right" bindtap="alertEWM">
         <view class="look">去签到</view>
       </view>
       <modal title="签到" hidden="{{modalHidden2}}" bindconfirm="modalConfirm" bindcancel="modalCandel2">
         <view class="image_box">
           <image class="image" src="{{signIn_ewmsrc}}" mode='aspectFill'></image>
+
+
         </view>
       </modal>
     </view>
@@ -111,16 +114,18 @@
   <!-- 列表结束 -->
 </view>
 
+<!-- 弹框start -->
 <view class="msg" wx:if="{{type==1}}">
-  <image src="https://yanxue.qiweibang.com/web/uploads/image/store_1/0fc3361feaf9689ba492c99d963f33e037146fa8.png"></image>
+  <image src="https://yanxue.qiweibang.com/assets/bg.png"></image>
   <view class="authorize_content">
     <view>亲 为了给您提供更好的服务</view>
     <view>我们需要您的授权喔~</view>
-    <view class="min">- 授权后您将享受以下服务 -</view>
+    <!-- <view class="min">- 授权后您将享受以下服务 -</view> -->
     <view class="btn">
+      <view class="cancel" bindtap="closeMsg">取消</view>
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
     </view>
   </view>
-
 </view>
 <view class="air" wx:if="{{type==1}}"></view>
+<!-- 弹框end -->

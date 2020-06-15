@@ -55,9 +55,6 @@ page{
   font-size: 28rpx;
   padding:0 10rpx;
 }
-.image-box{
-  text-align: center
-}
 
 .item image{
   width:690rpx;
@@ -67,6 +64,7 @@ page{
   width:300rpx;
   height:300rpx;
 }
+
 .item-name{
   position: absolute;
   bottom:0;
@@ -168,8 +166,8 @@ page{
   border-radius: 0rpx 0rpx 10rpx 10rpx;
 }
 
-.card_center>image {
-  width: 647rpx;
+
+.card_center image {
   height: 282rpx;
   border-radius: 10rpx;
 }

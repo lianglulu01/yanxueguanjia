@@ -28,12 +28,12 @@
     <view class="notice_content-box">
       <text class="notice_content">{{details.desc}}</text>
     </view>
-    
+
   </view>
   <view class="item">
     <view class="item_left">
       <view class="item_title">老师</view>
-       <view class="item_name"  wx:if="{{details.rolename}}">{{details.rolename}}</view>
+      <view class="item_name" wx:if="{{details.rolename}}">{{details.rolename}}</view>
       <view class="item_name" wx:else>{{details.nickname}}</view>
     </view>
     <view class="item_val" bindtap="open">
@@ -52,10 +52,10 @@
     <view class="plan_item" wx:for="{{details.richeng}}" wx:key="index">
       <view class="plan_time">{{item.time}}</view>
       <view class="plan_content">
-       {{item.desc}}
+        {{item.desc}}
       </view>
       <view class="plan_img">
-        <view class="img_item" wx:for="{{item.pic_url}}" wx:for-item="pu"  wx:key="y">
+        <view class="img_item" wx:for="{{item.pic_url}}" wx:for-item="pu" wx:key="y">
           <image src="{{pu}}"></image>
         </view>
       </view>
@@ -68,20 +68,22 @@
     <view class="notice_content-box">
       <text class="notice_content">{{details.know}}</text>
     </view>
-    
+
   </view>
   <view class="sign_button" wx:if="{{type==1}}" data-id="{{details.id}}" data-price="{{details.price}}" bindtap="signUp">立即报名</view>
-
-  <view class="msg" wx:if="{{type==0}}">
-    <image src="https://yanxue.qiweibang.com/web/uploads/image/store_1/0fc3361feaf9689ba492c99d963f33e037146fa8.png"></image>
-    <view class="authorize_content">
-      <view>亲 为了给您提供更好的服务</view>
-      <view>我们需要您的授权喔~</view>
-      <view class="min">- 授权后您将享受以下服务 -</view>
-      <view class="btn">
-        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
-      </view>
+</view>
+<!-- 弹框start -->
+<view class="msg" wx:if="{{loginType==1}}">
+  <image src="https://yanxue.qiweibang.com/assets/bg.png"></image>
+  <view class="authorize_content">
+    <view>亲 为了给您提供更好的服务</view>
+    <view>我们需要您的授权喔~</view>
+    <!-- <view class="min">- 授权后您将享受以下服务 -</view> -->
+    <view class="btn">
+      <view class="cancel" bindtap="closeMsg">取消</view>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
     </view>
   </view>
-  <view class="air" wx:if="{{type==0}}"></view>
 </view>
+<view class="air" wx:if="{{loginType==1}}"></view>
+<!-- 弹框end -->

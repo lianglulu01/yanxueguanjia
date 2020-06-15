@@ -67,7 +67,7 @@ Page({
           })
         } else if (res.data.msg == "手机号错误") {
           wx.showToast({
-            title: res.data.msg,
+            title: '手机号不正确',
             icon: 'none',
             duration: 2000
           })
@@ -87,13 +87,19 @@ Page({
                 signType: res.data.data.signType,
                 paySign: res.data.data.paySign,
                 success(res) {
-
+                  wx.navigateTo({
+                    url: '/pages/mine/mySignUp',
+                  })
+                  
                 },
                 fail(res) { console.log(res) }
               })
             },
             fail: err => {
-
+              wx.navigateTo({
+                url: '/pages/activeDetail/activeDetail',
+              })
+              
             }
           })
         }

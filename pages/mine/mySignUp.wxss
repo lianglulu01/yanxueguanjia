@@ -22,6 +22,12 @@
   border-radius: 8rpx;
   padding: 2rpx 6rpx;
 }
+.item_status_in{
+  background-color: #fc8506;
+}
+.item_status_end{
+  background-color: #949494;
+}
 .item-left image{
   width:200rpx;
   height:200rpx;

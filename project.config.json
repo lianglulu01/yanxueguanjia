@@ -4,35 +4,20 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
-		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"autoAudits": false,
 		"coverView": true,
 		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"enhance": true,
-		"nodeModules": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"useIsolateContext": true,
-		"compileHotReLoad": false
+		"scopeDataCheck": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.1",
+	"libVersion": "2.11.2",
 	"appid": "wx6361ef659af83d2d",
-	"projectname": "%E7%A0%94%E5%AD%A6",
+	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -48,20 +33,15 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
 		"miniprogram": {
 			"current": -1,
+<<<<<<< HEAD
+			"list": []
+=======
 			"list": [
 				{
 					"id": 0,
@@ -93,6 +73,16 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
+					"name": "协助教师列表",
+					"pathName": "pages/relatedList/relatedList_teacher",
+					"query": "id=16",
+					"scene": null
+				},
+				{
+					"id": -1,
+=======
+>>>>>>> origin
 					"name": "圈子详情",
 					"pathName": "pages/dynamic/dynamic_index",
 					"query": "circel_id=14",
@@ -107,6 +97,12 @@
 				},
 				{
 					"id": -1,
+<<<<<<< HEAD
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+=======
 					"name": "活动列表",
 					"pathName": "pages/publish/index",
 					"query": "",
@@ -131,8 +127,10 @@
 					"name": "pages/activeDetail/activeDetail",
 					"pathName": "pages/activeDetail/activeDetail",
 					"scene": null
+>>>>>>> origin
 				}
 			]
+>>>>>>> 73420af7ff54c454bedea2989995e3f173e77055
 		}
 	}
 }

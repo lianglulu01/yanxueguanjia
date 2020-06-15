@@ -14,11 +14,17 @@ Page({
   onLoad: function (options) {
     // console.log(wx.getStorageSync('userinfo'))
 
-    this.mySignUp()
+    this.getMySignUp()
   },
-
+  // 跳转-活动详情
+  toRegistrationDetail(e){
+    // console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../registrationDetail/registrationDetail?id='+e.currentTarget.dataset.id,
+    })
+  },
   // 获取我的活动
-  mySignUp() {
+  getMySignUp() {
     let id = wx.getStorageSync('userinfo').id
     let page = 1
     wx.request({

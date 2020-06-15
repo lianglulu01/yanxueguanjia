@@ -193,6 +193,7 @@ page {
 }
 
 /* 弹框 */
+
 .msg {
   position: fixed;
   top: 200rpx;
@@ -200,7 +201,6 @@ page {
   width: 607rpx;
   height: 640rpx;
   z-index: 99;
- 
 }
 
 .authorize_content {
@@ -213,15 +213,15 @@ page {
   position: fixed;
   top: 324rpx;
   left: 191rpx;
-  /* display: flex; *//* justify-content: center; *//* align-items: center; */
+
 }
 
 .msg image {
-  width: 607rpx;
+  width: 551rpx;
   height: 640rpx;
   position: fixed;
   top: 200rpx;
-  left: 113rpx;
+  left: 101rpx;
 }
 
 .button_authorize {
@@ -233,7 +233,6 @@ page {
   position: fixed;
   top: 200rpx;
   left: 67rpx;
-
 }
 
 .min {
@@ -243,17 +242,33 @@ page {
   font-weight: 400;
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 59rpx;
+}
+
+.cancel {
+  width: 149rpx;
+  height: 57rpx;
+  border: 1rpx solid rgba(26, 120, 252, 1);
+  border-radius: 29rpx;
+  line-height: 57rpx;
+  color: #227dfc;
+  font-size: 30rpx;
+}
+
 #sure {
-  width: 214rpx;
-  /* height: 57rpx; */
+  width: 149rpx;
   color: #fff;
-  /* line-height: 57rpx; */
   background: linear-gradient(0deg, rgba(26, 120, 252, 1), rgba(142, 189, 254, 1));
   border-radius: 29px;
   margin-left: 76rpx;
-  margin-top: 45rpx;
-  padding:13rpx 61rpx;
+  padding: 0rpx;
   font-size: 30rpx;
+  height: 57rpx;
+  line-height: 57rpx;
 }
 
 .air {
@@ -266,3 +281,5 @@ page {
   width: 100%;
   z-index: 96;
 }
+
+/* 弹框end */

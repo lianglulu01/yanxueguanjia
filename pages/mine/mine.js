@@ -76,9 +76,9 @@ Page({
     })
   },
   getUserInfo: function(o) {
-    // wx.showLoading({
-    //   title: '加载中',
-    // })
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this;
     "getUserInfo:ok" == o.detail.errMsg && wx.login({
       success: function(e) {
@@ -116,4 +116,9 @@ Page({
       fail: function(e) {}
     });
   },
+  closeMsg:function(){
+    this.setData({
+      type:0
+    })
+  }
 })

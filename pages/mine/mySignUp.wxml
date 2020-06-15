@@ -1,9 +1,9 @@
 <!--pages/mine/my.wxml-->
 <view class="content">
   <!-- <view></view> -->
-  <view class="item" wx:for="{{list}}" wx:key="index">
+  <view class="item" wx:for="{{list}}" wx:key="index" bindtap="toRegistrationDetail" data-id="{{item.id}}">
     <view class="item-left">
-      <view>{{item.status_text}}</view>
+      <view class="item-status {{item.status_text=='进行中'?'item_status_in':'item_status_end'}}">{{item.status_text}}</view>
       <image src="{{item.pic_url}}" mode="aspectFill"></image>
     </view>
     <view class="item-right">
