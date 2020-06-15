@@ -3,7 +3,7 @@
     <view class="add_button">
     <image src="../../images/add.png"></image>
       
-      <button class="btn-share" bindtap="tianjia">添加学生</button>
+      <button class="btn-share" bindtap="add">添加学生</button>
     </view>
     <view class="list">
       <view class="item" wx:for="{{list}}" wx:key="key">
@@ -12,16 +12,12 @@
         <image src="{{item.avatar_url}}"></image>
         </view>
         <view class="student_new">
-          <view class="student_name" wx:if="{{item.rolename}}">{{item.rolename}}</view>
+          <view class="student_name">{{item.nickname}}</view>
         </view>
-        <view class="student_right" wx:if="{{yichu}}">
+        <view class="student_right" bindtap="delete" data-index="{{item.id}}">
           移除
-        </view>
-        <view class="student_right2" wx:if="{{tianjia}}">
-          添加
         </view>
       </view>
     </view>
-    <view class="sure_button">确认关联</view>
   </view>
 </view>

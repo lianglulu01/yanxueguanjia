@@ -1,9 +1,4 @@
-// pages/relatedList/relatedList.js
 const app = getApp()
-
-
-// var request = require ('../../utils/request.js')
-
 Page({
 
   /**
@@ -15,12 +10,12 @@ Page({
     list: [],
     page: 1
   },
-  toPerson: function () {
-
-  },
-  student: function () {
+  student: function (e) {
+    console.log(e)
+    // var that = this
+    // var list = that.data.list
     wx.navigateTo({
-      url: '/pages/relatedList/relatedList_student',
+      url: '/pages/relatedList/relatedList_student?activity_id=' + this.data.activity_id  + '&teacher_id=' + e.currentTarget.dataset.id,
     })
   },
   /**

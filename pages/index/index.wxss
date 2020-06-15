@@ -128,6 +128,64 @@ page {
   font-size: 23rpx;
   line-height: 46rpx;
 }
+.hide{
+  display: none
+}
+.show{
+  display: block;
+  position: fixed;
+  top:150rpx;left:auto;
+  z-index: 999;
+  text-align: center;
+}
+.icondizhi2:before {
+  content: "\e672";
+  color:#1a78fc;
+}
+.positioning{
+  position: absolute;
+  top:230rpx;left: 220rpx;
+  font-size: 26rpx;
+}
+.apart{
+  position: absolute;
+  top:280rpx;left: 260rpx;
+  font-size: 26rpx;
+}
+.image-box{
+  position: absolute;
+  top:330rpx;left: 200rpx;
+}
+.image-box .image{
+  width:240rpx;
+  height:240rpx;
+}
+.show .btn{
+  position: absolute;
+  top: 590rpx;left:180rpx;
+}
+#btn{
+  width: 214rpx;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(26, 120, 252, 1), rgba(142, 189, 254, 1));
+  border-radius: 29px;
+  padding:13rpx 31rpx;
+  font-size: 30rpx;
+  text-align: center
+}
+.image_box{
+  text-align: center
+}
+.air {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  z-index: 96;
+}
 
 /* 卡片开始 */
 
@@ -238,7 +296,12 @@ page {
   color: rgba(26, 120, 252, 1);
   text-align: center;
 }
-
+.image-box{
+  text-align: center
+}
+.image{
+  width:480rpx
+}
 /* 导航 */
 
 .tabs-nav {

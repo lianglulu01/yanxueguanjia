@@ -92,15 +92,7 @@ Page({
         title: '网络错误，请重试',
       })
     })
-    // wx.request({
-    //   url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/list&id=' + id + '&page=',
-    //   success: res => {
-    //     me.setData({
-    //       list: res.data.data.list,
-    //       user: res.data.data.user
-    //     })
-    //   }
-    // })
+ 
   },
   deletelist: function (e) {
     console.log(e);

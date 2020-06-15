@@ -1,0 +1,24 @@
+<!--pages/index/m y.wxml-->
+<view class="content">
+  <view class="item" wx:for="{{mylist}}" wx:key="index">
+    <view class="item-top">
+      <view class="item-status {{item.status_text=='未开始'?'item-status-nostart':item.status_text=='已结束'?'item-status-end':'item-status-in'}}">{{item.status_text}}</view>
+      <view class="item-singIn iconfont iconqiandao" bindtap="alertEWM" data-id="{{item.id}}">去签到</view>
+      <modal title="签到" hidden="{{modalHidden2}}" bindconfirm="modalConfirm" bindcancel="modalCandel2">
+        <view class="image-box">
+          <image class="image" src="{{signIn_ewmsrc}}" mode='aspectFill'></image>
+        </view>
+      </modal>
+      <image src="{{item.pic_url}}" mode="aspectFill"></image>
+      <view class="item-name">
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+    <view class="item-bottom">
+      <view class="item-people">{{item.people}}人报名</view>
+      <view class="item-time">时间:{{item.start_time}}-{{item.end_time}}</view>
+    </view>
+    <view class="item-region">{{item.address}}</view>
+    <view class="detailBtn" bindtap="toDetail" data-id="{{item.id}}">立即查看</view>
+  </view>
+</view>

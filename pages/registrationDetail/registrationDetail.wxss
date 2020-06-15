@@ -1,0 +1,78 @@
+/* pages/registrationDetail/registrationDetail.wxss */
+page{
+  background-color: #f9f9f9
+}
+.content{
+
+}
+.item_status{
+  background: linear-gradient(122deg, rgba(85, 172, 250, 1) 0%, rgba(25, 121, 243, 1) 100%);
+  height:110rpx;
+  color:#fff;
+  font-size: 46rpx;
+  font-weight: bold;
+  padding:8rpx 30rpx;
+}
+.item_top{
+  padding: 30rpx;
+  margin-bottom:20rpx;
+  background-color: #fff
+}
+.item_top .item_title{
+  padding-bottom:20rpx;
+}
+
+.item_top view:last-child{
+  display: flex;
+  justify-content: space-between;
+}
+.item_top .item_price text{
+  color:red;
+  font-size: 38rpx;
+}
+.item_top .item_time{
+  margin-top: 10rpx;
+  color:#999;
+  font-size: 26rpx;
+}
+.item_middle{
+  padding: 30rpx;
+  margin-bottom:20rpx;
+  background-color: #fff
+}
+.item_middle>view{
+  display: flex;
+  padding:30rpx 0 0 0;
+  line-height: 30rpx;
+}
+.item_middle image{
+  border-radius: 50%;
+  width:60rpx;
+  height:60rpx;
+  margin-right: 30rpx;
+}
+.item_middle>view>view{
+  padding-top: 15rpx;
+}
+.item_bottom{
+  padding: 30rpx;
+  background-color: #fff;
+}
+.item_bottom .order{
+  padding-bottom: 20rpx;
+}
+.item_bottom view:last-child{
+  color:#999;
+  font-size: 26rpx;
+}
+.item_bottom view:last-child view{
+  margin:12rpx 0;
+}
+.item_bottom view:last-child text{
+  color:#666;
+  margin-left: 15rpx;
+}
+.item_bottom view:last-child .total_price{
+  color:red;
+  font-size: 28rpx;
+}

@@ -1,6 +1,6 @@
 <!--pages/index/m y.wxml-->
 <view class="content">
-  <view class="item" wx:for="{{mylist}}" wx:key="index" bindtap="xiangqing">
+  <view class="item" wx:for="{{mylist}}" wx:key="index" bindtap="xiangqing" data-id="{{item.id}}">
     <view class="item-top">
       <view class="item-status">{{item.status_text}}</view>
       <image src="{{item.pic_url}}" mode="aspectFill"></image>

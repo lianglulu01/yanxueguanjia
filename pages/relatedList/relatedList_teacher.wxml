@@ -21,7 +21,7 @@
            <view class="num">{{item.id}}</view>
           </view>
         </view>
-        <view class="student_right" bindtap="student">
+        <view class="student_right" bindtap="student" data-id="{{item.id}}">
         分配学生
         </view>
       </view>

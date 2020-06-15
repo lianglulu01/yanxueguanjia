@@ -5,21 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mylist: [
-
-    ]
+    mylist: [],
+    modalHidden2: true,
+    signIn_ewmsrc: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  xiangqing:function(e){
-    console.log(e)
-    wx.navigateTo({
-      url: '/pages/mine/report_index?id=' + e.currentTarget.dataset.id
-    })
-
-  },
   onLoad: function (options) {
     this.getMylist()
   },
@@ -29,7 +22,6 @@ Page({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-list',
       data: {
         user_id: wx.getStorageSync('userinfo').id,
-        page: 1
       },
       success: res => {
         console.log(res)
@@ -42,11 +34,44 @@ Page({
       }
     })
   },
+
+  // 去签到
+  alertEWM: function (e) {
+    console.log(e.currentTarget.dataset.id)
+    this.setData({
+      modalHidden2: false
+    })
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/sign-in/sub&user_id=' + wx.getStorageSync('userinfo').id + '&activity_id=' + e.currentTarget.dataset.id,
+      success: res => {
+        console.log(res.data.data)
+        this.setData({
+          signIn_ewmsrc: res.data.data
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+  },
+  modalCandel2: function () {
+    this.setData({
+      modalHidden2: true
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
+  },
+
+  // 立即查看-跳转-活动详情
+  toDetail: function (e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
+    })
   },
 
   /**

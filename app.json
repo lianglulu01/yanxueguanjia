@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/relatedList/relatedList_addstudent",
     "pages/active/active",
     "pages/mine/list_index",
     "pages/mine/list",

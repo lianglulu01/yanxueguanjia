@@ -2,18 +2,6 @@
 <view class="title">
   <view>最忆城--"中轴时光”研学实践报告</view>
 </view>
-<!--姓名学校班级-->
-<view class="index">
- <view>姓名: {{name}}</view>
- <view>学校: {{school}}</view>
- <view>班级: {{class}}</view>
-</view>
-<!--活动介绍-->
-<view class="desc">
- <view class="desc_title">活动介绍</view>
- <view class="desc_content">这是一篇关于AI变换知识总结的一门技巧，通过AI变换功能，可以把简单的图形变得高大上没有,快来围观老师是怎么做的吧；这把简单的图形变得高大上有没有,快来围观老师是怎么做的吧；</view>
- <image src="{{image}}" class="desc_image"></image>
-</view>
 <!--活动行程-->
 <view class="plan_list">
     <view class="plan_title">活动日程安排</view>
@@ -29,106 +17,6 @@
       </view>
     </view>
   </view>
-  
-  <!--画布-->
-     <view class="bottom_assess" wx:if="{{is_comment}}">
-      <view class="assess_top">
-        <view class="top_border"></view>
-        <view>每日评价</view>
-      </view>
-      <view class="assess_bottom">
-        <view class="assess_item">
-          <view class="assess_name">
-            <text>今日表现:</text>
-            <!-- <image src="../../images/star.png"></image> -->
-          </view>
-          <!-- 插件start -->
-          <view class="assess_value">
-            <view class="container">
-              <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
-            </view>
-          </view>
-          <!-- 插件end -->
-        </view>
-        <view class="assess_item">
-          <view class="assess_name">
-            <text>综合能力:</text>
-            <image wx:if="{{comment.zong_score>0}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.zong_score>1}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.zong_score>2}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.zong_score>3}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.zong_score>4}}" src="../../images/star.png"></image>
-          </view>
-          <view class="assess_val">
-            {{comment.zong_desc}}
-          </view>
-        </view>
-        <view class="assess_item">
-          <view class="assess_name">
-            <text> 活动态度:</text>
-            <image wx:if="{{comment.huo_score>0}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.huo_score>1}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.huo_score>2}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.huo_score>3}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.huo_score>4}}" src="../../images/star.png"></image>
-          </view>
-          <view class="assess_val">
-            {{comment.huo_desc}}
-          </view>
-        </view>
-        <view class="assess_item">
-          <view class="assess_name">
-            <text> 积极表现:</text>
-            <image wx:if="{{comment.jiji_score>0}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.jiji_score>1}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.jiji_score>2}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.jiji_score>3}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.jiji_score>4}}" src="../../images/star.png"></image>
-          </view>
-          <view class="assess_val">
-            {{comment.jiji_desc}}
-          </view>
-        </view>
-        <view class="assess_item">
-          <view class="assess_name">
-            <text> 团队贡献:</text>
-            <image wx:if="{{comment.tuan_score>0}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.tuan_score>1}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.tuan_score>2}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.tuan_score>3}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.tuan_score>4}}" src="../../images/star.png"></image>
-          </view>
-          <view class="assess_val">
-            {{comment.tuan_desc}}
-          </view>
-        </view>
-        <view class="assess_item">
-          <view class="assess_name">
-            <text> 成果评价:</text>
-            <image wx:if="{{comment.cheng_score>0}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.cheng_score>1}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.cheng_score>2}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.cheng_score>3}}" src="../../images/star.png"></image>
-            <image wx:if="{{comment.cheng_score>4}}" src="../../images/star.png"></image>
-          </view>
-          <view class="assess_val">
-            {{comment.cheng_desc}}
-          </view>
-        </view>
-
-        <view class="assess_item">
-          <view class="assess_name">
-            <view class="teach_title">老师寄语:</view>
-            <view class="teach">
-              {{comment.send_word}}
-            </view>
-          </view>
-          <!-- <view class="assess_val">
-            有记者就“未来的海南自贸港是否会替代香港的部分功能和地位
-          </view> -->
-        </view>
-      </view>
-    </view>
  <!--印章-->
  <view class="yinzhang">
    <view>人民大学</view>

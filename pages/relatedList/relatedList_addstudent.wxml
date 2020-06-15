@@ -1,0 +1,12 @@
+<view class="list">
+      <view class="item" wx:for="{{list}}" wx:key="key">
+        <view class="circle"></view>
+        <view class="student_avator">
+        <image src="{{item.avatar_url}}"></image>
+        </view>
+        <view class="student_new">
+          <view class="student_name">{{item.nickname}}</view>
+        </view>
+        <view class="student_right2" bindtap="addstudent" data-id="{{item.id}}">添加</view>
+      </view>
+    </view>

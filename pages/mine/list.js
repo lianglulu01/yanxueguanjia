@@ -5,15 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mylist: []
+    mylist: [
+
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  xiangqing:function(){
+  xiangqing:function(e){
+    console.log(e)
     wx.navigateTo({
-      url: '/pages/mine/report_index',
+      url: '/pages/mine/list_index?id=' + e.currentTarget.dataset.id
     })
 
   },
