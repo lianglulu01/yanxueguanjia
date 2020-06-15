@@ -5,20 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mylist: [
-
-    ]
+    mylist: [],
+    modalHidden:true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  xiangqing:function(){
-    wx.navigateTo({
-      url: '/pages/mine/report_index',
-    })
-
-  },
   onLoad: function (options) {
     this.getMylist()
   },
@@ -28,7 +21,6 @@ Page({
       url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-list',
       data: {
         user_id: wx.getStorageSync('userinfo').id,
-        page: 1
       },
       success: res => {
         console.log(res)
@@ -48,6 +40,38 @@ Page({
 
   },
 
+  // 立即查看-跳转-活动详情
+  toDetail: function (e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  // 去签到
+  alertEWM: function (e) {
+    console.log(e)
+    this.setData({
+      modalHidden: false
+    })
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/sign-in/sub&user_id=' + wx.getStorageSync('userinfo').id + '&activity_id=' + this.data.activity.id,
+      success: res => {
+        console.log(res.data.data)
+        this.setData({
+          ewmsrc: res.data.data
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+  },
+  // 签到结束
+  modalCandel: function () {
+    this.setData({
+      modalHidden: true
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

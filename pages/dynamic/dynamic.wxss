@@ -145,8 +145,8 @@ page {
 }
 
 .billing .billing_left image {
-  width: 110rpx;
-  height: 110rpx;
+  width: 65rpx;
+  height: 65rpx;
   border-radius: 8rpx;
 }
 

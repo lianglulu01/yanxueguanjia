@@ -2,7 +2,7 @@
   <view class="top">
     <image class="background_img" src="../../images/background.png"></image>
     <view class="top_content" bindtap="toAuth">
-      <view class="top_left" >
+      <view class="top_left">
         <image src="{{info.avatarUrl}}" wx:if="{{not==1}}"></image>
         <image src="../../images/ava.png" class="no_ava" wx:if="{{not==0}}"></image>
       </view>
@@ -75,57 +75,60 @@
       <view class="item_val">
         <image src="../../images/arrow.png"></image>
       </view>
+      <!-- <<<<<<< HEAD </view>
+        <view class="item"> -->
+          <!-- ======= -->
+        </view>
+        <view class="item" bindtap="report">
+          <!-- >>>>>>> 73420af7ff54c454bedea2989995e3f173e77055 -->
+          <view class="item_name">
+            <image src="../../images/tongming/baogao.png"></image>
+            <text>研学实践报告</text>
+          </view>
+          <view class="item_val">
+            <image src="../../images/arrow.png"></image>
+          </view>
+        </view>
+        <view class="item" bindtap="list">
+          <view class="item_name">
+            <image src="../../images/tongming/xingcheng.png"></image>
+            <text>行程单</text>
+          </view>
+          <view class="item_val">
+            <image src="../../images/arrow.png"></image>
+          </view>
+        </view>
+        <button class="item1" open-type="contact">
+          <view class="item_name">
+            <image src="../../images/tongming/kefu.png"></image>
+            <text>在线客服</text>
+          </view>
+          <view class="item_val">
+            <image src="../../images/arrow.png"></image>
+          </view>
+        </button>
+        <view class="item" bindtap="about">
+          <view class="item_name">
+            <image src="../../images/tongming/guanyu.png"></image>
+            <text>关于平台</text>
+          </view>
+          <view class="item_val">
+            <image src="../../images/arrow.png"></image>
+          </view>
+        </view>
     </view>
-    <view class="item">
-      <view class="item_name">
-        <image src="../../images/tongming/baogao.png"></image>
-        <text>研学实践报告</text>
-      </view>
-      <view class="item_val">
-        <image src="../../images/arrow.png"></image>
-      </view>
-    </view>
-    <view class="item">
-      <view class="item_name">
-        <image src="../../images/tongming/xingcheng.png"></image>
-        <text>行程单</text>
-      </view>
-      <view class="item_val">
-        <image src="../../images/arrow.png"></image>
-      </view>
-    </view>
-    <button class="item1" open-type="contact">
-      <view class="item_name">
-        <image src="../../images/tongming/kefu.png"></image>
-        <text>在线客服</text>
-      </view>
-      <view class="item_val">
-        <image src="../../images/arrow.png"></image>
-      </view>
-    </button>
-    <view class="item" bindtap="about">
-      <view class="item_name">
-        <image src="../../images/tongming/guanyu.png"></image>
-        <text>关于平台</text>
-      </view>
-      <view class="item_val">
-        <image src="../../images/arrow.png"></image>
+  </view>
+  <!-- 弹框start -->
+  <view class="msg" wx:if="{{type==1}}">
+    <image src="https://yanxue.qiweibang.com/assets/bg.png"></image>
+    <view class="authorize_content">
+      <view>亲 为了给您提供更好的服务</view>
+      <view>我们需要您的授权喔~</view>
+      <!-- <view class="min">- 授权后您将享受以下服务 -</view> -->
+      <view class="btn">
+        <view class="cancel" bindtap="closeMsg">取消</view>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
       </view>
     </view>
   </view>
-</view>
-<!-- 弹框start -->
-<view class="msg" wx:if="{{type==1}}">
-  <image src="https://yanxue.qiweibang.com/assets/bg.png"></image>
-  <view class="authorize_content">
-    <view>亲 为了给您提供更好的服务</view>
-    <view>我们需要您的授权喔~</view>
-    <!-- <view class="min">- 授权后您将享受以下服务 -</view> -->
-    <view class="btn">
-      <view class="cancel" bindtap="closeMsg">取消</view>
-      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" id="sure">去授权</button>
-    </view>
-  </view>
-</view>
-<view class="air" wx:if="{{type==1}}"></view>
-<!-- 弹框end -->
+  <view class="air" wx:if="{{type==1}}"></view>

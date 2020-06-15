@@ -1,0 +1,39 @@
+<view class="content">
+  <view class="item_status">
+    {{registrationDetail.status_text}}
+  </view>
+  <view class="item_top">
+    <view class="item_title">{{registrationDetail.name}}</view>
+    <view>
+      <view class="item_price">
+        活动价格 
+        <text>¥ {{registrationDetail.pay_price}}</text>
+      </view>
+      <view class="item_time">{{registrationDetail.addtime}}报名</view>
+    </view>
+  </view>
+  <view class="item_middle">
+    参加人
+    <view wx:for="{{registrationDetail.user}}" wx:key="index">
+      <image src="{{item.avatar_url}}" mode="aspectFill"></image>
+      <view>{{item.nickname}}</view>
+    </view>
+  </view>
+  <view class="item_bottom">
+    <view class="order">订单信息</view>
+    <view>
+      <view>
+        下单日期
+        <text>{{registrationDetail.end_time}}</text>
+      </view>
+      <view>
+        参加人数
+        <text>{{registrationDetail.user.length}}人</text>
+      </view>
+      <view>
+        实付价格
+        <text class="total_price"> ¥ {{registrationDetail.total_price}}</text>
+      </view>
+    </view>
+  </view>
+</view>

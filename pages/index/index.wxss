@@ -238,7 +238,12 @@ page {
   color: rgba(26, 120, 252, 1);
   text-align: center;
 }
-
+.image-box{
+  text-align: center
+}
+.image{
+  width:480rpx
+}
 /* 导航 */
 
 .tabs-nav {

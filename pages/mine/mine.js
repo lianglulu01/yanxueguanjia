@@ -54,6 +54,16 @@ Page({
       url: '/pages/mine/xiezhu',
     })
   },
+  list:function(){
+    wx.navigateTo({
+      url: '/pages/mine/list',
+    })
+  },
+  report:function(){
+    wx.navigateTo({
+      url: '/pages/mine/report',
+    })
+  },
   about:function(){
    wx.navigateTo({
      url: '/pages/mine/about',

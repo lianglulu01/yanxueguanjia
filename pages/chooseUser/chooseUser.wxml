@@ -4,7 +4,7 @@
     <checkbox-group  bindchange="checkboxChange">
       <label class="join_user {{item.is_check?' is_check':'checkbox'}}" wx:for="{{userList}}" bindtap='checkbox' data-index="{{index}}" data-id="{{item.id}}" wx:key="item.nickname">
         <view>{{item.nickname}}</view>
-        <checkbox value="{{item.nickname}}{{item.id}}" checked="{{item.is_check}}"/>
+        <checkbox value="{{item.nickname}}" checked="{{item.is_check}}"/>
       <!-- <image wx:if="{{!is_check}}" src="../../images/selected.png" mode="widthFix"></image>
       <image wx:else="{{is_check}}" src="../../images/selected_no.png" mode="widthFix"></image> -->
       </label>

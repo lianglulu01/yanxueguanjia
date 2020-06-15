@@ -65,7 +65,7 @@
 				<image class="xingcheng-image" mode="aspectFill" src="/images/tongming/add.png" data-index="{{index}}" bindtap="addImg"></image>
 			</view>
 			<view class="richengDel" bindtap="delRicheng" data-index="{{index}}">
-				<text class="iconfont iconshanchu" style="color:#696969"></text>
+				<text class="iconfont iconshanchu" style="color:#696969;font-size:32rpx"></text>
 			</view>
 		</view>
 		<view class="richengBtn" bindtap="addRicheng">添加行程</view>

@@ -1,4 +1,4 @@
-// pages/index/myActivity.js
+// pages/mine/list_index.js
 Page({
 
   /**

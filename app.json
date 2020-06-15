@@ -1,12 +1,14 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/mine/list_index",
+    "pages/mine/list",
     "pages/mine/report_index",
     "pages/mine/report",
-    "pages/active/active",
     "pages/publish/activity",
     "pages/mine/xiezhu",
     "pages/mine/mine",
+    "pages/active/active",
     "pages/publish/index",
     "pages/dynamic/dynamic_index",
     "pages/relatedList/relatedList_student",
@@ -29,8 +31,10 @@
     "pages/order/order",
     "pages/join/join",
     "pages/assess/assess",
-    "pages/index/myActivity",
+    "pages/myActivity/myActivity",
     "pages/mine/mySignUp",
+    "pages/registrationDetail/registrationDetail",
+    "pages/index/myActivity",
     "pages/mytalk/mytalk"
   ],
   "window": {
