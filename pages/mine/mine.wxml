@@ -76,7 +76,7 @@
         <image src="../../images/arrow.png"></image>
       </view>
       </view>
-    <view class="item">
+    <view class="item" bindtap="report">
       <view class="item_name">
         <image src="../../images/tongming/baogao.png"></image>
         <text>研学实践报告</text>
@@ -85,7 +85,7 @@
         <image src="../../images/arrow.png"></image>
       </view>
     </view>
-    <view class="item">
+    <view class="item" bindtap="list">
       <view class="item_name">
         <image src="../../images/tongming/xingcheng.png"></image>
         <text>行程单</text>

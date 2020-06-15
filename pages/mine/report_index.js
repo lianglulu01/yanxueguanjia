@@ -57,6 +57,8 @@ Page({
     school: "家里蹲大学",
     class: "一年级一班",
     image: "http://xzq.qiweibang.com/web/uploads/image/store_1/d81de869f081cd2247c6aa56ccccbb381b326b8e.png",
+    details:{},
+    type:1,
     ec: {
       onInit: function(canvas, width, height, dpr){
         chart = echarts.init(canvas, null, {
@@ -64,7 +66,6 @@ Page({
           height: height,
           devicePixelRatio: dpr // new
         });
-        console.log("hellojiangning")
         canvas.setChart(chart);
 
         chart.setOption(option);
@@ -93,7 +94,6 @@ Page({
     idx: 0,
     key: 0,
     idxx: 0,
-    explanation: ['中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争', '中国人民银行副行长、国家外汇管理局局长潘功胜回应，海南自由贸易港与香港的定位不同，重点发展产业也不同，互补大于竞争'],
 
   },
   previewImg:function(e){
@@ -174,8 +174,35 @@ Page({
       url: '../punchList/punchList',
     })
   },
-  onLoad: function() {
+  onLoad: function(options) {
     this.getNavlist()
+    var that = this
+    let userinfo = wx.getStorageSync('userinfo')
+    if(userinfo){
+      that.setData({
+        userinfo:userinfo
+      })
+    }
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/detail',
+      data:{
+        id: options.id
+      },
+      method:'GET',
+      success:function(res){
+        console.log(res.data.data)
+        that.setData({
+          details:res.data.data
+        })
+      }
+    })
+  },
+  toAuth: function () {
+    if (!wx.getStorageSync('userinfo')) {
+      this.setData({
+        type: 1
+      })
+    }
   },
   getNavlist:function(){
     var that = this;

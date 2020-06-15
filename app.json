@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/active/active",
+    "pages/mine/list_index",
+    "pages/mine/list",
     "pages/index/index",
     "pages/mine/report_index",
     "pages/mine/report",
-    "pages/active/active",
+
     "pages/publish/activity",
     "pages/mine/xiezhu",
     "pages/mine/mine",

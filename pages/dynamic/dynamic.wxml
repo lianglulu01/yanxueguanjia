@@ -7,7 +7,7 @@
     <view class="square_border" wx:if="{{selected1}}"></view>
   </view>
   <view class="list" wx:if="{{selected}}">
-    <view class="list_item"  wx:for="{{myList}}" wx:key="{{index}}">
+    <view class="list_item"  wx:for="{{myList}}" wx:key="key">
   
       <view class="item_left" bindtap="dynamic_index" data-id="{{item.id}}">
         <image src="{{item.avatar_url}}"></image>
@@ -118,7 +118,7 @@
            <view class="section">
               <view class="tui-table-view">
               <!-- 循环图片 -->
-                <view class="tui-col-3" wx:for="{{item.images}}" wx:key="{{index}}">
+                <view class="tui-col-3" wx:for="{{item.images}}" wx:key="key">
                     <view class="img">
                          <image src="{{item}}" style="width:100%;height:100%;border-radius:14rpx"></image>
                     </view>

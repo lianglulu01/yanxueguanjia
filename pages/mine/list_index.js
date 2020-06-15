@@ -1,46 +1,20 @@
-// pages/index/m y.js
+// pages/mine/list_index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mylist: [
 
-    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  xiangqing:function(){
-    wx.navigateTo({
-      url: '/pages/mine/report_index',
-    })
-
-  },
   onLoad: function (options) {
-    this.getMylist()
+
   },
 
-  getMylist() {
-    wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-list',
-      data: {
-        user_id: wx.getStorageSync('userinfo').id,
-        page: 1
-      },
-      success: res => {
-        console.log(res)
-        this.setData({
-          mylist: res.data.data.list
-        })
-      },
-      fail: err => {
-        console.log(err)
-      }
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
