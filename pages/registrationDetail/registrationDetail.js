@@ -1,4 +1,4 @@
-// pages/mine/my.js
+// pages/registrationDetail/registrationDetail.js
 //获取应用实例
 const app = getApp()
 
@@ -6,41 +6,34 @@ Page({
 
   /* 页面的初始数据 */
   data: {
-    list: [],
-    page:1,
+    registrationDetail:{},
+    registrationDetailId:[],
+    id:''
   },
 
-  /** 生命周期函数--监听页面加载 */
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
-    // console.log(wx.getStorageSync('userinfo'))
-
-    this.getMySignUp()
-  },
-  // 跳转-活动详情
-  toRegistrationDetail(e){
-    // console.log(e.currentTarget.dataset.id)
-    wx.navigateTo({
-      url: '../registrationDetail/registrationDetail?id='+e.currentTarget.dataset.id,
+    // console.log(options)
+    this.setData({
+      id: options.id
     })
-  },
-  // 获取我的活动
-  getMySignUp() {
-    let id = wx.getStorageSync('userinfo').id
-    let page = 1
     wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/my-order&id=' + id + '&page=' + page,
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/order-detail&id=' + this.data.id,
       success: res => {
-        console.log(res)
+        console.log(res.data.data)
         this.setData({
-          list: res.data.data.list
+          registrationDetail: res.data.data,
         })
       },
       fail: err => {
         console.log(err)
       }
     })
-
   },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -19,7 +19,9 @@ Page({
       activity_id:0,  //协助教师相关，活动id
       data_type:0
     },
-    activity:{}
+    activity:{},
+    modalHidden: true,
+    ewmsrc:''
   },
 
   onLoad:function(option){
@@ -41,12 +43,12 @@ Page({
       that.data.invite.data_type = option.activity_id
     }
     that.getImg()
-    that.getMyActivity()
-     
+    // that.getMyActivity()
   },
   onShow:function(){
     var that = this
     that.getList()
+    that.getMyActivity()
   },
   //事件处理函数
   bindViewTap: function() {
@@ -152,44 +154,13 @@ Page({
       }
     })
   },
-  // 跳转 活动详情
-  toDetail:function(e){
-    console.log(e.currentTarget.dataset.id)
-    wx.navigateTo({
-      url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
-    })
-  },
-  // 首页-我的活动
-  getMyActivity(){
-    // + wx.getStorageSync('userinfo').id
-    wx.request({
-      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-one&user_id='+ wx.getStorageSync('userinfo').id ,
-      success:res=>{
-        console.log(res)
-        this.setData({
-          activity:res.data.data
-        })
-      },
-      fail:err=>{
-        console.log(err)
-      }
-    })
-  },
-  // 查看活动 跳转
-  toMyActivity() {
-    wx.navigateTo({
-      url: './myActivity',
-    })
-  },
-  // 签到
-  signIn() {
 
-  },
+
   // 确认打卡的按钮
-  punch:function(){
+  punch: function () {
     wx.getLocation({
       type: 'wgs84',
-      success:(res)=> {
+      success: (res) => {
         const latitude = res.latitude
         const longitude = res.longitude
         // console.log(latitude, longitude)
@@ -201,18 +172,76 @@ Page({
           },
           data: {
             user_id: wx.getStorageSync('userinfo').id,
-            // address:
-            // clock_in_id:
+            address: this.data.activity.address,
+            clock_in_id: this.data.activity.sign.clock_in_id,
             longitude: longitude,
             latitude: latitude
-            // join_user: JSON.stringify(this.data.joinUserId),
-            // mobile: this.data.phone,
-            // activity_id: this.data.id,
           },
           success: (res) => { console.log(res) },
           fail: (err) => { }
         })
       }
+    })
+  },
+
+  // 首页-我的活动
+  getMyActivity(){
+    wx.getLocation({
+      type: 'wgs84',
+      success: (res) => {
+        const latitude = res.latitude
+        const longitude = res.longitude
+        wx.request({
+          url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/join-activity-one&user_id=' + wx.getStorageSync('userinfo').id + '&latitude=' + latitude + '&longitude=' + longitude,
+          success: res => {
+            console.log(res)
+            this.setData({
+              activity: res.data.data
+            })
+          },
+          fail: err => {
+            console.log(err)
+          }
+        })
+      },
+    })
+  },
+  // 查看活动 跳转
+  toMyActivity() {
+    wx.navigateTo({
+      url: '../myActivity/myActivity',
+    })
+  },
+
+  // 去签到
+  alertEWM: function () {
+    this.setData({
+      modalHidden: false
+    })
+    wx.request({
+      url: 'https://yanxue.qiweibang.com/web/index.php?r=api/sign-in/sub&user_id=' + wx.getStorageSync('userinfo').id + '&activity_id=' + this.data.activity.id,
+      success: res => {
+        console.log(res.data.data)
+        this.setData({
+          ewmsrc: res.data.data
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+  },
+  // 签到结束
+  modalCandel: function () {
+    this.setData({
+      modalHidden: true
+    })
+  },
+  // 跳转 活动详情
+  toDetail: function (e) {
+    console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '../activeDetail/activeDetail?id=' + e.currentTarget.dataset.id,
     })
   },
 
@@ -225,7 +254,7 @@ Page({
         page:that.data.page
       },
       success:function(res){
-        console.log(res)
+        // console.log(res)
         that.setData({
           list:res.data.data.list
         })

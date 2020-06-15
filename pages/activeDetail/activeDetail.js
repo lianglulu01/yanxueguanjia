@@ -63,7 +63,7 @@ Page({
   },
  
   // 跳转至订单页
-  signUp: function (e) {
+  toSignUp: function (e) {
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '../signUp/signUp?id=' + e.currentTarget.dataset.id,

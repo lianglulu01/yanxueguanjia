@@ -3,9 +3,7 @@
     "pages/index/index",
     "pages/active/active",
     "pages/publish/activity",
- 
     "pages/mine/xiezhu",
-    
     "pages/mine/mine",
     "pages/publish/index",
     "pages/dynamic/dynamic_index",
@@ -15,7 +13,6 @@
     "pages/releaseDynamic/releaseDynamic",
     "pages/personalData/personalData",
     "pages/relatedList/relatedList_teacher",
-
     "pages/publish/now_comment",
     "pages/publish/comment",
     "pages/publish/create_punch",
@@ -30,8 +27,9 @@
     "pages/order/order",
     "pages/join/join",
     "pages/assess/assess",
-    "pages/index/myActivity",
-    "pages/mine/mySignUp"
+    "pages/myActivity/myActivity",
+    "pages/mine/mySignUp",
+    "pages/registrationDetail/registrationDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

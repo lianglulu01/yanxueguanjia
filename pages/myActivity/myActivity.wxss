@@ -22,13 +22,23 @@ page{
 .item-status{
   position: absolute;
   top:0;left:0;
-  background-color: #fc8506;
   color:#fff;
   font-size: 22rpx;
   padding: 6rpx 18rpx;
   border-top-left-radius: 10rpx;
   border-bottom-right-radius: 10rpx
 }
+.item-status-nostart{
+  background-color: #1b77fb
+}
+.item-status-in{
+  background-color: #fc8506;
+}
+.item-status-end{
+  background-color: #cccccc
+}
+
+
 .item-singIn{
   position: absolute;
   top:35%;right:0;

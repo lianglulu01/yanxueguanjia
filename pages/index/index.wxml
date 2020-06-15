@@ -43,19 +43,24 @@
         <image class="rigth_arr" style="width:22rpx;height:22rpx;" src="../../images/right_arr.png"></image>
       </view>
     </view>
-    <view class="card_center">
+    <view class="card_center" bindtap="toDetail" data-id="{{activity.id}}">
       <image src="{{activity.pic_url}}" mode="aspectFill"></image>
       <view class="img_content">{{activity.name}}</view>
     </view>
     <view class="card_bottom">
-      <view class="bottom_left">
+      <view class="bottom_left" bindtap="toDetail" data-id="{{activity.id}}">
         <view class="people">{{activity.count}}人报名</view>
         <view class="time">时间:{{activity.start_time}}-{{activity.end_time}}</view>
         <view class="activeAddress">{{activity.address}}</view>
       </view>
-      <view class="bottom-right">
+      <view class="bottom-right" bindtap="alertEWM">
         <view class="look">去签到</view>
       </view>
+      <modal title="签到" hidden="{{modalHidden}}" bindconfirm="modalConfirm" bindcancel="modalCandel">
+        <view class="image-box">
+          <image class="image" src="{{ewmsrc}}" mode='aspectFill'></image>
+        </view>
+      </modal>
     </view>
   </view>
   <!-- 导航 -->
@@ -87,8 +92,6 @@
         </view>
       </view>
     </view>
-    
-  
   </view>
   <!-- 列表结束 -->
 </view>
