@@ -59,19 +59,13 @@ Page({
       },
       success: (res) => {
         console.log(res)
-        if (res.data.msg == "请选择参加人") {
+        if (res.data.code == 1) {
           wx.showToast({
             title: res.data.msg,
             icon: 'none',
             duration: 2000
           })
-        } else if (res.data.msg == "手机号错误") {
-          wx.showToast({
-            title: '手机号不正确',
-            icon: 'none',
-            duration: 2000
-          })
-        } else if (res.data.msg == "操作成功") {
+        } else if (res.data.code == 0) {
           wx.request({
             url: 'https://yanxue.qiweibang.com/web/index.php?r=api/activity/pay-data',
             data: {
